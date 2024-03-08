@@ -3,7 +3,7 @@
 //Juan Dario Rodas - juand.rodasm@upb.edu.co
 
 //Proyecto: Atlas de Frutas Colombianas
-// Motor de Base de datos: PostgreSQL 16.x
+// Especificación en DBML del modelo de datos
 
 Table "core"."departamentos" {
   "id" varchar(2) [pk, note: 'id del departamento según DIVIPOLA']
@@ -25,21 +25,77 @@ Indexes {
 Ref:"core"."departamentos"."id" < "core"."municipios"."departamento_id"
 
 Table "core"."frutas" {
-  "id" integer [pk, increment]
-  "nombre" varchar(100) [unique, not null]
-  "url_wikipedia" varchar(500)
-  "url_imagen" varchar(500)
+  "id" integer [pk, increment, note: 'id de la fruta']
+  "nombre" varchar(100) [unique, not null, note: 'Nombre de la fruta']
+  "url_wikipedia" varchar(500) [not null, note: 'URL en Wikipedia de la fruta']
+  "url_imagen" varchar(500) [not null, note: 'URL de la imagen en Wikipedia de la fruta']
+  Note: 'Frutas de Colombia'
 }
 
-Table "core"."taxonomias" {
-  "fruta_id" integer [not null]
-  "reino" varchar(50) [not null]
-  "division" varchar(50) [not null]
-  "clase" varchar(50) [not null]
-  "orden" varchar(50) [not null]
-  "familia" varchar(50) [not null]
-  "genero" varchar(50) [not null]
-  "especie" varchar(50) [not null]
+Table "core"."reinos" {
+  "id" integer [pk, increment, note: 'id del reino']
+  "nombre" varchar(100) [unique, not null, note: 'nombre del reino']
+  Note: 'Reinos en la clasificación botánica'
 }
 
-Ref:"core"."frutas"."id" - "core"."taxonomias"."fruta_id"
+Table "core"."divisiones" {
+  "id" integer [pk, increment, note: 'id de la división']
+  "nombre" varchar(100) [unique, not null, note: 'nombre de la división']
+  "reino_id" integer [not null, note: 'ID del reino al que pertenece la división']
+  Note: 'Divisiones en la clasificación botánica'
+}
+
+Table "core"."clases" {
+  "id" integer [pk, increment, note: 'id de la clase']
+  "nombre" varchar(100) [unique, not null, note: 'nombre de la clase']
+  "division_id" integer [not null, note: 'ID de la división al que pertenece la clase']
+  Note: 'Clases en la clasificación botánica'
+}
+
+Table "core"."ordenes" {
+  "id" integer [pk, increment, note: 'id del orden']
+  "nombre" varchar(100) [unique, not null, note: 'nombre del orden']
+  "clase_id" integer [not null, note: 'ID de la clase al que pertenece el orden']
+  Note: 'Ordenes en la clasificación botánica'
+}
+
+Table "core"."familias" {
+  "id" integer [pk, increment, note: 'id de la familia']
+  "nombre" varchar(100) [unique, not null, note: 'nombre de la familia']
+  "orden_id" integer [not null, note: 'ID del orden al que pertenece la familia']
+  Note: 'Familias en la clasificación botánica'
+}
+
+Table "core"."generos" {
+  "id" integer [pk, increment, note: 'id del género']
+  "nombre" varchar(100) [unique, not null, note: 'nombre del género']
+  "familia_id" integer [not null, note: 'ID de la familia al que pertenece el género']
+  Note: 'Géneros en la clasificación botánica'
+}
+
+Table "core"."especies" {
+  "id" integer [pk, increment, note: 'id de la especie']
+  "nombre" varchar(100) [unique, not null, note: 'nombre de la especie']
+  "genero_id" integer [not null, note: 'ID del genero al que pertenece la especie']
+  Note: 'Especies en la clasificación botánica'
+}
+
+Table "core"."taxonomia_frutas" {
+   "especie_id" integer [not null, note: 'Especie taxonómica a la que pertenece la fruta']
+   "fruta_id" integer [not null, note: 'Id de la fruta']
+
+
+Indexes {
+  (fruta_id, especie_id) [pk, name: "taxonomia_frutas_pk"]
+}
+  Note: 'Relación de la fruta con su clasificación taxonómica'
+}
+
+Ref:"core"."reinos"."id" < "core"."divisiones"."reino_id"
+Ref:"core"."divisiones"."id" < "core"."clases"."division_id"
+Ref:"core"."clases"."id" < "core"."ordenes"."clase_id"
+Ref:"core"."ordenes"."id" < "core"."familias"."orden_id"
+Ref:"core"."familias"."id" < "core"."generos"."familia_id"
+Ref:"core"."generos"."id" < "core"."especies"."genero_id"
+Ref:"core"."frutas"."id" - "core"."taxonomia_frutas"."fruta_id"
+Ref:"core"."especies"."id" - "core"."taxonomia_frutas"."especie_id"

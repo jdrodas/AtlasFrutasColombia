@@ -47,7 +47,7 @@
             Console.ReadKey();
 
             //U del CRUD - Actualización de un nuevo registro - UPDATE
-            Fruta  frutaActualizada = AccesoDatosPgsql.ObtieneFruta("Mango");
+            Fruta frutaActualizada = AccesoDatosPgsql.ObtieneFruta("Mango");
 
             frutaActualizada.Nombre = "Manguito Biche";
             Console.WriteLine($"\n\nActualizando la fruta No. {frutaActualizada.Id} " +
@@ -96,15 +96,10 @@
                 Console.WriteLine($"Eliminación exitosa! la fruta {nuevaFruta.Nombre} fue eliminada");
                 VisualizaFrutas();
             }
-
-            Console.WriteLine("\nPresiona una tecla para continuar...");
-            Console.ReadKey();            
-
-
         }
 
         /// <summary>
-        /// Visualiza la lista de nombres de cerveza registrados en la DB
+        /// Visualiza la lista de nombres de frutas registrados en la DB
         /// </summary>
         public static void VisualizaNombresFrutas()
         {
@@ -137,7 +132,7 @@
                 Console.WriteLine($"Id: {unaFruta.Id}\tNombre: {unaFruta.Nombre}");
                 Console.WriteLine($"Enlace Wikipedia: {unaFruta.Url_Wikipedia}");
                 Console.WriteLine($"Enlace Imagen: {unaFruta.Url_Imagen}\n");
-            }                
+            }
         }
     }
 }

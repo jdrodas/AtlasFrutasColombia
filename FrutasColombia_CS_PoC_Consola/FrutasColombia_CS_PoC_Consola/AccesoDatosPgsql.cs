@@ -31,9 +31,11 @@ namespace FrutasColombia_CS_PoC_Consola
 
             using IDbConnection cxnDB = new NpgsqlConnection(cadenaConexion);
             string sentenciaSQL = "SELECT nombre FROM frutas ORDER BY nombre";
-            var resultadoFrutas = cxnDB.Query<string>(sentenciaSQL, new DynamicParameters());
+            var resultadoNombresFrutas = cxnDB
+                .Query<string>(sentenciaSQL, new DynamicParameters());
 
-            return resultadoFrutas.AsList();
+            return resultadoNombresFrutas
+                .AsList();
         }
 
         /// <summary>
@@ -46,9 +48,11 @@ namespace FrutasColombia_CS_PoC_Consola
 
             using IDbConnection cxnDB = new NpgsqlConnection(cadenaConexion);
             string sentenciaSQL = "SELECT id, nombre, url_wikipedia, url_imagen FROM frutas ORDER BY nombre";
-            var resultadoFrutas = cxnDB.Query<Fruta>(sentenciaSQL, new DynamicParameters());
+            var resultadoFrutas = cxnDB
+                .Query<Fruta>(sentenciaSQL, new DynamicParameters());
 
-            return resultadoFrutas.AsList();
+            return resultadoFrutas
+                .AsList();
         }
 
         /// <summary>
@@ -71,10 +75,12 @@ namespace FrutasColombia_CS_PoC_Consola
                                     "FROM frutas " +
                                     "WHERE id = @id_fruta";
 
-            var salida = cxnDB.Query<Fruta>(sentenciaSQL, parametrosSentencia);
+            var salida = cxnDB
+                .Query<Fruta>(sentenciaSQL, parametrosSentencia);
 
             if (salida.Any())
-                frutaResultado = salida.First();
+                frutaResultado = salida
+                    .First();
 
             return frutaResultado;
         }
@@ -99,10 +105,12 @@ namespace FrutasColombia_CS_PoC_Consola
                                     "FROM frutas " +
                                     "WHERE nombre = @nombre_fruta";
 
-            var salida = cxnDB.Query<Fruta>(sentenciaSQL, parametrosSentencia);
+            var salida = cxnDB
+                .Query<Fruta>(sentenciaSQL, parametrosSentencia);
 
             if (salida.Any())
-                frutaResultado = salida.First();
+                frutaResultado = salida
+                    .First();
 
             return frutaResultado;
         }
@@ -121,41 +129,41 @@ namespace FrutasColombia_CS_PoC_Consola
             bool resultado = false;
             string? cadenaConexion = ObtieneCadenaConexion();
 
-            using (IDbConnection cxnDB = new NpgsqlConnection(cadenaConexion))
+            using IDbConnection cxnDB = new NpgsqlConnection(cadenaConexion);
+
+            DynamicParameters parametrosSentencia = new();
+            parametrosSentencia.Add("@nombre_fruta", unaFruta.Nombre,
+                DbType.String, ParameterDirection.Input);
+
+            //Preguntamos si ya existe una fruta con ese nombre
+            string consultaSQL = "SELECT COUNT(id) total " +
+                                        "FROM frutas " +
+                                        "WHERE LOWER(nombre) = LOWER(@nombre_fruta)";
+
+            cantidadFilas = cxnDB
+                .Query<int>(consultaSQL, parametrosSentencia).FirstOrDefault();
+
+            // Si hay filas, ya existe una fruta con ese nombre
+            if (cantidadFilas != 0)
+                return false;
+
+            try
             {
-                DynamicParameters parametrosSentencia = new ();
-                parametrosSentencia.Add("@nombre_fruta", unaFruta.Nombre,
-                    DbType.String, ParameterDirection.Input);
+                string insertaFrutaSQL = "INSERT INTO frutas (nombre, url_wikipedia, url_imagen) " +
+                                            "VALUES (@Nombre, @Url_Wikipedia, @Url_Imagen)";
 
-                //Preguntamos si ya existe una fruta con ese nombre
-                string consultaSQL = "SELECT COUNT(id) total " +
-                                           "FROM frutas " +
-                                           "WHERE LOWER(nombre) = LOWER(@nombre_fruta)";
-
-                cantidadFilas = cxnDB.Query<int>(consultaSQL, parametrosSentencia).FirstOrDefault();
-
-                // Si hay filas, ya existe una fruta con ese nombre
-                if (cantidadFilas != 0)
-                    return false;
-
-                try
-                {
-                    string insertaFrutaSQL = "INSERT INTO frutas (nombre, url_wikipedia, url_imagen) " +
-                                               "VALUES (@Nombre, @Url_Wikipedia, @Url_Imagen)";
-
-                    cantidadFilas = cxnDB.Execute(insertaFrutaSQL, unaFruta);
-                }
-                catch (NpgsqlException)
-                {
-                    resultado = false;
-                    cantidadFilas = 0;
-                }
-
-                //Si la inserción fue correcta, se afectaron filas y podemos retornar true.
-                if (cantidadFilas > 0)
-                    resultado = true;
-
+                cantidadFilas = cxnDB
+                    .Execute(insertaFrutaSQL, unaFruta);
             }
+            catch (NpgsqlException)
+            {
+                resultado = false;
+                cantidadFilas = 0;
+            }
+
+            //Si la inserción fue correcta, se afectaron filas y podemos retornar true.
+            if (cantidadFilas > 0)
+                resultado = true;
 
             return resultado;
         }
@@ -176,59 +184,60 @@ namespace FrutasColombia_CS_PoC_Consola
             string? cadenaConexion = ObtieneCadenaConexion();
 
 
-            using (IDbConnection cxnDB = new NpgsqlConnection(cadenaConexion))
+            using IDbConnection cxnDB = new NpgsqlConnection(cadenaConexion);
+
+            //Aqui validamos primero que la fruta previamente existe
+            DynamicParameters parametrosSentencia = new();
+            parametrosSentencia.Add("@fruta_id", frutaActualizada.Id,
+                                    DbType.Int32, ParameterDirection.Input);
+
+            string consultaSQL = "SELECT COUNT(id) total " +
+                                    "FROM frutas " +
+                                    "WHERE id = @fruta_id";
+
+            cantidadFilas = cxnDB
+                .Query<int>(consultaSQL, parametrosSentencia).FirstOrDefault();
+
+            //Si no hay filas, no existe fruta que actualizar
+            if (cantidadFilas == 0)
+                return false;
+
+            //Aqui validamos que no exista frutas con el nuevo nombre
+            parametrosSentencia = new DynamicParameters();
+            parametrosSentencia.Add("@fruta_nombre", frutaActualizada.Nombre,
+                                    DbType.String, ParameterDirection.Input);
+
+            //Validamos si el nuevo nombre no exista
+            consultaSQL = "SELECT COUNT(id) total " +
+                            "FROM frutas " +
+                            "WHERE nombre = @fruta_nombre";
+
+            cantidadFilas = cxnDB
+                .Query<int>(consultaSQL, parametrosSentencia).FirstOrDefault();
+
+            //Si hay filas, el nuevo nombre a utilizar ya existe!
+            if (cantidadFilas != 0)
+                return false;
+
+            //Terminadas las validaciones, realizamos el update
+            try
             {
-                //Aqui validamos primero que la fruta previamente existe
+                string actualizaFrutasSql = "UPDATE frutas SET nombre = @Nombre, url_wikipedia = @Url_Wikipedia, url_imagen = @Url_Imagen " +
+                    "WHERE id = @Id"; ;
 
-                DynamicParameters parametrosSentencia = new();
-                parametrosSentencia.Add("@fruta_id", frutaActualizada.Id,
-                                        DbType.Int32, ParameterDirection.Input);
-
-                string consultaSQL = "SELECT COUNT(id) total " +
-                                     "FROM frutas " +
-                                     "WHERE id = @fruta_id";
-
-                cantidadFilas = cxnDB.Query<int>(consultaSQL, parametrosSentencia).FirstOrDefault();
-
-                //Si no hay filas, no existe fruta que actualizar
-                if (cantidadFilas == 0)
-                    return false;
-
-                //Aqui validamos que no exista frutas con el nuevo nombre
-                parametrosSentencia = new DynamicParameters();
-                parametrosSentencia.Add("@fruta_nombre", frutaActualizada.Nombre,
-                                        DbType.String, ParameterDirection.Input);
-
-                //Validamos si el nuevo nombre no exista
-                consultaSQL = "SELECT COUNT(id) total " +
-                              "FROM frutas " +
-                              "WHERE nombre = @fruta_nombre";
-
-                cantidadFilas = cxnDB.Query<int>(consultaSQL, parametrosSentencia).FirstOrDefault();
-
-                //Si hay filas, el nuevo nombre a utilizar ya existe!
-                if (cantidadFilas != 0)
-                    return false;
-
-                //Terminadas las validaciones, realizamos el update
-                try
-                {
-                    string actualizaFrutasSql = "UPDATE frutas SET nombre = @Nombre, url_wikipedia = @Url_Wikipedia, url_imagen = @Url_Imagen " +
-                        "WHERE id = @Id"; ;
-
-                    //Aqui no usamos parámetros dinámicos, pasamos el objeto!!!
-                    cantidadFilas = cxnDB.Execute(actualizaFrutasSql, frutaActualizada);
-                }
-                catch (NpgsqlException)
-                {
-                    resultado = false;
-                    cantidadFilas = 0;
-                }
-
-                //Si la actualización fue correcta, devolvemos true
-                if (cantidadFilas > 0)
-                    resultado = true;
+                //Aqui no usamos parámetros dinámicos, pasamos el objeto!!!
+                cantidadFilas = cxnDB
+                    .Execute(actualizaFrutasSql, frutaActualizada);
             }
+            catch (NpgsqlException)
+            {
+                resultado = false;
+                cantidadFilas = 0;
+            }
+
+            //Si la actualización fue correcta, devolvemos true
+            if (cantidadFilas > 0)
+                resultado = true;
 
             return resultado;
         }
@@ -245,54 +254,56 @@ namespace FrutasColombia_CS_PoC_Consola
 
             mensajeEliminacion = string.Empty;
             int cantidadFilas;
-            bool resultado = false;
+            bool resultado;
             string? cadenaConexion = ObtieneCadenaConexion();
 
-            using (NpgsqlConnection cxnDB = new(cadenaConexion))
+            using NpgsqlConnection cxnDB = new(cadenaConexion);
+
+            //Primero, identificamos si hay una fruta con este nombre y ese Id
+
+            DynamicParameters parametrosSentencia = new();
+            parametrosSentencia.Add("@fruta_nombre", unaFruta.Nombre,
+                                    DbType.String, ParameterDirection.Input);
+
+            parametrosSentencia.Add("@fruta_id", unaFruta.Id,
+                                    DbType.Int32, ParameterDirection.Input);
+
+            string consultaSQL = "SELECT COUNT(id) total " +
+                                    "FROM frutas " +
+                                    "WHERE nombre = @fruta_nombre and id = @fruta_id";
+
+            cantidadFilas = cxnDB
+                .Query<int>(consultaSQL, parametrosSentencia).FirstOrDefault();
+
+            //Si no hay filas, no existe una fruta con ese nombre y ese Id ... no hay nada que eliminar.
+            if (cantidadFilas == 0)
             {
-                //Primero, identificamos si hay una fruta con este nombre y ese Id
+                mensajeEliminacion = $"Eliminación Fallida. No existe una fruta con el nombre {unaFruta.Nombre}.";
+                return false;
+            }
 
-                DynamicParameters parametrosSentencia = new();
-                parametrosSentencia.Add("@fruta_nombre", unaFruta.Nombre,
-                                        DbType.String, ParameterDirection.Input);
+            //Pasadas las validaciones, borramos la fruta
+            try
+            {
+                string eliminaFrutaSQL = "DELETE FROM frutas " +
+                                            "WHERE id = @Id";
 
-                parametrosSentencia.Add("@fruta_id", unaFruta.Id,
-                                        DbType.Int32, ParameterDirection.Input);                                        
+                //Aqui no usamos parámetros dinámicos, pasamos el objeto!!!
+                cantidadFilas = cxnDB
+                    .Execute(eliminaFrutaSQL, unaFruta);
+                
+                resultado = true;
+                mensajeEliminacion = "Eliminación exitosa!";
 
-                string consultaSQL = "SELECT COUNT(id) total " +
-                                     "FROM frutas " +
-                                     "WHERE nombre = @fruta_nombre and id = @fruta_id";
-
-                cantidadFilas = cxnDB.Query<int>(consultaSQL, parametrosSentencia).FirstOrDefault();
-
-                //Si no hay filas, no existe una fruta con ese nombre y ese Id ... no hay nada que eliminar.
-                if (cantidadFilas == 0)
-                {
-                    mensajeEliminacion = $"Eliminación Fallida. No existe una fruta con el nombre {unaFruta.Nombre}.";
-                    return false;
-                }
-
-                //Pasadas las validaciones, borramos la fruta
-                try
-                {
-                    string eliminaFrutaSQL = "DELETE FROM frutas " +
-                                             "WHERE id = @Id";
-
-                    //Aqui no usamos parámetros dinámicos, pasamos el objeto!!!
-                    cantidadFilas = cxnDB.Execute(eliminaFrutaSQL, unaFruta);
-                    resultado = true;
-                    mensajeEliminacion = "Eliminación exitosa!";
-
-                }
-                catch (NpgsqlException elError)
-                {
-                    resultado = false;
-                    mensajeEliminacion = $"Error de borrado en la DB. {elError.Message}";
-                }
+            }
+            catch (NpgsqlException elError)
+            {
+                resultado = false;
+                mensajeEliminacion = $"Error de borrado en la DB. {elError.Message}";
             }
 
             return resultado;
-        }                
+        }
         #endregion Frutas
     }
 }
