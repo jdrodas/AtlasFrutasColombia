@@ -3,7 +3,7 @@
 -- Juan Dario Rodas - juand.rodasm@upb.edu.co
 
 -- Proyecto: Atlas de Frutas Colombianas
--- Motor de Base de datos: PostgreSQL
+-- Motor de Base de datos: PostgreSQL 16.x
 
 -- ***********************************
 -- Abastecimiento de imagen en Docker
@@ -29,6 +29,8 @@ create database frutas_db;
 
 -- Creamos un esquema para almacenar todo el modelo de datos del dominio
 create schema core;
+create schena auth;
+create schema localizacion;
 
 -- crear el usuario con el que se floatizará la creación del modelo
 create user frutas_app with encrypted password 'unaClav3';
@@ -43,7 +45,7 @@ set timezone='America/Bogota';
 
 -- Script de creación de tablas y vistas
 
-create table core.tmp_divipola
+create table core.divipola
 (
     codigo_departamento varchar(2) not null,
     codigo_municipio varchar(10) not null,
@@ -68,7 +70,7 @@ comment on column core.departamentos.nombre is 'Nombre del departamento';
 insert into core.departamentos (id, nombre)
 (
     select distinct codigo_departamento, initcap(nombre_departamento)
-    from core.tmp_divipola
+    from core.divipola
 );
 
 -- -----------------------
@@ -92,7 +94,7 @@ comment on column core.municipios.departamento_id is 'id del departamento asocia
 insert into core.municipios (id, nombre, departamento_id)
 (
     select codigo_municipio, initcap(nombre_municipio), codigo_departamento
-    from core.tmp_divipola
+    from core.divipola
 );
 
 -- -----------------------
@@ -103,8 +105,8 @@ create table core.frutas
 (
     id              integer generated always as identity constraint frutas_pk primary key,
     nombre          varchar(100) not null constraint frutas_nombre_uk unique,
-    url_wikipedia   varchar(500),
-    url_imagen      varchar(500)
+    url_wikipedia   varchar(500) not null,
+    url_imagen      varchar(500) not null
 );
 
 -- -----------------------
@@ -119,20 +121,28 @@ create table core.taxonomias
     clase           varchar(50) not null,
     orden           varchar(50) not null,
     familia         varchar(50) not null,
-    genero          varchar(50) not null
+    genero          varchar(50) not null,
+    especie         varchar(50) not null
 );
 
-alter table taxonomias add constraint taxonomias_pk primary key (fruta_id);
+alter table core.taxonomias add constraint taxonomias_pk primary key (fruta_id);
 
 -- Inserción preliminar de información
-insert into frutas (nombre, url_wikipedia, url_imagen)
+insert into core.frutas (nombre, url_wikipedia, url_imagen)
 values (
     'Mango',
     'https://es.wikipedia.org/wiki/Mango_(fruta)',
     'https://upload.wikimedia.org/wikipedia/commons/4/49/Mango_-_single.jpg'
 );
 
-insert into taxonomias (fruta_id, reino, division, clase,orden,familia,genero)
+insert into core.frutas (nombre, url_wikipedia, url_imagen)
+values (
+    'Feijoa',
+    'https://es.wikipedia.org/wiki/Acca_sellowiana',
+    'https://es.wikipedia.org/wiki/Acca_sellowiana#/media/Archivo:Acca_sellowiana_Fruit_MHNT_Fronton.jpg'
+);
+
+insert into core.taxonomias (fruta_id, reino, division, clase,orden,familia,genero,especie)
 values (
     1,
     'Plantae',
@@ -140,7 +150,20 @@ values (
     'Magnoliopsida',
     'Sapindales',
     'Anacardiaceae',
-    'Mangifera'
+    'Mangifera',
+    'Mangifera indica'
+);
+
+insert into core.taxonomias (fruta_id, reino, division, clase,orden,familia,genero,especie)
+values (
+    2,
+    'Plantae',
+    'Magnoliophyta',
+    'Magnoliopsida',
+    'Myrtales',
+    'Myrtaceae',
+    'Acca',
+    'Acca sellowiana'
 );
 
 -- -----------------------
@@ -148,8 +171,8 @@ values (
 -- -----------------------
 
 create or replace view core.v_info_frutas as (
-    select 
-        t.fruta_id,
+    select
+        f. id fruta_id,
         f.nombre,
         f.url_wikipedia,
         f.url_imagen,
@@ -158,8 +181,9 @@ create or replace view core.v_info_frutas as (
         t.clase,
         t.orden,
         t.familia,
-        t.genero        
-    from frutas f inner join taxonomias t on f.id = t.fruta_id
+        t.genero,
+        t.especie
+    from frutas f left join taxonomias t on f.id = t.fruta_id
 );
 
 

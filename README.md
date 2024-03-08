@@ -17,6 +17,10 @@ en Wikipedia. No es 100% confiable y no pretende serlo.
 - Puede clonar el repositorio e inclusive proponer mejoras a través de issues, pero no necesariamente serán 
 implementadas en el tiempo asignado para el curso. Siempre será un trabajo en constante modificación
 
+## PoC
+### [FrutasColombia_CS_PoC_Consola](https://github.com/jdrodas/AtlasFrutasColombia/tree/main/FrutasColombia_CS_PoC_Consola)
+- Prueba de Concepto para validar funcionamiento del ORM Dapper, con base de datos PostgreSQL. Aplicación de **consola** en C# con framework .NET 8.x
+- Para cada base de datos, se realizan las operaciones CRUD básicas sobre una entidad específica.
 
 
 
@@ -35,3 +39,9 @@ on Wikipedia. It is not 100% reliable and it does not claim to be.
 
 - You can clone the repository and even propose improvements through github issues, but they will not necessarily 
 be implemented in the time allotted for the course. It will always be a Work in progress.
+
+## PoC
+### [FrutasColombia_CS_PoC_Consola](https://github.com/jdrodas/AtlasFrutasColombia/tree/main/FrutasColombia_CS_PoC_Consola)
+- Proof of Concept (PoC) to learn how the Dapper ORM works, using PostgreSQL as Database. **Console** application using .NET 8.x framework and C#
+
+- For each database, basic CRUD operations are performed on a specific entity.

@@ -1,0 +1,45 @@
+//Scripts de clase - Marzo 6 de 2024
+//Curso de Tópicos Avanzados de base de datos - UPB 202410
+//Juan Dario Rodas - juand.rodasm@upb.edu.co
+
+//Proyecto: Atlas de Frutas Colombianas
+// Motor de Base de datos: PostgreSQL 16.x
+
+Table "core"."departamentos" {
+  "id" varchar(2) [pk, note: 'id del departamento según DIVIPOLA']
+  "nombre" varchar(60) [unique, not null, note: 'Nombre del departamento']
+  Note: 'Departamentos del país'
+}
+
+Table "core"."municipios" {
+  "id" varchar(10) [pk, note: 'id del municipio según DIVIPOLA']
+  "nombre" varchar(100) [not null, note: 'Nombre del municipio']
+  "departamento_id" varchar(2) [not null, note: 'id del departamento asociado al municipio']
+
+Indexes {
+  (nombre, departamento_id) [unique, name: "municipio_departamento_uk"]
+}
+  Note: 'Municipios del pais'
+}
+
+Ref:"core"."departamentos"."id" < "core"."municipios"."departamento_id"
+
+Table "core"."frutas" {
+  "id" integer [pk, increment]
+  "nombre" varchar(100) [unique, not null]
+  "url_wikipedia" varchar(500)
+  "url_imagen" varchar(500)
+}
+
+Table "core"."taxonomias" {
+  "fruta_id" integer [not null]
+  "reino" varchar(50) [not null]
+  "division" varchar(50) [not null]
+  "clase" varchar(50) [not null]
+  "orden" varchar(50) [not null]
+  "familia" varchar(50) [not null]
+  "genero" varchar(50) [not null]
+  "especie" varchar(50) [not null]
+}
+
+Ref:"core"."frutas"."id" - "core"."taxonomias"."fruta_id"
