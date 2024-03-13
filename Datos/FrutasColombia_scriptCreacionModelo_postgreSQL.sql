@@ -33,7 +33,7 @@ create schema auth;
 create schema localizacion;
 create schema auditoria;
 
--- crear el usuario con el que se floatizará la creación del modelo
+-- crear el usuario con el que se implementará la creación del modelo
 create user frutas_app with encrypted password 'unaClav3';
 
 -- asignación de privilegios para el usuario
@@ -42,7 +42,17 @@ grant create on database frutas_db to frutas_app;
 grant create, usage on schema core to frutas_app;
 alter user frutas_app set search_path to core;
 
-set timezone='America/Bogota';
+
+-- crear el usuario con el que se conectará la aplicación
+create user frutas_usr with encrypted password 'unaClav3';
+
+-- asignación de privilegios para el usuario
+grant connect on database frutas_db to frutas_usr;
+grant usage on schema core, localizacion to frutas_usr;
+alter default privileges for user frutas_app in schema core grant insert, update, delete, select on tables to frutas_usr;
+alter default privileges for user frutas_app in schema core grant execute on routines TO frutas_usr;
+alter user frutas_usr set search_path to core;
+
 
 -- ----------------------------------------
 -- Script de creación de tablas y vistas
