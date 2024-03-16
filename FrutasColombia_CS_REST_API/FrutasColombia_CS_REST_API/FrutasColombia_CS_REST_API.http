@@ -1,6 +1,6 @@
-@FrutasColombia_CS_REST_API_HostAddress = http://localhost:5137
+@FrutasColombia_CS_REST_API_HostAddress = https://localhost:7024
 
-GET {{FrutasColombia_CS_REST_API_HostAddress}}/weatherforecast/
+GET {{FrutasColombia_CS_REST_API_HostAddress}}/api/Resumen
 Accept: application/json
 
 ###

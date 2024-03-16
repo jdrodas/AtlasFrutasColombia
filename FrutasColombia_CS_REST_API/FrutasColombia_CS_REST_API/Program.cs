@@ -13,10 +13,11 @@ builder.Services.AddSingleton<PgsqlDbContext>();
 
 //Los repositorios
 builder.Services.AddScoped<IResumenRepository, ResumenRepository>();
-//builder.Services.AddScoped<IFrutaRepository, FrutaRepository>();
+builder.Services.AddScoped<IFrutaRepository, FrutaRepository>();
 
 //Aqui agregamos los servicios asociados para cada EndPoint
 builder.Services.AddScoped<ResumenService>();
+builder.Services.AddScoped<FrutaService>();
 
 // Add services to the container.
 
