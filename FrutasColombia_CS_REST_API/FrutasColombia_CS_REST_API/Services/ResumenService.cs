@@ -1,6 +1,5 @@
 ﻿using FrutasColombia_CS_REST_API.Interfaces;
 using FrutasColombia_CS_REST_API.Models;
-using FrutasColombia_CS_REST_API.Repositories;
 
 namespace FrutasColombia_CS_REST_API.Services
 {

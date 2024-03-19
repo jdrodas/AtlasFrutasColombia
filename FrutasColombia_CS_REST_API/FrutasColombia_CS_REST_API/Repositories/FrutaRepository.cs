@@ -15,12 +15,12 @@ namespace FrutasColombia_CS_REST_API.Repositories
 
             string sentenciaSQL = "SELECT id, nombre, url_wikipedia, url_imagen " +
                                   "FROM core.frutas " +
-                                  "ORDER BY id DESC";
+                                  "ORDER BY nombre";
 
-            var resultadoEstilos = await conexion
+            var resultadoFrutas = await conexion
                 .QueryAsync<Fruta>(sentenciaSQL, new DynamicParameters());
 
-            return resultadoEstilos;
+            return resultadoFrutas;
         }
     }
 }

@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using FrutasColombia_CS_REST_API.Services;
+﻿using FrutasColombia_CS_REST_API.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace FrutasColombia_CS_REST_API.Controllers
 {
