@@ -25,5 +25,45 @@ namespace FrutasColombia_CS_REST_API.Services
 
             return unaFruta;
         }
+
+        public async Task<Fruta> CreateAsync(Fruta unaFruta)
+        {
+            //Validamos que la fruta tenga nombre
+            if (unaFruta.Nombre!.Length == 0)
+                throw new AppValidationException("No se puede insertar una fruta con nombre nulo");
+
+            //Validamos que la fruta tenga url_wikipedia
+            if (unaFruta.Url_Wikipedia!.Length == 0)
+                throw new AppValidationException("No se puede insertar una fruta con Url de Wikipedia nulo");
+
+            //Validamos que la fruta tenga url_imagen
+            if (unaFruta.Url_Imagen!.Length == 0)
+                throw new AppValidationException("No se puede insertar una fruta con Url de la imagen nulo");
+
+            //Validamos que no exista previamente una fruta con ese nombre
+            var frutaExistente = await _frutaRepository
+                .GetByNameAsync(unaFruta.Nombre);
+
+            if (frutaExistente.Id != 0)
+                throw new AppValidationException($"Ya existe la fruta {unaFruta.Nombre} ");
+
+            try
+            {
+                bool resultadoAccion = await _frutaRepository
+                    .CreateAsync(unaFruta);
+
+                if (!resultadoAccion)
+                    throw new AppValidationException("Operación ejecutada pero no generó cambios en la DB");
+
+                frutaExistente = await _frutaRepository
+                    .GetByNameAsync(unaFruta.Nombre);
+            }
+            catch (DbOperationException)
+            {
+                throw;
+            }
+
+            return (frutaExistente);
+        }
     }
 }

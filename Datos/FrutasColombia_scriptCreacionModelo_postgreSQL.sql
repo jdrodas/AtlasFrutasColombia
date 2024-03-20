@@ -317,6 +317,31 @@ create view core.v_info_frutas as (
 );
 
 
+-- ----------------------------
+-- Creación de Procedimientos
+-- ----------------------------
+
+-- p_inserta_frutas
+
+create or replace procedure core.p_inserta_fruta(
+                    in p_nombre varchar,
+                    in p_url_wikipedia varchar,
+                    in p_url_imagen varchar)
+    language plpgsql
+as
+$$
+    begin
+        -- Insertamos la fruta
+        insert into core.frutas (nombre, url_wikipedia, url_imagen)
+        values (p_nombre, p_url_wikipedia, p_url_imagen);
+    end;
+$$;
+
+-- p_actualiza_fruta
+
+-- p_elimina_frutas
+
+
 -- -----------------------
 -- Consultas de apoyo
 -- -----------------------
