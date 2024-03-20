@@ -1,4 +1,5 @@
-﻿using FrutasColombia_CS_REST_API.Services;
+﻿using FrutasColombia_CS_REST_API.Helpers;
+using FrutasColombia_CS_REST_API.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FrutasColombia_CS_REST_API.Controllers
@@ -16,6 +17,22 @@ namespace FrutasColombia_CS_REST_API.Controllers
                 .GetAllAsync();
 
             return Ok(lasFrutas);
+        }
+
+        [HttpGet("{fruta_id:int}")]
+        public async Task<IActionResult> GetByIdAsync(int fruta_id)
+        {
+            try
+            {
+                var unaFruta = await _frutaService
+                    .GetByIdAsync(fruta_id);
+
+                return Ok(unaFruta);
+            }
+            catch (AppValidationException error)
+            {
+                return NotFound(error.Message);
+            }
         }
     }
 }

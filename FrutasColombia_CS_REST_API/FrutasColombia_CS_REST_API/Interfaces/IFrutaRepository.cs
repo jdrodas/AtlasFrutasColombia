@@ -5,5 +5,7 @@ namespace FrutasColombia_CS_REST_API.Interfaces
     public interface IFrutaRepository
     {
         public Task<IEnumerable<Fruta>> GetAllAsync();
+
+        public Task<Fruta> GetByIdAsync(int fruta_id);
     }
 }
