@@ -99,3 +99,34 @@ Ref:"core"."familias"."id" < "core"."generos"."familia_id"
 Ref:"core"."generos"."id" < "core"."especies"."genero_id"
 Ref:"core"."frutas"."id" - "core"."taxonomia_frutas"."fruta_id"
 Ref:"core"."especies"."id" - "core"."taxonomia_frutas"."especie_id"
+
+Table "core"."climas" {
+  "id" integer [pk, increment, note: 'id del clima']
+  "nombre" varchar(50) [unique, not null, note: 'nombre del clima']
+  "descripcion" varchar(200) [note: 'descripción del clima donde se produce la fruta']
+  Note: 'Climas donde se producen las frutas'
+}
+
+Table "core"."epocas" {
+  "id" integer [pk, increment, note: 'id de la época']
+  "nombre" varchar(50) [unique, not null, note: 'nombre de la época']
+  "descripcion" varchar(200) [note: 'descripción de la época cuando se produce la fruta']
+  Note: 'épocas cuando se producen las frutas'
+}
+
+Table "core"."produccion_frutas" {
+  "fruta_id" integer [not null, note: 'Id de la fruta']
+  "clima_id" integer [not null, note: 'Id del clima']
+  "epoca_id" integer [not null, note: 'Id de la época']    
+  "municipio_id" varchar(10) [not null, note: 'Id del municipio']  
+  
+Indexes {
+  (fruta_id, clima_id, epoca_id, municipio_id) [pk, name: "produccion_frutas_pk"]
+}
+  Note: 'Relación de la fruta con su producción'
+}
+
+Ref:"core"."frutas"."id" - "core"."produccion_frutas"."fruta_id"
+Ref:"core"."climas"."id" < "core"."produccion_frutas"."clima_id"
+Ref:"core"."epocas"."id" < "core"."produccion_frutas"."epoca_id"  
+Ref:"core"."municipios"."id" < "core"."produccion_frutas"."municipio_id"

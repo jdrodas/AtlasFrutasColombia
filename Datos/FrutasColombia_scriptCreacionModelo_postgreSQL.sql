@@ -53,7 +53,6 @@ alter default privileges for user frutas_app in schema core grant insert, update
 alter default privileges for user frutas_app in schema core grant execute on routines TO frutas_usr;
 alter user frutas_usr set search_path to core;
 
-
 -- ----------------------------------------
 -- Script de creación de tablas y vistas
 -- ----------------------------------------
@@ -230,6 +229,58 @@ comment on table core.taxonomia_frutas is 'Relación de la fruta con su clasific
 comment on column core.taxonomia_frutas.fruta_id is 'Id de la fruta';
 comment on column core.taxonomia_frutas.especie_id is 'Especie taxonómica a la que pertenece la fruta';
 
+-- -------------------------------------------
+-- Tablas de Producción y Cultivo
+-- -------------------------------------------
+-- Tabla Climas
+create table core.climas
+(
+    id              	integer generated always as identity constraint climas_pk primary key,
+    nombre          	varchar(50) not null constraint clima_nombre_uk unique,
+	altitud_minima		integer not null,
+	altitud_maxima		integer not null
+);
+
+comment on table core.climas is 'Climas donde se producen las frutas';
+comment on column core.climas.id is 'id del clima';
+comment on column core.climas.nombre is 'nombre del clima';
+comment on column core.climas.altitud_minima is 'Altitud mínima del piso térmico';
+comment on column core.climas.altitud_maxima is 'Altitud máxima del piso térmico';
+
+-- Tabla Epocas
+create table core.epocas
+(
+    id              integer generated always as identity constraint epocas_pk primary key,
+    nombre          varchar(50) not null constraint epocas_nombre_uk unique,
+	mes_inicio		integer not null,
+	mes_final		integer not null
+);
+
+comment on table core.epocas is 'épocas cuando se producen las frutas';
+comment on column core.epocas.id is 'id de la época';
+comment on column core.epocas.nombre is 'nombre de la época';
+comment on column core.epocas.mes_inicio is 'Mes inicial de la época de producción';
+comment on column core.epocas.mes_final is 'Mes final de la época de producción';
+
+-- Tabla Produccion_Fruta
+create table core.produccion_frutas
+(
+    fruta_id        integer not null constraint produccion_frutas_fruta_fk references core.frutas,
+    clima_id        integer not null constraint produccion_frutas_clima_fk references core.climas,    
+    epoca_id        integer not null constraint produccion_frutas_epoca_fk references core.epocas,
+    municipio_id    varchar(10) not null constraint produccion_frutas_municipio_fk references core.municipios,
+    constraint produccion_frutas_pk primary key (fruta_id, clima_id, epoca_id, municipio_id)
+);
+
+comment on table core.produccion_frutas is 'Relación de la fruta con su producción';
+comment on column core.produccion_frutas.fruta_id is 'Id de la fruta';
+comment on column core.produccion_frutas.clima_id is 'Id del clima';
+comment on column core.produccion_frutas.epoca_id is 'Id de la epoca';
+comment on column core.produccion_frutas.municipio_id is 'Id del municipio';
+
+
+
+
 -- Inserción preliminar de información
 insert into core.frutas (nombre, url_wikipedia, url_imagen)
 values (
@@ -245,35 +296,11 @@ values (
     'https://es.wikipedia.org/wiki/Acca_sellowiana#/media/Archivo:Acca_sellowiana_Fruit_MHNT_Fronton.jpg'
 );
 
-insert into core.taxonomias (fruta_id, reino, division, clase,orden,familia,genero,especie)
-values (
-    1,
-    'Plantae',
-    'Magnoliophyta',
-    'Magnoliopsida',
-    'Sapindales',
-    'Anacardiaceae',
-    'Mangifera',
-    'Mangifera indica'
-);
-
-insert into core.taxonomias (fruta_id, reino, division, clase,orden,familia,genero,especie)
-values (
-    2,
-    'Plantae',
-    'Magnoliophyta',
-    'Magnoliopsida',
-    'Myrtales',
-    'Myrtaceae',
-    'Acca',
-    'Acca sellowiana'
-);
-
 -- -----------------------
 -- Creación de vistas
 -- -----------------------
 -- v_info_botanica
-create or replace view v_info_botanica as
+create or replace view core.v_info_botanica as
 (
 select r.id     reino_id,
        r.nombre reino_nombre,
@@ -314,6 +341,30 @@ create view core.v_info_frutas as (
     from core.frutas f
         left join core.taxonomia_frutas tf on f.id = tf.fruta_id
         left join v_info_botanica v on tf.especie_id = v.especie_id
+);
+
+-- v_info_produccion_frutas
+create or replace view core.v_info_produccion_frutas as
+(
+    select
+        f.id fruta_id,
+        f.nombre fruta_nombre,
+        c.nombre clima_nombre,
+        c.altitud_minima,
+        c.altitud_maxima,
+        e.nombre epoca_nombre,
+        e.mes_inicio,
+        e.mes_final,
+        m.id municipio_id,
+        m.nombre municipio_nombre,
+        d.id departamento_id,
+        d.nombre departamento_nombre
+    from core.frutas f
+        left join  core.produccion_frutas pf on f.id = pf.fruta_id
+        inner join core.climas c on pf.clima_id = c.id
+        inner join core.epocas e on pf.epoca_id = e.id
+        inner join core.municipios m on pf.municipio_id = m.id
+        inner join core.departamentos d on m.departamento_id = d.id
 );
 
 
@@ -364,6 +415,15 @@ order by 2 desc;
 --  Zona de peligro - Borrado de elementos
 --- ##########################################
 
+-- Borrado de Procedimientos
+drop procedure core.p_inserta_fruta;
+
+-- Borrado de vistas
+drop view core.v_info_botanica;
+drop view core.v_info_frutas;
+drop view core.v_info_produccion_frutas;
+
+-- Borrado de tablas
 drop table core.especies;
 drop table core.generos;
 drop table core.familias;
@@ -372,9 +432,6 @@ drop table core.clases;
 drop table core.divisiones;
 drop table core.reinos;
 
-drop view core.v_info_frutas;
-
-drop table core.taxonomias;
 drop table core.frutas;
 
 drop table core.municipios;
