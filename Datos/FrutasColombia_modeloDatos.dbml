@@ -103,14 +103,16 @@ Ref:"core"."especies"."id" - "core"."taxonomia_frutas"."especie_id"
 Table "core"."climas" {
   "id" integer [pk, increment, note: 'id del clima']
   "nombre" varchar(50) [unique, not null, note: 'nombre del clima']
-  "descripcion" varchar(200) [note: 'descripción del clima donde se produce la fruta']
+  "altura_minima" integer [note: 'Altitud mínima del piso térmico']
+  "altura_maxima" integer [note: 'Altitud máxima del piso térmico']
   Note: 'Climas donde se producen las frutas'
 }
 
 Table "core"."epocas" {
   "id" integer [pk, increment, note: 'id de la época']
   "nombre" varchar(50) [unique, not null, note: 'nombre de la época']
-  "descripcion" varchar(200) [note: 'descripción de la época cuando se produce la fruta']
+  "mes_inicio" integer [note: 'Mes inicial de la época de producción']
+  "mes_final" integer [note: 'Mes final de la época de producción']
   Note: 'épocas cuando se producen las frutas'
 }
 

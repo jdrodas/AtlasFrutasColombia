@@ -15,7 +15,6 @@ namespace FrutasColombia_CS_REST_API.Repositories
 
             var conexion = contextoDB.CreateConnection();
 
-            //Total Ubicaciones
             string sentenciaSQL = "SELECT COUNT(id) total FROM core.frutas";
             unResumen.Frutas = await conexion
                 .QueryFirstAsync<int>(sentenciaSQL, new DynamicParameters());
@@ -54,6 +53,14 @@ namespace FrutasColombia_CS_REST_API.Repositories
 
             sentenciaSQL = "SELECT COUNT(id) total FROM core.especies";
             unResumen.Taxonomia_Especies = await conexion
+                .QueryFirstAsync<int>(sentenciaSQL, new DynamicParameters());
+
+            sentenciaSQL = "SELECT COUNT(id) total FROM core.epocas";
+            unResumen.Epocas = await conexion
+                .QueryFirstAsync<int>(sentenciaSQL, new DynamicParameters());
+
+            sentenciaSQL = "SELECT COUNT(id) total FROM core.climas";
+            unResumen.Climas = await conexion
                 .QueryFirstAsync<int>(sentenciaSQL, new DynamicParameters());
 
             return unResumen;

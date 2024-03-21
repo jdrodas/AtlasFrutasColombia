@@ -33,5 +33,11 @@ namespace FrutasColombia_CS_REST_API.Models
 
         [JsonPropertyName("taxonomias_especies")]
         public int Taxonomia_Especies { get; set; } = 0;
+
+        [JsonPropertyName("epocas")]
+        public int Epocas { get; set; } = 0;
+
+        [JsonPropertyName("climas")]
+        public int Climas { get; set; } = 0;
     }
 }

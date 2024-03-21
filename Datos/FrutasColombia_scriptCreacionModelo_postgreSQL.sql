@@ -390,6 +390,24 @@ $$;
 
 -- p_actualiza_fruta
 
+create or replace procedure core.p_actualiza_fruta(
+                    in p_id integer,
+                    in p_nombre varchar,
+                    in p_url_wikipedia varchar,
+                    in p_url_imagen varchar)
+    language plpgsql
+as
+$$
+    begin
+        -- Actualizamos la fruta
+        update core.frutas
+        set nombre = p_nombre,
+            url_wikipedia = p_url_wikipedia,
+            url_imagen = p_url_imagen
+        where id = p_id;
+    end;
+$$;
+
 -- p_elimina_frutas
 
 

@@ -55,5 +55,25 @@ namespace FrutasColombia_CS_REST_API.Controllers
                 return BadRequest($"Error de operacion en DB: {error.Message}");
             }
         }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateAsync(Fruta unaFruta)
+        {
+            try
+            {
+                var frutaActualizada = await _frutaService
+                    .UpdateAsync(unaFruta);
+
+                return Ok(frutaActualizada);
+            }
+            catch (AppValidationException error)
+            {
+                return BadRequest($"Error de validación: {error.Message}");
+            }
+            catch (DbOperationException error)
+            {
+                return BadRequest($"Error de operacion en DB: {error.Message}");
+            }
+        }
     }
 }

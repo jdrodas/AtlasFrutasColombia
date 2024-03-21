@@ -11,5 +11,7 @@ namespace FrutasColombia_CS_REST_API.Interfaces
         public Task<Fruta> GetByNameAsync(string fruta_nombre);
 
         public Task<bool> CreateAsync(Fruta unaFruta);
+
+        public Task<bool> UpdateAsync(Fruta unaFruta);
     }
 }

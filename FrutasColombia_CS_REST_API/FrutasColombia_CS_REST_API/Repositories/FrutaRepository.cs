@@ -105,5 +105,38 @@ namespace FrutasColombia_CS_REST_API.Repositories
 
             return resultadoAccion;
         }
+
+        public async Task<bool> UpdateAsync(Fruta unaFruta)
+        {
+            bool resultadoAccion = false;
+
+            try
+            {
+                var conexion = contextoDB.CreateConnection();
+
+                string procedimiento = "core.p_actualiza_fruta";
+                var parametros = new
+                {
+                    p_id = unaFruta.Id,
+                    p_nombre = unaFruta.Nombre,
+                    p_url_wikipedia = unaFruta.Url_Wikipedia,
+                    p_url_imagen = unaFruta.Url_Imagen
+                };
+
+                var cantidad_filas = await conexion.ExecuteAsync(
+                    procedimiento,
+                    parametros,
+                    commandType: CommandType.StoredProcedure);
+
+                if (cantidad_filas != 0)
+                    resultadoAccion = true;
+            }
+            catch (NpgsqlException error)
+            {
+                throw new DbOperationException(error.Message);
+            }
+
+            return resultadoAccion;
+        }
     }
 }
