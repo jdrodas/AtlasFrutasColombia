@@ -410,6 +410,42 @@ $$;
 
 -- p_elimina_frutas
 
+create or replace procedure core.p_elimina_fruta(
+                    in p_id integer)
+    language plpgsql
+as
+$$
+    declare 
+        l_total_registros integer :=0;
+        l_especie_id integer :=0;
+    begin
+        -- Pendiente: Borrar informacion Nutricional
+        -- Pendiente: Borrar informacion de Producción
+
+        -- Borramos informacion taxonómica
+        select count(*) into l_total_registros
+        from core.taxonomia_frutas
+        where fruta_id = p_id;
+        
+        -- Si hay registros, hay especie por borrar
+        if(l_total_registros >0) then
+            select especie_id into l_especie_id
+            from core.taxonomia_frutas
+            where fruta_id = p_id;
+            
+            delete from taxonomia_frutas
+            where fruta_id = p_id;
+            
+            delete from especies
+            where id = l_especie_id;
+        end if;
+
+        -- borramos la fruta
+        delete from core.frutas
+        where id = p_id;
+    end;
+$$;
+
 
 -- -----------------------
 -- Consultas de apoyo

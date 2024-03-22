@@ -117,5 +117,34 @@ namespace FrutasColombia_CS_REST_API.Services
 
             return (frutaExistente);
         }
+
+        public async Task<string> RemoveAsync(int fruta_id)
+        {
+            string nombreFrutaEliminada = string.Empty;
+            
+            //Validamos que exista una fruta con ese Id
+            Fruta unaFruta = await _frutaRepository
+                .GetByIdAsync(fruta_id);
+
+            if (unaFruta.Id == 0)
+                throw new AppValidationException($"Fruta no encontrada con el id {fruta_id}");
+
+            nombreFrutaEliminada = unaFruta.Nombre!;
+
+            try
+            {
+                bool resultadoAccion = await _frutaRepository
+                    .RemoveAsync(fruta_id);
+
+                if (!resultadoAccion)
+                    throw new AppValidationException("Operación ejecutada pero no generó cambios en la DB");
+            }
+            catch (DbOperationException)
+            {
+                throw;
+            }
+
+            return nombreFrutaEliminada;
+        }
     }
 }

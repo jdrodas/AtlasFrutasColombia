@@ -75,5 +75,21 @@ namespace FrutasColombia_CS_REST_API.Controllers
                 return BadRequest($"Error de operacion en DB: {error.Message}");
             }
         }
+
+        [HttpDelete("{fruta_id:int}")]
+        public async Task<IActionResult> RemoveAsync(int fruta_id)
+        {
+            try
+            {
+                var nombreFrutaBorrada = await _frutaService
+                    .RemoveAsync(fruta_id);
+
+                return Ok($"La fruta {nombreFrutaBorrada} fue eliminada correctamente!");
+            }
+            catch (AppValidationException error)
+            {
+                return NotFound(error.Message);
+            }
+        }
     }
 }

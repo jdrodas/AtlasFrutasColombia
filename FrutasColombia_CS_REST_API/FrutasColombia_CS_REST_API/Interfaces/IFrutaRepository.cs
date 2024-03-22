@@ -13,5 +13,7 @@ namespace FrutasColombia_CS_REST_API.Interfaces
         public Task<bool> CreateAsync(Fruta unaFruta);
 
         public Task<bool> UpdateAsync(Fruta unaFruta);
+
+        public Task<bool> RemoveAsync(int fruta_id);
     }
 }
