@@ -96,7 +96,7 @@ namespace FrutasColombia_CS_REST_API.Services
             frutaExistente = await _frutaRepository
                 .GetByNameAsync(unaFruta.Nombre!);
 
-            if(frutaExistente.Id != unaFruta.Id)
+            if(frutaExistente.Id != 0)
                 throw new AppValidationException($"Ya existe la fruta {frutaExistente.Nombre} con el Id {frutaExistente.Id}");
 
             try
