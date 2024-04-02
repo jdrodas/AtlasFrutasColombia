@@ -86,6 +86,11 @@ namespace FrutasColombia_CS_REST_API.Controllers
 
                 return Ok($"La fruta {nombreFrutaBorrada} fue eliminada correctamente!");
             }
+            catch (DbOperationException error)
+            {
+                return BadRequest(error.Message);
+            }
+
             catch (AppValidationException error)
             {
                 return NotFound(error.Message);

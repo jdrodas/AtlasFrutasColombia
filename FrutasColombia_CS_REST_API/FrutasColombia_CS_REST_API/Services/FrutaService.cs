@@ -96,7 +96,7 @@ namespace FrutasColombia_CS_REST_API.Services
             frutaExistente = await _frutaRepository
                 .GetByNameAsync(unaFruta.Nombre!);
 
-            if(frutaExistente.Id != 0)
+            if(frutaExistente.Id != 0 && frutaExistente.Id != unaFruta.Id)
                 throw new AppValidationException($"Ya existe la fruta {frutaExistente.Nombre} con el Id {frutaExistente.Id}");
 
             try
@@ -137,7 +137,7 @@ namespace FrutasColombia_CS_REST_API.Services
                     .RemoveAsync(fruta_id);
 
                 if (!resultadoAccion)
-                    throw new AppValidationException("Operación ejecutada pero no generó cambios en la DB");
+                    throw new DbOperationException("Operación ejecutada pero no generó cambios en la DB");
             }
             catch (DbOperationException)
             {
