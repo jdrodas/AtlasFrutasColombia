@@ -25,7 +25,7 @@ namespace FrutasColombia_CS_REST_API.Services
             return unDepartamento;
         }
 
-        public async Task<IEnumerable<Municipio>> GetAssociatedMunicipiosAsync(string departamento_id)
+        public async Task<IEnumerable<Municipio>> GetAssociatedMunicipalityAsync(string departamento_id)
         {
             Departamento unDepartamento = await _departamentoRepository
                 .GetByIdAsync(departamento_id);
@@ -34,12 +34,29 @@ namespace FrutasColombia_CS_REST_API.Services
                 throw new AppValidationException($"Departamento no encontrado con el id {departamento_id}");
 
             var municipiosAsociados = await _departamentoRepository
-                .GetAssociatedMunicipiosAsync(unDepartamento.Id);
+                .GetAssociatedMunicipalityAsync(unDepartamento.Id);
 
             if (!municipiosAsociados.Any())
                 throw new AppValidationException($"Departamento {unDepartamento.Nombre} no tiene municipios asociados");
 
             return municipiosAsociados;
+        }
+
+        public async Task<IEnumerable<FrutaDetallada>> GetProducedFruitsAsync(string departamento_id)
+        {
+            Departamento unDepartamento = await _departamentoRepository
+                .GetByIdAsync(departamento_id);
+
+            if (string.IsNullOrEmpty(unDepartamento.Id))
+                throw new AppValidationException($"Departamento no encontrado con el id {departamento_id}");
+
+            var frutasProducidas = await _departamentoRepository
+                .GetProducedFruitsAsync(unDepartamento.Id);
+
+            if (!frutasProducidas.Any())
+                throw new AppValidationException($"Departamento {unDepartamento.Nombre} no tiene frutas producidas");
+
+            return frutasProducidas;
         }
     }
 }

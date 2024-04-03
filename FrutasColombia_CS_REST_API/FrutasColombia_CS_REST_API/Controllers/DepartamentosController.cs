@@ -36,12 +36,12 @@ namespace FrutasColombia_CS_REST_API.Controllers
         }
 
         [HttpGet("{departamento_id:length(2)}/Municipios")]
-        public async Task<IActionResult> GetAssociatedMunicipiosAsync(string departamento_id)
+        public async Task<IActionResult> GetAssociatedMunicipalityAsync(string departamento_id)
         {
             try
             {
                 var losMunicipiosAsociados = await _departamentoService
-                    .GetAssociatedMunicipiosAsync(departamento_id);
+                    .GetAssociatedMunicipalityAsync(departamento_id);
 
                 return Ok(losMunicipiosAsociados);
             }
@@ -50,5 +50,22 @@ namespace FrutasColombia_CS_REST_API.Controllers
                 return NotFound(error.Message);
             }
         }
+
+        [HttpGet("{departamento_id:length(2)}/Frutas")]
+        public async Task<IActionResult> GetProducedFruitsAsync(string departamento_id)
+        {
+            try
+            {
+                var lasFrutasProducidas = await _departamentoService
+                    .GetProducedFruitsAsync(departamento_id);
+
+                return Ok(lasFrutasProducidas);
+            }
+            catch (AppValidationException error)
+            {
+                return NotFound(error.Message);
+            }
+        }
+
     }
 }

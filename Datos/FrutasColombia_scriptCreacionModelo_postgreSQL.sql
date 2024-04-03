@@ -349,6 +349,8 @@ create or replace view core.v_info_produccion_frutas as
     select
         f.id fruta_id,
         f.nombre fruta_nombre,
+        f.url_wikipedia,
+        f.url_imagen,
         c.nombre clima_nombre,
         c.altitud_minima,
         c.altitud_maxima,
@@ -407,6 +409,8 @@ $$
         where id = p_id;
     end;
 $$;
+
+-- p_elimina_fruta
 
 create or replace procedure core.p_elimina_fruta(
                     in p_id integer)
