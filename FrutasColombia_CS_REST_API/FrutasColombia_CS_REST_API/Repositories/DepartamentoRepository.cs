@@ -85,6 +85,5 @@ namespace FrutasColombia_CS_REST_API.Repositories
 
             return resultadoFrutas;
         }
-
     }
 }

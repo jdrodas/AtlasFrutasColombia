@@ -10,7 +10,7 @@ namespace FrutasColombia_CS_REST_API.Models
         [JsonPropertyName("nombre")]
         public string? Nombre { get; set; } = string.Empty;
 
-        [JsonPropertyName("departamento_id")]
-        public string? Departamento_Id { get; set; } = string.Empty;
+        [JsonPropertyName("departamento")]
+        public string? Departamento { get; set; } = string.Empty;
     }
 }

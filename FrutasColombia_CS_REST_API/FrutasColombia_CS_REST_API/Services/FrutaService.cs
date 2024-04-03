@@ -1,8 +1,6 @@
 ﻿using FrutasColombia_CS_REST_API.Helpers;
 using FrutasColombia_CS_REST_API.Interfaces;
 using FrutasColombia_CS_REST_API.Models;
-using FrutasColombia_CS_REST_API.Repositories;
-using System.Runtime.Intrinsics.X86;
 
 namespace FrutasColombia_CS_REST_API.Services
 {
@@ -21,7 +19,7 @@ namespace FrutasColombia_CS_REST_API.Services
             Fruta unaFruta = await _frutaRepository
                 .GetByIdAsync(fruta_id);
 
-            if (unaFruta.Id ==0)
+            if (unaFruta.Id == 0)
                 throw new AppValidationException($"Fruta no encontrada con el id {fruta_id}");
 
             return unaFruta;
@@ -70,7 +68,7 @@ namespace FrutasColombia_CS_REST_API.Services
         public async Task<Fruta> UpdateAsync(Fruta unaFruta)
         {
             //Validamos que la fruta tenga Id
-            if(unaFruta.Id ==0)
+            if (unaFruta.Id == 0)
                 throw new AppValidationException("El Id de fruta se requiere especificar para realizar actualización");
 
             //Validamos que la fruta tenga nombre
@@ -96,7 +94,7 @@ namespace FrutasColombia_CS_REST_API.Services
             frutaExistente = await _frutaRepository
                 .GetByNameAsync(unaFruta.Nombre!);
 
-            if(frutaExistente.Id != 0 && frutaExistente.Id != unaFruta.Id)
+            if (frutaExistente.Id != 0 && frutaExistente.Id != unaFruta.Id)
                 throw new AppValidationException($"Ya existe la fruta {frutaExistente.Nombre} con el Id {frutaExistente.Id}");
 
             try
@@ -120,8 +118,6 @@ namespace FrutasColombia_CS_REST_API.Services
 
         public async Task<string> RemoveAsync(int fruta_id)
         {
-            string nombreFrutaEliminada = string.Empty;
-            
             //Validamos que exista una fruta con ese Id
             Fruta unaFruta = await _frutaRepository
                 .GetByIdAsync(fruta_id);
@@ -129,7 +125,7 @@ namespace FrutasColombia_CS_REST_API.Services
             if (unaFruta.Id == 0)
                 throw new AppValidationException($"Fruta no encontrada con el id {fruta_id}");
 
-            nombreFrutaEliminada = unaFruta.Nombre!;
+            string nombreFrutaEliminada = unaFruta.Nombre!;
 
             try
             {
