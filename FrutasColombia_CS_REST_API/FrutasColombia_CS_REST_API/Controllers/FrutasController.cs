@@ -21,12 +21,12 @@ namespace FrutasColombia_CS_REST_API.Controllers
         }
 
         [HttpGet("{fruta_id:int}")]
-        public async Task<IActionResult> GetByIdAsync(int fruta_id)
+        public async Task<IActionResult> GetFruitDetailsByIdAsync(int fruta_id)
         {
             try
             {
                 var unaFruta = await _frutaService
-                    .GetByIdAsync(fruta_id);
+                    .GetFruitDetailsByIdAsync(fruta_id);
 
                 return Ok(unaFruta);
             }

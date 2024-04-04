@@ -14,7 +14,7 @@ namespace FrutasColombia_CS_REST_API.Services
                 .GetAllAsync();
         }
 
-        public async Task<Fruta> GetByIdAsync(int fruta_id)
+        public async Task<FrutaDetallada> GetFruitDetailsByIdAsync(int fruta_id)
         {
             Fruta unaFruta = await _frutaRepository
                 .GetByIdAsync(fruta_id);
@@ -22,7 +22,10 @@ namespace FrutasColombia_CS_REST_API.Services
             if (unaFruta.Id == 0)
                 throw new AppValidationException($"Fruta no encontrada con el id {fruta_id}");
 
-            return unaFruta;
+            FrutaDetallada unaFrutaDetallada = await _frutaRepository
+                .GetFruitDetailsByIdAsync(fruta_id);
+
+            return unaFrutaDetallada;
         }
 
         public async Task<Fruta> CreateAsync(Fruta unaFruta)

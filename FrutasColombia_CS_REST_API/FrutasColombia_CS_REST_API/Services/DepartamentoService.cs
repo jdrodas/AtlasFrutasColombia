@@ -42,7 +42,7 @@ namespace FrutasColombia_CS_REST_API.Services
             return municipiosAsociados;
         }
 
-        public async Task<IEnumerable<FrutaDetallada>> GetProducedFruitsAsync(string departamento_id)
+        public async Task<IEnumerable<FrutaProducida>> GetProducedFruitsAsync(string departamento_id)
         {
             Departamento unDepartamento = await _departamentoRepository
                 .GetByIdAsync(departamento_id);

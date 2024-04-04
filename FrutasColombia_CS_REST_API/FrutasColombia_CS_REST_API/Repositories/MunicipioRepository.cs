@@ -49,7 +49,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return unMunicipio;
         }
 
-        public async Task<IEnumerable<FrutaDetallada>> GetProducedFruitsAsync(string municipio_id)
+        public async Task<IEnumerable<FrutaProducida>> GetProducedFruitsAsync(string municipio_id)
         {
             var conexion = contextoDB.CreateConnection();
 
@@ -64,7 +64,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
                 "WHERE v.municipio_id = @municipio_id";
 
             var resultadoFrutas = await conexion
-                .QueryAsync<FrutaDetallada>(sentenciaSQL, parametrosSentencia);
+                .QueryAsync<FrutaProducida>(sentenciaSQL, parametrosSentencia);
 
             return resultadoFrutas;
         }
