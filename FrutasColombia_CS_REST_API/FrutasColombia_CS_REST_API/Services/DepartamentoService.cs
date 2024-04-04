@@ -4,9 +4,11 @@ using FrutasColombia_CS_REST_API.Models;
 
 namespace FrutasColombia_CS_REST_API.Services
 {
-    public class DepartamentoService(IDepartamentoRepository departamentoRepository)
+    public class DepartamentoService(IDepartamentoRepository departamentoRepository,
+                                        IFrutaRepository frutaRepository)
     {
         private readonly IDepartamentoRepository _departamentoRepository = departamentoRepository;
+        private readonly IFrutaRepository _frutaRepository = frutaRepository;
 
         public async Task<IEnumerable<Departamento>> GetAllAsync()
         {
@@ -50,8 +52,8 @@ namespace FrutasColombia_CS_REST_API.Services
             if (string.IsNullOrEmpty(unDepartamento.Id))
                 throw new AppValidationException($"Departamento no encontrado con el id {departamento_id}");
 
-            var frutasProducidas = await _departamentoRepository
-                .GetProducedFruitsAsync(unDepartamento.Id);
+            var frutasProducidas = await _frutaRepository
+                .GetByLocationAsync(departamento_id, null);
 
             if (!frutasProducidas.Any())
                 throw new AppValidationException($"Departamento {unDepartamento.Nombre} no tiene frutas producidas");

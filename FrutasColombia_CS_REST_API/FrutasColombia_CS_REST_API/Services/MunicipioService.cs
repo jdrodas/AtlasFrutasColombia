@@ -4,9 +4,11 @@ using FrutasColombia_CS_REST_API.Models;
 
 namespace FrutasColombia_CS_REST_API.Services
 {
-    public class MunicipioService(IMunicipioRepository municipioRepository)
+    public class MunicipioService(IMunicipioRepository municipioRepository,
+                                        IFrutaRepository frutaRepository)
     {
         private readonly IMunicipioRepository _municipioRepository = municipioRepository;
+        private readonly IFrutaRepository _frutaRepository = frutaRepository;
 
         public async Task<IEnumerable<Municipio>> GetAllAsync()
         {
@@ -33,8 +35,8 @@ namespace FrutasColombia_CS_REST_API.Services
             if (string.IsNullOrEmpty(unMunicipio.Id))
                 throw new AppValidationException($"Municipio no encontrado con el id {municipio_id}");
 
-            var frutasProducidas = await _municipioRepository
-                .GetProducedFruitsAsync(unMunicipio.Id);
+            var frutasProducidas = await _frutaRepository
+                .GetByLocationAsync(null, municipio_id);
 
             if (!frutasProducidas.Any())
                 throw new AppValidationException($"Departamento {unMunicipio.Nombre} no tiene frutas producidas");
@@ -43,11 +45,3 @@ namespace FrutasColombia_CS_REST_API.Services
         }
     }
 }
-
-
-//namespace FrutasColombia_CS_REST_API.Services
-//{
-//    public class MunicipioService
-//    {
-//    }
-//}
