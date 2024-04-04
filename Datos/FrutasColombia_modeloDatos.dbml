@@ -24,6 +24,7 @@ Indexes {
 
 Ref:"core"."departamentos"."id" < "core"."municipios"."departamento_id"
 
+
 Table "core"."frutas" {
   "id" integer [pk, increment, note: 'id de la fruta']
   "nombre" varchar(100) [unique, not null, note: 'Nombre de la fruta']
@@ -81,10 +82,9 @@ Table "core"."especies" {
 }
 
 Table "core"."taxonomia_frutas" {
-   "especie_id" integer [not null, note: 'Especie taxonómica a la que pertenece la fruta']
-   "fruta_id" integer [not null, note: 'Id de la fruta']
-
-
+  "especie_id" integer [not null, note: 'Especie taxonómica a la que pertenece la fruta']
+  "fruta_id" integer [not null, note: 'Id de la fruta']
+  
 Indexes {
   (fruta_id, especie_id) [pk, name: "taxonomia_frutas_pk"]
 }
@@ -128,7 +128,18 @@ Indexes {
   Note: 'Relación de la fruta con su producción'
 }
 
-Ref:"core"."frutas"."id" - "core"."produccion_frutas"."fruta_id"
+Ref:"core"."frutas"."id" < "core"."produccion_frutas"."fruta_id"
 Ref:"core"."climas"."id" < "core"."produccion_frutas"."clima_id"
 Ref:"core"."epocas"."id" < "core"."produccion_frutas"."epoca_id"  
 Ref:"core"."municipios"."id" < "core"."produccion_frutas"."municipio_id"
+
+table "core"."nutricion_frutas"{
+"fruta_id" integer [not null, note: 'Id de la fruta']
+"carbohidratos" float [not null, note: 'Contenido en gr de carbohidratos'] 
+"azucares" float [not null, note: 'Contenido en gr de azúcares'] 
+"proteina" float [not null, note: 'Contenido en gr de proteinas'] 
+"grasas" float [not null, note: 'Contenido en gr de grasas'] 
+Note: 'Valores nutricionales de la fruta por cada 100 gr' 
+}
+
+Ref:"core"."frutas"."id" - "core"."nutricion_frutas"."fruta_id"

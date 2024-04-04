@@ -278,23 +278,23 @@ comment on column core.produccion_frutas.clima_id is 'Id del clima';
 comment on column core.produccion_frutas.epoca_id is 'Id de la epoca';
 comment on column core.produccion_frutas.municipio_id is 'Id del municipio';
 
-
-
-
--- Inserción preliminar de información
-insert into core.frutas (nombre, url_wikipedia, url_imagen)
-values (
-    'Mango',
-    'https://es.wikipedia.org/wiki/Mango_(fruta)',
-    'https://upload.wikimedia.org/wikipedia/commons/4/49/Mango_-_single.jpg'
+-- Tabla nutricion_frutas
+create table core.nutricion_frutas
+(
+    fruta_id        integer not null constraint produccion_frutas_fruta_fk references core.frutas,
+    carbohidratos   float not null,
+    azucares        float not null,
+    grasas          float not null,
+    proteinas       float not null,
+    constraint nutricion_frutas_pk primary key (fruta_id)
 );
 
-insert into core.frutas (nombre, url_wikipedia, url_imagen)
-values (
-    'Feijoa',
-    'https://es.wikipedia.org/wiki/Acca_sellowiana',
-    'https://es.wikipedia.org/wiki/Acca_sellowiana#/media/Archivo:Acca_sellowiana_Fruit_MHNT_Fronton.jpg'
-);
+comment on table "core"."nutricion_frutas" is 'Valores nutricionales de la fruta por cada 100 gr';
+comment on column "core"."nutricion_frutas"."fruta_id" is 'Id de la fruta';
+comment on column "core"."nutricion_frutas"."carbohidratos" is 'Contenido en gr de carbohidratos';
+comment on column "core"."nutricion_frutas"."azucares" IS 'Contenido en gr de azúcares';
+comment on column "core"."nutricion_frutas"."proteinas" is 'Contenido en gr de proteinas';
+comment on column "core"."nutricion_frutas"."grasas" is 'Contenido en gr de grasas';
 
 -- -----------------------
 -- Creación de vistas
@@ -302,33 +302,35 @@ values (
 -- v_info_botanica
 create or replace view core.v_info_botanica as
 (
-select r.id     reino_id,
-       r.nombre reino_nombre,
-       d.id     division_id,
-       d.nombre division_nombre,
-       c.id     clase_id,
-       c.nombre clase_nombre,
-       o.id     orden_id,
-       o.nombre orden_nombre,
-       f.id     familia_id,
-       f.nombre familia_nombre,
-       g.id     genero_id,
-       g.nombre genero_nombre,
-       e.id     especie_id,
-       e.nombre especie_nombre
-from reinos r
-         left join divisiones d on r.id = d.reino_id
-         left join clases c on d.id = c.division_id
-         left join ordenes o on c.id = o.clase_id
-         left join familias f on o.id = f.orden_id
-         left join generos g on f.id = g.familia_id
-         left join especies e on g.id = e.genero_id
+    select distinct
+        r.id     reino_id,
+        r.nombre reino_nombre,
+        d.id     division_id,
+        d.nombre division_nombre,
+        c.id     clase_id,
+        c.nombre clase_nombre,
+        o.id     orden_id,
+        o.nombre orden_nombre,
+        f.id     familia_id,
+        f.nombre familia_nombre,
+        g.id     genero_id,
+        g.nombre genero_nombre,
+        e.id     especie_id,
+        e.nombre especie_nombre
+    from reinos r
+        left join divisiones d on r.id = d.reino_id
+        left join clases c on d.id = c.division_id
+        left join ordenes o on c.id = o.clase_id
+        left join familias f on o.id = f.orden_id
+        left join generos g on f.id = g.familia_id
+        left join especies e on g.id = e.genero_id
 );
 
-create view core.v_info_frutas as (
-    select
-        f. id fruta_id,
-        f.nombre fruta_nombre,
+create view core.v_info_frutas as 
+(
+    select distinct
+        f. id       fruta_id,
+        f.nombre    fruta_nombre,
         f.url_wikipedia,
         f.url_imagen,
         v.reino_nombre,
@@ -346,27 +348,43 @@ create view core.v_info_frutas as (
 -- v_info_produccion_frutas
 create or replace view core.v_info_produccion_frutas as
 (
-    select
-        f.id fruta_id,
-        f.nombre fruta_nombre,
+    select distinct 
+        f.id        fruta_id,
+        f.nombre    fruta_nombre,
         f.url_wikipedia,
         f.url_imagen,
-        c.nombre clima_nombre,
+        c.nombre    clima_nombre,
         c.altitud_minima,
         c.altitud_maxima,
-        e.nombre epoca_nombre,
+        e.nombre    epoca_nombre,
         e.mes_inicio,
         e.mes_final,
-        m.id municipio_id,
-        m.nombre municipio_nombre,
-        d.id departamento_id,
-        d.nombre departamento_nombre
+        m.id        municipio_id,
+        m.nombre    municipio_nombre,
+        d.id        departamento_id,
+        d.nombre    departamento_nombre
     from core.frutas f
         left join  core.produccion_frutas pf on f.id = pf.fruta_id
         inner join core.climas c on pf.clima_id = c.id
         inner join core.epocas e on pf.epoca_id = e.id
         inner join core.municipios m on pf.municipio_id = m.id
         inner join core.departamentos d on m.departamento_id = d.id
+);
+
+-- v_info_nutricion_frutas
+create or replace view core.v_info_nutricion_frutas as
+(
+    select distinct
+        f.id fruta_id,
+        f.nombre fruta_nombre,
+        f.url_wikipedia,
+        f.url_imagen,
+        nf.azucares,
+        nf.grasas,
+        nf.carbohidratos,
+        nf.proteinas
+    from core.frutas f
+        left join  core.nutricion_frutas nf on f.id = nf.fruta_id
 );
 
 
