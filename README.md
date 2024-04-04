@@ -8,23 +8,27 @@ usando API REST y GraphQL
 
 Por favor tenga presente:
 
-- Es un proyecto acadÈmico que pretende evolucionar el aprendizaje de conceptos relacionados con bases de datos. 
-**Esta no es una aplicaciÛn "lista para producciÛn"**-
+- Es un proyecto acad√©mico que pretende evolucionar el aprendizaje de conceptos relacionados con bases de datos. 
+**Esta no es una aplicaci√≥n "lista para producci√≥n"**-
 
-- Toda la informaciÛn almacenada en las tablas y colecciones de las bases de datos es informaciÛn p˙blica disponible 
+- Toda la informaci√≥n almacenada en las tablas y colecciones de las bases de datos es informaci√≥n p√∫blica disponible 
 en Wikipedia. No es 100% confiable y no pretende serlo.
 
-- Puede clonar el repositorio e inclusive proponer mejoras a travÈs de issues, pero no necesariamente ser·n 
-implementadas en el tiempo asignado para el curso. Siempre ser· un trabajo en constante modificaciÛn
+- Puede clonar el repositorio e inclusive proponer mejoras a trav√≥s de issues, pero no necesariamente ser√°n 
+implementadas en el tiempo asignado para el curso. Siempre ser√° un trabajo en constante modificaci√≥n.
 
 ## PoC
 ### [FrutasColombia_CS_PoC_Consola](https://github.com/jdrodas/AtlasFrutasColombia/tree/main/FrutasColombia_CS_PoC_Consola)
-- Prueba de Concepto para validar funcionamiento del ORM Dapper, con base de datos PostgreSQL. AplicaciÛn de **consola** en C# con framework .NET 8.x
-- Para cada base de datos, se realizan las operaciones CRUD b·sicas sobre una entidad especÌfica.
+- Prueba de Concepto para validar funcionamiento del ORM Dapper, con base de datos PostgreSQL. Aplicaci√≥n de **consola** en C# con framework .NET 8.x
+- Para cada base de datos, se realizan las operaciones CRUD b√°sicas sobre una entidad espec√≥fica.
+
+## API
+### [FrutasColombia_CS_REST_API](https://github.com/jdrodas/AtlasFrutasColombia/tree/main/FrutasColombia_CS_REST_API)
+- WebAPI en C# con framework .NET 8.x implementando **Patr√≥n Repositorio** con capa de persistencia de datos en PostgreSQL a trav√©s de Dapper como ORM, utilizando l√≥gica almacenada para realizar operaciones CRUD.
 
 
 
-# Colombian Fruits Atlas
+# Atlas of Colombian Fruits
 
 Apps using C# y Python to demo database connectivity using PostgreSQL and MongoDB,
 using REST and GraphQL API
@@ -45,3 +49,7 @@ be implemented in the time allotted for the course. It will always be a Work in 
 - Proof of Concept (PoC) to learn how the Dapper ORM works, using PostgreSQL as Database. **Console** application using .NET 8.x framework and C#
 
 - For each database, basic CRUD operations are performed on a specific entity.
+
+## API
+### [FrutasColombia_CS_REST_API](https://github.com/jdrodas/AtlasFrutasColombia/tree/main/FrutasColombia_CS_REST_API)
+- .NET 8.x WebAPI implementing **Repository Pattern** with infrastructure persistence layer in PostgreSQL using Dapper as ORM, using stored procedures and functions to perform CRUD operations.
