@@ -66,6 +66,5 @@ namespace FrutasColombia_CS_REST_API.Controllers
                 return NotFound(error.Message);
             }
         }
-
     }
 }

@@ -16,12 +16,14 @@ builder.Services.AddScoped<IResumenRepository, ResumenRepository>();
 builder.Services.AddScoped<IFrutaRepository, FrutaRepository>();
 builder.Services.AddScoped<IDepartamentoRepository, DepartamentoRepository>();
 builder.Services.AddScoped<IMunicipioRepository, MunicipioRepository>();
+builder.Services.AddScoped<IClimaRepository, ClimaRepository>();
 
 //Aqui agregamos los servicios asociados para cada EndPoint
 builder.Services.AddScoped<ResumenService>();
 builder.Services.AddScoped<FrutaService>();
 builder.Services.AddScoped<DepartamentoService>();
 builder.Services.AddScoped<MunicipioService>();
+builder.Services.AddScoped<ClimaService>();
 
 // Add services to the container.
 

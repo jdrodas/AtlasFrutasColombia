@@ -348,21 +348,22 @@ create view core.v_info_frutas as
 -- v_info_produccion_frutas
 create or replace view core.v_info_produccion_frutas as
 (
-    select distinct 
-        f.id        fruta_id,
-        f.nombre    fruta_nombre,
-        f.url_wikipedia,
-        f.url_imagen,
-        c.nombre    clima_nombre,
+    select distinct
+        f.id                fruta_id,
+        f.nombre            fruta_nombre,
+        f.url_wikipedia     fruta_wikipedia,
+        f.url_imagen        fruta_imagen,
+        c.id                clima_id,
+        c.nombre            clima_nombre,
         c.altitud_minima,
         c.altitud_maxima,
-        e.nombre    epoca_nombre,
+        e.nombre            epoca_nombre,
         e.mes_inicio,
         e.mes_final,
-        m.id        municipio_id,
-        m.nombre    municipio_nombre,
-        d.id        departamento_id,
-        d.nombre    departamento_nombre
+        m.id                municipio_id,
+        m.nombre            municipio_nombre,
+        d.id                departamento_id,
+        d.nombre            departamento_nombre
     from core.frutas f
         left join  core.produccion_frutas pf on f.id = pf.fruta_id
         inner join core.climas c on pf.clima_id = c.id

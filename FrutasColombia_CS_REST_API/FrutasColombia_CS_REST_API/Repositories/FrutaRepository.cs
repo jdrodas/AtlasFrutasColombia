@@ -121,6 +121,36 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return frutasProducidas;
         }
 
+        public async Task<IEnumerable<FrutaProducida>> GetByClimateAsync(int clima_id)
+        {
+            List<FrutaProducida> frutasProducidas = new();
+
+            var conexion = contextoDB.CreateConnection();
+
+            DynamicParameters parametrosSentencia = new();
+            parametrosSentencia.Add("@clima_id", clima_id,
+                DbType.Int32, ParameterDirection.Input);
+
+
+            string sentenciaSQL = "SELECT DISTINCT fruta_id id, fruta_nombre nombre, " +
+                "fruta_wikipedia url_wikipedia, fruta_imagen url_imagen " +
+                "FROM v_info_produccion_frutas v " +
+                "WHERE clima_id = @clima_id";
+
+            var resultadoFrutas = await conexion
+                .QueryAsync<FrutaProducida>(sentenciaSQL, parametrosSentencia);
+
+            if (resultadoFrutas.Any())
+            {
+                frutasProducidas = resultadoFrutas.ToList();
+
+                foreach (FrutaProducida unaFruta in frutasProducidas.ToList())
+                    unaFruta.Produccion = await GetFruitProductionDetails(unaFruta.Id, clima_id);
+            }
+
+            return frutasProducidas;
+        }
+
         public async Task<FrutaDetallada> GetFruitDetailsByIdAsync(int fruta_id)
         {
             Fruta unaFruta = await GetByIdAsync(fruta_id);
@@ -170,6 +200,34 @@ namespace FrutasColombia_CS_REST_API.Repositories
 
                 sentenciaSQL += "AND v.municipio_id = @municipio_id";
             }
+
+            var resultadoProduccion = await conexion
+                .QueryAsync<Produccion>(sentenciaSQL, parametrosSentencia);
+
+            if (resultadoProduccion.Any())
+                infoProduccion = resultadoProduccion.ToList();
+
+            return infoProduccion;
+        }
+
+        public async Task<List<Produccion>> GetFruitProductionDetails(int fruta_id, int clima_id)
+        {
+            List<Produccion> infoProduccion = new();
+
+            var conexion = contextoDB.CreateConnection();
+
+            DynamicParameters parametrosSentencia = new();
+            parametrosSentencia.Add("@fruta_id", fruta_id,
+                                    DbType.Int32, ParameterDirection.Input);
+
+            parametrosSentencia.Add("@clima_id", clima_id,
+                                    DbType.Int32, ParameterDirection.Input);
+
+            string sentenciaSQL = "SELECT DISTINCT v.epoca_nombre epoca, v.clima_nombre clima, " +
+                "v.municipio_nombre municipio, v.departamento_nombre departamento " +
+                "FROM v_info_produccion_frutas v " +
+                "WHERE v.fruta_id = @fruta_id " +
+                "AND v.clima_id = @clima_id";
 
             var resultadoProduccion = await conexion
                 .QueryAsync<Produccion>(sentenciaSQL, parametrosSentencia);

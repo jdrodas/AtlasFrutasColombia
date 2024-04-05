@@ -12,9 +12,13 @@ namespace FrutasColombia_CS_REST_API.Interfaces
 
         public Task<IEnumerable<FrutaProducida>> GetByLocationAsync(string? departamento_id, string? municipio_id);
 
+        public Task<IEnumerable<FrutaProducida>> GetByClimateAsync(int clima_id);
+
         public Task<FrutaDetallada> GetFruitDetailsByIdAsync(int fruta_id);
 
         public Task<List<Produccion>> GetFruitProductionDetails(int fruta_id, string? departamento_id, string? municipio_id);
+
+        public Task<List<Produccion>> GetFruitProductionDetails(int fruta_id, int clima_id);
 
         public Task<Nutricion> GetFruitNutritionDetails(int fruta_id);
 
