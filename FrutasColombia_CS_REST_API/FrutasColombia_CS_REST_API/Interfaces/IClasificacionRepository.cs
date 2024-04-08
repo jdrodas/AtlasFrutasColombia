@@ -5,5 +5,13 @@ namespace FrutasColombia_CS_REST_API.Interfaces
     public interface IClasificacionRepository
     {
         public Task<IEnumerable<Clasificacion>> GetAllAsync();
+
+        public Task<IEnumerable<Division>> GetAllDivisionsAsync();
+
+        public Task<IEnumerable<Clase>> GetAllClassesAsync();
+
+        public Task<IEnumerable<Orden>> GetAllOrdersAsync();
+
+        public Task<IEnumerable<Familia>> GetAllFamiliesAsync();
     }
 }

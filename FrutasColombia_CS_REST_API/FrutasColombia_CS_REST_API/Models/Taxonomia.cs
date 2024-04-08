@@ -24,8 +24,5 @@ namespace FrutasColombia_CS_REST_API.Models
 
         [JsonPropertyName("especie")]
         public string? Especie { get; set; } = string.Empty;
-
-
-
     }
 }

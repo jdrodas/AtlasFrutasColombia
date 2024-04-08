@@ -76,7 +76,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
 
         public async Task<IEnumerable<FrutaProducida>> GetByLocationAsync(string? departamento_id, string? municipio_id)
         {
-            List<FrutaProducida> frutasProducidas = new();
+            List<FrutaProducida> frutasProducidas = [];
 
             var conexion = contextoDB.CreateConnection();
 
@@ -123,7 +123,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
 
         public async Task<IEnumerable<FrutaProducida>> GetByClimateAsync(int clima_id)
         {
-            List<FrutaProducida> frutasProducidas = new();
+            List<FrutaProducida> frutasProducidas = [];
 
             var conexion = contextoDB.CreateConnection();
 
@@ -160,19 +160,18 @@ namespace FrutasColombia_CS_REST_API.Repositories
                 Id = unaFruta.Id,
                 Nombre = unaFruta.Nombre,
                 Url_Imagen = unaFruta.Url_Imagen,
-                Url_Wikipedia = unaFruta.Url_Wikipedia
+                Url_Wikipedia = unaFruta.Url_Wikipedia,
+                Produccion = await GetFruitProductionDetails(fruta_id, null, null),
+                Nutricion = await GetFruitNutritionDetails(fruta_id),
+                Taxonomia = await GetFruitTaxonomicDetails(fruta_id)
             };
-
-            unaFrutaDetallada.Produccion = await GetFruitProductionDetails(fruta_id, null, null);
-            unaFrutaDetallada.Nutricion = await GetFruitNutritionDetails(fruta_id);
-            unaFrutaDetallada.Taxonomia = await GetFruitTaxonomicDetails(fruta_id);
 
             return unaFrutaDetallada;
         }
 
         public async Task<List<Produccion>> GetFruitProductionDetails(int fruta_id, string? departamento_id, string? municipio_id)
         {
-            List<Produccion> infoProduccion = new();
+            List<Produccion> infoProduccion = [];
 
             var conexion = contextoDB.CreateConnection();
 
@@ -212,7 +211,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
 
         public async Task<List<Produccion>> GetFruitProductionDetails(int fruta_id, int clima_id)
         {
-            List<Produccion> infoProduccion = new();
+            List<Produccion> infoProduccion = [];
 
             var conexion = contextoDB.CreateConnection();
 
