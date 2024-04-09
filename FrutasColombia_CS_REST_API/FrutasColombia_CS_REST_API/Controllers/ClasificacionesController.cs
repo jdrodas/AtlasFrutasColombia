@@ -83,5 +83,53 @@ namespace FrutasColombia_CS_REST_API.Controllers
                 return NotFound(error.Message);
             }
         }
+
+        [HttpGet("Generos")]
+        public async Task<IActionResult> GetAllGenusAsync()
+        {
+            try
+            {
+                var losGeneros = await _clasificacionService
+                    .GetAllGenusAsync();
+
+                return Ok(losGeneros);
+            }
+            catch (AppValidationException error)
+            {
+                return NotFound(error.Message);
+            }
+        }
+
+        [HttpGet("Generos/{genero_id:int}")]
+        public async Task<IActionResult> GetGenusByIdAsync(int genero_id)
+        {
+            try
+            {
+                var unGenero = await _clasificacionService
+                    .GetGenusByIdAsync(genero_id);
+
+                return Ok(unGenero);
+            }
+            catch (AppValidationException error)
+            {
+                return NotFound(error.Message);
+            }
+        }
+
+        [HttpGet("Generos/{genero_id:int}/Frutas")]
+        public async Task<IActionResult> GetFruitsByGenusIdAsync(int genero_id)
+        {
+            try
+            {
+                var unGenero = await _clasificacionService
+                    .GetFruitsByGenusIdAsync(genero_id);
+
+                return Ok(unGenero);
+            }
+            catch (AppValidationException error)
+            {
+                return NotFound(error.Message);
+            }
+        }
     }
 }

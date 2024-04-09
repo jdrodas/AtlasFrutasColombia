@@ -326,19 +326,26 @@ create or replace view core.v_info_botanica as
         left join especies e on g.id = e.genero_id
 );
 
-create view core.v_info_frutas as 
+create view core.v_info_frutas as
 (
     select distinct
-        f. id       fruta_id,
+        tf.fruta_id,
         f.nombre    fruta_nombre,
         f.url_wikipedia,
         f.url_imagen,
+        v.reino_id,
         v.reino_nombre,
+        v.division_id,
         v.division_nombre,
+        v.clase_id,
         v.clase_nombre,
+        v.orden_id,
         v.orden_nombre,
+        v.familia_id,
         v.familia_nombre,
+        v.genero_id,
         v.genero_nombre,
+        v.especie_id,
         v.especie_nombre
     from core.frutas f
         left join core.taxonomia_frutas tf on f.id = tf.fruta_id

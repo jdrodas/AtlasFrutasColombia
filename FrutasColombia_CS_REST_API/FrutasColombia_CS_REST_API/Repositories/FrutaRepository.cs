@@ -111,10 +111,10 @@ namespace FrutasColombia_CS_REST_API.Repositories
                 foreach (FrutaProducida unaFruta in frutasProducidas.ToList())
                 {
                     if (!string.IsNullOrEmpty(departamento_id))
-                        unaFruta.Produccion = await GetFruitProductionDetails(unaFruta.Id, departamento_id, null);
+                        unaFruta.Produccion = await GetProductionDetails(unaFruta.Id, departamento_id, null);
 
                     if (!string.IsNullOrEmpty(municipio_id))
-                        unaFruta.Produccion = await GetFruitProductionDetails(unaFruta.Id, null, municipio_id);
+                        unaFruta.Produccion = await GetProductionDetails(unaFruta.Id, null, municipio_id);
                 }
             }
 
@@ -145,13 +145,43 @@ namespace FrutasColombia_CS_REST_API.Repositories
                 frutasProducidas = resultadoFrutas.ToList();
 
                 foreach (FrutaProducida unaFruta in frutasProducidas.ToList())
-                    unaFruta.Produccion = await GetFruitProductionDetails(unaFruta.Id, clima_id);
+                    unaFruta.Produccion = await GetProductionDetails(unaFruta.Id, clima_id);
             }
 
             return frutasProducidas;
         }
 
-        public async Task<FrutaDetallada> GetFruitDetailsByIdAsync(int fruta_id)
+        public async Task<IEnumerable<FrutaClasificada>> GetByGenusIdAsync(int genero_id)
+        {
+            List<FrutaClasificada> frutasClasificadas = [];
+
+            var conexion = contextoDB.CreateConnection();
+
+            DynamicParameters parametrosSentencia = new();
+            parametrosSentencia.Add("@genero_id", genero_id,
+                DbType.Int32, ParameterDirection.Input);
+
+
+            string sentenciaSQL = "SELECT DISTINCT fruta_id id, fruta_nombre nombre, " +
+                "url_wikipedia, url_imagen " +
+                "FROM v_info_frutas v " +
+                "WHERE genero_id = @genero_id";
+
+            var resultadoFrutas = await conexion
+                .QueryAsync<FrutaClasificada>(sentenciaSQL, parametrosSentencia);
+
+            if (resultadoFrutas.Any())
+            {
+                frutasClasificadas = resultadoFrutas.ToList();
+
+                foreach (FrutaClasificada unaFruta in frutasClasificadas.ToList())
+                    unaFruta.Taxonomia = await GetTaxonomicDetails(unaFruta.Id);
+            }
+
+            return frutasClasificadas;
+        }
+
+        public async Task<FrutaDetallada> GetDetailsByIdAsync(int fruta_id)
         {
             Fruta unaFruta = await GetByIdAsync(fruta_id);
 
@@ -161,15 +191,15 @@ namespace FrutasColombia_CS_REST_API.Repositories
                 Nombre = unaFruta.Nombre,
                 Url_Imagen = unaFruta.Url_Imagen,
                 Url_Wikipedia = unaFruta.Url_Wikipedia,
-                Produccion = await GetFruitProductionDetails(fruta_id, null, null),
-                Nutricion = await GetFruitNutritionDetails(fruta_id),
-                Taxonomia = await GetFruitTaxonomicDetails(fruta_id)
+                Produccion = await GetProductionDetails(fruta_id, null, null),
+                Nutricion = await GetNutritionDetails(fruta_id),
+                Taxonomia = await GetTaxonomicDetails(fruta_id)
             };
 
             return unaFrutaDetallada;
         }
 
-        public async Task<List<Produccion>> GetFruitProductionDetails(int fruta_id, string? departamento_id, string? municipio_id)
+        public async Task<List<Produccion>> GetProductionDetails(int fruta_id, string? departamento_id, string? municipio_id)
         {
             List<Produccion> infoProduccion = [];
 
@@ -209,7 +239,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return infoProduccion;
         }
 
-        public async Task<List<Produccion>> GetFruitProductionDetails(int fruta_id, int clima_id)
+        public async Task<List<Produccion>> GetProductionDetails(int fruta_id, int clima_id)
         {
             List<Produccion> infoProduccion = [];
 
@@ -237,7 +267,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return infoProduccion;
         }
 
-        public async Task<Nutricion> GetFruitNutritionDetails(int fruta_id)
+        public async Task<Nutricion> GetNutritionDetails(int fruta_id)
         {
             Nutricion infoNutricion = new();
 
@@ -261,7 +291,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return infoNutricion;
         }
 
-        public async Task<Taxonomia> GetFruitTaxonomicDetails(int fruta_id)
+        public async Task<Taxonomia> GetTaxonomicDetails(int fruta_id)
         {
             Taxonomia infoTaxonomia = new();
 

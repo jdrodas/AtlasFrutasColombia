@@ -23,7 +23,7 @@ namespace FrutasColombia_CS_REST_API.Services
                 throw new AppValidationException($"Fruta no encontrada con el id {fruta_id}");
 
             FrutaDetallada unaFrutaDetallada = await _frutaRepository
-                .GetFruitDetailsByIdAsync(fruta_id);
+                .GetDetailsByIdAsync(fruta_id);
 
             return unaFrutaDetallada;
         }
