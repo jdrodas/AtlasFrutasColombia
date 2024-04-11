@@ -1,0 +1,34 @@
+[
+  {
+    "fruta_id": 1,
+    "especie_id": 1
+  },
+  {
+    "fruta_id": 2,
+    "especie_id": 2
+  },
+  {
+    "fruta_id": 4,
+    "especie_id": 3
+  },
+  {
+    "fruta_id": 5,
+    "especie_id": 6
+  },
+  {
+    "fruta_id": 11,
+    "especie_id": 9
+  },
+  {
+    "fruta_id": 20,
+    "especie_id": 14
+  },
+  {
+    "fruta_id": 13,
+    "especie_id": 15
+  },
+  {
+    "fruta_id": 21,
+    "especie_id": 16
+  }
+]

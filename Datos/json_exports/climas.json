@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "nombre": "Cálido",
+    "altitud_minima": 0,
+    "altitud_maxima": 1000
+  },
+  {
+    "id": 2,
+    "nombre": "Templado",
+    "altitud_minima": 1000,
+    "altitud_maxima": 2000
+  },
+  {
+    "id": 3,
+    "nombre": "Frío",
+    "altitud_minima": 2000,
+    "altitud_maxima": 3000
+  },
+  {
+    "id": 4,
+    "nombre": "Páramo",
+    "altitud_minima": 3000,
+    "altitud_maxima": 4200
+  },
+  {
+    "id": 5,
+    "nombre": "Nieves Perpetuas",
+    "altitud_minima": 4200,
+    "altitud_maxima": 8000
+  }
+]

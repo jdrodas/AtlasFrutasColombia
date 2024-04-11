@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "nombre": "Mangifera indica",
+    "genero_id": 1
+  },
+  {
+    "id": 2,
+    "nombre": "Acca sellowiana",
+    "genero_id": 2
+  },
+  {
+    "id": 3,
+    "nombre": "Melicoccus bijugatus",
+    "genero_id": 5
+  },
+  {
+    "id": 4,
+    "nombre": "Passiflora ligularis",
+    "genero_id": 6
+  },
+  {
+    "id": 5,
+    "nombre": "Passiflora popenovii",
+    "genero_id": 6
+  },
+  {
+    "id": 6,
+    "nombre": "Passiflora verrucifera",
+    "genero_id": 6
+  },
+  {
+    "id": 7,
+    "nombre": "Passiflora edulis",
+    "genero_id": 6
+  },
+  {
+    "id": 9,
+    "nombre": "Theobroma grandiflorum",
+    "genero_id": 7
+  },
+  {
+    "id": 14,
+    "nombre": "Persea Americana",
+    "genero_id": 8
+  },
+  {
+    "id": 15,
+    "nombre": "Psidium Guajava",
+    "genero_id": 9
+  },
+  {
+    "id": 16,
+    "nombre": "Musa Acuminata",
+    "genero_id": 10
+  }
+]

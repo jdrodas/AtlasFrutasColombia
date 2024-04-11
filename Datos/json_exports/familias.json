@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "nombre": "Anacardiaceae",
+    "orden_id": 1
+  },
+  {
+    "id": 2,
+    "nombre": "Myrtaceae",
+    "orden_id": 2
+  },
+  {
+    "id": 3,
+    "nombre": "Sapindaceae",
+    "orden_id": 1
+  },
+  {
+    "id": 4,
+    "nombre": "Passifloraceae",
+    "orden_id": 3
+  },
+  {
+    "id": 5,
+    "nombre": "Malvaceae",
+    "orden_id": 4
+  },
+  {
+    "id": 6,
+    "nombre": "Lauraceae",
+    "orden_id": 5
+  },
+  {
+    "id": 7,
+    "nombre": "Musaceae",
+    "orden_id": 6
+  }
+]

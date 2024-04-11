@@ -1,0 +1,41 @@
+{
+    "produccion": [
+        {
+            "epoca": "Cuatrimestre Enero Abril",
+            "clima": "Frío",
+            "municipio": "Guarne",
+            "departamento": "Antioquia"
+        },
+        {
+            "epoca": "Cuatrimestre Enero Abril",
+            "clima": "Frío",
+            "municipio": "La Ceja",
+            "departamento": "Antioquia"
+        },
+        {
+            "epoca": "Cuatrimestre Enero Abril",
+            "clima": "Frío",
+            "municipio": "Retiro",
+            "departamento": "Antioquia"
+        }
+    ],
+    "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "orden": "Laurales",
+        "familia": "Lauraceae",
+        "genero": "Persea",
+        "especie": "Persea Americana"
+    },
+    "nutricion": {
+        "azucares": "0.66",
+        "carbohidratos": "8.53",
+        "grasas": "14.66",
+        "proteinas": "2"
+    },
+    "id": 20,
+    "nombre": "Aguacate Hass",
+    "url_wikipedia": "https://es.m.wikipedia.org/wiki/Hass_(variedad_de_Persea_americana)",
+    "url_imagen": "https://es.m.wikipedia.org/wiki/Hass_(variedad_de_Persea_americana)#/media/Archivo%3AAvocado_Hass_-_single_and_halved.jpg"
+}

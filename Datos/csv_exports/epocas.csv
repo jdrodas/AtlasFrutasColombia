@@ -1,0 +1,7 @@
+id;nombre;mes_inicio;mes_final
+1;Bimestral Junio Julio;6;7
+2;Bimestral Noviembre Diciembre;11;12
+3;Semestral Julio Diciembre;7;12
+4;Trimestre Enero Marzo;1;3
+5;Cuatrimestre Enero Abril;1;4
+6;Bimestral Mayo Junio;5;6

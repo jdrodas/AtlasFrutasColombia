@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "nombre": "Mangifera",
+    "familia_id": 1
+  },
+  {
+    "id": 2,
+    "nombre": "Acca",
+    "familia_id": 2
+  },
+  {
+    "id": 5,
+    "nombre": "Melicoccus",
+    "familia_id": 3
+  },
+  {
+    "id": 6,
+    "nombre": "Passiflora",
+    "familia_id": 4
+  },
+  {
+    "id": 7,
+    "nombre": "Theobroma",
+    "familia_id": 5
+  },
+  {
+    "id": 8,
+    "nombre": "Persea",
+    "familia_id": 6
+  },
+  {
+    "id": 9,
+    "nombre": "Psidium",
+    "familia_id": 2
+  },
+  {
+    "id": 10,
+    "nombre": "Musa",
+    "familia_id": 7
+  }
+]

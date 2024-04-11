@@ -1,0 +1,68 @@
+[
+  {
+    "id": 2,
+    "nombre": "Feijoa",
+    "url_wikipedia": "https://es.wikipedia.org/wiki/Acca_sellowiana",
+    "url_imagen": "https://es.wikipedia.org/wiki/Acca_sellowiana#/media/Archivo:Acca_sellowiana_Fruit_MHNT_Fronton.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Mamoncillo",
+    "url_wikipedia": "https://es.wikipedia.org/wiki/Melicoccus_bijugatus",
+    "url_imagen": "https://es.wikipedia.org/wiki/Melicoccus_bijugatus#/media/Archivo:Melicoccus_bijugatus.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Gulupa",
+    "url_wikipedia": "https://es.wikipedia.org/wiki/Passiflora_edulis_f._edulis",
+    "url_imagen": "https://es.wikipedia.org/wiki/Passiflora_edulis_f._edulis#/media/Archivo:Passiflora_edulis_f._edulis_Sims.jpg"
+  },
+  {
+    "id": 11,
+    "nombre": "Copoazú",
+    "url_wikipedia": "https://es.wikipedia.org/wiki/Theobroma_grandiflorum",
+    "url_imagen": "https://es.wikipedia.org/wiki/Theobroma_grandiflorum#/media/Archivo:Theobroma_grandiflorum,_source_of_Cupulate_Chocolate_(9906147393).jpg"
+  },
+  {
+    "id": 14,
+    "nombre": "Cholupa",
+    "url_wikipedia": "https://es.wikipedia.org/wiki/Passiflora_maliformis",
+    "url_imagen": "https://aneia.uniandes.edu.co/wp-content/uploads/2023/06/Imagen11-3.jpg"
+  },
+  {
+    "id": 15,
+    "nombre": "cacao de monte",
+    "url_wikipedia": "https://es.wikipedia.org/wiki/Theobroma_subincanum",
+    "url_imagen": "https://catalogofloravalleaburra.eia.edu.co/storage/images/81860a37dcf5c93a05dcd66a2c72370059326122.jpg"
+  },
+  {
+    "id": 1,
+    "nombre": "Mango",
+    "url_wikipedia": "https://es.wikipedia.org/wiki/Mangifera_indica",
+    "url_imagen": "https://upload.wikimedia.org/wikipedia/commons/4/49/Mango_-_single.jpg"
+  },
+  {
+    "id": 16,
+    "nombre": "Ciruela",
+    "url_wikipedia": "https://es.wikipedia.org/wiki/ciruela_andina",
+    "url_imagen": "https://en.wikipedia.org/wiki/Spondias_purpurea#/media/File:Siniguelas_(Spanish_plum_-_Spondias_purpurea)_-_Mindanao,_Philippines.jpg"
+  },
+  {
+    "id": 20,
+    "nombre": "Aguacate Hass",
+    "url_wikipedia": "https://es.m.wikipedia.org/wiki/Hass_(variedad_de_Persea_americana)",
+    "url_imagen": "https://es.m.wikipedia.org/wiki/Hass_(variedad_de_Persea_americana)#/media/Archivo%3AAvocado_Hass_-_single_and_halved.jpg"
+  },
+  {
+    "id": 21,
+    "nombre": "Banano",
+    "url_wikipedia": "https://es.wikipedia.org/wiki/Banana",
+    "url_imagen": "https://es.wikipedia.org/wiki/Banana#/media/Archivo:Bananas.jpg"
+  },
+  {
+    "id": 13,
+    "nombre": "Guayaba",
+    "url_wikipedia": "https://es.wikipedia.org/wiki/Psidium_guajava",
+    "url_imagen": "https://es.wikipedia.org/wiki/Psidium_guajava#/media/Archivo:Goiaba_vermelha.jpg"
+  }
+]

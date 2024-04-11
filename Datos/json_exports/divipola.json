@@ -1,0 +1,6620 @@
+[
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05001",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "MEDELLÍN"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05002",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "ABEJORRAL"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05004",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "ABRIAQUÍ"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05021",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "ALEJANDRÍA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05030",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "AMAGÁ"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05031",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "AMALFI"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05034",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "ANDES"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05036",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "ANGELÓPOLIS"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05038",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "ANGOSTURA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05040",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "ANORÍ"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05042",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "SANTA FÉ DE ANTIOQUIA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05044",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "ANZÁ"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05045",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "APARTADÓ"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05051",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "ARBOLETES"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05055",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "ARGELIA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05059",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "ARMENIA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05079",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "BARBOSA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05086",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "BELMIRA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05088",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "BELLO"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05091",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "BETANIA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05093",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "BETULIA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05101",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "CIUDAD BOLÍVAR"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05107",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "BRICEÑO"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05113",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "BURITICÁ"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05120",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "CÁCERES"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05125",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "CAICEDO"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05129",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "CALDAS"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05134",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "CAMPAMENTO"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05138",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "CAÑASGORDAS"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05142",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "CARACOLÍ"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05145",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "CARAMANTA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05147",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "CAREPA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05148",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "EL CARMEN DE VIBORAL"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05150",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "CAROLINA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05154",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "CAUCASIA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05172",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "CHIGORODÓ"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05190",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "CISNEROS"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05197",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "COCORNÁ"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05206",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "CONCEPCIÓN"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05209",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "CONCORDIA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05212",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "COPACABANA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05234",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "DABEIBA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05237",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "DONMATÍAS"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05240",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "EBÉJICO"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05250",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "EL BAGRE"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05264",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "ENTRERRÍOS"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05266",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "ENVIGADO"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05282",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "FREDONIA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05284",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "FRONTINO"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05306",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "GIRALDO"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05308",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "GIRARDOTA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05310",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "GÓMEZ PLATA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05313",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "GRANADA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05315",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "GUADALUPE"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05318",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "GUARNE"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05321",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "GUATAPÉ"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05347",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "HELICONIA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05353",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "HISPANIA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05360",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "ITAGÜÍ"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05361",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "ITUANGO"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05364",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "JARDÍN"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05368",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "JERICÓ"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05376",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "LA CEJA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05380",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "LA ESTRELLA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05390",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "LA PINTADA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05400",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "LA UNIÓN"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05411",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "LIBORINA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05425",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "MACEO"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05440",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "MARINILLA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05467",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "MONTEBELLO"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05475",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "MURINDÓ"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05480",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "MUTATÁ"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05483",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "NARIÑO"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05490",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "NECOCLÍ"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05495",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "NECHÍ"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05501",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "OLAYA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05541",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "PEÑOL"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05543",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "PEQUE"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05576",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "PUEBLORRICO"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05579",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "PUERTO BERRÍO"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05585",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "PUERTO NARE"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05591",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "PUERTO TRIUNFO"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05604",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "REMEDIOS"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05607",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "RETIRO"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05615",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "RIONEGRO"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05628",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "SABANALARGA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05631",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "SABANETA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05642",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "SALGAR"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05647",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "SAN ANDRÉS DE CUERQUÍA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05649",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "SAN CARLOS"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05652",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "SAN FRANCISCO"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05656",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "SAN JERÓNIMO"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05658",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "SAN JOSÉ DE LA MONTAÑA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05659",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "SAN JUAN DE URABÁ"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05660",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "SAN LUIS"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05664",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "SAN PEDRO DE LOS MILAGROS"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05665",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "SAN PEDRO DE URABÁ"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05667",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "SAN RAFAEL"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05670",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "SAN ROQUE"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05674",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "SAN VICENTE FERRER"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05679",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "SANTA BÁRBARA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05686",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "SANTA ROSA DE OSOS"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05690",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "SANTO DOMINGO"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05697",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "EL SANTUARIO"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05736",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "SEGOVIA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05756",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "SONSÓN"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05761",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "SOPETRÁN"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05789",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "TÁMESIS"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05790",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "TARAZÁ"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05792",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "TARSO"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05809",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "TITIRIBÍ"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05819",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "TOLEDO"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05837",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "TURBO"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05842",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "URAMITA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05847",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "URRAO"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05854",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "VALDIVIA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05856",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "VALPARAÍSO"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05858",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "VEGACHÍ"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05861",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "VENECIA"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05873",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "VIGÍA DEL FUERTE"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05885",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "YALÍ"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05887",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "YARUMAL"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05890",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "YOLOMBÓ"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05893",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "YONDÓ"
+  },
+  {
+    "codigo_departamento": "05",
+    "codigo_municipio": "05895",
+    "nombre_departamento": "ANTIOQUIA",
+    "nombre_municipio": "ZARAGOZA"
+  },
+  {
+    "codigo_departamento": "08",
+    "codigo_municipio": "08001",
+    "nombre_departamento": "ATLÁNTICO",
+    "nombre_municipio": "BARRANQUILLA"
+  },
+  {
+    "codigo_departamento": "08",
+    "codigo_municipio": "08078",
+    "nombre_departamento": "ATLÁNTICO",
+    "nombre_municipio": "BARANOA"
+  },
+  {
+    "codigo_departamento": "08",
+    "codigo_municipio": "08137",
+    "nombre_departamento": "ATLÁNTICO",
+    "nombre_municipio": "CAMPO DE LA CRUZ"
+  },
+  {
+    "codigo_departamento": "08",
+    "codigo_municipio": "08141",
+    "nombre_departamento": "ATLÁNTICO",
+    "nombre_municipio": "CANDELARIA"
+  },
+  {
+    "codigo_departamento": "08",
+    "codigo_municipio": "08296",
+    "nombre_departamento": "ATLÁNTICO",
+    "nombre_municipio": "GALAPA"
+  },
+  {
+    "codigo_departamento": "08",
+    "codigo_municipio": "08372",
+    "nombre_departamento": "ATLÁNTICO",
+    "nombre_municipio": "JUAN DE ACOSTA"
+  },
+  {
+    "codigo_departamento": "08",
+    "codigo_municipio": "08421",
+    "nombre_departamento": "ATLÁNTICO",
+    "nombre_municipio": "LURUACO"
+  },
+  {
+    "codigo_departamento": "08",
+    "codigo_municipio": "08433",
+    "nombre_departamento": "ATLÁNTICO",
+    "nombre_municipio": "MALAMBO"
+  },
+  {
+    "codigo_departamento": "08",
+    "codigo_municipio": "08436",
+    "nombre_departamento": "ATLÁNTICO",
+    "nombre_municipio": "MANATÍ"
+  },
+  {
+    "codigo_departamento": "08",
+    "codigo_municipio": "08520",
+    "nombre_departamento": "ATLÁNTICO",
+    "nombre_municipio": "PALMAR DE VARELA"
+  },
+  {
+    "codigo_departamento": "08",
+    "codigo_municipio": "08549",
+    "nombre_departamento": "ATLÁNTICO",
+    "nombre_municipio": "PIOJÓ"
+  },
+  {
+    "codigo_departamento": "08",
+    "codigo_municipio": "08558",
+    "nombre_departamento": "ATLÁNTICO",
+    "nombre_municipio": "POLONUEVO"
+  },
+  {
+    "codigo_departamento": "08",
+    "codigo_municipio": "08560",
+    "nombre_departamento": "ATLÁNTICO",
+    "nombre_municipio": "PONEDERA"
+  },
+  {
+    "codigo_departamento": "08",
+    "codigo_municipio": "08573",
+    "nombre_departamento": "ATLÁNTICO",
+    "nombre_municipio": "PUERTO COLOMBIA"
+  },
+  {
+    "codigo_departamento": "08",
+    "codigo_municipio": "08606",
+    "nombre_departamento": "ATLÁNTICO",
+    "nombre_municipio": "REPELÓN"
+  },
+  {
+    "codigo_departamento": "08",
+    "codigo_municipio": "08634",
+    "nombre_departamento": "ATLÁNTICO",
+    "nombre_municipio": "SABANAGRANDE"
+  },
+  {
+    "codigo_departamento": "08",
+    "codigo_municipio": "08638",
+    "nombre_departamento": "ATLÁNTICO",
+    "nombre_municipio": "SABANALARGA"
+  },
+  {
+    "codigo_departamento": "08",
+    "codigo_municipio": "08675",
+    "nombre_departamento": "ATLÁNTICO",
+    "nombre_municipio": "SANTA LUCÍA"
+  },
+  {
+    "codigo_departamento": "08",
+    "codigo_municipio": "08685",
+    "nombre_departamento": "ATLÁNTICO",
+    "nombre_municipio": "SANTO TOMÁS"
+  },
+  {
+    "codigo_departamento": "08",
+    "codigo_municipio": "08758",
+    "nombre_departamento": "ATLÁNTICO",
+    "nombre_municipio": "SOLEDAD"
+  },
+  {
+    "codigo_departamento": "08",
+    "codigo_municipio": "08770",
+    "nombre_departamento": "ATLÁNTICO",
+    "nombre_municipio": "SUAN"
+  },
+  {
+    "codigo_departamento": "08",
+    "codigo_municipio": "08832",
+    "nombre_departamento": "ATLÁNTICO",
+    "nombre_municipio": "TUBARÁ"
+  },
+  {
+    "codigo_departamento": "08",
+    "codigo_municipio": "08849",
+    "nombre_departamento": "ATLÁNTICO",
+    "nombre_municipio": "USIACURÍ"
+  },
+  {
+    "codigo_departamento": "11",
+    "codigo_municipio": "11001",
+    "nombre_departamento": "BOGOTÁ. D.C.",
+    "nombre_municipio": "BOGOTÁ. D.C."
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13001",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "CARTAGENA DE INDIAS"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13006",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "ACHÍ"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13030",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "ALTOS DEL ROSARIO"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13042",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "ARENAL"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13052",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "ARJONA"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13062",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "ARROYOHONDO"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13074",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "BARRANCO DE LOBA"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13140",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "CALAMAR"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13160",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "CANTAGALLO"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13188",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "CICUCO"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13212",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "CÓRDOBA"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13222",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "CLEMENCIA"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13244",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "EL CARMEN DE BOLÍVAR"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13248",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "EL GUAMO"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13268",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "EL PEÑÓN"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13300",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "HATILLO DE LOBA"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13430",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "MAGANGUÉ"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13433",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "MAHATES"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13440",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "MARGARITA"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13442",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "MARÍA LA BAJA"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13458",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "MONTECRISTO"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13468",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "SANTA CRUZ DE MOMPOX"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13473",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "MORALES"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13490",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "NOROSÍ"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13549",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "PINILLOS"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13580",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "REGIDOR"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13600",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "RÍO VIEJO"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13620",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "SAN CRISTÓBAL"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13647",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "SAN ESTANISLAO"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13650",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "SAN FERNANDO"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13654",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "SAN JACINTO"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13655",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "SAN JACINTO DEL CAUCA"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13657",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "SAN JUAN NEPOMUCENO"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13667",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "SAN MARTÍN DE LOBA"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13670",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "SAN PABLO"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13673",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "SANTA CATALINA"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13683",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "SANTA ROSA"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13688",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "SANTA ROSA DEL SUR"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13744",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "SIMITÍ"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13760",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "SOPLAVIENTO"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13780",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "TALAIGUA NUEVO"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13810",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "TIQUISIO"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13836",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "TURBACO"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13838",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "TURBANÁ"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13873",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "VILLANUEVA"
+  },
+  {
+    "codigo_departamento": "13",
+    "codigo_municipio": "13894",
+    "nombre_departamento": "BOLÍVAR",
+    "nombre_municipio": "ZAMBRANO"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15001",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "TUNJA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15022",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "ALMEIDA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15047",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "AQUITANIA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15051",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "ARCABUCO"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15087",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "BELÉN"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15090",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "BERBEO"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15092",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "BETÉITIVA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15097",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "BOAVITA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15104",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "BOYACÁ"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15106",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "BRICEÑO"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15109",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "BUENAVISTA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15114",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "BUSBANZÁ"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15131",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "CALDAS"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15135",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "CAMPOHERMOSO"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15162",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "CERINZA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15172",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "CHINAVITA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15176",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "CHIQUINQUIRÁ"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15180",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "CHISCAS"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15183",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "CHITA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15185",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "CHITARAQUE"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15187",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "CHIVATÁ"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15189",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "CIÉNEGA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15204",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "CÓMBITA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15212",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "COPER"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15215",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "CORRALES"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15218",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "COVARACHÍA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15223",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "CUBARÁ"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19318",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "GUAPI"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15224",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "CUCAITA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15226",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "CUÍTIVA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15232",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "CHÍQUIZA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15236",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "CHIVOR"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15238",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "DUITAMA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15244",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "EL COCUY"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15248",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "EL ESPINO"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15272",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "FIRAVITOBA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15276",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "FLORESTA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15293",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "GACHANTIVÁ"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15296",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "GÁMEZA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15299",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "GARAGOA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15317",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "GUACAMAYAS"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15322",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "GUATEQUE"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15325",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "GUAYATÁ"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15332",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "GÜICÁN DE LA SIERRA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15362",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "IZA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15367",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "JENESANO"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15368",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "JERICÓ"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15377",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "LABRANZAGRANDE"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15380",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "LA CAPILLA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15401",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "LA VICTORIA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15403",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "LA UVITA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15407",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "VILLA DE LEYVA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15425",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "MACANAL"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15442",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "MARIPÍ"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15455",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "MIRAFLORES"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15464",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "MONGUA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15466",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "MONGUÍ"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15469",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "MONIQUIRÁ"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15476",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "MOTAVITA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15480",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "MUZO"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15491",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "NOBSA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15494",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "NUEVO COLÓN"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15500",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "OICATÁ"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15507",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "OTANCHE"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15511",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "PACHAVITA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15514",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "PÁEZ"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15516",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "PAIPA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15518",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "PAJARITO"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15522",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "PANQUEBA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15531",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "PAUNA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15533",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "PAYA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15537",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "PAZ DE RÍO"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15542",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "PESCA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15550",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "PISBA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15572",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "PUERTO BOYACÁ"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15580",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "QUÍPAMA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15599",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "RAMIRIQUÍ"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15600",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "RÁQUIRA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15621",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "RONDÓN"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15632",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "SABOYÁ"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15638",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "SÁCHICA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15646",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "SAMACÁ"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15660",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "SAN EDUARDO"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15664",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "SAN JOSÉ DE PARE"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15667",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "SAN LUIS DE GACENO"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15673",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "SAN MATEO"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15676",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "SAN MIGUEL DE SEMA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15681",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "SAN PABLO DE BORBUR"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15686",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "SANTANA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15690",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "SANTA MARÍA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15693",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "SANTA ROSA DE VITERBO"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15696",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "SANTA SOFÍA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15720",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "SATIVANORTE"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15723",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "SATIVASUR"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15740",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "SIACHOQUE"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15753",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "SOATÁ"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15755",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "SOCOTÁ"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15757",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "SOCHA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15759",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "SOGAMOSO"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15761",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "SOMONDOCO"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15762",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "SORA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15763",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "SOTAQUIRÁ"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15764",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "SORACÁ"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15774",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "SUSACÓN"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15776",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "SUTAMARCHÁN"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15778",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "SUTATENZA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15790",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "TASCO"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15798",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "TENZA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15804",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "TIBANÁ"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15806",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "TIBASOSA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15808",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "TINJACÁ"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15810",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "TIPACOQUE"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15814",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "TOCA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15816",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "TOGÜÍ"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15820",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "TÓPAGA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15822",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "TOTA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15832",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "TUNUNGUÁ"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15835",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "TURMEQUÉ"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15837",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "TUTA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15839",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "TUTAZÁ"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15842",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "ÚMBITA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15861",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "VENTAQUEMADA"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15879",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "VIRACACHÁ"
+  },
+  {
+    "codigo_departamento": "15",
+    "codigo_municipio": "15897",
+    "nombre_departamento": "BOYACÁ",
+    "nombre_municipio": "ZETAQUIRA"
+  },
+  {
+    "codigo_departamento": "17",
+    "codigo_municipio": "17001",
+    "nombre_departamento": "CALDAS",
+    "nombre_municipio": "MANIZALES"
+  },
+  {
+    "codigo_departamento": "17",
+    "codigo_municipio": "17013",
+    "nombre_departamento": "CALDAS",
+    "nombre_municipio": "AGUADAS"
+  },
+  {
+    "codigo_departamento": "17",
+    "codigo_municipio": "17042",
+    "nombre_departamento": "CALDAS",
+    "nombre_municipio": "ANSERMA"
+  },
+  {
+    "codigo_departamento": "17",
+    "codigo_municipio": "17050",
+    "nombre_departamento": "CALDAS",
+    "nombre_municipio": "ARANZAZU"
+  },
+  {
+    "codigo_departamento": "17",
+    "codigo_municipio": "17088",
+    "nombre_departamento": "CALDAS",
+    "nombre_municipio": "BELALCÁZAR"
+  },
+  {
+    "codigo_departamento": "17",
+    "codigo_municipio": "17174",
+    "nombre_departamento": "CALDAS",
+    "nombre_municipio": "CHINCHINÁ"
+  },
+  {
+    "codigo_departamento": "17",
+    "codigo_municipio": "17272",
+    "nombre_departamento": "CALDAS",
+    "nombre_municipio": "FILADELFIA"
+  },
+  {
+    "codigo_departamento": "17",
+    "codigo_municipio": "17380",
+    "nombre_departamento": "CALDAS",
+    "nombre_municipio": "LA DORADA"
+  },
+  {
+    "codigo_departamento": "17",
+    "codigo_municipio": "17388",
+    "nombre_departamento": "CALDAS",
+    "nombre_municipio": "LA MERCED"
+  },
+  {
+    "codigo_departamento": "17",
+    "codigo_municipio": "17433",
+    "nombre_departamento": "CALDAS",
+    "nombre_municipio": "MANZANARES"
+  },
+  {
+    "codigo_departamento": "17",
+    "codigo_municipio": "17442",
+    "nombre_departamento": "CALDAS",
+    "nombre_municipio": "MARMATO"
+  },
+  {
+    "codigo_departamento": "17",
+    "codigo_municipio": "17444",
+    "nombre_departamento": "CALDAS",
+    "nombre_municipio": "MARQUETALIA"
+  },
+  {
+    "codigo_departamento": "17",
+    "codigo_municipio": "17446",
+    "nombre_departamento": "CALDAS",
+    "nombre_municipio": "MARULANDA"
+  },
+  {
+    "codigo_departamento": "17",
+    "codigo_municipio": "17486",
+    "nombre_departamento": "CALDAS",
+    "nombre_municipio": "NEIRA"
+  },
+  {
+    "codigo_departamento": "17",
+    "codigo_municipio": "17495",
+    "nombre_departamento": "CALDAS",
+    "nombre_municipio": "NORCASIA"
+  },
+  {
+    "codigo_departamento": "17",
+    "codigo_municipio": "17513",
+    "nombre_departamento": "CALDAS",
+    "nombre_municipio": "PÁCORA"
+  },
+  {
+    "codigo_departamento": "17",
+    "codigo_municipio": "17524",
+    "nombre_departamento": "CALDAS",
+    "nombre_municipio": "PALESTINA"
+  },
+  {
+    "codigo_departamento": "17",
+    "codigo_municipio": "17541",
+    "nombre_departamento": "CALDAS",
+    "nombre_municipio": "PENSILVANIA"
+  },
+  {
+    "codigo_departamento": "17",
+    "codigo_municipio": "17614",
+    "nombre_departamento": "CALDAS",
+    "nombre_municipio": "RIOSUCIO"
+  },
+  {
+    "codigo_departamento": "17",
+    "codigo_municipio": "17616",
+    "nombre_departamento": "CALDAS",
+    "nombre_municipio": "RISARALDA"
+  },
+  {
+    "codigo_departamento": "17",
+    "codigo_municipio": "17653",
+    "nombre_departamento": "CALDAS",
+    "nombre_municipio": "SALAMINA"
+  },
+  {
+    "codigo_departamento": "17",
+    "codigo_municipio": "17662",
+    "nombre_departamento": "CALDAS",
+    "nombre_municipio": "SAMANÁ"
+  },
+  {
+    "codigo_departamento": "17",
+    "codigo_municipio": "17665",
+    "nombre_departamento": "CALDAS",
+    "nombre_municipio": "SAN JOSÉ"
+  },
+  {
+    "codigo_departamento": "17",
+    "codigo_municipio": "17777",
+    "nombre_departamento": "CALDAS",
+    "nombre_municipio": "SUPÍA"
+  },
+  {
+    "codigo_departamento": "17",
+    "codigo_municipio": "17867",
+    "nombre_departamento": "CALDAS",
+    "nombre_municipio": "VICTORIA"
+  },
+  {
+    "codigo_departamento": "17",
+    "codigo_municipio": "17873",
+    "nombre_departamento": "CALDAS",
+    "nombre_municipio": "VILLAMARÍA"
+  },
+  {
+    "codigo_departamento": "17",
+    "codigo_municipio": "17877",
+    "nombre_departamento": "CALDAS",
+    "nombre_municipio": "VITERBO"
+  },
+  {
+    "codigo_departamento": "18",
+    "codigo_municipio": "18001",
+    "nombre_departamento": "CAQUETÁ",
+    "nombre_municipio": "FLORENCIA"
+  },
+  {
+    "codigo_departamento": "18",
+    "codigo_municipio": "18029",
+    "nombre_departamento": "CAQUETÁ",
+    "nombre_municipio": "ALBANIA"
+  },
+  {
+    "codigo_departamento": "18",
+    "codigo_municipio": "18094",
+    "nombre_departamento": "CAQUETÁ",
+    "nombre_municipio": "BELÉN DE LOS ANDAQUÍES"
+  },
+  {
+    "codigo_departamento": "18",
+    "codigo_municipio": "18150",
+    "nombre_departamento": "CAQUETÁ",
+    "nombre_municipio": "CARTAGENA DEL CHAIRÁ"
+  },
+  {
+    "codigo_departamento": "18",
+    "codigo_municipio": "18205",
+    "nombre_departamento": "CAQUETÁ",
+    "nombre_municipio": "CURILLO"
+  },
+  {
+    "codigo_departamento": "18",
+    "codigo_municipio": "18247",
+    "nombre_departamento": "CAQUETÁ",
+    "nombre_municipio": "EL DONCELLO"
+  },
+  {
+    "codigo_departamento": "18",
+    "codigo_municipio": "18256",
+    "nombre_departamento": "CAQUETÁ",
+    "nombre_municipio": "EL PAUJÍL"
+  },
+  {
+    "codigo_departamento": "18",
+    "codigo_municipio": "18410",
+    "nombre_departamento": "CAQUETÁ",
+    "nombre_municipio": "LA MONTAÑITA"
+  },
+  {
+    "codigo_departamento": "18",
+    "codigo_municipio": "18460",
+    "nombre_departamento": "CAQUETÁ",
+    "nombre_municipio": "MILÁN"
+  },
+  {
+    "codigo_departamento": "18",
+    "codigo_municipio": "18479",
+    "nombre_departamento": "CAQUETÁ",
+    "nombre_municipio": "MORELIA"
+  },
+  {
+    "codigo_departamento": "18",
+    "codigo_municipio": "18592",
+    "nombre_departamento": "CAQUETÁ",
+    "nombre_municipio": "PUERTO RICO"
+  },
+  {
+    "codigo_departamento": "18",
+    "codigo_municipio": "18610",
+    "nombre_departamento": "CAQUETÁ",
+    "nombre_municipio": "SAN JOSÉ DEL FRAGUA"
+  },
+  {
+    "codigo_departamento": "18",
+    "codigo_municipio": "18753",
+    "nombre_departamento": "CAQUETÁ",
+    "nombre_municipio": "SAN VICENTE DEL CAGUÁN"
+  },
+  {
+    "codigo_departamento": "18",
+    "codigo_municipio": "18756",
+    "nombre_departamento": "CAQUETÁ",
+    "nombre_municipio": "SOLANO"
+  },
+  {
+    "codigo_departamento": "18",
+    "codigo_municipio": "18785",
+    "nombre_departamento": "CAQUETÁ",
+    "nombre_municipio": "SOLITA"
+  },
+  {
+    "codigo_departamento": "18",
+    "codigo_municipio": "18860",
+    "nombre_departamento": "CAQUETÁ",
+    "nombre_municipio": "VALPARAÍSO"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19001",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "POPAYÁN"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19022",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "ALMAGUER"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19050",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "ARGELIA"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19075",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "BALBOA"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19100",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "BOLÍVAR"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19110",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "BUENOS AIRES"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19130",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "CAJIBÍO"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19137",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "CALDONO"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19142",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "CALOTO"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19212",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "CORINTO"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19256",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "EL TAMBO"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19290",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "FLORENCIA"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19300",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "GUACHENÉ"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19355",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "INZÁ"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19364",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "JAMBALÓ"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19392",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "LA SIERRA"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19397",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "LA VEGA"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19418",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "LÓPEZ DE MICAY"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19450",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "MERCADERES"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19455",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "MIRANDA"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19473",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "MORALES"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19513",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "PADILLA"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19517",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "PÁEZ"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19532",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "PATÍA"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19533",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "PIAMONTE"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19548",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "PIENDAMÓ - TUNÍA"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19573",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "PUERTO TEJADA"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19585",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "PURACÉ"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19622",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "ROSAS"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19693",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "SAN SEBASTIÁN"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19698",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "SANTANDER DE QUILICHAO"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19701",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "SANTA ROSA"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19743",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "SILVIA"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19760",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "SOTARÁ PAISPAMBA"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19780",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "SUÁREZ"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19785",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "SUCRE"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19807",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "TIMBÍO"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19809",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "TIMBIQUÍ"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19821",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "TORIBÍO"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19824",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "TOTORÓ"
+  },
+  {
+    "codigo_departamento": "19",
+    "codigo_municipio": "19845",
+    "nombre_departamento": "CAUCA",
+    "nombre_municipio": "VILLA RICA"
+  },
+  {
+    "codigo_departamento": "20",
+    "codigo_municipio": "20001",
+    "nombre_departamento": "CESAR",
+    "nombre_municipio": "VALLEDUPAR"
+  },
+  {
+    "codigo_departamento": "20",
+    "codigo_municipio": "20011",
+    "nombre_departamento": "CESAR",
+    "nombre_municipio": "AGUACHICA"
+  },
+  {
+    "codigo_departamento": "20",
+    "codigo_municipio": "20013",
+    "nombre_departamento": "CESAR",
+    "nombre_municipio": "AGUSTÍN CODAZZI"
+  },
+  {
+    "codigo_departamento": "20",
+    "codigo_municipio": "20032",
+    "nombre_departamento": "CESAR",
+    "nombre_municipio": "ASTREA"
+  },
+  {
+    "codigo_departamento": "20",
+    "codigo_municipio": "20045",
+    "nombre_departamento": "CESAR",
+    "nombre_municipio": "BECERRIL"
+  },
+  {
+    "codigo_departamento": "20",
+    "codigo_municipio": "20060",
+    "nombre_departamento": "CESAR",
+    "nombre_municipio": "BOSCONIA"
+  },
+  {
+    "codigo_departamento": "20",
+    "codigo_municipio": "20175",
+    "nombre_departamento": "CESAR",
+    "nombre_municipio": "CHIMICHAGUA"
+  },
+  {
+    "codigo_departamento": "20",
+    "codigo_municipio": "20178",
+    "nombre_departamento": "CESAR",
+    "nombre_municipio": "CHIRIGUANÁ"
+  },
+  {
+    "codigo_departamento": "20",
+    "codigo_municipio": "20228",
+    "nombre_departamento": "CESAR",
+    "nombre_municipio": "CURUMANÍ"
+  },
+  {
+    "codigo_departamento": "20",
+    "codigo_municipio": "20238",
+    "nombre_departamento": "CESAR",
+    "nombre_municipio": "EL COPEY"
+  },
+  {
+    "codigo_departamento": "20",
+    "codigo_municipio": "20250",
+    "nombre_departamento": "CESAR",
+    "nombre_municipio": "EL PASO"
+  },
+  {
+    "codigo_departamento": "20",
+    "codigo_municipio": "20295",
+    "nombre_departamento": "CESAR",
+    "nombre_municipio": "GAMARRA"
+  },
+  {
+    "codigo_departamento": "20",
+    "codigo_municipio": "20310",
+    "nombre_departamento": "CESAR",
+    "nombre_municipio": "GONZÁLEZ"
+  },
+  {
+    "codigo_departamento": "20",
+    "codigo_municipio": "20383",
+    "nombre_departamento": "CESAR",
+    "nombre_municipio": "LA GLORIA"
+  },
+  {
+    "codigo_departamento": "20",
+    "codigo_municipio": "20400",
+    "nombre_departamento": "CESAR",
+    "nombre_municipio": "LA JAGUA DE IBIRICO"
+  },
+  {
+    "codigo_departamento": "20",
+    "codigo_municipio": "20443",
+    "nombre_departamento": "CESAR",
+    "nombre_municipio": "MANAURE BALCÓN DEL CESAR"
+  },
+  {
+    "codigo_departamento": "20",
+    "codigo_municipio": "20517",
+    "nombre_departamento": "CESAR",
+    "nombre_municipio": "PAILITAS"
+  },
+  {
+    "codigo_departamento": "20",
+    "codigo_municipio": "20550",
+    "nombre_departamento": "CESAR",
+    "nombre_municipio": "PELAYA"
+  },
+  {
+    "codigo_departamento": "20",
+    "codigo_municipio": "20570",
+    "nombre_departamento": "CESAR",
+    "nombre_municipio": "PUEBLO BELLO"
+  },
+  {
+    "codigo_departamento": "20",
+    "codigo_municipio": "20614",
+    "nombre_departamento": "CESAR",
+    "nombre_municipio": "RÍO DE ORO"
+  },
+  {
+    "codigo_departamento": "20",
+    "codigo_municipio": "20621",
+    "nombre_departamento": "CESAR",
+    "nombre_municipio": "LA PAZ"
+  },
+  {
+    "codigo_departamento": "20",
+    "codigo_municipio": "20710",
+    "nombre_departamento": "CESAR",
+    "nombre_municipio": "SAN ALBERTO"
+  },
+  {
+    "codigo_departamento": "20",
+    "codigo_municipio": "20750",
+    "nombre_departamento": "CESAR",
+    "nombre_municipio": "SAN DIEGO"
+  },
+  {
+    "codigo_departamento": "20",
+    "codigo_municipio": "20770",
+    "nombre_departamento": "CESAR",
+    "nombre_municipio": "SAN MARTÍN"
+  },
+  {
+    "codigo_departamento": "20",
+    "codigo_municipio": "20787",
+    "nombre_departamento": "CESAR",
+    "nombre_municipio": "TAMALAMEQUE"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23001",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "MONTERÍA"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23068",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "AYAPEL"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23079",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "BUENAVISTA"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23090",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "CANALETE"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23162",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "CERETÉ"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23168",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "CHIMÁ"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23182",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "CHINÚ"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23189",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "CIÉNAGA DE ORO"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23300",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "COTORRA"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23350",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "LA APARTADA"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23417",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "LORICA"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23419",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "LOS CÓRDOBAS"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23464",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "MOMIL"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23466",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "MONTELÍBANO"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23500",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "MOÑITOS"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23555",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "PLANETA RICA"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23570",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "PUEBLO NUEVO"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23574",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "PUERTO ESCONDIDO"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23580",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "PUERTO LIBERTADOR"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23586",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "PURÍSIMA DE LA CONCEPCIÓN"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23660",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "SAHAGÚN"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23670",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "SAN ANDRÉS DE SOTAVENTO"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23672",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "SAN ANTERO"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23675",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "SAN BERNARDO DEL VIENTO"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23678",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "SAN CARLOS"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23682",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "SAN JOSÉ DE URÉ"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23686",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "SAN PELAYO"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23807",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "TIERRALTA"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23815",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "TUCHÍN"
+  },
+  {
+    "codigo_departamento": "23",
+    "codigo_municipio": "23855",
+    "nombre_departamento": "CÓRDOBA",
+    "nombre_municipio": "VALENCIA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25001",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "AGUA DE DIOS"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25019",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "ALBÁN"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25035",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "ANAPOIMA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25040",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "ANOLAIMA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25053",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "ARBELÁEZ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25086",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "BELTRÁN"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25095",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "BITUIMA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25099",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "BOJACÁ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25120",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "CABRERA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25123",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "CACHIPAY"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25126",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "CAJICÁ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25148",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "CAPARRAPÍ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25151",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "CÁQUEZA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25154",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "CARMEN DE CARUPA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25168",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "CHAGUANÍ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25175",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "CHÍA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25178",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "CHIPAQUE"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25181",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "CHOACHÍ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25183",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "CHOCONTÁ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25200",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "COGUA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25214",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "COTA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25224",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "CUCUNUBÁ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25245",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "EL COLEGIO"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25258",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "EL PEÑÓN"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25260",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "EL ROSAL"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25269",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "FACATATIVÁ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25279",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "FÓMEQUE"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25281",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "FOSCA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25286",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "FUNZA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25288",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "FÚQUENE"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25290",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "FUSAGASUGÁ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25293",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "GACHALÁ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25295",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "GACHANCIPÁ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25297",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "GACHETÁ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25299",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "GAMA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25307",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "GIRARDOT"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25312",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "GRANADA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25317",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "GUACHETÁ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25320",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "GUADUAS"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25322",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "GUASCA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25324",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "GUATAQUÍ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25326",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "GUATAVITA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25328",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "GUAYABAL DE SÍQUIMA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25335",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "GUAYABETAL"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25339",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "GUTIÉRREZ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25368",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "JERUSALÉN"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25372",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "JUNÍN"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25377",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "LA CALERA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25386",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "LA MESA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25394",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "LA PALMA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25398",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "LA PEÑA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25402",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "LA VEGA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25407",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "LENGUAZAQUE"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25426",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "MACHETÁ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25430",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "MADRID"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25436",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "MANTA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25438",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "MEDINA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25473",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "MOSQUERA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25483",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "NARIÑO"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25486",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "NEMOCÓN"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25488",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "NILO"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25489",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "NIMAIMA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25491",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "NOCAIMA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25506",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "VENECIA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25513",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "PACHO"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25518",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "PAIME"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25524",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "PANDI"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25530",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "PARATEBUENO"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25535",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "PASCA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25572",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "PUERTO SALGAR"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25580",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "PULÍ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25592",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "QUEBRADANEGRA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25594",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "QUETAME"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25596",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "QUIPILE"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25599",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "APULO"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25612",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "RICAURTE"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25645",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "SAN ANTONIO DEL TEQUENDAMA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25649",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "SAN BERNARDO"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25653",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "SAN CAYETANO"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25658",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "SAN FRANCISCO"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25662",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "SAN JUAN DE RIOSECO"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25718",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "SASAIMA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25736",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "SESQUILÉ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25740",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "SIBATÉ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25743",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "SILVANIA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25745",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "SIMIJACA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25754",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "SOACHA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25758",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "SOPÓ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25769",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "SUBACHOQUE"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25772",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "SUESCA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25777",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "SUPATÁ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25779",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "SUSA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25781",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "SUTATAUSA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25785",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "TABIO"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25793",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "TAUSA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25797",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "TENA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25799",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "TENJO"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25805",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "TIBACUY"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25807",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "TIBIRITA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25815",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "TOCAIMA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25817",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "TOCANCIPÁ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25823",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "TOPAIPÍ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25839",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "UBALÁ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25841",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "UBAQUE"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25843",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "VILLA DE SAN DIEGO DE UBATÉ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25845",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "UNE"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25851",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "ÚTICA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25862",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "VERGARA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25867",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "VIANÍ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25871",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "VILLAGÓMEZ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25873",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "VILLAPINZÓN"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25875",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "VILLETA"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25878",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "VIOTÁ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25885",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "YACOPÍ"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25898",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "ZIPACÓN"
+  },
+  {
+    "codigo_departamento": "25",
+    "codigo_municipio": "25899",
+    "nombre_departamento": "CUNDINAMARCA",
+    "nombre_municipio": "ZIPAQUIRÁ"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27001",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "QUIBDÓ"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27006",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "ACANDÍ"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27025",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "ALTO BAUDÓ"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27050",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "ATRATO"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27073",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "BAGADÓ"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27075",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "BAHÍA SOLANO"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27077",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "BAJO BAUDÓ"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27099",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "BOJAYÁ"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27135",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "EL CANTÓN DEL SAN PABLO"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27150",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "CARMEN DEL DARIÉN"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27160",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "CÉRTEGUI"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27205",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "CONDOTO"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27245",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "EL CARMEN DE ATRATO"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27250",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "EL LITORAL DEL SAN JUAN"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27361",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "ISTMINA"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27372",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "JURADÓ"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27413",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "LLORÓ"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27425",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "MEDIO ATRATO"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27430",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "MEDIO BAUDÓ"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27450",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "MEDIO SAN JUAN"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27491",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "NÓVITA"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27495",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "NUQUÍ"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27580",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "RÍO IRÓ"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27600",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "RÍO QUITO"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27615",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "RIOSUCIO"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27660",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "SAN JOSÉ DEL PALMAR"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27745",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "SIPÍ"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27787",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "TADÓ"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27800",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "UNGUÍA"
+  },
+  {
+    "codigo_departamento": "27",
+    "codigo_municipio": "27810",
+    "nombre_departamento": "CHOCÓ",
+    "nombre_municipio": "UNIÓN PANAMERICANA"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41001",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "NEIVA"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41006",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "ACEVEDO"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41013",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "AGRADO"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41016",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "AIPE"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41020",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "ALGECIRAS"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41026",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "ALTAMIRA"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41078",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "BARAYA"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41132",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "CAMPOALEGRE"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41206",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "COLOMBIA"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41244",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "ELÍAS"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41298",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "GARZÓN"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41306",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "GIGANTE"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41319",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "GUADALUPE"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41349",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "HOBO"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41357",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "ÍQUIRA"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41359",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "ISNOS"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41378",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "LA ARGENTINA"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41396",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "LA PLATA"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41483",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "NÁTAGA"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41503",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "OPORAPA"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41518",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "PAICOL"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41524",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "PALERMO"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41530",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "PALESTINA"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41548",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "PITAL"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41551",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "PITALITO"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41615",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "RIVERA"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41660",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "SALADOBLANCO"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41668",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "SAN AGUSTÍN"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41676",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "SANTA MARÍA"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41770",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "SUAZA"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41791",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "TARQUI"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41797",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "TESALIA"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41799",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "TELLO"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41801",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "TERUEL"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41807",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "TIMANÁ"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41872",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "VILLAVIEJA"
+  },
+  {
+    "codigo_departamento": "41",
+    "codigo_municipio": "41885",
+    "nombre_departamento": "HUILA",
+    "nombre_municipio": "YAGUARÁ"
+  },
+  {
+    "codigo_departamento": "44",
+    "codigo_municipio": "44001",
+    "nombre_departamento": "LA GUAJIRA",
+    "nombre_municipio": "RIOHACHA"
+  },
+  {
+    "codigo_departamento": "44",
+    "codigo_municipio": "44035",
+    "nombre_departamento": "LA GUAJIRA",
+    "nombre_municipio": "ALBANIA"
+  },
+  {
+    "codigo_departamento": "44",
+    "codigo_municipio": "44078",
+    "nombre_departamento": "LA GUAJIRA",
+    "nombre_municipio": "BARRANCAS"
+  },
+  {
+    "codigo_departamento": "44",
+    "codigo_municipio": "44090",
+    "nombre_departamento": "LA GUAJIRA",
+    "nombre_municipio": "DIBULLA"
+  },
+  {
+    "codigo_departamento": "44",
+    "codigo_municipio": "44098",
+    "nombre_departamento": "LA GUAJIRA",
+    "nombre_municipio": "DISTRACCIÓN"
+  },
+  {
+    "codigo_departamento": "44",
+    "codigo_municipio": "44110",
+    "nombre_departamento": "LA GUAJIRA",
+    "nombre_municipio": "EL MOLINO"
+  },
+  {
+    "codigo_departamento": "44",
+    "codigo_municipio": "44279",
+    "nombre_departamento": "LA GUAJIRA",
+    "nombre_municipio": "FONSECA"
+  },
+  {
+    "codigo_departamento": "44",
+    "codigo_municipio": "44378",
+    "nombre_departamento": "LA GUAJIRA",
+    "nombre_municipio": "HATONUEVO"
+  },
+  {
+    "codigo_departamento": "44",
+    "codigo_municipio": "44420",
+    "nombre_departamento": "LA GUAJIRA",
+    "nombre_municipio": "LA JAGUA DEL PILAR"
+  },
+  {
+    "codigo_departamento": "44",
+    "codigo_municipio": "44430",
+    "nombre_departamento": "LA GUAJIRA",
+    "nombre_municipio": "MAICAO"
+  },
+  {
+    "codigo_departamento": "44",
+    "codigo_municipio": "44560",
+    "nombre_departamento": "LA GUAJIRA",
+    "nombre_municipio": "MANAURE"
+  },
+  {
+    "codigo_departamento": "44",
+    "codigo_municipio": "44650",
+    "nombre_departamento": "LA GUAJIRA",
+    "nombre_municipio": "SAN JUAN DEL CESAR"
+  },
+  {
+    "codigo_departamento": "44",
+    "codigo_municipio": "44847",
+    "nombre_departamento": "LA GUAJIRA",
+    "nombre_municipio": "URIBIA"
+  },
+  {
+    "codigo_departamento": "44",
+    "codigo_municipio": "44855",
+    "nombre_departamento": "LA GUAJIRA",
+    "nombre_municipio": "URUMITA"
+  },
+  {
+    "codigo_departamento": "44",
+    "codigo_municipio": "44874",
+    "nombre_departamento": "LA GUAJIRA",
+    "nombre_municipio": "VILLANUEVA"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47001",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "SANTA MARTA"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47030",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "ALGARROBO"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47053",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "ARACATACA"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47058",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "ARIGUANÍ"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47161",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "CERRO DE SAN ANTONIO"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47170",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "CHIVOLO"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47189",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "CIÉNAGA"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47205",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "CONCORDIA"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47245",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "EL BANCO"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47258",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "EL PIÑÓN"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47268",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "EL RETÉN"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47288",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "FUNDACIÓN"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47318",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "GUAMAL"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47460",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "NUEVA GRANADA"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47541",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "PEDRAZA"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47545",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "PIJIÑO DEL CARMEN"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47551",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "PIVIJAY"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47555",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "PLATO"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47570",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "PUEBLOVIEJO"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47605",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "REMOLINO"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47660",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "SABANAS DE SAN ÁNGEL"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47675",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "SALAMINA"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47692",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "SAN SEBASTIÁN DE BUENAVISTA"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47703",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "SAN ZENÓN"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47707",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "SANTA ANA"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47720",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "SANTA BÁRBARA DE PINTO"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47745",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "SITIONUEVO"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47798",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "TENERIFE"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47960",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "ZAPAYÁN"
+  },
+  {
+    "codigo_departamento": "47",
+    "codigo_municipio": "47980",
+    "nombre_departamento": "MAGDALENA",
+    "nombre_municipio": "ZONA BANANERA"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50001",
+    "nombre_departamento": "META",
+    "nombre_municipio": "VILLAVICENCIO"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50006",
+    "nombre_departamento": "META",
+    "nombre_municipio": "ACACÍAS"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50110",
+    "nombre_departamento": "META",
+    "nombre_municipio": "BARRANCA DE UPÍA"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50124",
+    "nombre_departamento": "META",
+    "nombre_municipio": "CABUYARO"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50150",
+    "nombre_departamento": "META",
+    "nombre_municipio": "CASTILLA LA NUEVA"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50223",
+    "nombre_departamento": "META",
+    "nombre_municipio": "CUBARRAL"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50226",
+    "nombre_departamento": "META",
+    "nombre_municipio": "CUMARAL"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50245",
+    "nombre_departamento": "META",
+    "nombre_municipio": "EL CALVARIO"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50251",
+    "nombre_departamento": "META",
+    "nombre_municipio": "EL CASTILLO"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50270",
+    "nombre_departamento": "META",
+    "nombre_municipio": "EL DORADO"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50287",
+    "nombre_departamento": "META",
+    "nombre_municipio": "FUENTE DE ORO"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50313",
+    "nombre_departamento": "META",
+    "nombre_municipio": "GRANADA"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50318",
+    "nombre_departamento": "META",
+    "nombre_municipio": "GUAMAL"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50325",
+    "nombre_departamento": "META",
+    "nombre_municipio": "MAPIRIPÁN"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50330",
+    "nombre_departamento": "META",
+    "nombre_municipio": "MESETAS"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50350",
+    "nombre_departamento": "META",
+    "nombre_municipio": "LA MACARENA"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50370",
+    "nombre_departamento": "META",
+    "nombre_municipio": "URIBE"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50400",
+    "nombre_departamento": "META",
+    "nombre_municipio": "LEJANÍAS"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50450",
+    "nombre_departamento": "META",
+    "nombre_municipio": "PUERTO CONCORDIA"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50568",
+    "nombre_departamento": "META",
+    "nombre_municipio": "PUERTO GAITÁN"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50573",
+    "nombre_departamento": "META",
+    "nombre_municipio": "PUERTO LÓPEZ"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50577",
+    "nombre_departamento": "META",
+    "nombre_municipio": "PUERTO LLERAS"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50590",
+    "nombre_departamento": "META",
+    "nombre_municipio": "PUERTO RICO"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50606",
+    "nombre_departamento": "META",
+    "nombre_municipio": "RESTREPO"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50680",
+    "nombre_departamento": "META",
+    "nombre_municipio": "SAN CARLOS DE GUAROA"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50683",
+    "nombre_departamento": "META",
+    "nombre_municipio": "SAN JUAN DE ARAMA"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50686",
+    "nombre_departamento": "META",
+    "nombre_municipio": "SAN JUANITO"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50689",
+    "nombre_departamento": "META",
+    "nombre_municipio": "SAN MARTÍN"
+  },
+  {
+    "codigo_departamento": "50",
+    "codigo_municipio": "50711",
+    "nombre_departamento": "META",
+    "nombre_municipio": "VISTAHERMOSA"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52001",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "PASTO"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52019",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "ALBÁN"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52022",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "ALDANA"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52036",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "ANCUYA"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52051",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "ARBOLEDA"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52079",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "BARBACOAS"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52083",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "BELÉN"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52110",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "BUESACO"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52203",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "COLÓN"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52207",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "CONSACÁ"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52210",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "CONTADERO"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52215",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "CÓRDOBA"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52224",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "CUASPUD CARLOSAMA"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52227",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "CUMBAL"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52233",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "CUMBITARA"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52240",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "CHACHAGÜÍ"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52250",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "EL CHARCO"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52254",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "EL PEÑOL"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52256",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "EL ROSARIO"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52258",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "EL TABLÓN DE GÓMEZ"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52260",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "EL TAMBO"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52287",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "FUNES"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52317",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "GUACHUCAL"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52320",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "GUAITARILLA"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52323",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "GUALMATÁN"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52352",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "ILES"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52354",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "IMUÉS"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52356",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "IPIALES"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52378",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "LA CRUZ"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52381",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "LA FLORIDA"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52385",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "LA LLANADA"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52390",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "LA TOLA"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52399",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "LA UNIÓN"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52405",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "LEIVA"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52411",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "LINARES"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52418",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "LOS ANDES"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52427",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "MAGÜÍ"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52435",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "MALLAMA"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52473",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "MOSQUERA"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52480",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "NARIÑO"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52490",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "OLAYA HERRERA"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52506",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "OSPINA"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52520",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "FRANCISCO PIZARRO"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52540",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "POLICARPA"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52560",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "POTOSÍ"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52565",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "PROVIDENCIA"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52573",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "PUERRES"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52585",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "PUPIALES"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52612",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "RICAURTE"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52621",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "ROBERTO PAYÁN"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52678",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "SAMANIEGO"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52683",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "SANDONÁ"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52685",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "SAN BERNARDO"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52687",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "SAN LORENZO"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52693",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "SAN PABLO"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52694",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "SAN PEDRO DE CARTAGO"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52696",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "SANTA BÁRBARA"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52699",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "SANTACRUZ"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52720",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "SAPUYES"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52786",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "TAMINANGO"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52788",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "TANGUA"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52835",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "SAN ANDRÉS DE TUMACO"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52838",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "TÚQUERRES"
+  },
+  {
+    "codigo_departamento": "52",
+    "codigo_municipio": "52885",
+    "nombre_departamento": "NARIÑO",
+    "nombre_municipio": "YACUANQUER"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54001",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "SAN JOSÉ DE CÚCUTA"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54003",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "ÁBREGO"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54051",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "ARBOLEDAS"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54099",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "BOCHALEMA"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54109",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "BUCARASICA"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54125",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "CÁCOTA"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54128",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "CÁCHIRA"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54172",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "CHINÁCOTA"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54174",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "CHITAGÁ"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54206",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "CONVENCIÓN"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54223",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "CUCUTILLA"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54239",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "DURANIA"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54245",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "EL CARMEN"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54250",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "EL TARRA"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54261",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "EL ZULIA"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54313",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "GRAMALOTE"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54344",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "HACARÍ"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54347",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "HERRÁN"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54377",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "LABATECA"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54385",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "LA ESPERANZA"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54398",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "LA PLAYA"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54405",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "LOS PATIOS"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54418",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "LOURDES"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54480",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "MUTISCUA"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54498",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "OCAÑA"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54518",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "PAMPLONA"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54520",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "PAMPLONITA"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54553",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "PUERTO SANTANDER"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54599",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "RAGONVALIA"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54660",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "SALAZAR"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54670",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "SAN CALIXTO"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54673",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "SAN CAYETANO"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54680",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "SANTIAGO"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54720",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "SARDINATA"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54743",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "SILOS"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54800",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "TEORAMA"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54810",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "TIBÚ"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54820",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "TOLEDO"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54871",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "VILLA CARO"
+  },
+  {
+    "codigo_departamento": "54",
+    "codigo_municipio": "54874",
+    "nombre_departamento": "NORTE DE SANTANDER",
+    "nombre_municipio": "VILLA DEL ROSARIO"
+  },
+  {
+    "codigo_departamento": "63",
+    "codigo_municipio": "63001",
+    "nombre_departamento": "QUINDÍO",
+    "nombre_municipio": "ARMENIA"
+  },
+  {
+    "codigo_departamento": "63",
+    "codigo_municipio": "63111",
+    "nombre_departamento": "QUINDÍO",
+    "nombre_municipio": "BUENAVISTA"
+  },
+  {
+    "codigo_departamento": "63",
+    "codigo_municipio": "63130",
+    "nombre_departamento": "QUINDÍO",
+    "nombre_municipio": "CALARCÁ"
+  },
+  {
+    "codigo_departamento": "63",
+    "codigo_municipio": "63190",
+    "nombre_departamento": "QUINDÍO",
+    "nombre_municipio": "CIRCASIA"
+  },
+  {
+    "codigo_departamento": "63",
+    "codigo_municipio": "63212",
+    "nombre_departamento": "QUINDÍO",
+    "nombre_municipio": "CÓRDOBA"
+  },
+  {
+    "codigo_departamento": "63",
+    "codigo_municipio": "63272",
+    "nombre_departamento": "QUINDÍO",
+    "nombre_municipio": "FILANDIA"
+  },
+  {
+    "codigo_departamento": "63",
+    "codigo_municipio": "63302",
+    "nombre_departamento": "QUINDÍO",
+    "nombre_municipio": "GÉNOVA"
+  },
+  {
+    "codigo_departamento": "63",
+    "codigo_municipio": "63401",
+    "nombre_departamento": "QUINDÍO",
+    "nombre_municipio": "LA TEBAIDA"
+  },
+  {
+    "codigo_departamento": "63",
+    "codigo_municipio": "63470",
+    "nombre_departamento": "QUINDÍO",
+    "nombre_municipio": "MONTENEGRO"
+  },
+  {
+    "codigo_departamento": "63",
+    "codigo_municipio": "63548",
+    "nombre_departamento": "QUINDÍO",
+    "nombre_municipio": "PIJAO"
+  },
+  {
+    "codigo_departamento": "63",
+    "codigo_municipio": "63594",
+    "nombre_departamento": "QUINDÍO",
+    "nombre_municipio": "QUIMBAYA"
+  },
+  {
+    "codigo_departamento": "63",
+    "codigo_municipio": "63690",
+    "nombre_departamento": "QUINDÍO",
+    "nombre_municipio": "SALENTO"
+  },
+  {
+    "codigo_departamento": "66",
+    "codigo_municipio": "66001",
+    "nombre_departamento": "RISARALDA",
+    "nombre_municipio": "PEREIRA"
+  },
+  {
+    "codigo_departamento": "66",
+    "codigo_municipio": "66045",
+    "nombre_departamento": "RISARALDA",
+    "nombre_municipio": "APÍA"
+  },
+  {
+    "codigo_departamento": "66",
+    "codigo_municipio": "66075",
+    "nombre_departamento": "RISARALDA",
+    "nombre_municipio": "BALBOA"
+  },
+  {
+    "codigo_departamento": "66",
+    "codigo_municipio": "66088",
+    "nombre_departamento": "RISARALDA",
+    "nombre_municipio": "BELÉN DE UMBRÍA"
+  },
+  {
+    "codigo_departamento": "66",
+    "codigo_municipio": "66170",
+    "nombre_departamento": "RISARALDA",
+    "nombre_municipio": "DOSQUEBRADAS"
+  },
+  {
+    "codigo_departamento": "66",
+    "codigo_municipio": "66318",
+    "nombre_departamento": "RISARALDA",
+    "nombre_municipio": "GUÁTICA"
+  },
+  {
+    "codigo_departamento": "66",
+    "codigo_municipio": "66383",
+    "nombre_departamento": "RISARALDA",
+    "nombre_municipio": "LA CELIA"
+  },
+  {
+    "codigo_departamento": "66",
+    "codigo_municipio": "66400",
+    "nombre_departamento": "RISARALDA",
+    "nombre_municipio": "LA VIRGINIA"
+  },
+  {
+    "codigo_departamento": "66",
+    "codigo_municipio": "66440",
+    "nombre_departamento": "RISARALDA",
+    "nombre_municipio": "MARSELLA"
+  },
+  {
+    "codigo_departamento": "66",
+    "codigo_municipio": "66456",
+    "nombre_departamento": "RISARALDA",
+    "nombre_municipio": "MISTRATÓ"
+  },
+  {
+    "codigo_departamento": "66",
+    "codigo_municipio": "66572",
+    "nombre_departamento": "RISARALDA",
+    "nombre_municipio": "PUEBLO RICO"
+  },
+  {
+    "codigo_departamento": "66",
+    "codigo_municipio": "66594",
+    "nombre_departamento": "RISARALDA",
+    "nombre_municipio": "QUINCHÍA"
+  },
+  {
+    "codigo_departamento": "66",
+    "codigo_municipio": "66682",
+    "nombre_departamento": "RISARALDA",
+    "nombre_municipio": "SANTA ROSA DE CABAL"
+  },
+  {
+    "codigo_departamento": "66",
+    "codigo_municipio": "66687",
+    "nombre_departamento": "RISARALDA",
+    "nombre_municipio": "SANTUARIO"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68001",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "BUCARAMANGA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68013",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "AGUADA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68020",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "ALBANIA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68051",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "ARATOCA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68077",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "BARBOSA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68079",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "BARICHARA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68081",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "BARRANCABERMEJA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68092",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "BETULIA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68101",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "BOLÍVAR"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68121",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "CABRERA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68132",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "CALIFORNIA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68147",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "CAPITANEJO"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68152",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "CARCASÍ"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68160",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "CEPITÁ"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68162",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "CERRITO"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68167",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "CHARALÁ"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68169",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "CHARTA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68176",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "CHIMA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68179",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "CHIPATÁ"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68190",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "CIMITARRA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68207",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "CONCEPCIÓN"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68209",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "CONFINES"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68211",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "CONTRATACIÓN"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68217",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "COROMORO"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68229",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "CURITÍ"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68235",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "EL CARMEN DE CHUCURI"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68245",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "EL GUACAMAYO"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68250",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "EL PEÑÓN"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68255",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "EL PLAYÓN"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68264",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "ENCINO"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68266",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "ENCISO"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68271",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "FLORIÁN"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68276",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "FLORIDABLANCA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68296",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "GALÁN"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68298",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "GÁMBITA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68307",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "GIRÓN"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68318",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "GUACA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68320",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "GUADALUPE"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68322",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "GUAPOTÁ"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68324",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "GUAVATÁ"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68327",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "GÜEPSA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68344",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "HATO"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68368",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "JESÚS MARÍA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68370",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "JORDÁN"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68377",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "LA BELLEZA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68385",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "LANDÁZURI"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68397",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "LA PAZ"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68406",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "LEBRIJA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68418",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "LOS SANTOS"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68425",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "MACARAVITA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68432",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "MÁLAGA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68444",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "MATANZA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68464",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "MOGOTES"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68468",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "MOLAGAVITA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68498",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "OCAMONTE"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68500",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "OIBA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68502",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "ONZAGA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68522",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "PALMAR"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68524",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "PALMAS DEL SOCORRO"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68533",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "PÁRAMO"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68547",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "PIEDECUESTA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68549",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "PINCHOTE"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68572",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "PUENTE NACIONAL"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68573",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "PUERTO PARRA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68575",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "PUERTO WILCHES"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68615",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "RIONEGRO"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68655",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "SABANA DE TORRES"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68669",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "SAN ANDRÉS"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68673",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "SAN BENITO"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68679",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "SAN GIL"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68682",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "SAN JOAQUÍN"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68684",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "SAN JOSÉ DE MIRANDA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68686",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "SAN MIGUEL"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68689",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "SAN VICENTE DE CHUCURÍ"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68705",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "SANTA BÁRBARA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68720",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "SANTA HELENA DEL OPÓN"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68745",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "SIMACOTA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68755",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "SOCORRO"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68770",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "SUAITA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68773",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "SUCRE"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68780",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "SURATÁ"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68820",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "TONA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68855",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "VALLE DE SAN JOSÉ"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68861",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "VÉLEZ"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68867",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "VETAS"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68872",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "VILLANUEVA"
+  },
+  {
+    "codigo_departamento": "68",
+    "codigo_municipio": "68895",
+    "nombre_departamento": "SANTANDER",
+    "nombre_municipio": "ZAPATOCA"
+  },
+  {
+    "codigo_departamento": "70",
+    "codigo_municipio": "70001",
+    "nombre_departamento": "SUCRE",
+    "nombre_municipio": "SINCELEJO"
+  },
+  {
+    "codigo_departamento": "70",
+    "codigo_municipio": "70110",
+    "nombre_departamento": "SUCRE",
+    "nombre_municipio": "BUENAVISTA"
+  },
+  {
+    "codigo_departamento": "70",
+    "codigo_municipio": "70124",
+    "nombre_departamento": "SUCRE",
+    "nombre_municipio": "CAIMITO"
+  },
+  {
+    "codigo_departamento": "70",
+    "codigo_municipio": "70204",
+    "nombre_departamento": "SUCRE",
+    "nombre_municipio": "COLOSÓ"
+  },
+  {
+    "codigo_departamento": "70",
+    "codigo_municipio": "70215",
+    "nombre_departamento": "SUCRE",
+    "nombre_municipio": "COROZAL"
+  },
+  {
+    "codigo_departamento": "70",
+    "codigo_municipio": "70221",
+    "nombre_departamento": "SUCRE",
+    "nombre_municipio": "COVEÑAS"
+  },
+  {
+    "codigo_departamento": "70",
+    "codigo_municipio": "70230",
+    "nombre_departamento": "SUCRE",
+    "nombre_municipio": "CHALÁN"
+  },
+  {
+    "codigo_departamento": "70",
+    "codigo_municipio": "70233",
+    "nombre_departamento": "SUCRE",
+    "nombre_municipio": "EL ROBLE"
+  },
+  {
+    "codigo_departamento": "70",
+    "codigo_municipio": "70235",
+    "nombre_departamento": "SUCRE",
+    "nombre_municipio": "GALERAS"
+  },
+  {
+    "codigo_departamento": "70",
+    "codigo_municipio": "70265",
+    "nombre_departamento": "SUCRE",
+    "nombre_municipio": "GUARANDA"
+  },
+  {
+    "codigo_departamento": "70",
+    "codigo_municipio": "70400",
+    "nombre_departamento": "SUCRE",
+    "nombre_municipio": "LA UNIÓN"
+  },
+  {
+    "codigo_departamento": "70",
+    "codigo_municipio": "70418",
+    "nombre_departamento": "SUCRE",
+    "nombre_municipio": "LOS PALMITOS"
+  },
+  {
+    "codigo_departamento": "70",
+    "codigo_municipio": "70429",
+    "nombre_departamento": "SUCRE",
+    "nombre_municipio": "MAJAGUAL"
+  },
+  {
+    "codigo_departamento": "70",
+    "codigo_municipio": "70473",
+    "nombre_departamento": "SUCRE",
+    "nombre_municipio": "MORROA"
+  },
+  {
+    "codigo_departamento": "70",
+    "codigo_municipio": "70508",
+    "nombre_departamento": "SUCRE",
+    "nombre_municipio": "OVEJAS"
+  },
+  {
+    "codigo_departamento": "70",
+    "codigo_municipio": "70523",
+    "nombre_departamento": "SUCRE",
+    "nombre_municipio": "PALMITO"
+  },
+  {
+    "codigo_departamento": "70",
+    "codigo_municipio": "70670",
+    "nombre_departamento": "SUCRE",
+    "nombre_municipio": "SAMPUÉS"
+  },
+  {
+    "codigo_departamento": "70",
+    "codigo_municipio": "70678",
+    "nombre_departamento": "SUCRE",
+    "nombre_municipio": "SAN BENITO ABAD"
+  },
+  {
+    "codigo_departamento": "70",
+    "codigo_municipio": "70702",
+    "nombre_departamento": "SUCRE",
+    "nombre_municipio": "SAN JUAN DE BETULIA"
+  },
+  {
+    "codigo_departamento": "70",
+    "codigo_municipio": "70708",
+    "nombre_departamento": "SUCRE",
+    "nombre_municipio": "SAN MARCOS"
+  },
+  {
+    "codigo_departamento": "70",
+    "codigo_municipio": "70713",
+    "nombre_departamento": "SUCRE",
+    "nombre_municipio": "SAN ONOFRE"
+  },
+  {
+    "codigo_departamento": "70",
+    "codigo_municipio": "70717",
+    "nombre_departamento": "SUCRE",
+    "nombre_municipio": "SAN PEDRO"
+  },
+  {
+    "codigo_departamento": "70",
+    "codigo_municipio": "70742",
+    "nombre_departamento": "SUCRE",
+    "nombre_municipio": "SAN LUIS DE SINCÉ"
+  },
+  {
+    "codigo_departamento": "70",
+    "codigo_municipio": "70771",
+    "nombre_departamento": "SUCRE",
+    "nombre_municipio": "SUCRE"
+  },
+  {
+    "codigo_departamento": "70",
+    "codigo_municipio": "70820",
+    "nombre_departamento": "SUCRE",
+    "nombre_municipio": "SANTIAGO DE TOLÚ"
+  },
+  {
+    "codigo_departamento": "70",
+    "codigo_municipio": "70823",
+    "nombre_departamento": "SUCRE",
+    "nombre_municipio": "SAN JOSÉ DE TOLUVIEJO"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73001",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "IBAGUÉ"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73024",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "ALPUJARRA"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73026",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "ALVARADO"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73030",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "AMBALEMA"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73043",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "ANZOÁTEGUI"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73055",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "ARMERO"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73067",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "ATACO"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73124",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "CAJAMARCA"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73148",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "CARMEN DE APICALÁ"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73152",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "CASABIANCA"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73168",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "CHAPARRAL"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73200",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "COELLO"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73217",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "COYAIMA"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73226",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "CUNDAY"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73236",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "DOLORES"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73268",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "ESPINAL"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73270",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "FALAN"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73275",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "FLANDES"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73283",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "FRESNO"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73319",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "GUAMO"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73347",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "HERVEO"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73349",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "HONDA"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73352",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "ICONONZO"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73408",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "LÉRIDA"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73411",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "LÍBANO"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73443",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "SAN SEBASTIÁN DE MARIQUITA"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73449",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "MELGAR"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73461",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "MURILLO"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73483",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "NATAGAIMA"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73504",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "ORTEGA"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73520",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "PALOCABILDO"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73547",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "PIEDRAS"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73555",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "PLANADAS"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73563",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "PRADO"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73585",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "PURIFICACIÓN"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73616",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "RIOBLANCO"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73622",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "RONCESVALLES"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73624",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "ROVIRA"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73671",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "SALDAÑA"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73675",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "SAN ANTONIO"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73678",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "SAN LUIS"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73686",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "SANTA ISABEL"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73770",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "SUÁREZ"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73854",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "VALLE DE SAN JUAN"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73861",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "VENADILLO"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73870",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "VILLAHERMOSA"
+  },
+  {
+    "codigo_departamento": "73",
+    "codigo_municipio": "73873",
+    "nombre_departamento": "TOLIMA",
+    "nombre_municipio": "VILLARRICA"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76001",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "CALI"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76020",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "ALCALÁ"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76036",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "ANDALUCÍA"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76041",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "ANSERMANUEVO"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76054",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "ARGELIA"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76100",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "BOLÍVAR"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76109",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "BUENAVENTURA"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76111",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "GUADALAJARA DE BUGA"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76113",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "BUGALAGRANDE"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76122",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "CAICEDONIA"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76126",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "CALIMA"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76130",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "CANDELARIA"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76147",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "CARTAGO"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76233",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "DAGUA"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76243",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "EL ÁGUILA"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76246",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "EL CAIRO"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76248",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "EL CERRITO"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76250",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "EL DOVIO"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76275",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "FLORIDA"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76306",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "GINEBRA"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76318",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "GUACARÍ"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76364",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "JAMUNDÍ"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76377",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "LA CUMBRE"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76400",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "LA UNIÓN"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76403",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "LA VICTORIA"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76497",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "OBANDO"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76520",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "PALMIRA"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76563",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "PRADERA"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76606",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "RESTREPO"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76616",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "RIOFRÍO"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76622",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "ROLDANILLO"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76670",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "SAN PEDRO"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76736",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "SEVILLA"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76823",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "TORO"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76828",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "TRUJILLO"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76834",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "TULUÁ"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76845",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "ULLOA"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76863",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "VERSALLES"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76869",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "VIJES"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76890",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "YOTOCO"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76892",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "YUMBO"
+  },
+  {
+    "codigo_departamento": "76",
+    "codigo_municipio": "76895",
+    "nombre_departamento": "VALLE DEL CAUCA",
+    "nombre_municipio": "ZARZAL"
+  },
+  {
+    "codigo_departamento": "81",
+    "codigo_municipio": "81001",
+    "nombre_departamento": "ARAUCA",
+    "nombre_municipio": "ARAUCA"
+  },
+  {
+    "codigo_departamento": "81",
+    "codigo_municipio": "81065",
+    "nombre_departamento": "ARAUCA",
+    "nombre_municipio": "ARAUQUITA"
+  },
+  {
+    "codigo_departamento": "81",
+    "codigo_municipio": "81220",
+    "nombre_departamento": "ARAUCA",
+    "nombre_municipio": "CRAVO NORTE"
+  },
+  {
+    "codigo_departamento": "81",
+    "codigo_municipio": "81300",
+    "nombre_departamento": "ARAUCA",
+    "nombre_municipio": "FORTUL"
+  },
+  {
+    "codigo_departamento": "81",
+    "codigo_municipio": "81591",
+    "nombre_departamento": "ARAUCA",
+    "nombre_municipio": "PUERTO RONDÓN"
+  },
+  {
+    "codigo_departamento": "81",
+    "codigo_municipio": "81736",
+    "nombre_departamento": "ARAUCA",
+    "nombre_municipio": "SARAVENA"
+  },
+  {
+    "codigo_departamento": "81",
+    "codigo_municipio": "81794",
+    "nombre_departamento": "ARAUCA",
+    "nombre_municipio": "TAME"
+  },
+  {
+    "codigo_departamento": "85",
+    "codigo_municipio": "85001",
+    "nombre_departamento": "CASANARE",
+    "nombre_municipio": "YOPAL"
+  },
+  {
+    "codigo_departamento": "85",
+    "codigo_municipio": "85010",
+    "nombre_departamento": "CASANARE",
+    "nombre_municipio": "AGUAZUL"
+  },
+  {
+    "codigo_departamento": "85",
+    "codigo_municipio": "85015",
+    "nombre_departamento": "CASANARE",
+    "nombre_municipio": "CHÁMEZA"
+  },
+  {
+    "codigo_departamento": "85",
+    "codigo_municipio": "85125",
+    "nombre_departamento": "CASANARE",
+    "nombre_municipio": "HATO COROZAL"
+  },
+  {
+    "codigo_departamento": "85",
+    "codigo_municipio": "85136",
+    "nombre_departamento": "CASANARE",
+    "nombre_municipio": "LA SALINA"
+  },
+  {
+    "codigo_departamento": "85",
+    "codigo_municipio": "85139",
+    "nombre_departamento": "CASANARE",
+    "nombre_municipio": "MANÍ"
+  },
+  {
+    "codigo_departamento": "85",
+    "codigo_municipio": "85162",
+    "nombre_departamento": "CASANARE",
+    "nombre_municipio": "MONTERREY"
+  },
+  {
+    "codigo_departamento": "85",
+    "codigo_municipio": "85225",
+    "nombre_departamento": "CASANARE",
+    "nombre_municipio": "NUNCHÍA"
+  },
+  {
+    "codigo_departamento": "85",
+    "codigo_municipio": "85230",
+    "nombre_departamento": "CASANARE",
+    "nombre_municipio": "OROCUÉ"
+  },
+  {
+    "codigo_departamento": "85",
+    "codigo_municipio": "85250",
+    "nombre_departamento": "CASANARE",
+    "nombre_municipio": "PAZ DE ARIPORO"
+  },
+  {
+    "codigo_departamento": "85",
+    "codigo_municipio": "85263",
+    "nombre_departamento": "CASANARE",
+    "nombre_municipio": "PORE"
+  },
+  {
+    "codigo_departamento": "85",
+    "codigo_municipio": "85279",
+    "nombre_departamento": "CASANARE",
+    "nombre_municipio": "RECETOR"
+  },
+  {
+    "codigo_departamento": "85",
+    "codigo_municipio": "85300",
+    "nombre_departamento": "CASANARE",
+    "nombre_municipio": "SABANALARGA"
+  },
+  {
+    "codigo_departamento": "85",
+    "codigo_municipio": "85315",
+    "nombre_departamento": "CASANARE",
+    "nombre_municipio": "SÁCAMA"
+  },
+  {
+    "codigo_departamento": "85",
+    "codigo_municipio": "85325",
+    "nombre_departamento": "CASANARE",
+    "nombre_municipio": "SAN LUIS DE PALENQUE"
+  },
+  {
+    "codigo_departamento": "85",
+    "codigo_municipio": "85400",
+    "nombre_departamento": "CASANARE",
+    "nombre_municipio": "TÁMARA"
+  },
+  {
+    "codigo_departamento": "85",
+    "codigo_municipio": "85410",
+    "nombre_departamento": "CASANARE",
+    "nombre_municipio": "TAURAMENA"
+  },
+  {
+    "codigo_departamento": "85",
+    "codigo_municipio": "85430",
+    "nombre_departamento": "CASANARE",
+    "nombre_municipio": "TRINIDAD"
+  },
+  {
+    "codigo_departamento": "85",
+    "codigo_municipio": "85440",
+    "nombre_departamento": "CASANARE",
+    "nombre_municipio": "VILLANUEVA"
+  },
+  {
+    "codigo_departamento": "86",
+    "codigo_municipio": "86001",
+    "nombre_departamento": "PUTUMAYO",
+    "nombre_municipio": "MOCOA"
+  },
+  {
+    "codigo_departamento": "86",
+    "codigo_municipio": "86219",
+    "nombre_departamento": "PUTUMAYO",
+    "nombre_municipio": "COLÓN"
+  },
+  {
+    "codigo_departamento": "86",
+    "codigo_municipio": "86320",
+    "nombre_departamento": "PUTUMAYO",
+    "nombre_municipio": "ORITO"
+  },
+  {
+    "codigo_departamento": "86",
+    "codigo_municipio": "86568",
+    "nombre_departamento": "PUTUMAYO",
+    "nombre_municipio": "PUERTO ASÍS"
+  },
+  {
+    "codigo_departamento": "86",
+    "codigo_municipio": "86569",
+    "nombre_departamento": "PUTUMAYO",
+    "nombre_municipio": "PUERTO CAICEDO"
+  },
+  {
+    "codigo_departamento": "86",
+    "codigo_municipio": "86571",
+    "nombre_departamento": "PUTUMAYO",
+    "nombre_municipio": "PUERTO GUZMÁN"
+  },
+  {
+    "codigo_departamento": "86",
+    "codigo_municipio": "86573",
+    "nombre_departamento": "PUTUMAYO",
+    "nombre_municipio": "PUERTO LEGUÍZAMO"
+  },
+  {
+    "codigo_departamento": "86",
+    "codigo_municipio": "86749",
+    "nombre_departamento": "PUTUMAYO",
+    "nombre_municipio": "SIBUNDOY"
+  },
+  {
+    "codigo_departamento": "86",
+    "codigo_municipio": "86755",
+    "nombre_departamento": "PUTUMAYO",
+    "nombre_municipio": "SAN FRANCISCO"
+  },
+  {
+    "codigo_departamento": "86",
+    "codigo_municipio": "86757",
+    "nombre_departamento": "PUTUMAYO",
+    "nombre_municipio": "SAN MIGUEL"
+  },
+  {
+    "codigo_departamento": "86",
+    "codigo_municipio": "86760",
+    "nombre_departamento": "PUTUMAYO",
+    "nombre_municipio": "SANTIAGO"
+  },
+  {
+    "codigo_departamento": "86",
+    "codigo_municipio": "86865",
+    "nombre_departamento": "PUTUMAYO",
+    "nombre_municipio": "VALLE DEL GUAMUEZ"
+  },
+  {
+    "codigo_departamento": "86",
+    "codigo_municipio": "86885",
+    "nombre_departamento": "PUTUMAYO",
+    "nombre_municipio": "VILLAGARZÓN"
+  },
+  {
+    "codigo_departamento": "88",
+    "codigo_municipio": "88001",
+    "nombre_departamento": "ARCHIPIÉLAGO DE SAN ANDRÉS. PROVIDENCIA Y SANTA CATALINA",
+    "nombre_municipio": "SAN ANDRÉS"
+  },
+  {
+    "codigo_departamento": "88",
+    "codigo_municipio": "88564",
+    "nombre_departamento": "ARCHIPIÉLAGO DE SAN ANDRÉS. PROVIDENCIA Y SANTA CATALINA",
+    "nombre_municipio": "PROVIDENCIA"
+  },
+  {
+    "codigo_departamento": "91",
+    "codigo_municipio": "91001",
+    "nombre_departamento": "AMAZONAS",
+    "nombre_municipio": "LETICIA"
+  },
+  {
+    "codigo_departamento": "91",
+    "codigo_municipio": "91540",
+    "nombre_departamento": "AMAZONAS",
+    "nombre_municipio": "PUERTO NARIÑO"
+  },
+  {
+    "codigo_departamento": "94",
+    "codigo_municipio": "94001",
+    "nombre_departamento": "GUAINÍA",
+    "nombre_municipio": "INÍRIDA"
+  },
+  {
+    "codigo_departamento": "94",
+    "codigo_municipio": "94343",
+    "nombre_departamento": "GUAINÍA",
+    "nombre_municipio": "BARRANCOMINAS"
+  },
+  {
+    "codigo_departamento": "95",
+    "codigo_municipio": "95001",
+    "nombre_departamento": "GUAVIARE",
+    "nombre_municipio": "SAN JOSÉ DEL GUAVIARE"
+  },
+  {
+    "codigo_departamento": "95",
+    "codigo_municipio": "95015",
+    "nombre_departamento": "GUAVIARE",
+    "nombre_municipio": "CALAMAR"
+  },
+  {
+    "codigo_departamento": "95",
+    "codigo_municipio": "95025",
+    "nombre_departamento": "GUAVIARE",
+    "nombre_municipio": "EL RETORNO"
+  },
+  {
+    "codigo_departamento": "95",
+    "codigo_municipio": "95200",
+    "nombre_departamento": "GUAVIARE",
+    "nombre_municipio": "MIRAFLORES"
+  },
+  {
+    "codigo_departamento": "97",
+    "codigo_municipio": "97001",
+    "nombre_departamento": "VAUPÉS",
+    "nombre_municipio": "MITÚ"
+  },
+  {
+    "codigo_departamento": "97",
+    "codigo_municipio": "97161",
+    "nombre_departamento": "VAUPÉS",
+    "nombre_municipio": "CARURÚ"
+  },
+  {
+    "codigo_departamento": "97",
+    "codigo_municipio": "97666",
+    "nombre_departamento": "VAUPÉS",
+    "nombre_municipio": "TARAIRA"
+  },
+  {
+    "codigo_departamento": "99",
+    "codigo_municipio": "99001",
+    "nombre_departamento": "VICHADA",
+    "nombre_municipio": "PUERTO CARREÑO"
+  },
+  {
+    "codigo_departamento": "99",
+    "codigo_municipio": "99524",
+    "nombre_departamento": "VICHADA",
+    "nombre_municipio": "LA PRIMAVERA"
+  },
+  {
+    "codigo_departamento": "99",
+    "codigo_municipio": "99624",
+    "nombre_departamento": "VICHADA",
+    "nombre_municipio": "SANTA ROSALÍA"
+  },
+  {
+    "codigo_departamento": "99",
+    "codigo_municipio": "99773",
+    "nombre_departamento": "VICHADA",
+    "nombre_municipio": "CUMARIBO"
+  }
+]

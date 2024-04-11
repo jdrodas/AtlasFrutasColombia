@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "nombre": "Sapindales",
+    "clase_id": 1
+  },
+  {
+    "id": 2,
+    "nombre": "Myrtales",
+    "clase_id": 1
+  },
+  {
+    "id": 3,
+    "nombre": "Malpighiales",
+    "clase_id": 1
+  },
+  {
+    "id": 4,
+    "nombre": "Malvales",
+    "clase_id": 1
+  },
+  {
+    "id": 5,
+    "nombre": "Laurales",
+    "clase_id": 1
+  },
+  {
+    "id": 6,
+    "nombre": "Zingiberales",
+    "clase_id": 2
+  }
+]

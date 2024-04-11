@@ -1,0 +1,6 @@
+id;nombre;altitud_minima;altitud_maxima
+1;Cálido;0;1000
+2;Templado;1000;2000
+3;Frío;2000;3000
+4;Páramo;3000;4200
+5;Nieves Perpetuas;4200;8000

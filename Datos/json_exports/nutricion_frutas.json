@@ -1,0 +1,30 @@
+[
+  {
+    "fruta_id": 1,
+    "carbohidratos": 14.98,
+    "azucares": 13.66,
+    "grasas": 0.38,
+    "proteinas": 0.82
+  },
+  {
+    "fruta_id": 20,
+    "carbohidratos": 8.53,
+    "azucares": 0.66,
+    "grasas": 14.66,
+    "proteinas": 2
+  },
+  {
+    "fruta_id": 13,
+    "carbohidratos": 14.32,
+    "azucares": 8.92,
+    "grasas": 0.95,
+    "proteinas": 2.55
+  },
+  {
+    "fruta_id": 21,
+    "carbohidratos": 22.8,
+    "azucares": 12.23,
+    "grasas": 0.33,
+    "proteinas": 1.09
+  }
+]

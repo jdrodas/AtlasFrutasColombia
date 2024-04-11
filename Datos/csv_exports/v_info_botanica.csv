@@ -1,0 +1,12 @@
+reino_id;reino_nombre;division_id;division_nombre;clase_id;clase_nombre;orden_id;orden_nombre;familia_id;familia_nombre;genero_id;genero_nombre;especie_id;especie_nombre
+1;Plantae;1;Magnoliophyta;1;Magnoliopsida;1;Sapindales;1;Anacardiaceae;1;Mangifera;1;Mangifera indica
+1;Plantae;1;Magnoliophyta;1;Magnoliopsida;2;Myrtales;2;Myrtaceae;2;Acca;2;Acca sellowiana
+1;Plantae;1;Magnoliophyta;1;Magnoliopsida;1;Sapindales;3;Sapindaceae;5;Melicoccus;3;Melicoccus bijugatus
+1;Plantae;1;Magnoliophyta;1;Magnoliopsida;3;Malpighiales;4;Passifloraceae;6;Passiflora;4;Passiflora ligularis
+1;Plantae;1;Magnoliophyta;1;Magnoliopsida;3;Malpighiales;4;Passifloraceae;6;Passiflora;5;Passiflora popenovii
+1;Plantae;1;Magnoliophyta;1;Magnoliopsida;3;Malpighiales;4;Passifloraceae;6;Passiflora;6;Passiflora verrucifera
+1;Plantae;1;Magnoliophyta;1;Magnoliopsida;3;Malpighiales;4;Passifloraceae;6;Passiflora;7;Passiflora edulis
+1;Plantae;1;Magnoliophyta;1;Magnoliopsida;4;Malvales;5;Malvaceae;7;Theobroma;9;Theobroma grandiflorum
+1;Plantae;1;Magnoliophyta;1;Magnoliopsida;5;Laurales;6;Lauraceae;8;Persea;14;Persea Americana
+1;Plantae;1;Magnoliophyta;1;Magnoliopsida;2;Myrtales;2;Myrtaceae;9;Psidium;15;Psidium Guajava
+1;Plantae;1;Magnoliophyta;2;Liliopsida;6;Zingiberales;7;Musaceae;10;Musa;16;Musa Acuminata

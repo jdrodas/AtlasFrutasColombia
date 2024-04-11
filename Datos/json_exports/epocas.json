@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "nombre": "Bimestral Junio Julio",
+    "mes_inicio": 6,
+    "mes_final": 7
+  },
+  {
+    "id": 2,
+    "nombre": "Bimestral Noviembre Diciembre",
+    "mes_inicio": 11,
+    "mes_final": 12
+  },
+  {
+    "id": 3,
+    "nombre": "Semestral Julio Diciembre",
+    "mes_inicio": 7,
+    "mes_final": 12
+  },
+  {
+    "id": 4,
+    "nombre": "Trimestre Enero Marzo",
+    "mes_inicio": 1,
+    "mes_final": 3
+  },
+  {
+    "id": 5,
+    "nombre": "Cuatrimestre Enero Abril",
+    "mes_inicio": 1,
+    "mes_final": 4
+  },
+  {
+    "id": 6,
+    "nombre": "Bimestral Mayo Junio",
+    "mes_inicio": 5,
+    "mes_final": 6
+  }
+]

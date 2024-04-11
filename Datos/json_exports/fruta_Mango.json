@@ -1,0 +1,47 @@
+{
+    "produccion": [
+        {
+            "epoca": "Bimestral Junio Julio",
+            "clima": "Cálido",
+            "municipio": "Espinal",
+            "departamento": "Tolima"
+        },
+        {
+            "epoca": "Bimestral Junio Julio",
+            "clima": "Cálido",
+            "municipio": "Tocaima",
+            "departamento": "Cundinamarca"
+        },
+        {
+            "epoca": "Bimestral Noviembre Diciembre",
+            "clima": "Cálido",
+            "municipio": "Espinal",
+            "departamento": "Tolima"
+        },
+        {
+            "epoca": "Bimestral Noviembre Diciembre",
+            "clima": "Cálido",
+            "municipio": "Tocaima",
+            "departamento": "Cundinamarca"
+        }
+    ],
+    "taxonomia": {
+        "reino": "Plantae",
+        "division": "Magnoliophyta",
+        "clase": "Magnoliopsida",
+        "orden": "Sapindales",
+        "familia": "Anacardiaceae",
+        "genero": "Mangifera",
+        "especie": "Mangifera indica"
+    },
+    "nutricion": {
+        "azucares": "13.66",
+        "carbohidratos": "14.98",
+        "grasas": "0.38",
+        "proteinas": "0.82"
+    },
+    "id": 1,
+    "nombre": "Mango",
+    "url_wikipedia": "https://es.wikipedia.org/wiki/Mangifera_indica",
+    "url_imagen": "https://upload.wikimedia.org/wikipedia/commons/4/49/Mango_-_single.jpg"
+}

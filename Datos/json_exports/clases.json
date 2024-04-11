@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "nombre": "Magnoliopsida",
+    "division_id": 1
+  },
+  {
+    "id": 2,
+    "nombre": "Liliopsida",
+    "division_id": 1
+  }
+]

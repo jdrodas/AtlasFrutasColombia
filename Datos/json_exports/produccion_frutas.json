@@ -1,0 +1,68 @@
+[
+  {
+    "fruta_id": 1,
+    "clima_id": 1,
+    "epoca_id": 1,
+    "municipio_id": "25815"
+  },
+  {
+    "fruta_id": 1,
+    "clima_id": 1,
+    "epoca_id": 2,
+    "municipio_id": "25815"
+  },
+  {
+    "fruta_id": 1,
+    "clima_id": 1,
+    "epoca_id": 1,
+    "municipio_id": "73268"
+  },
+  {
+    "fruta_id": 1,
+    "clima_id": 1,
+    "epoca_id": 2,
+    "municipio_id": "73268"
+  },
+  {
+    "fruta_id": 20,
+    "clima_id": 3,
+    "epoca_id": 5,
+    "municipio_id": "05318"
+  },
+  {
+    "fruta_id": 20,
+    "clima_id": 3,
+    "epoca_id": 5,
+    "municipio_id": "05376"
+  },
+  {
+    "fruta_id": 20,
+    "clima_id": 3,
+    "epoca_id": 5,
+    "municipio_id": "05607"
+  },
+  {
+    "fruta_id": 21,
+    "clima_id": 1,
+    "epoca_id": 6,
+    "municipio_id": "05490"
+  },
+  {
+    "fruta_id": 21,
+    "clima_id": 1,
+    "epoca_id": 6,
+    "municipio_id": "05045"
+  },
+  {
+    "fruta_id": 13,
+    "clima_id": 2,
+    "epoca_id": 5,
+    "municipio_id": "17174"
+  },
+  {
+    "fruta_id": 13,
+    "clima_id": 2,
+    "epoca_id": 5,
+    "municipio_id": "17524"
+  }
+]
