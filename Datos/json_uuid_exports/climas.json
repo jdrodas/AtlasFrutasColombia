@@ -1,0 +1,32 @@
+[
+  {
+    "nombre": "Cálido",
+    "altitud_minima": 0,
+    "altitud_maxima": 1000,
+    "id": "9758e3e2-c343-4ad9-81f1-21bf347f7ef2"
+  },
+  {
+    "nombre": "Templado",
+    "altitud_minima": 1000,
+    "altitud_maxima": 2000,
+    "id": "056d2a1e-0f8c-45e7-84f3-ddba44ea3462"
+  },
+  {
+    "nombre": "Frío",
+    "altitud_minima": 2000,
+    "altitud_maxima": 3000,
+    "id": "25fc7dec-2848-4dfe-bf5c-4658e5c59233"
+  },
+  {
+    "nombre": "Páramo",
+    "altitud_minima": 3000,
+    "altitud_maxima": 4200,
+    "id": "071bce94-0159-4cc9-992a-259ca1eb1606"
+  },
+  {
+    "nombre": "Nieves Perpetuas",
+    "altitud_minima": 4200,
+    "altitud_maxima": 8000,
+    "id": "fcaab1c6-ecce-4e75-b639-39aff4568490"
+  }
+]

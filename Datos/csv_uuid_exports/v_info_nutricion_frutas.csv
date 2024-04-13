@@ -1,0 +1,12 @@
+fruta_id;fruta_nombre;url_wikipedia;url_imagen;azucares;grasas;carbohidratos;proteinas
+2b181c2e-1e89-447e-a733-10d49de15b92;cacao de monte;https://es.wikipedia.org/wiki/Theobroma_subincanum;https://catalogofloravalleaburra.eia.edu.co/storage/images/81860a37dcf5c93a05dcd66a2c72370059326122.jpg;;;;
+64c91beb-f416-46da-bbd8-ce7786298900;Gulupa;https://es.wikipedia.org/wiki/Passiflora_edulis_f._edulis;https://es.wikipedia.org/wiki/Passiflora_edulis_f._edulis#/media/Archivo:Passiflora_edulis_f._edulis_Sims.jpg;;;;
+18d59241-41ff-4a34-8fbd-515d2ec7d87b;Banano;https://es.wikipedia.org/wiki/Banana;https://es.wikipedia.org/wiki/Banana#/media/Archivo:Bananas.jpg;12.23;0.33;22.8;1.09
+247581d4-fbb1-4bd9-9c50-18ec9b787add;Ciruela;https://es.wikipedia.org/wiki/ciruela_andina;https://en.wikipedia.org/wiki/Spondias_purpurea#/media/File:Siniguelas_(Spanish_plum_-_Spondias_purpurea)_-_Mindanao,_Philippines.jpg;;;;
+92ce0a9b-0ba6-41eb-a22f-f07e46b374bf;Copoazú;https://es.wikipedia.org/wiki/Theobroma_grandiflorum;https://es.wikipedia.org/wiki/Theobroma_grandiflorum#/media/Archivo:Theobroma_grandiflorum,_source_of_Cupulate_Chocolate_(9906147393).jpg;;;;
+c7f1dea8-1425-44d4-aac8-131acc040df7;Mamoncillo;https://es.wikipedia.org/wiki/Melicoccus_bijugatus;https://es.wikipedia.org/wiki/Melicoccus_bijugatus#/media/Archivo:Melicoccus_bijugatus.jpg;;;;
+3603cb10-1820-4a14-aee2-4d73765a8887;Feijoa;https://es.wikipedia.org/wiki/Acca_sellowiana;https://es.wikipedia.org/wiki/Acca_sellowiana#/media/Archivo:Acca_sellowiana_Fruit_MHNT_Fronton.jpg;;;;
+43fdea94-91f0-4773-873e-0eda865ae3a2;Guayaba;https://es.wikipedia.org/wiki/Psidium_guajava;https://es.wikipedia.org/wiki/Psidium_guajava#/media/Archivo:Goiaba_vermelha.jpg;8.92;0.95;14.32;2.55
+a9f7d3f6-e304-4192-b8c7-9a74aed2a618;Aguacate Hass;https://es.m.wikipedia.org/wiki/Hass_(variedad_de_Persea_americana);https://es.m.wikipedia.org/wiki/Hass_(variedad_de_Persea_americana)#/media/Archivo%3AAvocado_Hass_-_single_and_halved.jpg;0.66;14.66;8.53;2
+1f672d2a-194e-48ad-9277-83fa694c9afc;Cholupa;https://es.wikipedia.org/wiki/Passiflora_maliformis;https://aneia.uniandes.edu.co/wp-content/uploads/2023/06/Imagen11-3.jpg;;;;
+b58089ad-bee7-417f-bc20-6fa2c0e0e67a;Mango;https://es.wikipedia.org/wiki/Mangifera_indica;https://upload.wikimedia.org/wikipedia/commons/4/49/Mango_-_single.jpg;13.66;0.38;14.98;0.82

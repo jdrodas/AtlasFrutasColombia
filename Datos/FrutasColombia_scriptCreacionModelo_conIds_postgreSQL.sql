@@ -53,9 +53,6 @@ alter default privileges for user frutas_app in schema core grant insert, update
 alter default privileges for user frutas_app in schema core grant execute on routines TO frutas_usr;
 alter user frutas_usr set search_path to core;
 
--- activación de la extensión uuid-ossp - Permite usar los uuid
-create extension if not exists "uuid-oosp";
-
 -- ----------------------------------------
 -- Script de creación de tablas y vistas
 -- ----------------------------------------
@@ -66,8 +63,7 @@ create table core.divipola
     codigo_departamento varchar(2) not null,
     codigo_municipio varchar(10) not null,
     nombre_departamento varchar(100) not null,
-    nombre_municipio varchar(100) not null,
-    guid_departamento uuid;
+    nombre_municipio varchar(100) not null
 );
 
 comment on table core.divipola is 'División Político Administrativa de Colombia';
@@ -75,62 +71,50 @@ comment on column core.divipola.codigo_departamento is 'id del departamento seg�
 comment on column core.divipola.nombre_departamento is 'Nombre del departamento';
 comment on column core.divipola.codigo_municipio is 'id del municipio según DIVIPOLA';
 comment on column core.divipola.nombre_municipio is 'Nombre del municipio';
-comment on column core.divipola.guid_departamento is 'GUID del departamento';
 
 -- Tabla Departamentos
 create table core.departamentos
 (
-    id              uuid default uuid_generate_v4() constraint departamentos_pk primary key,    
-    divipola_id     varchar(2) not null,
-    nombre 		    varchar(60) not null constraint departamentos_nombre_uk unique
+    id          varchar(2)          constraint departamentos_pk primary key,
+    nombre 		varchar(60)         not null constraint departamentos_nombre_uk unique
 );
 
 comment on table core.departamentos is 'Departamentos del país';
-comment on column core.departamentos.id is 'id del departamento';
-comment on column core.departamentos.id is 'id DIVIPOLA del departamento';
+comment on column core.departamentos.id is 'id del departamento según DIVIPOLA';
 comment on column core.departamentos.nombre is 'Nombre del departamento';
 
 -- cargamos desde la tabla inicial del divipola
-insert into core.departamentos (divipola_id, nombre)
+insert into core.departamentos (id, nombre)
 (
     select distinct codigo_departamento, initcap(nombre_departamento)
     from core.divipola
 );
 
--- devolvemos el guid del departamento al divipola
-
-update divipola set guid_departamento =
-    (select id from departamentos where upper(nombre) = nombre_departamento
-                                  and codigo_departamento = divipola_id)
-where departamento_guid is null;
-
 -- Tabla Municipios
 create table core.municipios
 (
-    id              uuid default uuid_generate_v4() constraint municipios_pk primary key,
-    divipola_id     varchar(5) not null,    
-    nombre          varchar(100) not null,    
-    departamento_id uuid not null constraint municipio_departamento_fk references core.departamentos,
+    id              varchar(10)     constraint municipios_pk primary key,
+    nombre          varchar(100)    not null,
+    departamento_id varchar(2)      not null constraint municipio_departamento_fk references core.departamentos,
     constraint municipio_departamento_uk unique (nombre, departamento_id)
 );
 
 comment on table core.municipios is 'Municipios del pais';
-comment on column core.municipios.id is 'id del municipio';
-comment on column core.departamentos.id is 'id DIVIPOLA del municipio';
+comment on column core.municipios.id is 'id del municipio según DIVIPOLA';
 comment on column core.municipios.nombre is 'Nombre del municipio';
 comment on column core.municipios.departamento_id is 'id del departamento asociado al municipio';
 
 -- Cargamos datos desde el esquema inicial
-insert into core.municipios (divipola_id, nombre, departamento_id)
+insert into core.municipios (id, nombre, departamento_id)
 (
-    select codigo_municipio, initcap(nombre_municipio), departamento_guid
+    select codigo_municipio, initcap(nombre_municipio), codigo_departamento
     from core.divipola
 );
 
 -- Tabla Frutas
 create table core.frutas
 (
-    id              uuid default uuid_generate_v4() constraint frutas_pk primary key,
+    id              integer generated always as identity constraint frutas_pk primary key,
     nombre          varchar(100) not null constraint frutas_nombre_uk unique,
     url_wikipedia   varchar(500) not null,
     url_imagen      varchar(500) not null
@@ -148,7 +132,7 @@ comment on column core.frutas.url_imagen is 'URL de la imagen en Wikipedia de la
 -- Tabla Reinos
 create table core.reinos
 (
-    id              uuid default uuid_generate_v4() constraint reinos_pk primary key,
+    id              integer generated always as identity constraint reinos_pk primary key,
     nombre          varchar(100) not null constraint reino_nombre_uk unique
 );
 
@@ -159,9 +143,9 @@ comment on column core.reinos.nombre is 'nombre del reino';
 -- Tabla Divisiones
 create table core.divisiones
 (
-    id              uuid default uuid_generate_v4() constraint divisiones_pk primary key,
+    id              integer generated always as identity constraint divisiones_pk primary key,
     nombre          varchar(100) not null constraint division_nombre_uk unique,
-    reino_id        uuid not null constraint division_reino_fk references core.reinos
+    reino_id        integer not null constraint division_reino_fk references core.reinos
 );
 
 comment on table core.divisiones is 'Divisiones en la clasificación botánica';
@@ -172,9 +156,9 @@ comment on column core.divisiones.reino_id is 'ID del reino al que pertenece la 
 -- Tabla Clases
 create table core.clases
 (
-    id              uuid default uuid_generate_v4() constraint clases_pk primary key,
+    id              integer generated always as identity constraint clases_pk primary key,
     nombre          varchar(100) not null constraint clase_nombre_uk unique,
-    division_id     uuid not null constraint clase_division_fk references core.divisiones
+    division_id        integer not null constraint clase_division_fk references core.divisiones
 );
 
 comment on table core.clases is 'Clases en la clasificación botánica';
@@ -185,9 +169,9 @@ comment on column core.clases.division_id is 'ID de la división al que pertenec
 -- Tabla Ordenes
 create table core.ordenes
 (
-    id              uuid default uuid_generate_v4() constraint ordenes_pk primary key,
+    id              integer generated always as identity constraint ordenes_pk primary key,
     nombre          varchar(100) not null constraint orden_nombre_uk unique,
-    clase_id        uuid not null constraint orden_clase_fk references core.clases
+    clase_id        integer not null constraint orden_clase_fk references core.clases
 );
 
 comment on table core.ordenes is 'Ordenes en la clasificación botánica';
@@ -198,9 +182,9 @@ comment on column core.ordenes.clase_id is 'ID de la clase al que pertenece el o
 -- Tabla Familias
 create table core.familias
 (
-    id              uuid default uuid_generate_v4() constraint familias_pk primary key,
+    id              integer generated always as identity constraint familias_pk primary key,
     nombre          varchar(100) not null constraint familia_nombre_uk unique,
-    orden_id        uuid not null constraint familia_orden_fk references core.ordenes
+    orden_id        integer not null constraint familia_orden_fk references core.ordenes
 );
 
 comment on table core.familias is 'Familias en la clasificación botánica';
@@ -211,9 +195,9 @@ comment on column core.familias.orden_id is 'ID del orden al que pertenece la fa
 -- Tabla Generos
 create table core.generos
 (
-    id              uuid default uuid_generate_v4() constraint generos_pk primary key,
+    id              integer generated always as identity constraint generos_pk primary key,
     nombre          varchar(100) not null constraint genero_nombre_uk unique,
-    familia_id      uuid not null constraint genero_familia_fk references core.familias
+    familia_id        integer not null constraint genero_familia_fk references core.familias
 );
 
 comment on table core.generos is 'Géneros en la clasificación botánica';
@@ -224,9 +208,9 @@ comment on column core.generos.familia_id is 'ID de la familia al que pertenece 
 -- Tabla Especies
 create table core.especies
 (
-    id              uuid default uuid_generate_v4() constraint especies_pk primary key,
+    id              integer generated always as identity constraint especies_pk primary key,
     nombre          varchar(100) not null constraint especie_nombre_uk unique,
-    genero_id       uuid not null constraint especie_genero_fk references core.generos
+    genero_id        integer not null constraint especie_genero_fk references core.generos
 );
 
 comment on table core.especies is 'Especies en la clasificación botánica';
@@ -236,14 +220,14 @@ comment on column core.especies.genero_id is 'ID del genero al que pertenece la 
 
 create table core.taxonomia_frutas
 (
-    especie_id uuid not null constraint taxonomia_frutas_especie_fk references core.especies,
-    fruta_id   uuid not null constraint taxonomia_frutas_fruta_fk references core.frutas,
+    especie_id integer not null constraint taxonomia_frutas_especie_fk references core.especies,
+    fruta_id   integer not null constraint taxonomia_frutas_fruta_fk references core.frutas,
     constraint taxonomia_frutas_pk primary key (fruta_id, especie_id)
 );
 
 comment on table core.taxonomia_frutas is 'Relación de la fruta con su clasificación taxonómica';
 comment on column core.taxonomia_frutas.fruta_id is 'Id de la fruta';
-comment on column core.taxonomia_frutas.especie_id is 'Id de la especie taxonómica a la que pertenece la fruta';
+comment on column core.taxonomia_frutas.especie_id is 'Especie taxonómica a la que pertenece la fruta';
 
 -- -------------------------------------------
 -- Tablas de Producción y Cultivo
@@ -251,7 +235,7 @@ comment on column core.taxonomia_frutas.especie_id is 'Id de la especie taxonóm
 -- Tabla Climas
 create table core.climas
 (
-    id              	uuid default uuid_generate_v4() constraint climas_pk primary key,
+    id              	integer generated always as identity constraint climas_pk primary key,
     nombre          	varchar(50) not null constraint clima_nombre_uk unique,
 	altitud_minima		integer not null,
 	altitud_maxima		integer not null
@@ -266,7 +250,7 @@ comment on column core.climas.altitud_maxima is 'Altitud máxima del piso térmi
 -- Tabla Epocas
 create table core.epocas
 (
-    id              uuid default uuid_generate_v4() constraint epocas_pk primary key,
+    id              integer generated always as identity constraint epocas_pk primary key,
     nombre          varchar(50) not null constraint epocas_nombre_uk unique,
 	mes_inicio		integer not null,
 	mes_final		integer not null
@@ -281,10 +265,10 @@ comment on column core.epocas.mes_final is 'Mes final de la época de producció
 -- Tabla Produccion_Fruta
 create table core.produccion_frutas
 (
-    fruta_id        uuid not null constraint produccion_frutas_fruta_fk references core.frutas,
-    clima_id        uuid not null constraint produccion_frutas_clima_fk references core.climas,    
-    epoca_id        uuid not null constraint produccion_frutas_epoca_fk references core.epocas,
-    municipio_id    uuid not null constraint produccion_frutas_municipio_fk references core.municipios,
+    fruta_id        integer not null constraint produccion_frutas_fruta_fk references core.frutas,
+    clima_id        integer not null constraint produccion_frutas_clima_fk references core.climas,    
+    epoca_id        integer not null constraint produccion_frutas_epoca_fk references core.epocas,
+    municipio_id    varchar(10) not null constraint produccion_frutas_municipio_fk references core.municipios,
     constraint produccion_frutas_pk primary key (fruta_id, clima_id, epoca_id, municipio_id)
 );
 
@@ -297,7 +281,7 @@ comment on column core.produccion_frutas.municipio_id is 'Id del municipio';
 -- Tabla nutricion_frutas
 create table core.nutricion_frutas
 (
-    fruta_id        uuid not null constraint nutricion_frutas_fruta_fk references core.frutas,
+    fruta_id        integer not null constraint produccion_frutas_fruta_fk references core.frutas,
     carbohidratos   float not null,
     azucares        float not null,
     grasas          float not null,
@@ -342,7 +326,6 @@ create or replace view core.v_info_botanica as
         left join especies e on g.id = e.genero_id
 );
 
--- v_info_frutas
 create view core.v_info_frutas as
 (
     select distinct
@@ -412,25 +395,19 @@ create or replace view core.v_info_nutricion_frutas as
         left join  core.nutricion_frutas nf on f.id = nf.fruta_id
 );
 
--- v_info_ubicaciones
-create or replace view core.v_info_ubicaciones as
-(select distinct m.id municipio_id,
-                 m.nombre municipio_nombre,
-                 d.id departamento_id,
-                 d.nombre departamento_nombre
- from core.municipios m join core.departamentos d on m.departamento_id = d.id);
-
 
 -- ----------------------------
 -- Creación de Procedimientos
 -- ----------------------------
 
 -- p_inserta_frutas
+
 create or replace procedure core.p_inserta_fruta(
-                    in p_nombre         varchar,
-                    in p_url_wikipedia  varchar,
-                    in p_url_imagen     varchar
-) language plpgsql as
+                    in p_nombre varchar,
+                    in p_url_wikipedia varchar,
+                    in p_url_imagen varchar)
+    language plpgsql
+as
 $$
     begin
         -- Insertamos la fruta
@@ -440,12 +417,14 @@ $$
 $$;
 
 -- p_actualiza_fruta
+
 create or replace procedure core.p_actualiza_fruta(
-                    in p_id             uuid,
-                    in p_nombre         varchar,
-                    in p_url_wikipedia  varchar,
-                    in p_url_imagen     varchar
-) language plpgsql as
+                    in p_id integer,
+                    in p_nombre varchar,
+                    in p_url_wikipedia varchar,
+                    in p_url_imagen varchar)
+    language plpgsql
+as
 $$
     begin
         -- Actualizamos la fruta
@@ -458,24 +437,17 @@ $$
 $$;
 
 -- p_elimina_fruta
+
 create or replace procedure core.p_elimina_fruta(
-                    in p_id uuid
-) language plpgsql as
+                    in p_id integer)
+    language plpgsql
+as
 $$
     declare
         l_total_registros integer :=0;
-        l_especie_id uuid;
+        l_especie_id integer :=0;
     begin
-        -- Borramos informacion Nutricional
-        select count(*) into l_total_registros
-        from core.nutricion_frutas
-        where fruta_id = p_id;
-
-        -- Si hay registros, se borra de la tabla nutricion_frutas
-        if(l_total_registros >0) then
-            delete from core.nutricion_frutas
-            where fruta_id = p_id;
-        end if;   
+        -- Pendiente: Borrar informacion Nutricional
 
         -- Borramos informacion taxonómica
         select count(*) into l_total_registros
@@ -512,6 +484,7 @@ $$
     end;
 $$;
 
+
 -- -----------------------
 -- Consultas de apoyo
 -- -----------------------
@@ -536,21 +509,13 @@ order by 2 desc;
 
 -- Borrado de Procedimientos
 drop procedure core.p_inserta_fruta;
-drop procedure core.p_actualiza_fruta;
-drop procedure core.p_elimina_fruta;
 
 -- Borrado de vistas
 drop view core.v_info_botanica;
 drop view core.v_info_frutas;
 drop view core.v_info_produccion_frutas;
-drop view core.v_info_ubicaciones;
-drop view core.v_info_botanica;
 
 -- Borrado de tablas
-drop table core.nutricion_frutas;
-drop table core.produccion_frutas;
-drop table core.taxonomia_frutas;
-
 drop table core.especies;
 drop table core.generos;
 drop table core.familias;
@@ -563,7 +528,3 @@ drop table core.frutas;
 
 drop table core.municipios;
 drop table core.departamentos;
-drop table core.epocas;
-drop table core.climas;
-
-drop table core.divipola;

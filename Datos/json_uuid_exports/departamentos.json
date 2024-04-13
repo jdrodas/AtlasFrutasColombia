@@ -1,0 +1,167 @@
+[
+  {
+    "id": "465eb70b-377d-4034-ab1d-bf779edcf404",
+    "divipola_id": "81",
+    "nombre": "Arauca"
+  },
+  {
+    "id": "b1789925-1ca4-4f9c-a6d9-0ffad50c5f22",
+    "divipola_id": "63",
+    "nombre": "Quindío"
+  },
+  {
+    "id": "e16028ce-2c3c-4ddd-88e8-7342931bb650",
+    "divipola_id": "11",
+    "nombre": "Bogotá. D.C."
+  },
+  {
+    "id": "dd487dc6-658c-4473-84ac-cbb0f7336036",
+    "divipola_id": "97",
+    "nombre": "Vaupés"
+  },
+  {
+    "id": "55ab1c6c-6184-4737-9021-dfe55955b2cf",
+    "divipola_id": "73",
+    "nombre": "Tolima"
+  },
+  {
+    "id": "7dba66a3-9b2c-4d04-acd4-a51feb5f4214",
+    "divipola_id": "44",
+    "nombre": "La Guajira"
+  },
+  {
+    "id": "8e13046e-2f96-4cd7-bad3-cb67361bd8e6",
+    "divipola_id": "20",
+    "nombre": "Cesar"
+  },
+  {
+    "id": "14a2a3ca-0dae-4027-a938-0cf88b11180c",
+    "divipola_id": "95",
+    "nombre": "Guaviare"
+  },
+  {
+    "id": "9673a855-fb5d-44b5-ba8e-53f9def10aff",
+    "divipola_id": "18",
+    "nombre": "Caquetá"
+  },
+  {
+    "id": "4baf6c55-0ad5-46bb-b8e9-683e16a9f86b",
+    "divipola_id": "88",
+    "nombre": "Archipiélago De San Andrés. Providencia Y Santa Catalina"
+  },
+  {
+    "id": "99551a7e-63ce-4584-82ed-a583a568d57f",
+    "divipola_id": "66",
+    "nombre": "Risaralda"
+  },
+  {
+    "id": "afdb15f0-6eba-4e49-92fb-9c3721b94f8f",
+    "divipola_id": "05",
+    "nombre": "Antioquia"
+  },
+  {
+    "id": "fffc97dc-d2a4-46e2-8282-262e6abdcadf",
+    "divipola_id": "85",
+    "nombre": "Casanare"
+  },
+  {
+    "id": "2809cb32-e11b-4fa7-b6e7-3ca3d044773c",
+    "divipola_id": "19",
+    "nombre": "Cauca"
+  },
+  {
+    "id": "8ae009cd-eaca-475a-8282-9741ae3017eb",
+    "divipola_id": "15",
+    "nombre": "Boyacá"
+  },
+  {
+    "id": "cf74f697-e51c-48a8-a80e-f23277c78f18",
+    "divipola_id": "50",
+    "nombre": "Meta"
+  },
+  {
+    "id": "ac8970d8-6f04-44ec-a74a-75283705dc69",
+    "divipola_id": "27",
+    "nombre": "Chocó"
+  },
+  {
+    "id": "f1739904-e536-42c2-8c27-7d67d6e7f682",
+    "divipola_id": "25",
+    "nombre": "Cundinamarca"
+  },
+  {
+    "id": "0e64e121-5bb9-4f91-ad60-bc414675ccd6",
+    "divipola_id": "52",
+    "nombre": "Nariño"
+  },
+  {
+    "id": "54a729f4-4c16-403e-a209-dddc1e0135a0",
+    "divipola_id": "68",
+    "nombre": "Santander"
+  },
+  {
+    "id": "106492f9-5524-48c4-8532-e405c78a90c0",
+    "divipola_id": "94",
+    "nombre": "Guainía"
+  },
+  {
+    "id": "aa9aaa76-b18f-4681-b046-cb70abe67bea",
+    "divipola_id": "47",
+    "nombre": "Magdalena"
+  },
+  {
+    "id": "ef891b6c-bb85-45b2-9899-2e311a0ed942",
+    "divipola_id": "76",
+    "nombre": "Valle Del Cauca"
+  },
+  {
+    "id": "7db89df9-0d29-4682-9c5f-99c4fe20f8b6",
+    "divipola_id": "23",
+    "nombre": "Córdoba"
+  },
+  {
+    "id": "38c830e4-ba5b-4046-aab2-4aabf797b7d2",
+    "divipola_id": "41",
+    "nombre": "Huila"
+  },
+  {
+    "id": "1205920d-5f2a-426c-a6ee-1a64d20130b0",
+    "divipola_id": "08",
+    "nombre": "Atlántico"
+  },
+  {
+    "id": "1f595cb0-5e69-4ac1-b48b-944e4bba57ec",
+    "divipola_id": "99",
+    "nombre": "Vichada"
+  },
+  {
+    "id": "db79599c-022c-4847-8551-205e73d474d8",
+    "divipola_id": "86",
+    "nombre": "Putumayo"
+  },
+  {
+    "id": "35c6840d-d6e5-4b6b-99d9-23da7ba74321",
+    "divipola_id": "13",
+    "nombre": "Bolívar"
+  },
+  {
+    "id": "bf82dd95-ab24-43cc-86a1-691b096e46d4",
+    "divipola_id": "91",
+    "nombre": "Amazonas"
+  },
+  {
+    "id": "a4392468-724c-4eae-9c17-acf39ee21d2f",
+    "divipola_id": "17",
+    "nombre": "Caldas"
+  },
+  {
+    "id": "0581cb8a-97c5-4c38-a2ca-6c1305f30cf5",
+    "divipola_id": "54",
+    "nombre": "Norte De Santander"
+  },
+  {
+    "id": "dc46627c-0e3e-4990-8c11-2bddc56040a6",
+    "divipola_id": "70",
+    "nombre": "Sucre"
+  }
+]

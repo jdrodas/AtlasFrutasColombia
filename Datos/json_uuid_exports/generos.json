@@ -1,0 +1,42 @@
+[
+  {
+    "id": "f0b853f4-e966-4926-af6e-12eb1fa9a68c",
+    "nombre": "Passiflora",
+    "familia_id": "88e05cac-c90a-425b-9896-3f73a5d78cf3"
+  },
+  {
+    "id": "f8530888-0f53-407d-b7b3-c26caaf6aa86",
+    "nombre": "Mangifera",
+    "familia_id": "ed59daf9-f02f-44af-9185-5f7072af53c4"
+  },
+  {
+    "id": "8f88b0d9-5e4a-4030-9b35-fd077997bb76",
+    "nombre": "Musa",
+    "familia_id": "660bce8c-73af-4fe9-bb89-8638f54859d2"
+  },
+  {
+    "id": "d715467c-b577-499b-8677-818d704adf27",
+    "nombre": "Theobroma",
+    "familia_id": "1fab29d5-bd2b-490c-abaf-d6f95e38d1c5"
+  },
+  {
+    "id": "3cfbcb61-b75a-4333-bd52-832ef3122562",
+    "nombre": "Persea",
+    "familia_id": "16d27833-e738-4188-99d6-8e2f3dfc6b9f"
+  },
+  {
+    "id": "01acb5c2-53f2-4259-ab79-4c02f1a02a08",
+    "nombre": "Melicoccus",
+    "familia_id": "374a3826-beef-436f-ac0c-aae3c2d8cd3d"
+  },
+  {
+    "id": "37b5cce6-a9b2-4886-a7ba-faa81ed60ac6",
+    "nombre": "Acca",
+    "familia_id": "2f940c05-b61e-412d-8922-5b4b5a55ff98"
+  },
+  {
+    "id": "60a10103-397e-40be-b351-749fb217e745",
+    "nombre": "Psidium",
+    "familia_id": "2f940c05-b61e-412d-8922-5b4b5a55ff98"
+  }
+]

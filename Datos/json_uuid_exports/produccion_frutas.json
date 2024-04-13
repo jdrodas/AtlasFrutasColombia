@@ -1,0 +1,68 @@
+[
+  {
+    "municipio_id": "0b15de3c-4056-4f2f-9ca6-2f833f7f2f1c",
+    "clima_id": "9758e3e2-c343-4ad9-81f1-21bf347f7ef2",
+    "epoca_id": "29c878e5-2fc0-410a-86ea-600ec08254ac",
+    "fruta_id": "b58089ad-bee7-417f-bc20-6fa2c0e0e67a"
+  },
+  {
+    "municipio_id": "0b15de3c-4056-4f2f-9ca6-2f833f7f2f1c",
+    "clima_id": "9758e3e2-c343-4ad9-81f1-21bf347f7ef2",
+    "epoca_id": "a975d3f4-36d7-4505-a0cc-3fed264709c8",
+    "fruta_id": "b58089ad-bee7-417f-bc20-6fa2c0e0e67a"
+  },
+  {
+    "municipio_id": "12633ff3-1eb3-4960-acab-5873cd4cb0c8",
+    "clima_id": "9758e3e2-c343-4ad9-81f1-21bf347f7ef2",
+    "epoca_id": "29c878e5-2fc0-410a-86ea-600ec08254ac",
+    "fruta_id": "b58089ad-bee7-417f-bc20-6fa2c0e0e67a"
+  },
+  {
+    "municipio_id": "12633ff3-1eb3-4960-acab-5873cd4cb0c8",
+    "clima_id": "9758e3e2-c343-4ad9-81f1-21bf347f7ef2",
+    "epoca_id": "a975d3f4-36d7-4505-a0cc-3fed264709c8",
+    "fruta_id": "b58089ad-bee7-417f-bc20-6fa2c0e0e67a"
+  },
+  {
+    "municipio_id": "df5eafdb-8d6c-42a0-949f-4369d2cfb28c",
+    "clima_id": "25fc7dec-2848-4dfe-bf5c-4658e5c59233",
+    "epoca_id": "8de41a79-8302-4623-8683-c40ff3de82ec",
+    "fruta_id": "a9f7d3f6-e304-4192-b8c7-9a74aed2a618"
+  },
+  {
+    "municipio_id": "e7afea69-a9fb-4297-b501-f4b726283de9",
+    "clima_id": "25fc7dec-2848-4dfe-bf5c-4658e5c59233",
+    "epoca_id": "8de41a79-8302-4623-8683-c40ff3de82ec",
+    "fruta_id": "a9f7d3f6-e304-4192-b8c7-9a74aed2a618"
+  },
+  {
+    "municipio_id": "67e40d8a-637e-48fa-bf3b-ef3e8c817e7a",
+    "clima_id": "25fc7dec-2848-4dfe-bf5c-4658e5c59233",
+    "epoca_id": "8de41a79-8302-4623-8683-c40ff3de82ec",
+    "fruta_id": "a9f7d3f6-e304-4192-b8c7-9a74aed2a618"
+  },
+  {
+    "municipio_id": "bf843ae2-d52d-43f3-85af-e72681a29045",
+    "clima_id": "9758e3e2-c343-4ad9-81f1-21bf347f7ef2",
+    "epoca_id": "9a7afbf3-d4d8-4e41-830f-573defc46ea6",
+    "fruta_id": "18d59241-41ff-4a34-8fbd-515d2ec7d87b"
+  },
+  {
+    "municipio_id": "1215664a-ab41-47a0-9820-5f729815735a",
+    "clima_id": "9758e3e2-c343-4ad9-81f1-21bf347f7ef2",
+    "epoca_id": "9a7afbf3-d4d8-4e41-830f-573defc46ea6",
+    "fruta_id": "18d59241-41ff-4a34-8fbd-515d2ec7d87b"
+  },
+  {
+    "municipio_id": "2b786478-c40b-4578-80f6-f543c0dd0a1e",
+    "clima_id": "056d2a1e-0f8c-45e7-84f3-ddba44ea3462",
+    "epoca_id": "8de41a79-8302-4623-8683-c40ff3de82ec",
+    "fruta_id": "43fdea94-91f0-4773-873e-0eda865ae3a2"
+  },
+  {
+    "municipio_id": "0968ae0a-bd48-44e8-a408-85d0c50a8381",
+    "clima_id": "056d2a1e-0f8c-45e7-84f3-ddba44ea3462",
+    "epoca_id": "8de41a79-8302-4623-8683-c40ff3de82ec",
+    "fruta_id": "43fdea94-91f0-4773-873e-0eda865ae3a2"
+  }
+]

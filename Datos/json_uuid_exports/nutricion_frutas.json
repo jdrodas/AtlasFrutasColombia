@@ -1,0 +1,30 @@
+[
+  {
+    "carbohidratos": 14.98,
+    "azucares": 13.66,
+    "grasas": 0.38,
+    "proteinas": 0.82,
+    "fruta_id": "b58089ad-bee7-417f-bc20-6fa2c0e0e67a"
+  },
+  {
+    "carbohidratos": 8.53,
+    "azucares": 0.66,
+    "grasas": 14.66,
+    "proteinas": 2,
+    "fruta_id": "a9f7d3f6-e304-4192-b8c7-9a74aed2a618"
+  },
+  {
+    "carbohidratos": 14.32,
+    "azucares": 8.92,
+    "grasas": 0.95,
+    "proteinas": 2.55,
+    "fruta_id": "43fdea94-91f0-4773-873e-0eda865ae3a2"
+  },
+  {
+    "carbohidratos": 22.8,
+    "azucares": 12.23,
+    "grasas": 0.33,
+    "proteinas": 1.09,
+    "fruta_id": "18d59241-41ff-4a34-8fbd-515d2ec7d87b"
+  }
+]
