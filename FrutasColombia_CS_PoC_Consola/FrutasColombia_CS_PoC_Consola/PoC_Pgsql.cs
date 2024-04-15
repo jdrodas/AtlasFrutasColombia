@@ -21,9 +21,9 @@
             //C del CRUD - Creación de un nuevo registro - INSERT
             Fruta nuevaFruta = new()
             {
-                Nombre = "Zapote",
-                Url_Wikipedia = "https://es.wikipedia.org/wiki/Matisia_cordata",
-                Url_Imagen = "https://es.wikipedia.org/wiki/Matisia_cordata#/media/Archivo:Zapote_fruta.jpg"
+                Nombre = "Chontaduro",
+                Url_Wikipedia = "https://es.wikipedia.org/wiki/Bactris_gasipaes",
+                Url_Imagen = "https://en.wikipedia.org/wiki/Bactris_gasipaes#/media/File:Pupunha_(Bactris_gasipaes)_7.jpg"
             };
 
             Console.WriteLine($"\nRegistro de nueva fruta: {nuevaFruta.Nombre}:");
@@ -62,7 +62,7 @@
                 Console.WriteLine($"Actualización exitosa! Este fue la fruta actualizada");
 
                 //Obtenemos la fruta por Id
-                Fruta unaFruta = AccesoDatosPgsql.ObtieneFruta(frutaActualizada.Id);
+                Fruta unaFruta = AccesoDatosPgsql.ObtieneFruta(frutaActualizada.Id!);
                 Console.WriteLine($"Id: {unaFruta.Id}, Nombre: {unaFruta.Nombre}");
             }
 

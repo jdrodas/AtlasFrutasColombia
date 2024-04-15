@@ -60,7 +60,7 @@ namespace FrutasColombia_CS_PoC_Consola
         /// </summary>
         /// <param name="idFruta">ID de la fruta a buscar</param>
         /// <returns>La fruta identificada según el parámetro</returns>
-        public static Fruta ObtieneFruta(int idFruta)
+        public static Fruta ObtieneFruta(Guid idFruta)
         {
             Fruta frutaResultado = new();
             string? cadenaConexion = ObtieneCadenaConexion();
@@ -69,7 +69,7 @@ namespace FrutasColombia_CS_PoC_Consola
             using IDbConnection cxnDB = new NpgsqlConnection(cadenaConexion);
             DynamicParameters parametrosSentencia = new();
             parametrosSentencia.Add("@id_fruta", idFruta,
-                                    DbType.Int32, ParameterDirection.Input);
+                                    DbType.Guid, ParameterDirection.Input);
 
             string? sentenciaSQL = "SELECT id, nombre, url_wikipedia, url_imagen " +
                                     "FROM frutas " +
@@ -189,7 +189,7 @@ namespace FrutasColombia_CS_PoC_Consola
             //Aqui validamos primero que la fruta previamente existe
             DynamicParameters parametrosSentencia = new();
             parametrosSentencia.Add("@fruta_id", frutaActualizada.Id,
-                                    DbType.Int32, ParameterDirection.Input);
+                                    DbType.Guid, ParameterDirection.Input);
 
             string consultaSQL = "SELECT COUNT(id) total " +
                                     "FROM frutas " +
@@ -266,7 +266,7 @@ namespace FrutasColombia_CS_PoC_Consola
                                     DbType.String, ParameterDirection.Input);
 
             parametrosSentencia.Add("@fruta_id", unaFruta.Id,
-                                    DbType.Int32, ParameterDirection.Input);
+                                    DbType.Guid, ParameterDirection.Input);
 
             string consultaSQL = "SELECT COUNT(id) total " +
                                     "FROM frutas " +

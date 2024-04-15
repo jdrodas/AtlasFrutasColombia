@@ -2,7 +2,7 @@
 {
     public class Fruta
     {
-        public int Id { get; set; } = 0;
+        public Guid Id { get; set; }
         public string? Nombre { get; set; } = String.Empty;
         public string? Url_Wikipedia { get; set; } = String.Empty;
         public string? Url_Imagen { get; set; } = String.Empty;

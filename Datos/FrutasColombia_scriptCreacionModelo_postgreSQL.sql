@@ -343,10 +343,10 @@ create or replace view core.v_info_botanica as
 );
 
 -- v_info_frutas
-create view core.v_info_frutas as
+create or replace view core.v_info_frutas as
 (
     select distinct
-        tf.fruta_id,
+        f.id        fruta_id,
         f.nombre    fruta_nombre,
         f.url_wikipedia,
         f.url_imagen,
