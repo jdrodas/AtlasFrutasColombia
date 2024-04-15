@@ -5,14 +5,9 @@ namespace FrutasColombia_CS_REST_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ResumenController : Controller
+    public class ResumenController(ResumenService resumenService) : Controller
     {
-        private readonly ResumenService _resumenService;
-
-        public ResumenController(ResumenService resumenService)
-        {
-            _resumenService = resumenService;
-        }
+        private readonly ResumenService _resumenService = resumenService;
 
         [HttpGet]
         public async Task<IActionResult> GetAllAsync()

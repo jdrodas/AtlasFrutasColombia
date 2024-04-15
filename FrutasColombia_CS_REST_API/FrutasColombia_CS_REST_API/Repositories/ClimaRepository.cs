@@ -24,7 +24,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return resultadoClimas;
         }
 
-        public async Task<Clima> GetByIdAsync(int clima_id)
+        public async Task<Clima> GetByIdAsync(Guid clima_id)
         {
             Clima unClima = new();
 
@@ -32,7 +32,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
 
             DynamicParameters parametrosSentencia = new();
             parametrosSentencia.Add("@clima_id", clima_id,
-                                    DbType.Int32, ParameterDirection.Input);
+                                    DbType.Guid, ParameterDirection.Input);
 
             string sentenciaSQL = "SELECT id, nombre, altitud_minima, altitud_maxima " +
                                   "FROM core.climas " +

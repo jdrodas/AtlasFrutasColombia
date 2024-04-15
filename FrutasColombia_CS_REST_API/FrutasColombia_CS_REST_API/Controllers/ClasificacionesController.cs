@@ -100,8 +100,8 @@ namespace FrutasColombia_CS_REST_API.Controllers
             }
         }
 
-        [HttpGet("Generos/{genero_id:int}")]
-        public async Task<IActionResult> GetGenusByIdAsync(int genero_id)
+        [HttpGet("Generos/{genero_id:Guid}")]
+        public async Task<IActionResult> GetGenusByIdAsync(Guid genero_id)
         {
             try
             {
@@ -116,8 +116,8 @@ namespace FrutasColombia_CS_REST_API.Controllers
             }
         }
 
-        [HttpGet("Generos/{genero_id:int}/Frutas")]
-        public async Task<IActionResult> GetFruitsByGenusIdAsync(int genero_id)
+        [HttpGet("Generos/{genero_id:Guid}/Frutas")]
+        public async Task<IActionResult> GetFruitsByGenusIdAsync(Guid genero_id)
         {
             try
             {

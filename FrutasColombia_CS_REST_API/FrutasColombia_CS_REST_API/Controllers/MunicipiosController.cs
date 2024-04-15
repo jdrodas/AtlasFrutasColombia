@@ -19,8 +19,8 @@ namespace FrutasColombia_CS_REST_API.Controllers
             return Ok(losMunicipios);
         }
 
-        [HttpGet("{municipio_id:length(5)}")]
-        public async Task<IActionResult> GetByIdAsync(string municipio_id)
+        [HttpGet("{municipio_id:Guid}")]
+        public async Task<IActionResult> GetByIdAsync(Guid municipio_id)
         {
             try
             {
@@ -35,8 +35,8 @@ namespace FrutasColombia_CS_REST_API.Controllers
             }
         }
 
-        [HttpGet("{municipio_id:length(5)}/Frutas")]
-        public async Task<IActionResult> GetProducedFruitsAsync(string municipio_id)
+        [HttpGet("{municipio_id:Guid}/Frutas")]
+        public async Task<IActionResult> GetProducedFruitsAsync(Guid municipio_id)
         {
             try
             {

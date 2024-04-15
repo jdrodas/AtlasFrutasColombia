@@ -14,12 +14,12 @@ namespace FrutasColombia_CS_REST_API.Services
                 .GetAllAsync();
         }
 
-        public async Task<FrutaDetallada> GetFruitDetailsByIdAsync(int fruta_id)
+        public async Task<FrutaDetallada> GetFruitDetailsByIdAsync(Guid fruta_id)
         {
             Fruta unaFruta = await _frutaRepository
                 .GetByIdAsync(fruta_id);
 
-            if (unaFruta.Id == 0)
+            if (unaFruta.Id == Guid.Empty)
                 throw new AppValidationException($"Fruta no encontrada con el id {fruta_id}");
 
             FrutaDetallada unaFrutaDetallada = await _frutaRepository
@@ -46,7 +46,7 @@ namespace FrutasColombia_CS_REST_API.Services
             var frutaExistente = await _frutaRepository
                 .GetByNameAsync(unaFruta.Nombre);
 
-            if (frutaExistente.Id != 0)
+            if (frutaExistente.Id != Guid.Empty)
                 throw new AppValidationException($"Ya existe la fruta {unaFruta.Nombre} ");
 
             try
@@ -71,7 +71,7 @@ namespace FrutasColombia_CS_REST_API.Services
         public async Task<Fruta> UpdateAsync(Fruta unaFruta)
         {
             //Validamos que la fruta tenga Id
-            if (unaFruta.Id == 0)
+            if (unaFruta.Id == Guid.Empty)
                 throw new AppValidationException("El Id de fruta se requiere especificar para realizar actualización");
 
             //Validamos que la fruta tenga nombre
@@ -90,14 +90,14 @@ namespace FrutasColombia_CS_REST_API.Services
             var frutaExistente = await _frutaRepository
                 .GetByIdAsync(unaFruta.Id);
 
-            if (frutaExistente.Id == 0)
+            if (frutaExistente.Id == Guid.Empty)
                 throw new AppValidationException($"No existe la fruta {unaFruta.Nombre} para actualizar");
 
             //Que el nombre nuevo de la fruta no exista en otra fruta distinta
             frutaExistente = await _frutaRepository
                 .GetByNameAsync(unaFruta.Nombre!);
 
-            if (frutaExistente.Id != 0 && frutaExistente.Id != unaFruta.Id)
+            if (frutaExistente.Id != Guid.Empty && frutaExistente.Id != unaFruta.Id)
                 throw new AppValidationException($"Ya existe la fruta {frutaExistente.Nombre} con el Id {frutaExistente.Id}");
 
             try
@@ -119,13 +119,13 @@ namespace FrutasColombia_CS_REST_API.Services
             return (frutaExistente);
         }
 
-        public async Task<string> RemoveAsync(int fruta_id)
+        public async Task<string> RemoveAsync(Guid fruta_id)
         {
             //Validamos que exista una fruta con ese Id
             Fruta unaFruta = await _frutaRepository
                 .GetByIdAsync(fruta_id);
 
-            if (unaFruta.Id == 0)
+            if (unaFruta.Id == Guid.Empty)
                 throw new AppValidationException($"Fruta no encontrada con el id {fruta_id}");
 
             string nombreFrutaEliminada = unaFruta.Nombre!;

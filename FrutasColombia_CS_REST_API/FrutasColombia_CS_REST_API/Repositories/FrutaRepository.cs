@@ -26,7 +26,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return resultadoFrutas;
         }
 
-        public async Task<Fruta> GetByIdAsync(int fruta_id)
+        public async Task<Fruta> GetByIdAsync(Guid fruta_id)
         {
             Fruta unaFruta = new();
 
@@ -34,15 +34,15 @@ namespace FrutasColombia_CS_REST_API.Repositories
 
             DynamicParameters parametrosSentencia = new();
             parametrosSentencia.Add("@fruta_id", fruta_id,
-                                    DbType.Int32, ParameterDirection.Input);
+                                    DbType.Guid, ParameterDirection.Input);
 
             string sentenciaSQL = "SELECT id, nombre, url_wikipedia, url_imagen " +
                                   "FROM core.frutas " +
                                   "WHERE id = @fruta_id " +
                                   "ORDER BY nombre";
 
-            var resultado = await conexion.QueryAsync<Fruta>(sentenciaSQL,
-                parametrosSentencia);
+            var resultado = await conexion
+                .QueryAsync<Fruta>(sentenciaSQL,parametrosSentencia);
 
             if (resultado.Any())
                 unaFruta = resultado.First();
@@ -65,8 +65,8 @@ namespace FrutasColombia_CS_REST_API.Repositories
                                   "WHERE nombre = @fruta_nombre " +
                                   "ORDER BY nombre";
 
-            var resultado = await conexion.QueryAsync<Fruta>(sentenciaSQL,
-                parametrosSentencia);
+            var resultado = await conexion
+                .QueryAsync<Fruta>(sentenciaSQL,parametrosSentencia);
 
             if (resultado.Any())
                 unaFruta = resultado.First();
@@ -74,7 +74,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return unaFruta;
         }
 
-        public async Task<IEnumerable<FrutaProducida>> GetByLocationAsync(string? departamento_id, string? municipio_id)
+        public async Task<IEnumerable<FrutaProducida>> GetByLocationAsync(Guid departamento_id, Guid municipio_id)
         {
             List<FrutaProducida> frutasProducidas = [];
 
@@ -85,18 +85,18 @@ namespace FrutasColombia_CS_REST_API.Repositories
                 "fruta_wikipedia url_wikipedia, fruta_imagen url_imagen " +
                 "FROM v_info_produccion_frutas v ";
 
-            if (!string.IsNullOrEmpty(departamento_id))
+            if (departamento_id != Guid.Empty)
             {
                 parametrosSentencia.Add("@departamento_id", departamento_id,
-                DbType.String, ParameterDirection.Input);
+                DbType.Guid, ParameterDirection.Input);
 
                 sentenciaSQL += "WHERE v.departamento_id = @departamento_id";
             }
 
-            if (!string.IsNullOrEmpty(municipio_id))
+            if (municipio_id != Guid.Empty)
             {
                 parametrosSentencia.Add("@municipio_id", municipio_id,
-                DbType.String, ParameterDirection.Input);
+                DbType.Guid, ParameterDirection.Input);
 
                 sentenciaSQL += "WHERE v.municipio_id = @municipio_id";
             }
@@ -110,18 +110,18 @@ namespace FrutasColombia_CS_REST_API.Repositories
 
                 foreach (FrutaProducida unaFruta in frutasProducidas.ToList())
                 {
-                    if (!string.IsNullOrEmpty(departamento_id))
-                        unaFruta.Produccion = await GetProductionDetails(unaFruta.Id, departamento_id, null);
+                    if (departamento_id != Guid.Empty)
+                        unaFruta.Produccion = await GetProductionDetails(unaFruta.Id, departamento_id, Guid.Empty);
 
-                    if (!string.IsNullOrEmpty(municipio_id))
-                        unaFruta.Produccion = await GetProductionDetails(unaFruta.Id, null, municipio_id);
+                    if (municipio_id != Guid.Empty)
+                        unaFruta.Produccion = await GetProductionDetails(unaFruta.Id, Guid.Empty, municipio_id);
                 }
             }
 
             return frutasProducidas;
         }
 
-        public async Task<IEnumerable<FrutaProducida>> GetByClimateAsync(int clima_id)
+        public async Task<IEnumerable<FrutaProducida>> GetByClimateAsync(Guid clima_id)
         {
             List<FrutaProducida> frutasProducidas = [];
 
@@ -129,7 +129,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
 
             DynamicParameters parametrosSentencia = new();
             parametrosSentencia.Add("@clima_id", clima_id,
-                DbType.Int32, ParameterDirection.Input);
+                DbType.Guid, ParameterDirection.Input);
 
 
             string sentenciaSQL = "SELECT DISTINCT fruta_id id, fruta_nombre nombre, " +
@@ -151,7 +151,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return frutasProducidas;
         }
 
-        public async Task<IEnumerable<FrutaClasificada>> GetByGenusIdAsync(int genero_id)
+        public async Task<IEnumerable<FrutaClasificada>> GetByGenusIdAsync(Guid genero_id)
         {
             List<FrutaClasificada> frutasClasificadas = [];
 
@@ -159,8 +159,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
 
             DynamicParameters parametrosSentencia = new();
             parametrosSentencia.Add("@genero_id", genero_id,
-                DbType.Int32, ParameterDirection.Input);
-
+                DbType.Guid, ParameterDirection.Input);
 
             string sentenciaSQL = "SELECT DISTINCT fruta_id id, fruta_nombre nombre, " +
                 "url_wikipedia, url_imagen " +
@@ -181,7 +180,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return frutasClasificadas;
         }
 
-        public async Task<FrutaDetallada> GetDetailsByIdAsync(int fruta_id)
+        public async Task<FrutaDetallada> GetDetailsByIdAsync(Guid fruta_id)
         {
             Fruta unaFruta = await GetByIdAsync(fruta_id);
 
@@ -191,7 +190,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
                 Nombre = unaFruta.Nombre,
                 Url_Imagen = unaFruta.Url_Imagen,
                 Url_Wikipedia = unaFruta.Url_Wikipedia,
-                Produccion = await GetProductionDetails(fruta_id, null, null),
+                Produccion = await GetProductionDetails(fruta_id, Guid.Empty, Guid.Empty),
                 Nutricion = await GetNutritionDetails(fruta_id),
                 Taxonomia = await GetTaxonomicDetails(fruta_id)
             };
@@ -199,7 +198,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return unaFrutaDetallada;
         }
 
-        public async Task<List<Produccion>> GetProductionDetails(int fruta_id, string? departamento_id, string? municipio_id)
+        public async Task<List<Produccion>> GetProductionDetails(Guid fruta_id, Guid departamento_id, Guid municipio_id)
         {
             List<Produccion> infoProduccion = [];
 
@@ -207,25 +206,25 @@ namespace FrutasColombia_CS_REST_API.Repositories
 
             DynamicParameters parametrosSentencia = new();
             parametrosSentencia.Add("@fruta_id", fruta_id,
-                                    DbType.Int32, ParameterDirection.Input);
+                                    DbType.Guid, ParameterDirection.Input);
 
             string sentenciaSQL = "SELECT DISTINCT v.epoca_nombre epoca, v.clima_nombre clima, " +
                 "v.municipio_nombre municipio, v.departamento_nombre departamento " +
                 "FROM v_info_produccion_frutas v " +
                 "WHERE v.fruta_id = @fruta_id ";
 
-            if (!string.IsNullOrEmpty(departamento_id))
+            if (departamento_id != Guid.Empty)
             {
                 parametrosSentencia.Add("@departamento_id", departamento_id,
-                DbType.String, ParameterDirection.Input);
+                DbType.Guid, ParameterDirection.Input);
 
                 sentenciaSQL += "AND v.departamento_id = @departamento_id";
             }
 
-            if (!string.IsNullOrEmpty(municipio_id))
+            if (municipio_id != Guid.Empty)
             {
                 parametrosSentencia.Add("@municipio_id", municipio_id,
-                DbType.String, ParameterDirection.Input);
+                DbType.Guid, ParameterDirection.Input);
 
                 sentenciaSQL += "AND v.municipio_id = @municipio_id";
             }
@@ -239,7 +238,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return infoProduccion;
         }
 
-        public async Task<List<Produccion>> GetProductionDetails(int fruta_id, int clima_id)
+        public async Task<List<Produccion>> GetProductionDetails(Guid fruta_id, Guid clima_id)
         {
             List<Produccion> infoProduccion = [];
 
@@ -247,10 +246,10 @@ namespace FrutasColombia_CS_REST_API.Repositories
 
             DynamicParameters parametrosSentencia = new();
             parametrosSentencia.Add("@fruta_id", fruta_id,
-                                    DbType.Int32, ParameterDirection.Input);
+                                    DbType.Guid, ParameterDirection.Input);
 
             parametrosSentencia.Add("@clima_id", clima_id,
-                                    DbType.Int32, ParameterDirection.Input);
+                                    DbType.Guid, ParameterDirection.Input);
 
             string sentenciaSQL = "SELECT DISTINCT v.epoca_nombre epoca, v.clima_nombre clima, " +
                 "v.municipio_nombre municipio, v.departamento_nombre departamento " +
@@ -267,7 +266,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return infoProduccion;
         }
 
-        public async Task<Nutricion> GetNutritionDetails(int fruta_id)
+        public async Task<Nutricion> GetNutritionDetails(Guid fruta_id)
         {
             Nutricion infoNutricion = new();
 
@@ -275,7 +274,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
 
             DynamicParameters parametrosSentencia = new();
             parametrosSentencia.Add("@fruta_id", fruta_id,
-                                    DbType.Int32, ParameterDirection.Input);
+                                    DbType.Guid, ParameterDirection.Input);
 
             //Aqui colocamos la informacion nutricional
             string sentenciaSQL = "SELECT DISTINCT azucares, carbohidratos, grasas, proteinas " +
@@ -291,7 +290,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return infoNutricion;
         }
 
-        public async Task<Taxonomia> GetTaxonomicDetails(int fruta_id)
+        public async Task<Taxonomia> GetTaxonomicDetails(Guid fruta_id)
         {
             Taxonomia infoTaxonomia = new();
 
@@ -299,7 +298,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
 
             DynamicParameters parametrosSentencia = new();
             parametrosSentencia.Add("@fruta_id", fruta_id,
-                                    DbType.Int32, ParameterDirection.Input);
+                                    DbType.Guid, ParameterDirection.Input);
 
             //Aqui colocamos la informacion de clasificación taxonómica
             string sentenciaSQL = "SELECT DISTINCT reino_nombre reino, division_nombre division, clase_nombre clase, " +
@@ -382,7 +381,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return resultadoAccion;
         }
 
-        public async Task<bool> RemoveAsync(int fruta_id)
+        public async Task<bool> RemoveAsync(Guid fruta_id)
         {
             bool resultadoAccion = false;
 

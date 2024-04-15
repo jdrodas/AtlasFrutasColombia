@@ -6,6 +6,6 @@ namespace FrutasColombia_CS_REST_API.Interfaces
     {
         public Task<IEnumerable<Municipio>> GetAllAsync();
 
-        public Task<Municipio> GetByIdAsync(string municipio_id);
+        public Task<Municipio> GetByIdAsync(Guid municipio_id);
     }
 }

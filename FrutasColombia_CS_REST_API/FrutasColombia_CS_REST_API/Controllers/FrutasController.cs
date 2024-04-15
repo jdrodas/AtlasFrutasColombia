@@ -20,8 +20,8 @@ namespace FrutasColombia_CS_REST_API.Controllers
             return Ok(lasFrutas);
         }
 
-        [HttpGet("{fruta_id:int}")]
-        public async Task<IActionResult> GetFruitDetailsByIdAsync(int fruta_id)
+        [HttpGet("{fruta_id:Guid}")]
+        public async Task<IActionResult> GetFruitDetailsByIdAsync(Guid fruta_id)
         {
             try
             {
@@ -76,8 +76,8 @@ namespace FrutasColombia_CS_REST_API.Controllers
             }
         }
 
-        [HttpDelete("{fruta_id:int}")]
-        public async Task<IActionResult> RemoveAsync(int fruta_id)
+        [HttpDelete("{fruta_id:Guid}")]
+        public async Task<IActionResult> RemoveAsync(Guid fruta_id)
         {
             try
             {

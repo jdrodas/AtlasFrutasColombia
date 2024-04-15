@@ -25,7 +25,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return resultadoMunicipios;
         }
 
-        public async Task<Municipio> GetByIdAsync(string municipio_id)
+        public async Task<Municipio> GetByIdAsync(Guid municipio_id)
         {
             Municipio unMunicipio = new();
 
@@ -33,15 +33,15 @@ namespace FrutasColombia_CS_REST_API.Repositories
 
             DynamicParameters parametrosSentencia = new();
             parametrosSentencia.Add("@municipio_id", municipio_id,
-                                    DbType.String, ParameterDirection.Input);
+                                    DbType.Guid, ParameterDirection.Input);
 
             string sentenciaSQL = "SELECT m.id, m.nombre, d.nombre departamento " +
                 "FROM core.municipios m " +
                 "JOIN core.departamentos d ON m.departamento_id = d.id " +
                 "WHERE m.id = @municipio_id ";
 
-            var resultado = await conexion.QueryAsync<Municipio>(sentenciaSQL,
-                parametrosSentencia);
+            var resultado = await conexion
+                .QueryAsync<Municipio>(sentenciaSQL,parametrosSentencia);
 
             if (resultado.Any())
                 unMunicipio = resultado.First();

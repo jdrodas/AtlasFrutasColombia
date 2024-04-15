@@ -24,7 +24,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return resultadoDepartamentos;
         }
 
-        public async Task<Departamento> GetByIdAsync(string departamento_id)
+        public async Task<Departamento> GetByIdAsync(Guid departamento_id)
         {
             Departamento unDepartamento = new();
 
@@ -32,7 +32,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
 
             DynamicParameters parametrosSentencia = new();
             parametrosSentencia.Add("@departamento_id", departamento_id,
-                                    DbType.String, ParameterDirection.Input);
+                                    DbType.Guid, ParameterDirection.Input);
 
             string sentenciaSQL = "SELECT id, nombre " +
                                   "FROM core.departamentos " +
@@ -47,18 +47,18 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return unDepartamento;
         }
 
-        public async Task<IEnumerable<Municipio>> GetAssociatedMunicipalityAsync(string departamento_id)
+        public async Task<IEnumerable<Municipio>> GetAssociatedMunicipalityAsync(Guid departamento_id)
         {
             var conexion = contextoDB.CreateConnection();
 
             DynamicParameters parametrosSentencia = new();
             parametrosSentencia.Add("@departamento_id", departamento_id,
-                                    DbType.String, ParameterDirection.Input);
+                                    DbType.Guid, ParameterDirection.Input);
 
-            string sentenciaSQL = "SELECT id, nombre, departamento_id " +
-                                  "FROM core.municipios " +
-                                  "WHERE departamento_id = @departamento_id " +
-                                  "ORDER BY nombre";
+            string sentenciaSQL = "SELECT m.id, m.nombre, d.nombre departamento " +
+                                  "FROM core.municipios m join departamentos d on m.departamento_id = d.id " +
+                                  "WHERE m.departamento_id = @departamento_id " +
+                                  "ORDER BY m.nombre";
 
             var resultadoMunicipios = await conexion
                 .QueryAsync<Municipio>(sentenciaSQL, parametrosSentencia);

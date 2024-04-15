@@ -100,7 +100,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return resultadoGeneros;
         }
 
-        public async Task<Genero> GetGenusByIdAsync(int genero_id)
+        public async Task<Genero> GetGenusByIdAsync(Guid genero_id)
         {
             Genero unGenero = new();
 
@@ -115,7 +115,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
 
             DynamicParameters parametrosSentencia = new();
             parametrosSentencia.Add("@genero_id", genero_id,
-                                    DbType.Int32, ParameterDirection.Input);
+                                    DbType.Guid, ParameterDirection.Input);
 
             var resultado = await conexion
                 .QueryAsync<Genero>(sentenciaSQL, parametrosSentencia);
@@ -126,7 +126,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return unGenero;
         }
 
-        public async Task<GeneroDetallado> GetGenusDetailsByIdAsync(int genero_id)
+        public async Task<GeneroDetallado> GetGenusDetailsByIdAsync(Guid genero_id)
         {
             Genero unGenero = await GetGenusByIdAsync(genero_id);
 
@@ -142,7 +142,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return unGeneroDetallado;
         }
 
-        public async Task<List<Especie>> GetAssociatedSpeciesToGenusById(int genero_id)
+        public async Task<List<Especie>> GetAssociatedSpeciesToGenusById(Guid genero_id)
         {
             List<Especie> especiesDelGenero = [];
 
@@ -150,7 +150,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
 
             DynamicParameters parametrosSentencia = new();
             parametrosSentencia.Add("@genero_id", genero_id,
-                                    DbType.Int32, ParameterDirection.Input);
+                                    DbType.Guid, ParameterDirection.Input);
 
             string sentenciaSQL = "SELECT DISTINCT especie_id id, especie_nombre nombre " +
                 "FROM core.v_info_botanica v " +

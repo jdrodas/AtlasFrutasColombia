@@ -16,10 +16,10 @@ namespace FrutasColombia_CS_REST_API.Interfaces
 
         public Task<IEnumerable<Genero>> GetAllGenusAsync();
 
-        public Task<Genero> GetGenusByIdAsync(int genero_id);
+        public Task<Genero> GetGenusByIdAsync(Guid genero_id);
 
-        public Task<GeneroDetallado> GetGenusDetailsByIdAsync(int genero_id);
+        public Task<GeneroDetallado> GetGenusDetailsByIdAsync(Guid genero_id);
 
-        public Task<List<Especie>> GetAssociatedSpeciesToGenusById(int genero_id);
+        public Task<List<Especie>> GetAssociatedSpeciesToGenusById(Guid genero_id);
     }
 }

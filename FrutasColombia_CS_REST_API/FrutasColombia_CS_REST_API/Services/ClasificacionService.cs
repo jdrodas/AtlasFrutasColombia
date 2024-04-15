@@ -46,12 +46,12 @@ namespace FrutasColombia_CS_REST_API.Services
                 .GetAllGenusAsync();
         }
 
-        public async Task<GeneroDetallado> GetGenusByIdAsync(int genero_id)
+        public async Task<GeneroDetallado> GetGenusByIdAsync(Guid genero_id)
         {
             Genero unGenero = await _clasificacionRepository
                 .GetGenusByIdAsync(genero_id);
 
-            if (unGenero.Id == 0)
+            if (unGenero.Id == Guid.Empty)
                 throw new AppValidationException($"Género no encontrad0 con el id {genero_id}");
 
             GeneroDetallado unGeneroDetallado = await _clasificacionRepository
@@ -60,12 +60,12 @@ namespace FrutasColombia_CS_REST_API.Services
             return unGeneroDetallado;
         }
 
-        public async Task<IEnumerable<FrutaClasificada>> GetFruitsByGenusIdAsync(int genero_id)
+        public async Task<IEnumerable<FrutaClasificada>> GetFruitsByGenusIdAsync(Guid genero_id)
         {
             Genero unGenero = await _clasificacionRepository
                 .GetGenusByIdAsync(genero_id);
 
-            if (unGenero.Id == 0)
+            if (unGenero.Id == Guid.Empty)
                 throw new AppValidationException($"Género no encontrad0 con el id {genero_id}");
 
             var frutasClasificadas = await _frutaRepository

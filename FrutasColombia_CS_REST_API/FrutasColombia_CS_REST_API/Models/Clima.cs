@@ -5,7 +5,7 @@ namespace FrutasColombia_CS_REST_API.Models
     public class Clima
     {
         [JsonPropertyName("id")]
-        public int Id { get; set; } = 0;
+        public Guid Id { get; set; } = Guid.Empty;
 
         [JsonPropertyName("nombre")]
         public string? Nombre { get; set; } = string.Empty;
