@@ -36,6 +36,22 @@ namespace FrutasColombia_CS_REST_API.Controllers
             }
         }
 
+        [HttpGet("{fruta_id:Guid}/Nutricion")]
+        public async Task<IActionResult> GetNutritiousFruitByIdAsync(Guid fruta_id)
+        {
+            try
+            {
+                var unaFrutaNutritiva = await _frutaService
+                    .GetNutritiousFruitByIdAsync(fruta_id);
+
+                return Ok(unaFrutaNutritiva);
+            }
+            catch (AppValidationException error)
+            {
+                return NotFound(error.Message);
+            }
+        }
+
         [HttpPost]
         public async Task<IActionResult> CreateAsync(Fruta unaFruta)
         {
@@ -43,6 +59,26 @@ namespace FrutasColombia_CS_REST_API.Controllers
             {
                 var frutaCreada = await _frutaService
                     .CreateAsync(unaFruta);
+
+                return Ok(frutaCreada);
+            }
+            catch (AppValidationException error)
+            {
+                return BadRequest($"Error de validación: {error.Message}");
+            }
+            catch (DbOperationException error)
+            {
+                return BadRequest($"Error de operacion en DB: {error.Message}");
+            }
+        }
+
+        [HttpPost("{fruta_id:Guid}/Nutricion")]
+        public async Task<IActionResult> CreateNutritionDetailsAsync(Guid fruta_id, Nutricion unaInformacionNutricional)
+        {
+            try
+            {
+                var frutaCreada = await _frutaService
+                    .CreateNutritionDetailsAsync(fruta_id, unaInformacionNutricional);
 
                 return Ok(frutaCreada);
             }
@@ -76,6 +112,26 @@ namespace FrutasColombia_CS_REST_API.Controllers
             }
         }
 
+        [HttpPut("{fruta_id:Guid}/Nutricion")]
+        public async Task<IActionResult> UpdateNutritionDetailsAsync(Guid fruta_id, Nutricion unaInformacionNutricional)
+        {
+            try
+            {
+                var frutaActualizada = await _frutaService
+                    .UpdateNutritionDetailsAsync(fruta_id, unaInformacionNutricional);
+
+                return Ok(frutaActualizada);
+            }
+            catch (AppValidationException error)
+            {
+                return BadRequest($"Error de validación: {error.Message}");
+            }
+            catch (DbOperationException error)
+            {
+                return BadRequest($"Error de operacion en DB: {error.Message}");
+            }
+        }
+
         [HttpDelete("{fruta_id:Guid}")]
         public async Task<IActionResult> RemoveAsync(Guid fruta_id)
         {
@@ -86,14 +142,33 @@ namespace FrutasColombia_CS_REST_API.Controllers
 
                 return Ok($"La fruta {nombreFrutaBorrada} fue eliminada correctamente!");
             }
-            catch (DbOperationException error)
-            {
-                return BadRequest(error.Message);
-            }
-
             catch (AppValidationException error)
             {
-                return NotFound(error.Message);
+                return BadRequest($"Error de validación: {error.Message}");
+            }
+            catch (DbOperationException error)
+            {
+                return BadRequest($"Error de operacion en DB: {error.Message}");
+            }
+        }
+
+        [HttpDelete("{fruta_id:Guid}/Nutricion")]
+        public async Task<IActionResult> RemoveNutritionDetailsAsync(Guid fruta_id)
+        {
+            try
+            {
+                var frutaSinNutricion = await _frutaService
+                    .RemoveNutritionDetailsAsync(fruta_id);
+
+                return Ok($"La fruta {frutaSinNutricion.Nombre} ya no tiene información nutricional!");
+            }
+            catch (AppValidationException error)
+            {
+                return BadRequest($"Error de validación: {error.Message}");
+            }
+            catch (DbOperationException error)
+            {
+                return BadRequest($"Error de operacion en DB: {error.Message}");
             }
         }
     }

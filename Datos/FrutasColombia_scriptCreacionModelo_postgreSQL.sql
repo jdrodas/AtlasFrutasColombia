@@ -512,6 +512,56 @@ $$
     end;
 $$;
 
+-- p_inserta_nutricion_fruta
+create or replace procedure core.p_inserta_nutricion_fruta(
+                    in p_fruta_id       uuid,
+                    in p_azucares       double precision,
+                    in p_carbohidratos  double precision,
+                    in p_grasas         double precision,
+                    in p_proteinas      double precision
+) language plpgsql as
+$$
+    begin
+        -- Insertamos la información nutricional de la fruta
+        insert into core.nutricion_frutas (fruta_id, azucares, carbohidratos, grasas, proteinas)
+        values (p_fruta_id, p_azucares, p_carbohidratos, p_grasas, p_proteinas);
+    end;
+$$;
+
+-- p_actualiza_nutricion_fruta
+create or replace procedure core.p_actualiza_nutricion_fruta(
+                    in p_fruta_id       uuid,
+                    in p_azucares       double precision,
+                    in p_carbohidratos  double precision,
+                    in p_grasas         double precision,
+                    in p_proteinas      double precision
+) language plpgsql as
+$$
+    begin
+        -- Actualizamos la información nutricional de la fruta
+        update core.nutricion_frutas
+        set
+            azucares = p_azucares,
+            carbohidratos = p_carbohidratos,
+            grasas = p_grasas,
+            proteinas = p_proteinas
+            where fruta_id = p_fruta_id;
+    end;
+$$;
+
+-- p_elimina_nutricion_fruta
+create or replace procedure core.p_elimina_nutricion_fruta(
+                    in p_fruta_id       uuid
+) language plpgsql as
+$$
+    begin
+        -- Insertamos la fruta
+        insert into core.nutricion_frutas (fruta_id, azucares, carbohidratos, grasas, proteinas)
+        values (p_fruta_id, p_azucares, p_carbohidratos, p_grasas, p_proteinas);
+    end;
+$$;
+
+
 -- -----------------------
 -- Consultas de apoyo
 -- -----------------------

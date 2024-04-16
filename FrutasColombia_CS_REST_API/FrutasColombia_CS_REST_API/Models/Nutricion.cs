@@ -5,15 +5,15 @@ namespace FrutasColombia_CS_REST_API.Models
     public class Nutricion
     {
         [JsonPropertyName("azucares")]
-        public string? Azucares { get; set; } = string.Empty;
+        public double Azucares { get; set; } = 0d;
 
         [JsonPropertyName("carbohidratos")]
-        public string? Carbohidratos { get; set; } = string.Empty;
+        public double Carbohidratos { get; set; } = 0d;
 
         [JsonPropertyName("grasas")]
-        public string? Grasas { get; set; } = string.Empty;
+        public double Grasas { get; set; } = 0d;
 
         [JsonPropertyName("proteinas")]
-        public string? Proteinas { get; set; } = string.Empty;
+        public double Proteinas { get; set; } = 0d;
     }
 }

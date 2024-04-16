@@ -41,7 +41,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
                 "WHERE m.id = @municipio_id ";
 
             var resultado = await conexion
-                .QueryAsync<Municipio>(sentenciaSQL,parametrosSentencia);
+                .QueryAsync<Municipio>(sentenciaSQL, parametrosSentencia);
 
             if (resultado.Any())
                 unMunicipio = resultado.First();

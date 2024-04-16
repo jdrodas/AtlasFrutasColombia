@@ -28,6 +28,20 @@ namespace FrutasColombia_CS_REST_API.Services
             return unaFrutaDetallada;
         }
 
+        public async Task<FrutaNutritiva> GetNutritiousFruitByIdAsync(Guid fruta_id)
+        {
+            Fruta unaFruta = await _frutaRepository
+                .GetByIdAsync(fruta_id);
+
+            if (unaFruta.Id == Guid.Empty)
+                throw new AppValidationException($"Fruta no encontrada con el id {fruta_id}");
+
+            FrutaNutritiva unaFrutaNutritiva = await _frutaRepository
+                .GetNutritiousFruitByIdAsync(fruta_id);
+
+            return unaFrutaNutritiva;
+        }
+
         public async Task<Fruta> CreateAsync(Fruta unaFruta)
         {
             //Validamos que la fruta tenga nombre
@@ -66,6 +80,34 @@ namespace FrutasColombia_CS_REST_API.Services
             }
 
             return (frutaExistente);
+        }
+
+        public async Task<FrutaNutritiva> CreateNutritionDetailsAsync(Guid fruta_id, Nutricion unaInformacionNutricional)
+        {
+            //Validamos que exista la fruta previamente
+            var frutaNutritivaExistente = await _frutaRepository
+                .GetNutritiousFruitByIdAsync(fruta_id);
+
+            if (frutaNutritivaExistente.Id == Guid.Empty)
+                throw new AppValidationException($"No existe la fruta con el ID {fruta_id} ");
+
+            try
+            {
+                bool resultadoAccion = await _frutaRepository
+                    .CreateNutritionDetailsAsync(fruta_id, unaInformacionNutricional);
+
+                if (!resultadoAccion)
+                    throw new AppValidationException("Operación ejecutada pero no generó cambios en la DB");
+
+                frutaNutritivaExistente = await _frutaRepository
+                    .GetNutritiousFruitByIdAsync(fruta_id);
+            }
+            catch (DbOperationException)
+            {
+                throw;
+            }
+
+            return (frutaNutritivaExistente);
         }
 
         public async Task<Fruta> UpdateAsync(Fruta unaFruta)
@@ -119,6 +161,34 @@ namespace FrutasColombia_CS_REST_API.Services
             return (frutaExistente);
         }
 
+        public async Task<FrutaNutritiva> UpdateNutritionDetailsAsync(Guid fruta_id, Nutricion unaInformacionNutricional)
+        {
+            //Validamos que exista la fruta previamente
+            var frutaNutritivaExistente = await _frutaRepository
+                .GetNutritiousFruitByIdAsync(fruta_id);
+
+            if (frutaNutritivaExistente.Id == Guid.Empty)
+                throw new AppValidationException($"No existe la fruta con el ID {fruta_id} ");
+
+            try
+            {
+                bool resultadoAccion = await _frutaRepository
+                    .UpdateNutritionDetailsAsync(fruta_id, unaInformacionNutricional);
+
+                if (!resultadoAccion)
+                    throw new AppValidationException("Operación ejecutada pero no generó cambios en la DB");
+
+                frutaNutritivaExistente = await _frutaRepository
+                    .GetNutritiousFruitByIdAsync(fruta_id);
+            }
+            catch (DbOperationException)
+            {
+                throw;
+            }
+
+            return (frutaNutritivaExistente);
+        }
+
         public async Task<string> RemoveAsync(Guid fruta_id)
         {
             //Validamos que exista una fruta con ese Id
@@ -144,6 +214,34 @@ namespace FrutasColombia_CS_REST_API.Services
             }
 
             return nombreFrutaEliminada;
+        }
+
+        public async Task<FrutaNutritiva> RemoveNutritionDetailsAsync(Guid fruta_id)
+        {
+            //Validamos que exista la fruta previamente
+            var frutaNutritivaExistente = await _frutaRepository
+                .GetNutritiousFruitByIdAsync(fruta_id);
+
+            if (frutaNutritivaExistente.Id == Guid.Empty)
+                throw new AppValidationException($"No existe la fruta con el ID {fruta_id} ");
+
+            try
+            {
+                bool resultadoAccion = await _frutaRepository
+                    .RemoveNutritionDetailsAsync(fruta_id);
+
+                if (!resultadoAccion)
+                    throw new AppValidationException("Operación ejecutada pero no generó cambios en la DB");
+
+                frutaNutritivaExistente = await _frutaRepository
+                    .GetNutritiousFruitByIdAsync(fruta_id);
+            }
+            catch (DbOperationException)
+            {
+                throw;
+            }
+
+            return (frutaNutritivaExistente);
         }
     }
 }
