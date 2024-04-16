@@ -307,6 +307,22 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return unaFrutaNutritiva;
         }
 
+        public async Task<FrutaClasificada> GetClassifiedFruitByIdAsync(Guid fruta_id)
+        {
+            Fruta unaFruta = await GetByIdAsync(fruta_id);
+
+            FrutaClasificada unafrutaClasificada = new()
+            {
+                Id = unaFruta.Id,
+                Nombre = unaFruta.Nombre,
+                Url_Imagen = unaFruta.Url_Imagen,
+                Url_Wikipedia = unaFruta.Url_Wikipedia,
+                Taxonomia = await GetTaxonomicDetailsAsync(fruta_id)
+            };
+
+            return unafrutaClasificada;
+        }
+
         public async Task<Taxonomia> GetTaxonomicDetailsAsync(Guid fruta_id)
         {
             Taxonomia infoTaxonomia = new();
@@ -411,6 +427,49 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return resultadoAccion;
         }
 
+        public async Task<bool> CreateTaxonomicDetailsAsync(Guid fruta_id, Taxonomia unaInformacionTaxonomica)
+        {
+            bool resultadoAccion = false;
+
+            //Validamos si hay registros existentes
+            int totalRegistros =
+                await GetTotalTaxonomicDetailsByFruitIdAsync(fruta_id);
+
+            if (totalRegistros != 0)
+                throw new DbOperationException("No se puede insertar. Ya existen registros taxonómicos para esta fruta.");
+
+            try
+            {
+                var conexion = contextoDB.CreateConnection();
+                string procedimiento = "core.p_inserta_taxonomia_fruta";
+                var parametros = new
+                {
+                    p_fruta_id = fruta_id,
+                    p_reino = unaInformacionTaxonomica.Reino,
+                    p_division = unaInformacionTaxonomica.Division,
+                    p_clase = unaInformacionTaxonomica.Clase,
+                    p_orden = unaInformacionTaxonomica.Orden,
+                    p_familia = unaInformacionTaxonomica.Familia,
+                    p_genero = unaInformacionTaxonomica.Genero,
+                    p_especie = unaInformacionTaxonomica.Especie
+                };
+
+                var cantidad_filas = await conexion.ExecuteAsync(
+                    procedimiento,
+                    parametros,
+                    commandType: CommandType.StoredProcedure);
+
+                if (cantidad_filas != 0)
+                    resultadoAccion = true;
+            }
+            catch (NpgsqlException error)
+            {
+                throw new DbOperationException(error.Message);
+            }
+
+            return resultadoAccion;
+        }
+
         public async Task<bool> UpdateAsync(Fruta unaFruta)
         {
             bool resultadoAccion = false;
@@ -473,6 +532,50 @@ namespace FrutasColombia_CS_REST_API.Repositories
                     p_carbohidratos = unaInformacionNutricional.Carbohidratos,
                     p_grasas = unaInformacionNutricional.Grasas,
                     p_proteinas = unaInformacionNutricional.Proteinas
+                };
+
+                var cantidad_filas = await conexion.ExecuteAsync(
+                    procedimiento,
+                    parametros,
+                    commandType: CommandType.StoredProcedure);
+
+                if (cantidad_filas != 0)
+                    resultadoAccion = true;
+            }
+            catch (NpgsqlException error)
+            {
+                throw new DbOperationException(error.Message);
+            }
+
+            return resultadoAccion;
+        }
+
+        public async Task<bool> UpdateTaxonomicDetailsAsync(Guid fruta_id, Taxonomia unaInformacionTaxonomica)
+        {
+            bool resultadoAccion = false;
+
+            //Validamos si hay registros existentes
+            int totalRegistros =
+                await GetTotalTaxonomicDetailsByFruitIdAsync(fruta_id);
+
+            if (totalRegistros == 0)
+                throw new DbOperationException("No se puede actualizar. NO existen registros taxonómicos para esta fruta.");
+
+            try
+            {
+                var conexion = contextoDB.CreateConnection();
+
+                string procedimiento = "core.p_actualiza_taxonomia_fruta";
+                var parametros = new
+                {
+                    p_fruta_id = fruta_id,
+                    p_reino = unaInformacionTaxonomica.Reino,
+                    p_division = unaInformacionTaxonomica.Division,
+                    p_clase = unaInformacionTaxonomica.Clase,
+                    p_orden = unaInformacionTaxonomica.Orden,
+                    p_familia = unaInformacionTaxonomica.Familia,
+                    p_genero = unaInformacionTaxonomica.Genero,
+                    p_especie = unaInformacionTaxonomica.Especie
                 };
 
                 var cantidad_filas = await conexion.ExecuteAsync(
@@ -565,6 +668,44 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return resultadoAccion;
         }
 
+        public async Task<bool> RemoveTaxonomicDetailsAsync(Guid fruta_id)
+        {
+            bool resultadoAccion = false;
+
+            //Validamos si hay registros existentes
+            int totalRegistros =
+                await GetTotalTaxonomicDetailsByFruitIdAsync(fruta_id);
+
+            if (totalRegistros == 0)
+                throw new DbOperationException("No se puede eliminar. NO existen registros taxonómicos para esta fruta.");
+
+
+            try
+            {
+                var conexion = contextoDB.CreateConnection();
+
+                string procedimiento = "core.p_elimina_taxonomia_fruta";
+                var parametros = new
+                {
+                    p_fruta_id = fruta_id
+                };
+
+                var cantidad_filas = await conexion.ExecuteAsync(
+                    procedimiento,
+                    parametros,
+                    commandType: CommandType.StoredProcedure);
+
+                if (cantidad_filas != 0)
+                    resultadoAccion = true;
+            }
+            catch (NpgsqlException error)
+            {
+                throw new DbOperationException(error.Message);
+            }
+
+            return resultadoAccion;
+        }
+
         private async Task<int> GetTotalNutritionDetailsByFruitIdAsync(Guid fruta_id)
         {
             var conexion = contextoDB.CreateConnection();
@@ -577,6 +718,26 @@ namespace FrutasColombia_CS_REST_API.Repositories
             //Aqui colocamos la informacion nutricional
             string sentenciaSQL = "SELECT count(*) totalRegistros " +
                 "FROM core.nutricion_frutas " +
+                "WHERE fruta_id = @fruta_id";
+
+            var totalRegistros = await conexion
+                .QueryAsync<int>(sentenciaSQL, parametrosSentencia);
+
+            return totalRegistros.FirstOrDefault();
+        }
+
+        private async Task<int> GetTotalTaxonomicDetailsByFruitIdAsync(Guid fruta_id)
+        {
+            var conexion = contextoDB.CreateConnection();
+
+            //Validamos si hay registros existentes
+            DynamicParameters parametrosSentencia = new();
+            parametrosSentencia.Add("@fruta_id", fruta_id,
+                                    DbType.Guid, ParameterDirection.Input);
+
+            //Aqui colocamos la informacion nutricional
+            string sentenciaSQL = "SELECT count(*) totalRegistros " +
+                "FROM core.taxonomia_frutas " +
                 "WHERE fruta_id = @fruta_id";
 
             var totalRegistros = await conexion

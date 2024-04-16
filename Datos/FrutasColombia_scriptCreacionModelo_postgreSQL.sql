@@ -421,6 +421,128 @@ create or replace view core.v_info_ubicaciones as
  from core.municipios m join core.departamentos d on m.departamento_id = d.id);
 
 
+
+-- ----------------------------
+-- Creación de Funciones
+-- ----------------------------
+-- f_obtiene_reino_id
+create or replace function core.f_obtiene_reino_id(in p_reino text)
+returns uuid language plpgsql as
+$$
+    declare
+        l_reino_id     uuid;
+
+    begin
+        select id into l_reino_id
+        from core.reinos
+        where lower(nombre) = lower(p_reino);
+
+        return l_reino_id;
+    end;
+$$;
+
+-- f_obtiene_division_id
+create or replace function core.f_obtiene_division_id(in p_division text, in p_reino_id uuid)
+returns uuid language plpgsql as
+$$
+    declare
+        l_division_id     uuid;
+
+    begin
+        select id into l_division_id
+        from core.divisiones
+        where lower(nombre) = lower(p_division)
+        and reino_id = p_reino_id;
+
+        return l_division_id;
+    end;
+$$;
+
+-- f_obtiene_clase_id
+create or replace function core.f_obtiene_clase_id(in p_clase text, in p_division_id uuid)
+returns uuid language plpgsql as
+$$
+    declare
+        l_clase_id     uuid;
+
+    begin
+        select id into l_clase_id
+        from core.clases
+        where lower(nombre) = lower(p_clase)
+        and division_id = p_division_id;
+
+        return l_clase_id;
+    end;
+$$;
+
+-- f_obtiene_orden_id
+create or replace function core.f_obtiene_orden_id(in p_orden text, in p_clase_id uuid)
+returns uuid language plpgsql as
+$$
+    declare
+        l_orden_id     uuid;
+
+    begin
+        select id into l_orden_id
+        from core.ordenes
+        where lower(nombre) = lower(p_orden)
+        and clase_id = p_clase_id;
+
+        return l_orden_id;
+    end;
+$$;
+
+-- f_obtiene_familia_id
+create or replace function core.f_obtiene_familia_id(in p_familia text, in p_orden_id uuid)
+returns uuid language plpgsql as
+$$
+    declare
+        l_familia_id     uuid;
+
+    begin
+        select id into l_familia_id
+        from core.familias
+        where lower(nombre) = lower(p_familia)
+        and orden_id = p_orden_id;
+
+        return l_familia_id;
+    end;
+$$;
+
+-- f_obtiene_genero_id
+create or replace function core.f_obtiene_genero_id(in p_genero text, in p_familia_id uuid)
+returns uuid language plpgsql as
+$$
+    declare
+        l_genero_id     uuid;
+
+    begin
+        select id into l_genero_id
+        from core.generos
+        where lower(nombre) = lower(p_genero)
+        and familia_id = p_familia_id;
+
+        return l_genero_id;
+    end;
+$$;
+
+-- f_obtiene_especie_id
+create or replace function core.f_obtiene_especie_id(in p_especie text, in p_genero_id uuid)
+returns uuid language plpgsql as
+$$
+    declare
+        l_especie_id     uuid;
+
+    begin
+        select id into l_especie_id
+        from core.especies
+        where lower(nombre) = lower(p_especie)
+        and genero_id = p_genero_id;
+
+        return l_especie_id;
+    end;
+$$;
+
 -- ----------------------------
 -- Creación de Procedimientos
 -- ----------------------------
@@ -590,6 +712,207 @@ $$
         if(l_total_registros!=0) then
             -- eliminamos la información nutricional de la fruta
             delete from nutricion_frutas
+            where fruta_id = p_fruta_id;
+        end if;
+    end;
+$$;
+
+-- p_inserta_taxonomia_fruta
+create or replace procedure core.p_inserta_taxonomia_fruta(
+                    in p_fruta_id       uuid,
+                    in p_reino          text,
+                    in p_division       text,
+                    in p_clase          text,
+                    in p_orden          text,
+                    in p_familia        text,
+                    in p_genero         text,
+                    in p_especie        text
+) language plpgsql as
+$$
+    declare
+        l_total_registros integer :=0;
+        l_reino_id        uuid;
+        l_division_id     uuid;
+        l_clase_id        uuid;
+        l_orden_id        uuid;
+        l_familia_id      uuid;
+        l_genero_id       uuid;
+        l_especie_id      uuid;
+
+    begin
+        -- identificamos si hay información taxonomica previa
+        select count(fruta_id) into l_total_registros
+        from core.taxonomia_frutas
+        where fruta_id = p_fruta_id;
+
+        if l_total_registros != 0 then
+            RAISE EXCEPTION 'Ya hay registros taxonómicos para la fruta';
+        end if;
+
+        -- Validamos que el reino esté registrado
+        l_reino_id := core.f_obtiene_reino_id(p_reino);
+
+        if l_reino_id is null then
+            RAISE EXCEPTION 'El reino no es válido';
+        end if;
+
+        -- Validamos que la división esté registrada
+        l_division_id := core.f_obtiene_division_id(p_division,l_reino_id);
+
+        if l_division_id is null then
+            RAISE EXCEPTION 'la división no es válida';
+        end if;
+
+        -- Validamos que la clase esté registrada
+        l_clase_id := core.f_obtiene_clase_id(p_clase,l_division_id);
+
+        if l_clase_id is null then
+            RAISE EXCEPTION 'la clase no es válida';
+        end if;
+
+        -- Validamos que el orden esté registrado
+        l_orden_id := core.f_obtiene_orden_id(p_orden,l_clase_id);
+
+        if l_orden_id is null then
+            RAISE EXCEPTION 'El orden no es válido';
+        end if;
+
+        -- Validamos que la familia esté registrada
+        l_familia_id := core.f_obtiene_familia_id(p_familia,l_orden_id);
+
+        if l_familia_id is null then
+            RAISE EXCEPTION 'La familia no es válida';
+        end if;
+
+        -- Validamos que el género esté registrado
+        l_genero_id := core.f_obtiene_genero_id(p_genero,l_familia_id);
+
+        if l_genero_id is null then
+            RAISE EXCEPTION 'El género no es válido';
+        end if;
+
+        -- Validamos que la especie esté registrada
+        l_especie_id := core.f_obtiene_especie_id(p_especie,l_genero_id);
+
+        if l_especie_id is null then
+            RAISE EXCEPTION 'La especie no es válida';
+        end if;
+
+        -- Si todas las validaciones son correctas, insertamos
+        insert into taxonomia_frutas (fruta_id, especie_id)
+        values (p_fruta_id, l_especie_id);
+
+    end;
+$$;
+
+-- p_actualiza_taxonomia_fruta
+create or replace procedure core.p_actualiza_taxonomia_fruta(
+                    in p_fruta_id       uuid,
+                    in p_reino          text,
+                    in p_division       text,
+                    in p_clase          text,
+                    in p_orden          text,
+                    in p_familia        text,
+                    in p_genero         text,
+                    in p_especie        text
+) language plpgsql as
+$$
+    declare
+        l_total_registros integer :=0;
+        l_reino_id        uuid;
+        l_division_id     uuid;
+        l_clase_id        uuid;
+        l_orden_id        uuid;
+        l_familia_id      uuid;
+        l_genero_id       uuid;
+        l_especie_id      uuid;
+
+    begin
+        -- identificamos si hay información taxonomica previa
+        select count(fruta_id) into l_total_registros
+        from core.taxonomia_frutas
+        where fruta_id = p_fruta_id;
+
+        if l_total_registros = 0 then
+            RAISE EXCEPTION 'No hay registros taxonómicos para actualizar de la fruta';
+        end if;
+
+        -- Validamos que el reino esté registrado
+        l_reino_id := core.f_obtiene_reino_id(p_reino);
+
+        if l_reino_id is null then
+            RAISE EXCEPTION 'El reino no es válido';
+        end if;
+
+        -- Validamos que la división esté registrada
+        l_division_id := core.f_obtiene_division_id(p_division,l_reino_id);
+
+        if l_division_id is null then
+            RAISE EXCEPTION 'la división no es válida';
+        end if;
+
+        -- Validamos que la clase esté registrada
+        l_clase_id := core.f_obtiene_clase_id(p_clase,l_division_id);
+
+        if l_clase_id is null then
+            RAISE EXCEPTION 'la clase no es válida';
+        end if;
+
+        -- Validamos que el orden esté registrado
+        l_orden_id := core.f_obtiene_orden_id(p_orden,l_clase_id);
+
+        if l_orden_id is null then
+            RAISE EXCEPTION 'El orden no es válido';
+        end if;
+
+        -- Validamos que la familia esté registrada
+        l_familia_id := core.f_obtiene_familia_id(p_familia,l_orden_id);
+
+        if l_familia_id is null then
+            RAISE EXCEPTION 'La familia no es válida';
+        end if;
+
+        -- Validamos que el género esté registrado
+        l_genero_id := core.f_obtiene_genero_id(p_genero,l_familia_id);
+
+        if l_genero_id is null then
+            RAISE EXCEPTION 'El género no es válido';
+        end if;
+
+        -- Validamos que la especie esté registrada
+        l_especie_id := core.f_obtiene_especie_id(p_especie,l_genero_id);
+
+        if l_especie_id is null then
+            RAISE EXCEPTION 'La especie no es válida';
+        end if;
+
+        -- Si todas las validaciones son correctas, actualizamos
+        update core.taxonomia_frutas
+            set especie_id = l_especie_id
+        where fruta_id = p_fruta_id;
+
+    end;
+$$;
+
+
+-- p_elimina_taxonomia_fruta
+create or replace procedure core.p_elimina_taxonomia_fruta(
+                    in p_fruta_id       uuid
+) language plpgsql as
+$$
+    declare
+    l_total_registros integer :=0;
+
+    begin
+        -- identificamos si hay información nutricional previa
+        select count(fruta_id) into l_total_registros
+        from core.taxonomia_frutas
+        where fruta_id = p_fruta_id;
+
+        -- Si hay registros, se puede eliminar
+        if(l_total_registros!=0) then
+            -- eliminamos la información de taxonomia de la fruta
+            delete from taxonomia_frutas
             where fruta_id = p_fruta_id;
         end if;
     end;

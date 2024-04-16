@@ -42,6 +42,20 @@ namespace FrutasColombia_CS_REST_API.Services
             return unaFrutaNutritiva;
         }
 
+        public async Task<FrutaClasificada> GetClassifiedFruitByIdAsync(Guid fruta_id)
+        {
+            Fruta unaFruta = await _frutaRepository
+                .GetByIdAsync(fruta_id);
+
+            if (unaFruta.Id == Guid.Empty)
+                throw new AppValidationException($"Fruta no encontrada con el id {fruta_id}");
+
+            FrutaClasificada unaFrutaClasificada = await _frutaRepository
+                .GetClassifiedFruitByIdAsync(fruta_id);
+
+            return unaFrutaClasificada;
+        }
+
         public async Task<Fruta> CreateAsync(Fruta unaFruta)
         {
             //Validamos que la fruta tenga nombre
@@ -79,7 +93,7 @@ namespace FrutasColombia_CS_REST_API.Services
                 throw;
             }
 
-            return (frutaExistente);
+            return frutaExistente;
         }
 
         public async Task<FrutaNutritiva> CreateNutritionDetailsAsync(Guid fruta_id, Nutricion unaInformacionNutricional)
@@ -107,7 +121,40 @@ namespace FrutasColombia_CS_REST_API.Services
                 throw;
             }
 
-            return (frutaNutritivaExistente);
+            return frutaNutritivaExistente;
+        }
+
+        public async Task<FrutaClasificada> CreateTaxonomicDetailsAsync(Guid fruta_id, Taxonomia unaInformacionTaxonomica)
+        {
+            //Validamos que exista la fruta previamente
+            var frutaClasificadaExistente = await _frutaRepository
+                .GetClassifiedFruitByIdAsync(fruta_id);
+
+            if (frutaClasificadaExistente.Id == Guid.Empty)
+                throw new AppValidationException($"No existe la fruta con el ID {fruta_id} ");
+
+            //Aqui evaluamos que la información taxonómica no venga con valores nulos 
+            string resultadoValidacionTaxonomia = EvaluaInformacionTaxonomica(unaInformacionTaxonomica);
+            if (!string.IsNullOrEmpty(resultadoValidacionTaxonomia))
+                throw new AppValidationException($"No se puede registrar información taxonómica con {resultadoValidacionTaxonomia} nulo. ");
+
+            try
+            {
+                bool resultadoAccion = await _frutaRepository
+                    .CreateTaxonomicDetailsAsync(fruta_id, unaInformacionTaxonomica);
+
+                if (!resultadoAccion)
+                    throw new AppValidationException("Operación ejecutada pero no generó cambios en la DB");
+
+                frutaClasificadaExistente = await _frutaRepository
+                    .GetClassifiedFruitByIdAsync(fruta_id);
+            }
+            catch (DbOperationException)
+            {
+                throw;
+            }
+
+            return frutaClasificadaExistente;
         }
 
         public async Task<Fruta> UpdateAsync(Fruta unaFruta)
@@ -158,7 +205,7 @@ namespace FrutasColombia_CS_REST_API.Services
                 throw;
             }
 
-            return (frutaExistente);
+            return frutaExistente;
         }
 
         public async Task<FrutaNutritiva> UpdateNutritionDetailsAsync(Guid fruta_id, Nutricion unaInformacionNutricional)
@@ -186,7 +233,35 @@ namespace FrutasColombia_CS_REST_API.Services
                 throw;
             }
 
-            return (frutaNutritivaExistente);
+            return frutaNutritivaExistente;
+        }
+
+        public async Task<FrutaClasificada> UpdateTaxonomicDetailsAsync(Guid fruta_id, Taxonomia unaInformacionTaxonomica)
+        {
+            //Validamos que exista la fruta previamente
+            var frutaClasificadaExistente = await _frutaRepository
+                .GetClassifiedFruitByIdAsync(fruta_id);
+
+            if (frutaClasificadaExistente.Id == Guid.Empty)
+                throw new AppValidationException($"No existe la fruta con el ID {fruta_id} ");
+
+            try
+            {
+                bool resultadoAccion = await _frutaRepository
+                    .UpdateTaxonomicDetailsAsync(fruta_id, unaInformacionTaxonomica);
+
+                if (!resultadoAccion)
+                    throw new AppValidationException("Operación ejecutada pero no generó cambios en la DB");
+
+                frutaClasificadaExistente = await _frutaRepository
+                    .GetClassifiedFruitByIdAsync(fruta_id);
+            }
+            catch (DbOperationException)
+            {
+                throw;
+            }
+
+            return frutaClasificadaExistente;
         }
 
         public async Task<string> RemoveAsync(Guid fruta_id)
@@ -241,7 +316,61 @@ namespace FrutasColombia_CS_REST_API.Services
                 throw;
             }
 
-            return (frutaNutritivaExistente);
+            return frutaNutritivaExistente;
+        }
+
+        public async Task<FrutaClasificada> RemoveTaxonomicDetailsAsync(Guid fruta_id)
+        {
+            //Validamos que exista la fruta previamente
+            var frutaClasificadaExistente = await _frutaRepository
+                .GetClassifiedFruitByIdAsync(fruta_id);
+
+            if (frutaClasificadaExistente.Id == Guid.Empty)
+                throw new AppValidationException($"No existe la fruta con el ID {fruta_id} ");
+
+            try
+            {
+                bool resultadoAccion = await _frutaRepository
+                    .RemoveTaxonomicDetailsAsync(fruta_id);
+
+                if (!resultadoAccion)
+                    throw new AppValidationException("Operación ejecutada pero no generó cambios en la DB");
+
+                frutaClasificadaExistente = await _frutaRepository
+                    .GetClassifiedFruitByIdAsync(fruta_id);
+            }
+            catch (DbOperationException)
+            {
+                throw;
+            }
+
+            return frutaClasificadaExistente;
+        }
+
+        private string EvaluaInformacionTaxonomica(Taxonomia unaInformacionTaxonomica)
+        {
+            if (string.IsNullOrEmpty(unaInformacionTaxonomica.Reino))
+                return "Reino";
+
+            if (string.IsNullOrEmpty(unaInformacionTaxonomica.Division))
+                return "Division";
+
+            if (string.IsNullOrEmpty(unaInformacionTaxonomica.Orden))
+                return "Orden";
+
+            if (string.IsNullOrEmpty(unaInformacionTaxonomica.Clase))
+                return "Clase";
+
+            if (string.IsNullOrEmpty(unaInformacionTaxonomica.Familia))
+                return "Familia";
+
+            if (string.IsNullOrEmpty(unaInformacionTaxonomica.Genero))
+                return "Genero";
+
+            if (string.IsNullOrEmpty(unaInformacionTaxonomica.Especie))
+                return "Especie";
+
+            return string.Empty;
         }
     }
 }

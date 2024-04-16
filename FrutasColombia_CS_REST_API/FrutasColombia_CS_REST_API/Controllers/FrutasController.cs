@@ -52,6 +52,22 @@ namespace FrutasColombia_CS_REST_API.Controllers
             }
         }
 
+        [HttpGet("{fruta_id:Guid}/Taxonomia")]
+        public async Task<IActionResult> GetClassifiedFruitByIdAsync(Guid fruta_id)
+        {
+            try
+            {
+                var unaFrutaClasificada = await _frutaService
+                    .GetClassifiedFruitByIdAsync(fruta_id);
+
+                return Ok(unaFrutaClasificada);
+            }
+            catch (AppValidationException error)
+            {
+                return NotFound(error.Message);
+            }
+        }
+
         [HttpPost]
         public async Task<IActionResult> CreateAsync(Fruta unaFruta)
         {
@@ -79,6 +95,26 @@ namespace FrutasColombia_CS_REST_API.Controllers
             {
                 var frutaCreada = await _frutaService
                     .CreateNutritionDetailsAsync(fruta_id, unaInformacionNutricional);
+
+                return Ok(frutaCreada);
+            }
+            catch (AppValidationException error)
+            {
+                return BadRequest($"Error de validación: {error.Message}");
+            }
+            catch (DbOperationException error)
+            {
+                return BadRequest($"Error de operacion en DB: {error.Message}");
+            }
+        }
+
+        [HttpPost("{fruta_id:Guid}/Taxonomia")]
+        public async Task<IActionResult> CreateTaxonomicDetailsAsync(Guid fruta_id, Taxonomia unaInformacionTaxonomica)
+        {
+            try
+            {
+                var frutaCreada = await _frutaService
+                    .CreateTaxonomicDetailsAsync(fruta_id, unaInformacionTaxonomica);
 
                 return Ok(frutaCreada);
             }
@@ -132,6 +168,26 @@ namespace FrutasColombia_CS_REST_API.Controllers
             }
         }
 
+        [HttpPut("{fruta_id:Guid}/Taxonomia")]
+        public async Task<IActionResult> UpdateTaxonomicDetailsAsync(Guid fruta_id, Taxonomia unaInformacionTaxonomica)
+        {
+            try
+            {
+                var frutaActualizada = await _frutaService
+                    .UpdateTaxonomicDetailsAsync(fruta_id, unaInformacionTaxonomica);
+
+                return Ok(frutaActualizada);
+            }
+            catch (AppValidationException error)
+            {
+                return BadRequest($"Error de validación: {error.Message}");
+            }
+            catch (DbOperationException error)
+            {
+                return BadRequest($"Error de operacion en DB: {error.Message}");
+            }
+        }
+
         [HttpDelete("{fruta_id:Guid}")]
         public async Task<IActionResult> RemoveAsync(Guid fruta_id)
         {
@@ -161,6 +217,26 @@ namespace FrutasColombia_CS_REST_API.Controllers
                     .RemoveNutritionDetailsAsync(fruta_id);
 
                 return Ok($"La fruta {frutaSinNutricion.Nombre} ya no tiene información nutricional!");
+            }
+            catch (AppValidationException error)
+            {
+                return BadRequest($"Error de validación: {error.Message}");
+            }
+            catch (DbOperationException error)
+            {
+                return BadRequest($"Error de operacion en DB: {error.Message}");
+            }
+        }
+
+        [HttpDelete("{fruta_id:Guid}/Taxonomia")]
+        public async Task<IActionResult> RemoveTaxonomicDetailsAsync(Guid fruta_id)
+        {
+            try
+            {
+                var frutaSinClasificacion = await _frutaService
+                    .RemoveTaxonomicDetailsAsync(fruta_id);
+
+                return Ok($"La fruta {frutaSinClasificacion.Nombre} ya no tiene información taxonómica!");
             }
             catch (AppValidationException error)
             {
