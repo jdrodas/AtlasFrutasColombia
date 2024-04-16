@@ -6,6 +6,7 @@ using FrutasColombia_CS_REST_API.Models;
 using Npgsql;
 using System.Data;
 
+
 namespace FrutasColombia_CS_REST_API.Repositories
 {
     public class FrutaRepository(PgsqlDbContext unContexto) : IFrutaRepository
@@ -336,6 +337,12 @@ namespace FrutasColombia_CS_REST_API.Repositories
         {
             bool resultadoAccion = false;
 
+            //Validamos si la fruta existe por ese Nombre
+            var frutaExistente = await GetByNameAsync(unaFruta.Nombre!);
+
+            if (frutaExistente.Id != Guid.Empty)
+                throw new DbOperationException($"No se puede insertar. Ya existe la fruta {unaFruta.Nombre!}.");
+
             try
             {
                 var conexion = contextoDB.CreateConnection();
@@ -368,10 +375,16 @@ namespace FrutasColombia_CS_REST_API.Repositories
         {
             bool resultadoAccion = false;
 
+            //Validamos si hay registros existentes
+            int totalRegistros =
+                await GetTotalNutritionDetailsByFruitIdAsync(fruta_id);
+
+            if (totalRegistros != 0)
+                throw new DbOperationException("No se puede insertar. Ya existen registros nutricionales para esta fruta.");
+
             try
             {
                 var conexion = contextoDB.CreateConnection();
-
                 string procedimiento = "core.p_inserta_nutricion_fruta";
                 var parametros = new
                 {
@@ -401,6 +414,12 @@ namespace FrutasColombia_CS_REST_API.Repositories
         public async Task<bool> UpdateAsync(Fruta unaFruta)
         {
             bool resultadoAccion = false;
+
+            //Validamos si la fruta existe por ese ID
+            var frutaExistente = await GetByIdAsync(unaFruta.Id);
+
+            if (frutaExistente.Id == Guid.Empty)
+                throw new DbOperationException($"No se puede actualizar. No existe la fruta {unaFruta.Nombre!}.");
 
             try
             {
@@ -435,6 +454,13 @@ namespace FrutasColombia_CS_REST_API.Repositories
         {
             bool resultadoAccion = false;
 
+            //Validamos si hay registros existentes
+            int totalRegistros =
+                await GetTotalNutritionDetailsByFruitIdAsync(fruta_id);
+
+            if (totalRegistros == 0)
+                throw new DbOperationException("No se puede actualizar. NO existen registros nutricionales para esta fruta.");
+
             try
             {
                 var conexion = contextoDB.CreateConnection();
@@ -465,10 +491,15 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return resultadoAccion;
         }
 
-
         public async Task<bool> RemoveAsync(Guid fruta_id)
         {
             bool resultadoAccion = false;
+
+            //Validamos si la fruta existe por ese ID
+            var frutaExistente = await GetByIdAsync(fruta_id);
+
+            if (frutaExistente.Id == Guid.Empty)
+                throw new DbOperationException($"No se puede eliminar. No existe la fruta con el Id {fruta_id}.");
 
             try
             {
@@ -500,6 +531,14 @@ namespace FrutasColombia_CS_REST_API.Repositories
         {
             bool resultadoAccion = false;
 
+            //Validamos si hay registros existentes
+            int totalRegistros =
+                await GetTotalNutritionDetailsByFruitIdAsync(fruta_id);
+
+            if (totalRegistros == 0)
+                throw new DbOperationException("No se puede eliminar. NO existen registros nutricionales para esta fruta.");
+
+
             try
             {
                 var conexion = contextoDB.CreateConnection();
@@ -524,6 +563,26 @@ namespace FrutasColombia_CS_REST_API.Repositories
             }
 
             return resultadoAccion;
+        }
+
+        private async Task<int> GetTotalNutritionDetailsByFruitIdAsync(Guid fruta_id)
+        {
+            var conexion = contextoDB.CreateConnection();
+
+            //Validamos si hay registros existentes
+            DynamicParameters parametrosSentencia = new();
+            parametrosSentencia.Add("@fruta_id", fruta_id,
+                                    DbType.Guid, ParameterDirection.Input);
+
+            //Aqui colocamos la informacion nutricional
+            string sentenciaSQL = "SELECT count(*) totalRegistros " +
+                "FROM core.nutricion_frutas " +
+                "WHERE fruta_id = @fruta_id";
+
+            var totalRegistros = await conexion
+                .QueryAsync<int>(sentenciaSQL, parametrosSentencia);
+
+            return totalRegistros.FirstOrDefault();
         }
     }
 }

@@ -521,10 +521,21 @@ create or replace procedure core.p_inserta_nutricion_fruta(
                     in p_proteinas      double precision
 ) language plpgsql as
 $$
+    declare
+    l_total_registros integer :=0;
+
     begin
-        -- Insertamos la información nutricional de la fruta
-        insert into core.nutricion_frutas (fruta_id, azucares, carbohidratos, grasas, proteinas)
-        values (p_fruta_id, p_azucares, p_carbohidratos, p_grasas, p_proteinas);
+        -- identificamos si hay información nutricional previa
+        select count(fruta_id) into l_total_registros
+        from core.nutricion_frutas
+        where fruta_id = p_fruta_id;
+
+        -- Si no hay registros, se puede insertar
+        if(l_total_registros=0) then
+            -- Insertamos la información nutricional de la fruta
+            insert into core.nutricion_frutas (fruta_id, azucares, carbohidratos, grasas, proteinas)
+            values (p_fruta_id, p_azucares, p_carbohidratos, p_grasas, p_proteinas);
+        end if;
     end;
 $$;
 
@@ -537,15 +548,27 @@ create or replace procedure core.p_actualiza_nutricion_fruta(
                     in p_proteinas      double precision
 ) language plpgsql as
 $$
+    declare
+    l_total_registros integer :=0;
+
     begin
-        -- Actualizamos la información nutricional de la fruta
-        update core.nutricion_frutas
-        set
-            azucares = p_azucares,
-            carbohidratos = p_carbohidratos,
-            grasas = p_grasas,
-            proteinas = p_proteinas
-            where fruta_id = p_fruta_id;
+        -- identificamos si hay información nutricional previa
+        select count(fruta_id) into l_total_registros
+        from core.nutricion_frutas
+        where fruta_id = p_fruta_id;
+
+        -- Si hay registros, se puede actualizar
+        if(l_total_registros!=0) then
+
+            -- Actualizamos la información nutricional de la fruta
+            update core.nutricion_frutas
+            set
+                azucares = p_azucares,
+                carbohidratos = p_carbohidratos,
+                grasas = p_grasas,
+                proteinas = p_proteinas
+                where fruta_id = p_fruta_id;
+        end if;
     end;
 $$;
 
@@ -554,10 +577,21 @@ create or replace procedure core.p_elimina_nutricion_fruta(
                     in p_fruta_id       uuid
 ) language plpgsql as
 $$
+    declare
+    l_total_registros integer :=0;
+
     begin
-        -- Insertamos la fruta
-        insert into core.nutricion_frutas (fruta_id, azucares, carbohidratos, grasas, proteinas)
-        values (p_fruta_id, p_azucares, p_carbohidratos, p_grasas, p_proteinas);
+        -- identificamos si hay información nutricional previa
+        select count(fruta_id) into l_total_registros
+        from core.nutricion_frutas
+        where fruta_id = p_fruta_id;
+
+        -- Si hay registros, se puede eliminar
+        if(l_total_registros!=0) then
+            -- eliminamos la información nutricional de la fruta
+            delete from nutricion_frutas
+            where fruta_id = p_fruta_id;
+        end if;
     end;
 $$;
 
