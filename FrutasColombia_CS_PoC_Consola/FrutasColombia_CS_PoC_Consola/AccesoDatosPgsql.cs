@@ -16,7 +16,7 @@ namespace FrutasColombia_CS_PoC_Consola
 
             IConfiguration miConfiguracion = builder.Build();
 
-            return miConfiguracion["ConnectionString:FrutasPL"];
+            return miConfiguracion["ConnectionString:pgsql"];
         }
 
         #region Frutas
