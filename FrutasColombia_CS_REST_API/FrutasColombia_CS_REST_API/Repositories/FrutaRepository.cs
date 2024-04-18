@@ -152,6 +152,36 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return frutasProducidas;
         }
 
+        public async Task<IEnumerable<FrutaProducida>> GetByMonthAsync(int mes_id)
+        {
+            List<FrutaProducida> frutasProducidas = [];
+
+            var conexion = contextoDB.CreateConnection();
+
+            DynamicParameters parametrosSentencia = new();
+            parametrosSentencia.Add("@mes_id", mes_id,
+                DbType.Int32, ParameterDirection.Input);
+
+
+            string sentenciaSQL = "SELECT DISTINCT fruta_id id, fruta_nombre nombre, " +
+                "fruta_wikipedia url_wikipedia, fruta_imagen url_imagen " +
+                "FROM v_info_produccion_frutas v " +
+                "WHERE @mes_id BETWEEN mes_inicio and mes_final";
+
+            var resultadoFrutas = await conexion
+                .QueryAsync<FrutaProducida>(sentenciaSQL, parametrosSentencia);
+
+            if (resultadoFrutas.Any())
+            {
+                frutasProducidas = resultadoFrutas.ToList();
+
+                foreach (FrutaProducida unaFruta in frutasProducidas.ToList())
+                    unaFruta.Produccion = await GetProductionDetailsAsync(unaFruta.Id, mes_id);
+            }
+
+            return frutasProducidas;
+        }
+
         public async Task<IEnumerable<FrutaClasificada>> GetByGenusIdAsync(Guid genero_id)
         {
             List<FrutaClasificada> frutasClasificadas = [];
@@ -210,7 +240,8 @@ namespace FrutasColombia_CS_REST_API.Repositories
                                     DbType.Guid, ParameterDirection.Input);
 
             string sentenciaSQL = "SELECT DISTINCT v.epoca_nombre epoca, v.clima_nombre clima, " +
-                "v.municipio_nombre municipio, v.departamento_nombre departamento " +
+                "v.municipio_nombre municipio, v.departamento_nombre departamento, " +
+                "v.mes_inicio, v.mes_final " +
                 "FROM v_info_produccion_frutas v " +
                 "WHERE v.fruta_id = @fruta_id ";
 
@@ -253,10 +284,40 @@ namespace FrutasColombia_CS_REST_API.Repositories
                                     DbType.Guid, ParameterDirection.Input);
 
             string sentenciaSQL = "SELECT DISTINCT v.epoca_nombre epoca, v.clima_nombre clima, " +
-                "v.municipio_nombre municipio, v.departamento_nombre departamento " +
+                "v.municipio_nombre municipio, v.departamento_nombre departamento, " +
+                "v.mes_inicio, v.mes_final " +
                 "FROM v_info_produccion_frutas v " +
                 "WHERE v.fruta_id = @fruta_id " +
                 "AND v.clima_id = @clima_id";
+
+            var resultadoProduccion = await conexion
+                .QueryAsync<Produccion>(sentenciaSQL, parametrosSentencia);
+
+            if (resultadoProduccion.Any())
+                infoProduccion = resultadoProduccion.ToList();
+
+            return infoProduccion;
+        }
+
+        public async Task<List<Produccion>> GetProductionDetailsAsync(Guid fruta_id, int mes_id)
+        {
+            List<Produccion> infoProduccion = [];
+
+            var conexion = contextoDB.CreateConnection();
+
+            DynamicParameters parametrosSentencia = new();
+            parametrosSentencia.Add("@fruta_id", fruta_id,
+                                    DbType.Guid, ParameterDirection.Input);
+
+            parametrosSentencia.Add("@mes_id", mes_id,
+                                    DbType.Int32, ParameterDirection.Input);
+
+            string sentenciaSQL = "SELECT DISTINCT v.epoca_nombre epoca, v.clima_nombre clima, " +
+                "v.municipio_nombre municipio, v.departamento_nombre departamento, " +
+                "v.mes_inicio, v.mes_final " +
+                "FROM v_info_produccion_frutas v " +
+                "WHERE v.fruta_id = @fruta_id " +
+                "AND @mes_id BETWEEN mes_inicio and mes_final";
 
             var resultadoProduccion = await conexion
                 .QueryAsync<Produccion>(sentenciaSQL, parametrosSentencia);

@@ -420,6 +420,18 @@ create or replace view core.v_info_ubicaciones as
                  d.nombre departamento_nombre
  from core.municipios m join core.departamentos d on m.departamento_id = d.id);
 
+-- v_info_meses
+create or replace view v_info_meses as
+(
+    with meses as
+    (
+        select generate_series(1,12) as mes_id
+    )
+    select mes_id,
+    trim(to_char(to_date(mes_id::text,'MM'),'Month')) mes_nombre
+    from meses
+);
+
 
 
 -- ----------------------------
