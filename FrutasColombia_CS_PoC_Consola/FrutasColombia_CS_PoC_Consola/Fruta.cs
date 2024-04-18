@@ -13,7 +13,7 @@ namespace FrutasColombia_CS_PoC_Consola
 
         //[JsonPropertyName("id")]
         //public Guid Id { get; set; } = Guid.Empty;
-        
+
         [BsonElement("nombre")]
         [BsonRepresentation(BsonType.String)]
         [JsonPropertyName("nombre")]
@@ -23,7 +23,7 @@ namespace FrutasColombia_CS_PoC_Consola
         [BsonRepresentation(BsonType.String)]
         [JsonPropertyName("url_wikipedia")]
         public string? Url_Wikipedia { get; set; } = String.Empty;
-        
+
         [BsonElement("url_imagen")]
         [BsonRepresentation(BsonType.String)]
         [JsonPropertyName("url_imagen")]

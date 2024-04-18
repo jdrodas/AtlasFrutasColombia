@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FrutasColombia_CS_PoC_Consola
+﻿namespace FrutasColombia_CS_PoC_Consola
 {
     public class PoC_Mongo
     {
@@ -87,23 +81,24 @@ namespace FrutasColombia_CS_PoC_Consola
 
             Console.WriteLine("\nPresiona una tecla para continuar...");
             Console.ReadKey();
+
+
+            //D del CRUD - Borrado de una fruta existente - DELETE
+            nuevaFruta = AccesoDatosMongo.ObtieneFruta(nuevaFruta.Nombre!);
+            Console.WriteLine($"\n\nBorrando la fruta {nuevaFruta.Nombre} ...");
+
+            bool resultadoEliminacion = AccesoDatosMongo.EliminaFruta(nuevaFruta, out string mensajeEliminacion);
+
+            if (resultadoEliminacion == false)
+                Console.WriteLine(mensajeEliminacion);
+            else
+            {
+                Console.WriteLine($"Eliminación exitosa! la fruta {nuevaFruta.Nombre} fue eliminada");
+                VisualizaFrutas();
+            }
         }
 
-        //    //D del CRUD - Borrado de una fruta existente - DELETE
-        //    nuevaFruta = AccesoDatosMongo.ObtieneFruta(nuevaFruta.Nombre!);
-        //    Console.WriteLine($"\n\nBorrando la fruta {nuevaFruta.Nombre} ...");
-
-        //    bool resultadoEliminacion = AccesoDatosMongo.EliminaFruta(nuevaFruta, out string mensajeEliminacion);
-
-        //    if (resultadoEliminacion == false)
-        //        Console.WriteLine(mensajeEliminacion);
-        //    else
-        //    {
-        //        Console.WriteLine($"Eliminación exitosa! la fruta {nuevaFruta.Nombre} fue eliminada");
-        //        VisualizaFrutas();
-        //    }
-        //}
-
+ 
         /// <summary>
         /// Visualiza la lista de nombres de frutas registrados en la DB
         /// </summary>

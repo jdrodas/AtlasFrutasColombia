@@ -3,13 +3,6 @@ using Microsoft.Extensions.Configuration;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace FrutasColombia_CS_PoC_Consola
 {
     public class AccesoDatosMongo
@@ -32,11 +25,11 @@ namespace FrutasColombia_CS_PoC_Consola
 
             var clienteDB = new MongoClient(cadenaConexion);
             var miDB = clienteDB.GetDatabase("frutas_db");
-            var ColeccionEstilos = "frutas";
+            var coleccionFrutas = "frutas";
 
-            var listaFrutas = miDB.GetCollection<Fruta>(ColeccionEstilos)
+            var listaFrutas = miDB.GetCollection<Fruta>(coleccionFrutas)
                 .Find(new BsonDocument())
-                .SortBy(estilo => estilo.Nombre)
+                .SortBy(fruta => fruta.Nombre)
                 .ToList();
 
             return listaFrutas;
@@ -48,15 +41,15 @@ namespace FrutasColombia_CS_PoC_Consola
 
             var clienteDB = new MongoClient(cadenaConexion);
             var miDB = clienteDB.GetDatabase("frutas_db");
-            var ColeccionEstilos = "frutas";
+            var coleccionFrutas = "frutas";
 
             var filtroFruta = new BsonDocument { { "nombre", nombre_fruta } };
 
-            var unEstilo = miDB.GetCollection<Fruta>(ColeccionEstilos)
+            var unaFruta = miDB.GetCollection<Fruta>(coleccionFrutas)
                 .Find(filtroFruta)
                 .FirstOrDefault();
 
-            return unEstilo;
+            return unaFruta;
         }
 
         public static List<string> ObtieneNombresFrutas()
@@ -78,11 +71,11 @@ namespace FrutasColombia_CS_PoC_Consola
 
             var clienteDB = new MongoClient(cadenaConexion);
             var miDB = clienteDB.GetDatabase("frutas_db");
-            var ColeccionEstilos = "frutas";
+            var coleccionFrutas = "frutas";
 
             var filtroFruta = new BsonDocument { { "nombre", nombre_fruta } };
 
-            var unaFruta = miDB.GetCollection<Fruta>(ColeccionEstilos)
+            var unaFruta = miDB.GetCollection<Fruta>(coleccionFrutas)
                 .Find(filtroFruta)
                 .FirstOrDefault();
 
@@ -119,6 +112,26 @@ namespace FrutasColombia_CS_PoC_Consola
                                             .ReplaceOne(fruta => fruta.ObjectId == unaFruta.ObjectId, unaFruta);
 
             return resultadoActualizacion.IsAcknowledged;
+        }
+
+        public static bool EliminaFruta(Fruta unaFruta, out string mensajeEliminacion)
+        {
+            mensajeEliminacion = string.Empty;
+
+            string? cadenaConexion = ObtieneCadenaConexion();
+
+            var clienteDB = new MongoClient(cadenaConexion);
+            var miDB = clienteDB.GetDatabase("frutas_db");
+            var miColeccion = miDB.GetCollection<Fruta>("frutas");
+
+            var resultadoEliminacion = miColeccion.DeleteOne(fruta => fruta.ObjectId == unaFruta.ObjectId);
+
+            if (resultadoEliminacion.IsAcknowledged)
+                mensajeEliminacion = "Fruta eliminada exitosamente!";
+            else
+                mensajeEliminacion = $"No se pudo borrar la fruta {unaFruta.Nombre!}";
+            
+            return resultadoEliminacion.IsAcknowledged;
         }
     }
 }
