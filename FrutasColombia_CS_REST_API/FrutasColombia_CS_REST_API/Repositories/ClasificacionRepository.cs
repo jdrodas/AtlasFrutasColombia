@@ -165,5 +165,59 @@ namespace FrutasColombia_CS_REST_API.Repositories
 
             return especiesDelGenero;
         }
+
+        public async Task<Guid> GetTaxonomicElementIdAsync(string tipo_elemento, string nombre_elemento)
+        {
+            Guid elemento_guid = Guid.Empty;
+
+            var conexion = contextoDB.CreateConnection();
+
+            string sentenciaSQL = "SELECT id ";
+
+            switch (tipo_elemento)
+            {
+                case "reino":
+                    sentenciaSQL += "FROM core.reinos ";
+                    break;
+
+                case "division":
+                    sentenciaSQL += "FROM core.divisiones ";
+                    break;
+
+                case "orden":
+                    sentenciaSQL += "FROM core.ordenes ";
+                    break;
+
+                case "clase":
+                    sentenciaSQL += "FROM core.clases ";
+                    break;
+
+                case "familia":
+                    sentenciaSQL += "FROM core.familias ";
+                    break;
+
+                case "genero":
+                    sentenciaSQL += "FROM core.generos ";
+                    break;
+
+                case "especie":
+                    sentenciaSQL += "FROM core.especies ";
+                    break;
+            }
+
+            sentenciaSQL += "WHERE nombre = @nombre_elemento";
+
+            DynamicParameters parametrosSentencia = new();
+            parametrosSentencia.Add("@nombre_elemento", nombre_elemento,
+                                    DbType.String, ParameterDirection.Input);
+
+            var resultado = await conexion
+                .QueryAsync<Guid>(sentenciaSQL, parametrosSentencia);
+
+            if (resultado.Any())
+                elemento_guid = resultado.First();
+
+            return elemento_guid;
+        }
     }
 }

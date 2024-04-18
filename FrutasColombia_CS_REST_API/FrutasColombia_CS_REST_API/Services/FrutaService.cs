@@ -4,9 +4,11 @@ using FrutasColombia_CS_REST_API.Models;
 
 namespace FrutasColombia_CS_REST_API.Services
 {
-    public class FrutaService(IFrutaRepository frutaRepository)
+    public class FrutaService(IFrutaRepository frutaRepository,
+        IClasificacionRepository clasificacionRepository)
     {
         private readonly IFrutaRepository _frutaRepository = frutaRepository;
+        private readonly IClasificacionRepository _clasificacionRepository = clasificacionRepository;
 
         public async Task<IEnumerable<Fruta>> GetAllAsync()
         {
@@ -133,10 +135,12 @@ namespace FrutasColombia_CS_REST_API.Services
             if (frutaClasificadaExistente.Id == Guid.Empty)
                 throw new AppValidationException($"No existe la fruta con el ID {fruta_id} ");
 
-            //Aqui evaluamos que la información taxonómica no venga con valores nulos 
-            string resultadoValidacionTaxonomia = EvaluaInformacionTaxonomica(unaInformacionTaxonomica);
+            //Aqui evaluamos la información taxonómica
+            string resultadoValidacionTaxonomia = 
+                await EvaluateTaxonomicDetails(unaInformacionTaxonomica);
+            
             if (!string.IsNullOrEmpty(resultadoValidacionTaxonomia))
-                throw new AppValidationException($"No se puede registrar información taxonómica con {resultadoValidacionTaxonomia} nulo. ");
+                throw new AppValidationException($"No se puede registrar información taxonómica. Error: {resultadoValidacionTaxonomia}. ");
 
             try
             {
@@ -245,6 +249,13 @@ namespace FrutasColombia_CS_REST_API.Services
             if (frutaClasificadaExistente.Id == Guid.Empty)
                 throw new AppValidationException($"No existe la fruta con el ID {fruta_id} ");
 
+            //Aqui evaluamos la información taxonómica
+            string resultadoValidacionTaxonomia =
+                await EvaluateTaxonomicDetails(unaInformacionTaxonomica);
+
+            if (!string.IsNullOrEmpty(resultadoValidacionTaxonomia))
+                throw new AppValidationException($"No se puede registrar información taxonómica. Error: {resultadoValidacionTaxonomia}. ");
+
             try
             {
                 bool resultadoAccion = await _frutaRepository
@@ -347,28 +358,81 @@ namespace FrutasColombia_CS_REST_API.Services
             return frutaClasificadaExistente;
         }
 
-        private string EvaluaInformacionTaxonomica(Taxonomia unaInformacionTaxonomica)
+        private async Task<string> EvaluateTaxonomicDetails(Taxonomia unaInformacionTaxonomica)
         {
+            // Validaciones que los campos no sean nulos
             if (string.IsNullOrEmpty(unaInformacionTaxonomica.Reino))
-                return "Reino";
+                return "Reino es nulo";
 
             if (string.IsNullOrEmpty(unaInformacionTaxonomica.Division))
-                return "Division";
+                return "Division  es nulo";
 
             if (string.IsNullOrEmpty(unaInformacionTaxonomica.Orden))
-                return "Orden";
+                return "Orden  es nulo";
 
             if (string.IsNullOrEmpty(unaInformacionTaxonomica.Clase))
-                return "Clase";
+                return "Clase  es nulo";
 
             if (string.IsNullOrEmpty(unaInformacionTaxonomica.Familia))
-                return "Familia";
+                return "Familia es nulo";
 
             if (string.IsNullOrEmpty(unaInformacionTaxonomica.Genero))
-                return "Genero";
+                return "Genero  es nulo";
 
             if (string.IsNullOrEmpty(unaInformacionTaxonomica.Especie))
-                return "Especie";
+                return "Especie es nulo";
+
+            // Validamos que cada uno de los elementos esté previamente registrado
+            Guid elemento_guid;
+
+            //Validamos reino existente
+            elemento_guid = await _clasificacionRepository.
+                GetTaxonomicElementIdAsync("reino", unaInformacionTaxonomica.Reino);
+
+            if (elemento_guid == Guid.Empty)
+                return $"Reino {unaInformacionTaxonomica.Reino} no está en la jerarquía taxonómica";
+
+            //Validamos division existente
+            elemento_guid = await _clasificacionRepository.
+                GetTaxonomicElementIdAsync("division", unaInformacionTaxonomica.Division);
+
+            if (elemento_guid == Guid.Empty)
+                return $"Division {unaInformacionTaxonomica.Division} no está en la jerarquía taxonómica";
+
+            //Validamos orden existente
+            elemento_guid = await _clasificacionRepository.
+                GetTaxonomicElementIdAsync("orden", unaInformacionTaxonomica.Orden);
+
+            if (elemento_guid == Guid.Empty)
+                return $"Orden {unaInformacionTaxonomica.Orden} no está en la jerarquía taxonómica";
+
+            //Validamos clase existente
+            elemento_guid = await _clasificacionRepository.
+                GetTaxonomicElementIdAsync("clase", unaInformacionTaxonomica.Clase);
+
+            if (elemento_guid == Guid.Empty)
+                return $"Clase {unaInformacionTaxonomica.Clase} no está en la jerarquía taxonómica";
+
+            //Validamos familia existente
+            elemento_guid = await _clasificacionRepository.
+                GetTaxonomicElementIdAsync("familia", unaInformacionTaxonomica.Familia);
+
+            if (elemento_guid == Guid.Empty)
+                return $"Familia {unaInformacionTaxonomica.Familia} no está en la jerarquía taxonómica";
+
+            //Validamos genero existente
+            elemento_guid = await _clasificacionRepository.
+                GetTaxonomicElementIdAsync("genero", unaInformacionTaxonomica.Genero);
+
+            if (elemento_guid == Guid.Empty)
+                return $"Genero {unaInformacionTaxonomica.Genero} no está en la jerarquía taxonómica";
+
+            //Validamos especie existente
+            elemento_guid = await _clasificacionRepository.
+                GetTaxonomicElementIdAsync("especie", unaInformacionTaxonomica.Especie);
+
+            if (elemento_guid == Guid.Empty)
+                return $"Especie {unaInformacionTaxonomica.Especie} no está en la jerarquía taxonómica";
 
             return string.Empty;
         }

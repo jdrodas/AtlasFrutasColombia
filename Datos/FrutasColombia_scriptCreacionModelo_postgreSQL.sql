@@ -555,6 +555,81 @@ $$
     end;
 $$;
 
+
+create or replace function f_valida_especie_id(
+    p_reino text,
+    p_division text,
+    p_clase text,
+    p_orden text,
+    p_familia text,
+    p_genero text,
+    p_especie text)
+returns uuid language plpgsql as
+$$
+    declare
+    l_total_registros integer :=0;
+    l_reino_id        uuid:=null;
+    l_division_id     uuid:=null;
+    l_clase_id        uuid:=null;
+    l_orden_id        uuid:=null;
+    l_familia_id      uuid:=null;
+    l_genero_id       uuid:=null;
+    l_especie_id      uuid:=null;
+
+    begin
+        -- Validamos que el reino esté registrado
+        l_reino_id := core.f_obtiene_reino_id(p_reino);
+
+        if l_reino_id is null then
+            return null;
+        end if;
+
+        -- Validamos que la división esté registrada
+        l_division_id := core.f_obtiene_division_id(p_division,l_reino_id);
+
+        if l_division_id is null then
+            return null;
+        end if;
+
+        -- Validamos que la clase esté registrada
+        l_clase_id := core.f_obtiene_clase_id(p_clase,l_division_id);
+
+        if l_clase_id is null then
+            return null;
+        end if;
+
+        -- Validamos que el orden esté registrado
+        l_orden_id := core.f_obtiene_orden_id(p_orden,l_clase_id);
+
+        if l_orden_id is null then
+            return null;
+        end if;
+
+        -- Validamos que la familia esté registrada
+        l_familia_id := core.f_obtiene_familia_id(p_familia,l_orden_id);
+
+        if l_familia_id is null then
+            return null;
+        end if;
+
+        -- Validamos que el género esté registrado
+        l_genero_id := core.f_obtiene_genero_id(p_genero,l_familia_id);
+
+        if l_genero_id is null then
+            return null;
+        end if;
+
+        -- Validamos que la especie esté registrada
+        l_especie_id := core.f_obtiene_especie_id(p_especie,l_genero_id);
+
+        if l_especie_id is null then
+            return null;
+        end if;
+
+        return l_especie_id;
+    end;
+$$;
+
 -- ----------------------------
 -- Creación de Procedimientos
 -- ----------------------------
@@ -761,59 +836,23 @@ $$
             RAISE EXCEPTION 'Ya hay registros taxonómicos para la fruta';
         end if;
 
-        -- Validamos que el reino esté registrado
-        l_reino_id := core.f_obtiene_reino_id(p_reino);
-
-        if l_reino_id is null then
-            RAISE EXCEPTION 'El reino no es válido';
-        end if;
-
-        -- Validamos que la división esté registrada
-        l_division_id := core.f_obtiene_division_id(p_division,l_reino_id);
-
-        if l_division_id is null then
-            RAISE EXCEPTION 'la división no es válida';
-        end if;
-
-        -- Validamos que la clase esté registrada
-        l_clase_id := core.f_obtiene_clase_id(p_clase,l_division_id);
-
-        if l_clase_id is null then
-            RAISE EXCEPTION 'la clase no es válida';
-        end if;
-
-        -- Validamos que el orden esté registrado
-        l_orden_id := core.f_obtiene_orden_id(p_orden,l_clase_id);
-
-        if l_orden_id is null then
-            RAISE EXCEPTION 'El orden no es válido';
-        end if;
-
-        -- Validamos que la familia esté registrada
-        l_familia_id := core.f_obtiene_familia_id(p_familia,l_orden_id);
-
-        if l_familia_id is null then
-            RAISE EXCEPTION 'La familia no es válida';
-        end if;
-
-        -- Validamos que el género esté registrado
-        l_genero_id := core.f_obtiene_genero_id(p_genero,l_familia_id);
-
-        if l_genero_id is null then
-            RAISE EXCEPTION 'El género no es válido';
-        end if;
-
-        -- Validamos que la especie esté registrada
-        l_especie_id := core.f_obtiene_especie_id(p_especie,l_genero_id);
+        -- Validamos que la especie esté asociada a la jerarquía taxonómica        
+        l_especie_id := core.f_valida_especie_id(
+        p_reino,
+        p_division,
+        p_clase,
+        p_orden,
+        p_familia,
+        p_genero,
+        p_especie);
 
         if l_especie_id is null then
-            RAISE EXCEPTION 'La especie no es válida';
+            RAISE EXCEPTION 'La jerarquía para la especie de la fruta no es válida';
         end if;
 
         -- Si todas las validaciones son correctas, insertamos
         insert into taxonomia_frutas (fruta_id, especie_id)
         values (p_fruta_id, l_especie_id);
-
     end;
 $$;
 
@@ -849,60 +888,24 @@ $$
             RAISE EXCEPTION 'No hay registros taxonómicos para actualizar de la fruta';
         end if;
 
-        -- Validamos que el reino esté registrado
-        l_reino_id := core.f_obtiene_reino_id(p_reino);
-
-        if l_reino_id is null then
-            RAISE EXCEPTION 'El reino no es válido';
-        end if;
-
-        -- Validamos que la división esté registrada
-        l_division_id := core.f_obtiene_division_id(p_division,l_reino_id);
-
-        if l_division_id is null then
-            RAISE EXCEPTION 'la división no es válida';
-        end if;
-
-        -- Validamos que la clase esté registrada
-        l_clase_id := core.f_obtiene_clase_id(p_clase,l_division_id);
-
-        if l_clase_id is null then
-            RAISE EXCEPTION 'la clase no es válida';
-        end if;
-
-        -- Validamos que el orden esté registrado
-        l_orden_id := core.f_obtiene_orden_id(p_orden,l_clase_id);
-
-        if l_orden_id is null then
-            RAISE EXCEPTION 'El orden no es válido';
-        end if;
-
-        -- Validamos que la familia esté registrada
-        l_familia_id := core.f_obtiene_familia_id(p_familia,l_orden_id);
-
-        if l_familia_id is null then
-            RAISE EXCEPTION 'La familia no es válida';
-        end if;
-
-        -- Validamos que el género esté registrado
-        l_genero_id := core.f_obtiene_genero_id(p_genero,l_familia_id);
-
-        if l_genero_id is null then
-            RAISE EXCEPTION 'El género no es válido';
-        end if;
-
-        -- Validamos que la especie esté registrada
-        l_especie_id := core.f_obtiene_especie_id(p_especie,l_genero_id);
+        -- Validamos que la especie esté asociada a la jerarquía taxonómica
+        l_especie_id := core.f_valida_especie_id(
+        p_reino,
+        p_division,
+        p_clase,
+        p_orden,
+        p_familia,
+        p_genero,
+        p_especie);
 
         if l_especie_id is null then
-            RAISE EXCEPTION 'La especie no es válida';
+            RAISE EXCEPTION 'La jerarquía para la especie de la fruta no es válida';
         end if;
 
         -- Si todas las validaciones son correctas, actualizamos
         update core.taxonomia_frutas
             set especie_id = l_especie_id
         where fruta_id = p_fruta_id;
-
     end;
 $$;
 
