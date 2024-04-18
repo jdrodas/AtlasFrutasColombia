@@ -24,74 +24,70 @@ namespace FrutasColombia_CS_PoC_Consola
             Console.WriteLine("\nPresiona una tecla para continuar...");
             Console.ReadKey();
 
+            //C del CRUD - Creación de un nuevo registro - INSERT
+            Fruta nuevaFruta = new()
+            {
+                Nombre = "Chontaduro",
+                Url_Wikipedia = "https://es.wikipedia.org/wiki/Bactris_gasipaes",
+                Url_Imagen = "https://en.wikipedia.org/wiki/Bactris_gasipaes#/media/File:Pupunha_(Bactris_gasipaes)_7.jpg"
+            };
+
+            Console.WriteLine($"\nRegistro de nueva fruta: {nuevaFruta.Nombre}:");
+
+            bool resultadoInsercion = AccesoDatosMongo.InsertaFruta(nuevaFruta);
+
+            if (resultadoInsercion == false)
+                Console.WriteLine($"Inserción fallida para la fruta {nuevaFruta.Nombre}");
+            else
+            {
+                Console.WriteLine($"Inserción exitosa! Este fue la fruta registrada");
+
+                //Obtenemos la fruta por nombre
+                nuevaFruta = AccesoDatosMongo.ObtieneFruta(nuevaFruta.Nombre);
+                Console.WriteLine($"Id: {nuevaFruta.ObjectId}, Nombre: {nuevaFruta.Nombre}");
+            }
+
+            VisualizaFrutas();
+
+            Console.WriteLine("\nPresiona una tecla para continuar...");
+            Console.ReadKey();
+
+            //U del CRUD - Actualización de un nuevo registro - UPDATE
+            Fruta frutaActualizada = AccesoDatosMongo.ObtieneFruta("Mamoncillo");
+
+            frutaActualizada.Nombre = "Mamoncillo Biche";
+            Console.WriteLine($"\n\nActualizando la fruta No. {frutaActualizada.ObjectId} " +
+                $"al nuevo nombre de {frutaActualizada.Nombre}...");
+
+            bool resultadoActualizacion = AccesoDatosMongo.ActualizaFruta(frutaActualizada);
+
+            if (resultadoActualizacion == false)
+                Console.WriteLine($"Actualización fallida para la fruta {frutaActualizada.Nombre}");
+            else
+            {
+                Console.WriteLine($"Actualización exitosa! Este fue la fruta actualizada");
+
+                //Obtenemos la fruta por Id
+                Fruta unaFruta = AccesoDatosMongo.ObtieneFruta(frutaActualizada.Nombre!);
+                Console.WriteLine($"Id: {unaFruta.ObjectId}, Nombre: {unaFruta.Nombre}");
+            }
+
+            VisualizaFrutas();
+
+            Console.WriteLine("\nPresiona una tecla para continuar...");
+            Console.ReadKey();
+
+            //Devolvemos la fruta a su valor orignal
+            frutaActualizada.Nombre = "Mamoncillo";
+            Console.WriteLine($"Devolviendo el nombre original a la fruta: {frutaActualizada.Nombre}");
+
+            AccesoDatosMongo.ActualizaFruta(frutaActualizada);
+
+            VisualizaFrutas();
+
+            Console.WriteLine("\nPresiona una tecla para continuar...");
+            Console.ReadKey();
         }
-
-
-
-        //    //C del CRUD - Creación de un nuevo registro - INSERT
-        //    Fruta nuevaFruta = new()
-        //    {
-        //        Nombre = "Chontaduro",
-        //        Url_Wikipedia = "https://es.wikipedia.org/wiki/Bactris_gasipaes",
-        //        Url_Imagen = "https://en.wikipedia.org/wiki/Bactris_gasipaes#/media/File:Pupunha_(Bactris_gasipaes)_7.jpg"
-        //    };
-
-        //    Console.WriteLine($"\nRegistro de nueva fruta: {nuevaFruta.Nombre}:");
-
-        //    bool resultadoInsercion = AccesoDatosMongo.InsertaFruta(nuevaFruta);
-
-        //    if (resultadoInsercion == false)
-        //        Console.WriteLine($"Inserción fallida para la fruta {nuevaFruta.Nombre}");
-        //    else
-        //    {
-        //        Console.WriteLine($"Inserción exitosa! Este fue la fruta registrada");
-
-        //        //Obtenemos la fruta por nombre
-        //        nuevaFruta = AccesoDatosMongo.ObtieneFruta(nuevaFruta.Nombre);
-        //        Console.WriteLine($"Id: {nuevaFruta.Id}, Nombre: {nuevaFruta.Nombre}");
-        //    }
-
-        //    VisualizaFrutas();
-
-        //    Console.WriteLine("\nPresiona una tecla para continuar...");
-        //    Console.ReadKey();
-
-        //    //U del CRUD - Actualización de un nuevo registro - UPDATE
-        //    Fruta frutaActualizada = AccesoDatosMongo.ObtieneFruta("Mango");
-
-        //    frutaActualizada.Nombre = "Manguito Biche";
-        //    Console.WriteLine($"\n\nActualizando la fruta No. {frutaActualizada.Id} " +
-        //        $"al nuevo nombre de {frutaActualizada.Nombre}...");
-
-        //    bool resultadoActualizacion = AccesoDatosMongo.ActualizaFruta(frutaActualizada);
-
-        //    if (resultadoActualizacion == false)
-        //        Console.WriteLine($"Actualización fallida para la fruta {frutaActualizada.Nombre}");
-        //    else
-        //    {
-        //        Console.WriteLine($"Actualización exitosa! Este fue la fruta actualizada");
-
-        //        //Obtenemos la fruta por Id
-        //        Fruta unaFruta = AccesoDatosMongo.ObtieneFruta(frutaActualizada.Id!);
-        //        Console.WriteLine($"Id: {unaFruta.Id}, Nombre: {unaFruta.Nombre}");
-        //    }
-
-        //    VisualizaFrutas();
-
-        //    Console.WriteLine("\nPresiona una tecla para continuar...");
-        //    Console.ReadKey();
-
-        //    //Devolvemos la fruta a su valor orignal
-        //    frutaActualizada.Nombre = "Mango";
-        //    Console.WriteLine($"Devolviendo el nombre original a la fruta: {frutaActualizada.Nombre}");
-
-        //    AccesoDatosMongo.ActualizaFruta(frutaActualizada);
-
-        //    VisualizaFrutas();
-
-        //    Console.WriteLine("\nPresiona una tecla para continuar...");
-        //    Console.ReadKey();
-
 
         //    //D del CRUD - Borrado de una fruta existente - DELETE
         //    nuevaFruta = AccesoDatosMongo.ObtieneFruta(nuevaFruta.Nombre!);

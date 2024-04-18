@@ -42,6 +42,23 @@ namespace FrutasColombia_CS_PoC_Consola
             return listaFrutas;
         }
 
+        public static Fruta ObtieneFruta(string nombre_fruta)
+        {
+            string? cadenaConexion = ObtieneCadenaConexion();
+
+            var clienteDB = new MongoClient(cadenaConexion);
+            var miDB = clienteDB.GetDatabase("frutas_db");
+            var ColeccionEstilos = "frutas";
+
+            var filtroFruta = new BsonDocument { { "nombre", nombre_fruta } };
+
+            var unEstilo = miDB.GetCollection<Fruta>(ColeccionEstilos)
+                .Find(filtroFruta)
+                .FirstOrDefault();
+
+            return unEstilo;
+        }
+
         public static List<string> ObtieneNombresFrutas()
         {
             var listaFrutas = ObtieneListaFrutas();
@@ -52,6 +69,56 @@ namespace FrutasColombia_CS_PoC_Consola
                 listaNombresFrutas.Add(unaFruta.Nombre!);
 
             return listaNombresFrutas;
+        }
+
+        public static string ObtenerObjectIdFruta(string nombre_fruta)
+        {
+
+            string? cadenaConexion = ObtieneCadenaConexion();
+
+            var clienteDB = new MongoClient(cadenaConexion);
+            var miDB = clienteDB.GetDatabase("frutas_db");
+            var ColeccionEstilos = "frutas";
+
+            var filtroFruta = new BsonDocument { { "nombre", nombre_fruta } };
+
+            var unaFruta = miDB.GetCollection<Fruta>(ColeccionEstilos)
+                .Find(filtroFruta)
+                .FirstOrDefault();
+
+            return unaFruta.ObjectId!;
+        }
+
+        public static bool InsertaFruta(Fruta unaFruta)
+        {
+            string? cadenaConexion = ObtieneCadenaConexion();
+
+            var clienteDB = new MongoClient(cadenaConexion);
+            var miDB = clienteDB.GetDatabase("frutas_db");
+            var miColeccion = miDB.GetCollection<Fruta>("frutas");
+
+            miColeccion.InsertOne(unaFruta);
+
+            string ObjectIdFruta = ObtenerObjectIdFruta(unaFruta.Nombre!);
+
+            if (string.IsNullOrEmpty(ObjectIdFruta))
+                return false;
+            else
+                return true;
+        }
+
+        public static bool ActualizaFruta(Fruta unaFruta)
+        {
+            string? cadenaConexion = ObtieneCadenaConexion();
+
+            var clienteDB = new MongoClient(cadenaConexion);
+            var miDB = clienteDB.GetDatabase("frutas_db");
+            var miColeccion = miDB.GetCollection<Fruta>("frutas");
+
+            var resultadoActualizacion = miColeccion
+                                            .ReplaceOne(fruta => fruta.ObjectId == unaFruta.ObjectId, unaFruta);
+
+            return resultadoActualizacion.IsAcknowledged;
         }
     }
 }

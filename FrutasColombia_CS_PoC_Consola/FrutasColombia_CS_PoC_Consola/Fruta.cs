@@ -11,8 +11,8 @@ namespace FrutasColombia_CS_PoC_Consola
         [JsonPropertyName("id")]
         public string? ObjectId { get; set; }
 
-        [JsonPropertyName("id")]
-        public Guid Id { get; set; } = Guid.Empty;
+        //[JsonPropertyName("id")]
+        //public Guid Id { get; set; } = Guid.Empty;
         
         [BsonElement("nombre")]
         [BsonRepresentation(BsonType.String)]
