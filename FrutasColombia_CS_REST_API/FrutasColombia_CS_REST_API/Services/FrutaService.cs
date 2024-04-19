@@ -1,4 +1,4 @@
-﻿using FrutasColombia_CS_REST_API.Helpers;
+﻿using FrutasColombia_CS_REST_API.Exceptions;
 using FrutasColombia_CS_REST_API.Interfaces;
 using FrutasColombia_CS_REST_API.Models;
 

@@ -1,6 +1,6 @@
 ﻿using Dapper;
 using FrutasColombia_CS_REST_API.DbContexts;
-using FrutasColombia_CS_REST_API.Helpers;
+using FrutasColombia_CS_REST_API.Exceptions;
 using FrutasColombia_CS_REST_API.Interfaces;
 using FrutasColombia_CS_REST_API.Models;
 using Npgsql;
@@ -152,6 +152,36 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return frutasProducidas;
         }
 
+        public async Task<IEnumerable<FrutaProducida>> GetByEpochAsync(Guid epoca_id)
+        {
+            List<FrutaProducida> frutasProducidas = [];
+
+            var conexion = contextoDB.CreateConnection();
+
+            DynamicParameters parametrosSentencia = new();
+            parametrosSentencia.Add("@epoca_id", epoca_id,
+                DbType.Guid, ParameterDirection.Input);
+
+
+            string sentenciaSQL = "SELECT DISTINCT fruta_id id, fruta_nombre nombre, " +
+                "fruta_wikipedia url_wikipedia, fruta_imagen url_imagen " +
+                "FROM v_info_produccion_frutas v " +
+                "WHERE epoca_id = @epoca_id";
+
+            var resultadoFrutas = await conexion
+                .QueryAsync<FrutaProducida>(sentenciaSQL, parametrosSentencia);
+
+            if (resultadoFrutas.Any())
+            {
+                frutasProducidas = resultadoFrutas.ToList();
+
+                foreach (FrutaProducida unaFruta in frutasProducidas.ToList())
+                    unaFruta.Produccion = await GetEpochProductionDetailsAsync(unaFruta.Id, epoca_id);
+            }
+
+            return frutasProducidas;
+        }
+
         public async Task<IEnumerable<FrutaProducida>> GetByMonthAsync(int mes_id)
         {
             List<FrutaProducida> frutasProducidas = [];
@@ -289,6 +319,35 @@ namespace FrutasColombia_CS_REST_API.Repositories
                 "FROM v_info_produccion_frutas v " +
                 "WHERE v.fruta_id = @fruta_id " +
                 "AND v.clima_id = @clima_id";
+
+            var resultadoProduccion = await conexion
+                .QueryAsync<Produccion>(sentenciaSQL, parametrosSentencia);
+
+            if (resultadoProduccion.Any())
+                infoProduccion = resultadoProduccion.ToList();
+
+            return infoProduccion;
+        }
+
+        public async Task<List<Produccion>> GetEpochProductionDetailsAsync(Guid fruta_id, Guid epoca_id)
+        {
+            List<Produccion> infoProduccion = [];
+
+            var conexion = contextoDB.CreateConnection();
+
+            DynamicParameters parametrosSentencia = new();
+            parametrosSentencia.Add("@fruta_id", fruta_id,
+                                    DbType.Guid, ParameterDirection.Input);
+
+            parametrosSentencia.Add("@epoca_id", epoca_id,
+                                    DbType.Guid, ParameterDirection.Input);
+
+            string sentenciaSQL = "SELECT DISTINCT v.epoca_nombre epoca, v.clima_nombre clima, " +
+                "v.municipio_nombre municipio, v.departamento_nombre departamento, " +
+                "v.mes_inicio, v.mes_final " +
+                "FROM v_info_produccion_frutas v " +
+                "WHERE v.fruta_id = @fruta_id " +
+                "AND v.epoca_id = @epoca_id";
 
             var resultadoProduccion = await conexion
                 .QueryAsync<Produccion>(sentenciaSQL, parametrosSentencia);

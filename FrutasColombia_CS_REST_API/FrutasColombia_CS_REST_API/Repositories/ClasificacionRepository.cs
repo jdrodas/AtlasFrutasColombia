@@ -1,10 +1,10 @@
 ﻿using Dapper;
 using FrutasColombia_CS_REST_API.DbContexts;
-using FrutasColombia_CS_REST_API.Helpers;
+using FrutasColombia_CS_REST_API.Exceptions;
 using FrutasColombia_CS_REST_API.Interfaces;
 using FrutasColombia_CS_REST_API.Models;
-using System.Data;
 using Npgsql;
+using System.Data;
 
 namespace FrutasColombia_CS_REST_API.Repositories
 {

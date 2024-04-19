@@ -1,4 +1,4 @@
-﻿using FrutasColombia_CS_REST_API.Helpers;
+﻿using FrutasColombia_CS_REST_API.Exceptions;
 using FrutasColombia_CS_REST_API.Interfaces;
 using FrutasColombia_CS_REST_API.Models;
 
@@ -34,9 +34,6 @@ namespace FrutasColombia_CS_REST_API.Services
 
             if (unClima.Id == Guid.Empty)
                 throw new AppValidationException($"Clima no encontrado con el id {clima_id}");
-
-            //var frutasProducidas = await _frutaRepository
-            //    .GetByLocationAsync(departamento_id, null);
 
             var frutasProducidas = await _frutaRepository
                 .GetByClimateAsync(clima_id);

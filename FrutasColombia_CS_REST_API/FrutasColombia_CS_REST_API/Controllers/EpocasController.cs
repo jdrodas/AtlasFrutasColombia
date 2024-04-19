@@ -6,26 +6,26 @@ namespace FrutasColombia_CS_REST_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ClimasController(ClimaService climaService) : Controller
+    public class EpocasController(EpocaService epocaService) : Controller
     {
-        private readonly ClimaService _climaService = climaService;
+        private readonly EpocaService _epocaService = epocaService;
 
         [HttpGet]
         public async Task<IActionResult> GetAllAsync()
         {
-            var losDepartamentos = await _climaService
+            var losDepartamentos = await _epocaService
                 .GetAllAsync();
 
             return Ok(losDepartamentos);
         }
 
-        [HttpGet("{clima_id:Guid}")]
-        public async Task<IActionResult> GetByIdAsync(Guid clima_id)
+        [HttpGet("{epoca_id:Guid}")]
+        public async Task<IActionResult> GetByIdAsync(Guid epoca_id)
         {
             try
             {
-                var unaFruta = await _climaService
-                    .GetByIdAsync(clima_id);
+                var unaFruta = await _epocaService
+                    .GetByIdAsync(epoca_id);
 
                 return Ok(unaFruta);
             }
@@ -35,13 +35,13 @@ namespace FrutasColombia_CS_REST_API.Controllers
             }
         }
 
-        [HttpGet("{clima_id:Guid}/Frutas")]
-        public async Task<IActionResult> GetProducedFruitsAsync(Guid clima_id)
+        [HttpGet("{epoca_id:Guid}/Frutas")]
+        public async Task<IActionResult> GetProducedFruitsAsync(Guid epoca_id)
         {
             try
             {
-                var lasFrutasProducidas = await _climaService
-                    .GetProducedFruitsAsync(clima_id);
+                var lasFrutasProducidas = await _epocaService
+                    .GetProducedFruitsAsync(epoca_id);
 
                 return Ok(lasFrutasProducidas);
             }

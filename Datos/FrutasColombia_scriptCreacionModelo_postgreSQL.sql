@@ -381,6 +381,7 @@ create or replace view core.v_info_produccion_frutas as
         c.nombre            clima_nombre,
         c.altitud_minima,
         c.altitud_maxima,
+        e.id                epoca_id,
         e.nombre            epoca_nombre,
         e.mes_inicio,
         e.mes_final,
