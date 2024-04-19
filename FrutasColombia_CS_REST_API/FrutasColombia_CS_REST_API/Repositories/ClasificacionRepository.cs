@@ -1,8 +1,10 @@
 ﻿using Dapper;
 using FrutasColombia_CS_REST_API.DbContexts;
+using FrutasColombia_CS_REST_API.Helpers;
 using FrutasColombia_CS_REST_API.Interfaces;
 using FrutasColombia_CS_REST_API.Models;
 using System.Data;
+using Npgsql;
 
 namespace FrutasColombia_CS_REST_API.Repositories
 {
@@ -218,6 +220,110 @@ namespace FrutasColombia_CS_REST_API.Repositories
                 elemento_guid = resultado.First();
 
             return elemento_guid;
+        }
+
+        public async Task<bool> CreateAsync(Taxonomia unaClasificacion)
+        {
+            bool resultadoAccion = false;
+
+            //Validamos si hay registros existentes
+            int totalRegistros =
+                await GetTotalTaxonomicRecordsAsync(unaClasificacion);
+
+            if (totalRegistros != 0)
+                throw new DbOperationException("No se puede insertar. Esta información ya está registrada.");
+
+            try
+            {
+                var conexion = contextoDB.CreateConnection();
+                string procedimiento = "core.p_inserta_clasificacion";
+                var parametros = new
+                {
+                    p_reino = unaClasificacion.Reino,
+                    p_division = unaClasificacion.Division,
+                    p_clase = unaClasificacion.Clase,
+                    p_orden = unaClasificacion.Orden,
+                    p_familia = unaClasificacion.Familia,
+                    p_genero = unaClasificacion.Genero,
+                    p_especie = unaClasificacion.Especie
+                };
+
+                var cantidad_filas = await conexion.ExecuteAsync(
+                    procedimiento,
+                    parametros,
+                    commandType: CommandType.StoredProcedure);
+
+                if (cantidad_filas != 0)
+                    resultadoAccion = true;
+            }
+            catch (NpgsqlException error)
+            {
+                throw new DbOperationException(error.Message);
+            }
+
+            return resultadoAccion;
+        }
+
+        public async Task<bool> RemoveAsync(Taxonomia unaClasificacion)
+        {
+            bool resultadoAccion = false;
+
+            //Validamos si hay registros existentes
+            int totalRegistros =
+                await GetTotalTaxonomicRecordsAsync(unaClasificacion);
+
+            if (totalRegistros == 0)
+                throw new DbOperationException("No se puede eliminar. Esta información no está registrada.");
+
+            try
+            {
+                var conexion = contextoDB.CreateConnection();
+                string procedimiento = "core.p_elimina_clasificacion";
+                var parametros = new
+                {
+                    p_reino = unaClasificacion.Reino,
+                    p_division = unaClasificacion.Division,
+                    p_clase = unaClasificacion.Clase,
+                    p_orden = unaClasificacion.Orden,
+                    p_familia = unaClasificacion.Familia,
+                    p_genero = unaClasificacion.Genero,
+                    p_especie = unaClasificacion.Especie
+                };
+
+                var cantidad_filas = await conexion.ExecuteAsync(
+                    procedimiento,
+                    parametros,
+                    commandType: CommandType.StoredProcedure);
+
+                if (cantidad_filas != 0)
+                    resultadoAccion = true;
+            }
+            catch (NpgsqlException error)
+            {
+                throw new DbOperationException(error.Message);
+            }
+
+            return resultadoAccion;
+        }
+
+        private async Task<int> GetTotalTaxonomicRecordsAsync(Taxonomia unaTaxonomia)
+        {
+            var conexion = contextoDB.CreateConnection();
+
+            string sentenciaSQL = "select count(*) totalRegistros " +
+                "FROM v_info_botanica " +
+                "WHERE reino_nombre = @Reino " +
+                "AND division_nombre = @Division " +
+                "AND clase_nombre = @Clase " +
+                "AND orden_nombre = @Orden " +
+                "AND familia_nombre = @Familia " +
+                "AND genero_nombre = @Genero " +
+                "AND especie_nombre = @Especie";
+
+            var totalRegistros = await conexion
+                .QueryAsync<int>(sentenciaSQL, unaTaxonomia);
+
+            return totalRegistros.FirstOrDefault();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using FrutasColombia_CS_REST_API.Helpers;
+using FrutasColombia_CS_REST_API.Models;
 using FrutasColombia_CS_REST_API.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -129,6 +130,48 @@ namespace FrutasColombia_CS_REST_API.Controllers
             catch (AppValidationException error)
             {
                 return NotFound(error.Message);
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateAsync(Taxonomia unaClasificacion)
+        {
+            try
+            {
+                var clasificacionCreada = await _clasificacionService
+                    .CreateAsync(unaClasificacion);
+
+                return Ok(clasificacionCreada);
+            }
+            catch (AppValidationException error)
+            {
+                return BadRequest($"Error de validación: {error.Message}");
+            }
+            catch (DbOperationException error)
+            {
+                return BadRequest($"Error de operacion en DB: {error.Message}");
+            }
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> RemoveAsync(Taxonomia unaClasificacion)
+        {
+            {
+                try
+                {
+                    var nombreEspecieBorrada = await _clasificacionService
+                        .RemoveAsync(unaClasificacion);
+
+                    return Ok($"La especie {nombreEspecieBorrada} y toda su clasificación fue eliminada correctamente!");
+                }
+                catch (AppValidationException error)
+                {
+                    return BadRequest($"Error de validación: {error.Message}");
+                }
+                catch (DbOperationException error)
+                {
+                    return BadRequest($"Error de operacion en DB: {error.Message}");
+                }
             }
         }
     }

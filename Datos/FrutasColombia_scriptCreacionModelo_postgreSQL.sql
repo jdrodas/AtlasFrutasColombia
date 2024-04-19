@@ -933,6 +933,140 @@ $$
     end;
 $$;
 
+-- p_inserta_clasificacion
+create or replace procedure core.p_inserta_clasificacion(
+                    in p_reino          text,
+                    in p_division       text,
+                    in p_clase          text,
+                    in p_orden          text,
+                    in p_familia        text,
+                    in p_genero         text,
+                    in p_especie        text
+) language plpgsql as
+$$
+    declare
+        l_total_registros integer :=0;
+        l_reino_id        uuid;
+        l_division_id     uuid;
+        l_clase_id        uuid;
+        l_orden_id        uuid;
+        l_familia_id      uuid;
+        l_genero_id       uuid;
+        l_especie_id      uuid;
+
+    begin
+        -- Validamos si hay reino con ese nombre
+        l_reino_id = f_obtiene_reino_id(p_reino);
+        
+        --Si no existe, lo creamos
+        if l_reino_id is null then
+            insert into core.reinos (nombre) values (p_reino);
+            l_reino_id = f_obtiene_reino_id(p_reino);
+        end if;
+        
+        --Validamos si hay división con ese nombre
+        l_division_id = f_obtiene_division_id(p_division,l_reino_id);
+        
+        --Si no existe, la creamos
+        if l_division_id is null then
+            insert into core.divisiones (nombre,reino_id) values (p_division,l_reino_id);
+            l_division_id = f_obtiene_division_id(p_division,l_reino_id);
+        end if;
+        
+        -- Validamos si hay clase con ese nombre
+        l_clase_id = f_obtiene_clase_id(p_clase,l_division_id);
+        
+        --Si no existe, la creamos
+        if l_clase_id is null then
+            insert into core.clases (nombre,division_id) values (p_division,l_division_id);
+            l_clase_id = f_obtiene_clase_id(p_clase,l_division_id);
+        end if;
+        
+        --Validamos si hay orden con ese nombre
+        l_orden_id = f_obtiene_orden_id(p_orden,l_clase_id);
+        
+        --Si no existe, lo creamos
+        if l_orden_id is null then
+            insert into core.ordenes (nombre,clase_id) values (p_division,l_clase_id);
+            l_orden_id = f_obtiene_orden_id(p_orden,l_clase_id);
+        end if;            
+
+        --Validamos si hay familia con ese nombre
+        l_familia_id = f_obtiene_familia_id(p_familia,l_orden_id);
+        
+        --Si no existe, la creamos
+        if l_familia_id is null then
+            insert into core.familias (nombre,orden_id) values (p_familia,l_orden_id);
+            l_orden_id = f_obtiene_familia_id(p_familia,l_orden_id);
+        end if;        
+        
+        --Validamos si hay genero con ese nombre
+        l_genero_id = f_obtiene_genero_id(p_genero,l_familia_id);
+        
+        --Si no existe, lo creamos
+        if l_genero_id is null then
+            insert into core.generos (nombre,familia_id) values (p_genero,l_familia_id);
+            l_genero_id = f_obtiene_genero_id(p_genero,l_familia_id);
+        end if;               
+        
+        --Validamos si hay especie con ese nombre
+        l_especie_id = f_obtiene_especie_id(p_especie,l_genero_id);
+        
+        --Si no existe, lo creamos
+        if l_especie_id is null then
+            insert into core.especies (nombre,genero_id) values (p_especie,l_genero_id);
+            l_especie_id = f_obtiene_especie_id(p_especie,l_genero_id);
+        end if;     
+    end;
+$$;
+
+-- p_elimina_clasificacion
+create or replace procedure p_elimina_clasificacion(
+                    in p_reino          text,
+                    in p_division       text,
+                    in p_clase          text,
+                    in p_orden          text,
+                    in p_familia        text,
+                    in p_genero         text,
+                    in p_especie        text
+) language plpgsql as
+$$
+    declare
+        l_total_registros integer :=0;
+        l_especie_id      uuid;
+
+    begin
+        -- Validamos que la especie esté asociada a la jerarquía taxonómica
+        l_especie_id := core.f_valida_especie_id(
+        p_reino,
+        p_division,
+        p_clase,
+        p_orden,
+        p_familia,
+        p_genero,
+        p_especie);
+        
+        if l_especie_id is null then
+            RAISE EXCEPTION 'La jerarquía para la especie no es válida';
+        end if;        
+        
+        -- identificamos si hay información taxonomica previa
+        select count(fruta_id) into l_total_registros
+        from core.taxonomia_frutas
+        where especie_id = l_especie_id;
+
+        -- Si hay registros, se desvincula de la fruta
+        if l_total_registros != 0 then
+            delete from core.taxonomia_frutas
+            where especie_id = l_especie_id;
+        end if;
+        
+        -- Solo se borra la especie, No borrar las ramas superiores de la jerarquía
+        delete from core.especies
+        where id = l_especie_id;
+    end;
+$$; 
+
 
 -- -----------------------
 -- Consultas de apoyo

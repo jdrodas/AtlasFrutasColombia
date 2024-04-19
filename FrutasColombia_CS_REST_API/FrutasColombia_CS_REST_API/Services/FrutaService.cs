@@ -136,9 +136,9 @@ namespace FrutasColombia_CS_REST_API.Services
                 throw new AppValidationException($"No existe la fruta con el ID {fruta_id} ");
 
             //Aqui evaluamos la información taxonómica
-            string resultadoValidacionTaxonomia = 
+            string resultadoValidacionTaxonomia =
                 await EvaluateTaxonomicDetails(unaInformacionTaxonomica);
-            
+
             if (!string.IsNullOrEmpty(resultadoValidacionTaxonomia))
                 throw new AppValidationException($"No se puede registrar información taxonómica. Error: {resultadoValidacionTaxonomia}. ");
 

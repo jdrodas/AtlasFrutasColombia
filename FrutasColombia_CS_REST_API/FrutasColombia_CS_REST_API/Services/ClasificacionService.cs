@@ -76,5 +76,63 @@ namespace FrutasColombia_CS_REST_API.Services
 
             return frutasClasificadas;
         }
+
+        public async Task<Taxonomia> CreateAsync(Taxonomia unaClasificacion)
+        {
+            // Validaciones que los campos no sean nulos
+            if (string.IsNullOrEmpty(unaClasificacion.Reino))
+                throw new AppValidationException("No se puede insertar un reino con nombre nulo");
+
+            if (string.IsNullOrEmpty(unaClasificacion.Division))
+                throw new AppValidationException("No se puede insertar una división con nombre nulo");
+
+            if (string.IsNullOrEmpty(unaClasificacion.Orden))
+                throw new AppValidationException("No se puede insertar un orden con nombre nulo");
+
+            if (string.IsNullOrEmpty(unaClasificacion.Clase))
+                throw new AppValidationException("No se puede insertar una clase con nombre nulo");
+
+            if (string.IsNullOrEmpty(unaClasificacion.Familia))
+                throw new AppValidationException("No se puede insertar una familia con nombre nulo");
+
+            if (string.IsNullOrEmpty(unaClasificacion.Genero))
+                throw new AppValidationException("No se puede insertar un género con nombre nulo");
+
+            if (string.IsNullOrEmpty(unaClasificacion.Especie))
+                throw new AppValidationException("No se puede insertar una especie con nombre nulo");
+
+            try
+            {
+                bool resultadoAccion = await _clasificacionRepository
+                    .CreateAsync(unaClasificacion);
+
+                if (!resultadoAccion)
+                    throw new AppValidationException("Operación ejecutada pero no generó cambios en la DB");
+            }
+            catch (DbOperationException)
+            {
+                throw;
+            }
+
+            return unaClasificacion;
+        }
+
+        public async Task<string> RemoveAsync(Taxonomia unaClasificacion)
+        {
+            try
+            {
+                bool resultadoAccion = await _clasificacionRepository
+                    .RemoveAsync(unaClasificacion);
+
+                if (!resultadoAccion)
+                    throw new AppValidationException("Operación ejecutada pero no generó cambios en la DB");
+            }
+            catch (DbOperationException)
+            {
+                throw;
+            }
+
+            return unaClasificacion.Especie!;
+        }
     }
 }

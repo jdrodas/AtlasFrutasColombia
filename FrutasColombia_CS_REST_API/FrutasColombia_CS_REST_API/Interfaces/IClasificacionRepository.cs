@@ -23,5 +23,9 @@ namespace FrutasColombia_CS_REST_API.Interfaces
         public Task<List<Especie>> GetAssociatedSpeciesToGenusById(Guid genero_id);
 
         public Task<Guid> GetTaxonomicElementIdAsync(string tipo_elemento, string nombre_elemento);
+
+        public Task<bool> CreateAsync(Taxonomia unaClasificacion);
+
+        public Task<bool> RemoveAsync(Taxonomia unaClasificacion);
     }
 }
