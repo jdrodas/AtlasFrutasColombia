@@ -6,6 +6,6 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Interfaces
     {
         public Task<IEnumerable<Clima>> GetAllAsync();
 
-        public Task<Clima> GetByIdAsync(Guid clima_id);
+        public Task<Clima> GetByIdAsync(string clima_id);
     }
 }

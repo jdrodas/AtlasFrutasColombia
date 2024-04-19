@@ -19,8 +19,8 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Controllers
             return Ok(losMunicipios);
         }
 
-        [HttpGet("{municipio_id:Guid}")]
-        public async Task<IActionResult> GetByIdAsync(Guid municipio_id)
+        [HttpGet("{municipio_id:string?}")]
+        public async Task<IActionResult> GetByIdAsync(string? municipio_id)
         {
             try
             {
@@ -35,8 +35,8 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Controllers
             }
         }
 
-        [HttpGet("{municipio_id:Guid}/Frutas")]
-        public async Task<IActionResult> GetProducedFruitsAsync(Guid municipio_id)
+        [HttpGet("{municipio_id:string?}/Frutas")]
+        public async Task<IActionResult> GetProducedFruitsAsync(string? municipio_id)
         {
             try
             {

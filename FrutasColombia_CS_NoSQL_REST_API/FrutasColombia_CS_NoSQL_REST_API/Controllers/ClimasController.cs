@@ -19,8 +19,8 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Controllers
             return Ok(losDepartamentos);
         }
 
-        [HttpGet("{clima_id:Guid}")]
-        public async Task<IActionResult> GetByIdAsync(Guid clima_id)
+        [HttpGet("{clima_id:string}")]
+        public async Task<IActionResult> GetByIdAsync(string clima_id)
         {
             try
             {
@@ -35,8 +35,8 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Controllers
             }
         }
 
-        [HttpGet("{clima_id:Guid}/Frutas")]
-        public async Task<IActionResult> GetProducedFruitsAsync(Guid clima_id)
+        [HttpGet("{clima_id:string}/Frutas")]
+        public async Task<IActionResult> GetProducedFruitsAsync(string clima_id)
         {
             try
             {

@@ -16,23 +16,23 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Services
                 .GetAllAsync();
         }
 
-        public async Task<Departamento> GetByIdAsync(Guid departamento_id)
+        public async Task<Departamento> GetByIdAsync(string? departamento_id)
         {
             Departamento unDepartamento = await _departamentoRepository
                 .GetByIdAsync(departamento_id);
 
-            if (unDepartamento.Id == Guid.Empty)
+            if (unDepartamento.Id == string?.Empty)
                 throw new AppValidationException($"Departamento no encontrado con el id {departamento_id}");
 
             return unDepartamento;
         }
 
-        public async Task<IEnumerable<Municipio>> GetAssociatedMunicipalityAsync(Guid departamento_id)
+        public async Task<IEnumerable<Municipio>> GetAssociatedMunicipalityAsync(string? departamento_id)
         {
             Departamento unDepartamento = await _departamentoRepository
                 .GetByIdAsync(departamento_id);
 
-            if (unDepartamento.Id == Guid.Empty)
+            if (unDepartamento.Id == string?.Empty)
                 throw new AppValidationException($"Departamento no encontrado con el id {departamento_id}");
 
             var municipiosAsociados = await _departamentoRepository
@@ -44,16 +44,16 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Services
             return municipiosAsociados;
         }
 
-        public async Task<IEnumerable<FrutaProducida>> GetProducedFruitsAsync(Guid departamento_id)
+        public async Task<IEnumerable<FrutaProducida>> GetProducedFruitsAsync(string? departamento_id)
         {
             Departamento unDepartamento = await _departamentoRepository
                 .GetByIdAsync(departamento_id);
 
-            if (unDepartamento.Id == Guid.Empty)
+            if (unDepartamento.Id == string?.Empty)
                 throw new AppValidationException($"Departamento no encontrado con el id {departamento_id}");
 
             var frutasProducidas = await _frutaRepository
-                .GetByLocationAsync(departamento_id, Guid.Empty);
+                .GetByLocationAsync(departamento_id, string?.Empty);
 
             if (!frutasProducidas.Any())
                 throw new AppValidationException($"Departamento {unDepartamento.Nombre} no tiene frutas producidas");

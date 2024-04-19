@@ -1,4 +1,5 @@
-﻿using FrutasColombia_CS_NoSQL_REST_API.DbContexts;
+﻿
+using FrutasColombia_CS_NoSQL_REST_API.DbContexts;
 using FrutasColombia_CS_NoSQL_REST_API.Interfaces;
 using FrutasColombia_CS_NoSQL_REST_API.Models;
 using System.Data;
@@ -24,7 +25,7 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Repositories
             return resultadoMunicipios;
         }
 
-        public async Task<Municipio> GetByIdAsync(Guid municipio_id)
+        public async Task<Municipio> GetByIdAsync(string? municipio_id)
         {
             Municipio unMunicipio = new();
 
@@ -32,7 +33,7 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Repositories
 
             DynamicParameters parametrosSentencia = new();
             parametrosSentencia.Add("@municipio_id", municipio_id,
-                                    DbType.Guid, ParameterDirection.Input);
+                                    DbType.string?, ParameterDirection.Input);
 
             string sentenciaSQL = "SELECT m.id, m.nombre, d.nombre departamento " +
                 "FROM core.municipios m " +

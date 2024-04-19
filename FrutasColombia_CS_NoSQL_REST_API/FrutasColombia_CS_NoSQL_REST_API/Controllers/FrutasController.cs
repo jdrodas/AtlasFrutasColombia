@@ -20,8 +20,8 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Controllers
             return Ok(lasFrutas);
         }
 
-        [HttpGet("{fruta_id:Guid}")]
-        public async Task<IActionResult> GetFruitDetailsByIdAsync(Guid fruta_id)
+        [HttpGet("{fruta_id:string?}")]
+        public async Task<IActionResult> GetFruitDetailsByIdAsync(string? fruta_id)
         {
             try
             {
@@ -36,8 +36,8 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Controllers
             }
         }
 
-        [HttpGet("{fruta_id:Guid}/Nutricion")]
-        public async Task<IActionResult> GetNutritiousFruitByIdAsync(Guid fruta_id)
+        [HttpGet("{fruta_id:string?}/Nutricion")]
+        public async Task<IActionResult> GetNutritiousFruitByIdAsync(string? fruta_id)
         {
             try
             {
@@ -52,8 +52,8 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Controllers
             }
         }
 
-        [HttpGet("{fruta_id:Guid}/Taxonomia")]
-        public async Task<IActionResult> GetClassifiedFruitByIdAsync(Guid fruta_id)
+        [HttpGet("{fruta_id:string?}/Taxonomia")]
+        public async Task<IActionResult> GetClassifiedFruitByIdAsync(string? fruta_id)
         {
             try
             {
@@ -88,8 +88,8 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Controllers
             }
         }
 
-        [HttpPost("{fruta_id:Guid}/Nutricion")]
-        public async Task<IActionResult> CreateNutritionDetailsAsync(Guid fruta_id, Nutricion unaInformacionNutricional)
+        [HttpPost("{fruta_id:string?}/Nutricion")]
+        public async Task<IActionResult> CreateNutritionDetailsAsync(string? fruta_id, Nutricion unaInformacionNutricional)
         {
             try
             {
@@ -108,8 +108,8 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Controllers
             }
         }
 
-        [HttpPost("{fruta_id:Guid}/Taxonomia")]
-        public async Task<IActionResult> CreateTaxonomicDetailsAsync(Guid fruta_id, Taxonomia unaInformacionTaxonomica)
+        [HttpPost("{fruta_id:string?}/Taxonomia")]
+        public async Task<IActionResult> CreateTaxonomicDetailsAsync(string? fruta_id, Taxonomia unaInformacionTaxonomica)
         {
             try
             {
@@ -148,8 +148,8 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Controllers
             }
         }
 
-        [HttpPut("{fruta_id:Guid}/Nutricion")]
-        public async Task<IActionResult> UpdateNutritionDetailsAsync(Guid fruta_id, Nutricion unaInformacionNutricional)
+        [HttpPut("{fruta_id:string?}/Nutricion")]
+        public async Task<IActionResult> UpdateNutritionDetailsAsync(string? fruta_id, Nutricion unaInformacionNutricional)
         {
             try
             {
@@ -168,8 +168,8 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Controllers
             }
         }
 
-        [HttpPut("{fruta_id:Guid}/Taxonomia")]
-        public async Task<IActionResult> UpdateTaxonomicDetailsAsync(Guid fruta_id, Taxonomia unaInformacionTaxonomica)
+        [HttpPut("{fruta_id:string?}/Taxonomia")]
+        public async Task<IActionResult> UpdateTaxonomicDetailsAsync(string? fruta_id, Taxonomia unaInformacionTaxonomica)
         {
             try
             {
@@ -188,8 +188,8 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Controllers
             }
         }
 
-        [HttpDelete("{fruta_id:Guid}")]
-        public async Task<IActionResult> RemoveAsync(Guid fruta_id)
+        [HttpDelete("{fruta_id:string?}")]
+        public async Task<IActionResult> RemoveAsync(string? fruta_id)
         {
             try
             {
@@ -208,8 +208,8 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Controllers
             }
         }
 
-        [HttpDelete("{fruta_id:Guid}/Nutricion")]
-        public async Task<IActionResult> RemoveNutritionDetailsAsync(Guid fruta_id)
+        [HttpDelete("{fruta_id:string?}/Nutricion")]
+        public async Task<IActionResult> RemoveNutritionDetailsAsync(string? fruta_id)
         {
             try
             {
@@ -228,8 +228,8 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Controllers
             }
         }
 
-        [HttpDelete("{fruta_id:Guid}/Taxonomia")]
-        public async Task<IActionResult> RemoveTaxonomicDetailsAsync(Guid fruta_id)
+        [HttpDelete("{fruta_id:string?}/Taxonomia")]
+        public async Task<IActionResult> RemoveTaxonomicDetailsAsync(string? fruta_id)
         {
             try
             {

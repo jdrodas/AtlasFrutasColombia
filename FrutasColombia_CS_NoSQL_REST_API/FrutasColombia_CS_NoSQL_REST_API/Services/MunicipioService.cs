@@ -16,27 +16,27 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Services
                 .GetAllAsync();
         }
 
-        public async Task<Municipio> GetByIdAsync(Guid municipio_id)
+        public async Task<Municipio> GetByIdAsync(string? municipio_id)
         {
             Municipio unMunicipio = await _municipioRepository
                 .GetByIdAsync(municipio_id);
 
-            if (unMunicipio.Id == Guid.Empty)
+            if (unMunicipio.Id == string?.Empty)
                 throw new AppValidationException($"Municipio no encontrado con el id {municipio_id}");
 
             return unMunicipio;
         }
 
-        public async Task<IEnumerable<FrutaProducida>> GetProducedFruitsAsync(Guid municipio_id)
+        public async Task<IEnumerable<FrutaProducida>> GetProducedFruitsAsync(string? municipio_id)
         {
             Municipio unMunicipio = await _municipioRepository
                 .GetByIdAsync(municipio_id);
 
-            if (unMunicipio.Id == Guid.Empty)
+            if (unMunicipio.Id == string?.Empty)
                 throw new AppValidationException($"Municipio no encontrado con el id {municipio_id}");
 
             var frutasProducidas = await _frutaRepository
-                .GetByLocationAsync(Guid.Empty, municipio_id);
+                .GetByLocationAsync(string?.Empty, municipio_id);
 
             if (!frutasProducidas.Any())
                 throw new AppValidationException($"Departamento {unMunicipio.Nombre} no tiene frutas producidas");

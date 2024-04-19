@@ -1,6 +1,8 @@
-﻿using FrutasColombia_CS_NoSQL_REST_API.DbContexts;
+﻿
+using FrutasColombia_CS_NoSQL_REST_API.DbContexts;
 using FrutasColombia_CS_NoSQL_REST_API.Interfaces;
 using FrutasColombia_CS_NoSQL_REST_API.Models;
+using MongoDB.Driver;
 using System.Data;
 
 namespace FrutasColombia_CS_NoSQL_REST_API.Repositories
@@ -12,18 +14,18 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Repositories
         public async Task<IEnumerable<Clima>> GetAllAsync()
         {
             var conexion = contextoDB.CreateConnection();
+            var coleccionClimas = conexion
+                .GetCollection<Clima>(contextoDB.configuracionColecciones.ColeccionClimas);
 
-            string sentenciaSQL = "SELECT id, nombre, altitud_minima, altitud_maxima " +
-                                  "FROM core.climas " +
-                                  "ORDER BY id";
+            var losClimas = await coleccionClimas
+                .Find(_ => true)
+                .SortBy(clima => clima.Nombre)
+                .ToListAsync();
 
-            var resultadoClimas = await conexion
-                .QueryAsync<Clima>(sentenciaSQL, new DynamicParameters());
-
-            return resultadoClimas;
+            return losClimas;
         }
 
-        public async Task<Clima> GetByIdAsync(Guid clima_id)
+        public async Task<Clima> GetByIdAsync(string? clima_id)
         {
             Clima unClima = new();
 
@@ -31,7 +33,7 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Repositories
 
             DynamicParameters parametrosSentencia = new();
             parametrosSentencia.Add("@clima_id", clima_id,
-                                    DbType.Guid, ParameterDirection.Input);
+                                    DbType.string?, ParameterDirection.Input);
 
             string sentenciaSQL = "SELECT id, nombre, altitud_minima, altitud_maxima " +
                                   "FROM core.climas " +

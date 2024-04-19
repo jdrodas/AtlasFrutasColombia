@@ -19,8 +19,8 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Controllers
             return Ok(losDepartamentos);
         }
 
-        [HttpGet("{departamento_id:Guid}")]
-        public async Task<IActionResult> GetByIdAsync(Guid departamento_id)
+        [HttpGet("{departamento_id:string?}")]
+        public async Task<IActionResult> GetByIdAsync(string? departamento_id)
         {
             try
             {
@@ -35,8 +35,8 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Controllers
             }
         }
 
-        [HttpGet("{departamento_id:Guid}/Municipios")]
-        public async Task<IActionResult> GetAssociatedMunicipalityAsync(Guid departamento_id)
+        [HttpGet("{departamento_id:string?}/Municipios")]
+        public async Task<IActionResult> GetAssociatedMunicipalityAsync(string? departamento_id)
         {
             try
             {
@@ -51,8 +51,8 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Controllers
             }
         }
 
-        [HttpGet("{departamento_id:Guid}/Frutas")]
-        public async Task<IActionResult> GetProducedFruitsAsync(Guid departamento_id)
+        [HttpGet("{departamento_id:string?}/Frutas")]
+        public async Task<IActionResult> GetProducedFruitsAsync(string? departamento_id)
         {
             try
             {

@@ -16,27 +16,24 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Services
                 .GetAllAsync();
         }
 
-        public async Task<Clima> GetByIdAsync(Guid clima_id)
+        public async Task<Clima> GetByIdAsync(string clima_id)
         {
             Clima unClima = await _climaRepository
                 .GetByIdAsync(clima_id);
 
-            if (unClima.Id == Guid.Empty)
+            if (string.IsNullOrEmpty(unClima.Id))
                 throw new AppValidationException($"Clima no encontrado con el id {clima_id}");
 
             return unClima;
         }
 
-        public async Task<IEnumerable<FrutaProducida>> GetProducedFruitsAsync(Guid clima_id)
+        public async Task<IEnumerable<FrutaProducida>> GetProducedFruitsAsync(string clima_id)
         {
             Clima unClima = await _climaRepository
                 .GetByIdAsync(clima_id);
 
-            if (unClima.Id == Guid.Empty)
+            if (string.IsNullOrEmpty(unClima.Id))
                 throw new AppValidationException($"Clima no encontrado con el id {clima_id}");
-
-            //var frutasProducidas = await _frutaRepository
-            //    .GetByLocationAsync(departamento_id, null);
 
             var frutasProducidas = await _frutaRepository
                 .GetByClimateAsync(clima_id);

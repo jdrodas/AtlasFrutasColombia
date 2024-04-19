@@ -1,4 +1,5 @@
-﻿using FrutasColombia_CS_NoSQL_REST_API.DbContexts;
+﻿
+using FrutasColombia_CS_NoSQL_REST_API.DbContexts;
 using FrutasColombia_CS_NoSQL_REST_API.Interfaces;
 using FrutasColombia_CS_NoSQL_REST_API.Models;
 using System.Data;
@@ -23,7 +24,7 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Repositories
             return resultadoDepartamentos;
         }
 
-        public async Task<Departamento> GetByIdAsync(Guid departamento_id)
+        public async Task<Departamento> GetByIdAsync(string? departamento_id)
         {
             Departamento unDepartamento = new();
 
@@ -31,7 +32,7 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Repositories
 
             DynamicParameters parametrosSentencia = new();
             parametrosSentencia.Add("@departamento_id", departamento_id,
-                                    DbType.Guid, ParameterDirection.Input);
+                                    DbType.string?, ParameterDirection.Input);
 
             string sentenciaSQL = "SELECT id, nombre " +
                                   "FROM core.departamentos " +
@@ -46,13 +47,13 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Repositories
             return unDepartamento;
         }
 
-        public async Task<IEnumerable<Municipio>> GetAssociatedMunicipalityAsync(Guid departamento_id)
+        public async Task<IEnumerable<Municipio>> GetAssociatedMunicipalityAsync(string? departamento_id)
         {
             var conexion = contextoDB.CreateConnection();
 
             DynamicParameters parametrosSentencia = new();
             parametrosSentencia.Add("@departamento_id", departamento_id,
-                                    DbType.Guid, ParameterDirection.Input);
+                                    DbType.string?, ParameterDirection.Input);
 
             string sentenciaSQL = "SELECT m.id, m.nombre, d.nombre departamento " +
                                   "FROM core.municipios m join departamentos d on m.departamento_id = d.id " +
