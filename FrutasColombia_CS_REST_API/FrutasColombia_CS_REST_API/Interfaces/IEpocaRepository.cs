@@ -7,5 +7,9 @@ namespace FrutasColombia_CS_REST_API.Interfaces
         public Task<IEnumerable<Epoca>> GetAllAsync();
 
         public Task<Epoca> GetByIdAsync(Guid epoca_id);
+
+        public Task<Epoca> GetByNameAsync(string epoca_nombre);
+
+        public Task<bool> CreateAsync(Epoca unaEpoca);
     }
 }

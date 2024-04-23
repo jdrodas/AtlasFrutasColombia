@@ -43,5 +43,48 @@ namespace FrutasColombia_CS_REST_API.Services
 
             return frutasProducidas;
         }
+
+        public async Task<Epoca> CreateAsync(Epoca unaEpoca)
+        {
+            //Validamos que la época tenga nombre
+            if (unaEpoca.Nombre!.Length == 0)
+                throw new AppValidationException("No se puede insertar una época con nombre nulo");
+
+            //Validamos que la época tenga un mes de inicio válido
+            if (unaEpoca.Mes_Inicio == 0)
+                throw new AppValidationException("No se puede insertar una época sin el mes de inicio");
+
+            //Validamos que la fruta tenga url_imagen
+            if (unaEpoca.Mes_Final == 0)
+                throw new AppValidationException("No se puede insertar una época sin el mes de final");
+
+            if(unaEpoca.Mes_Inicio > unaEpoca.Mes_Final)
+                throw new AppValidationException("Los meses inicial y final de la época deben delimitar un rango");
+
+            //Validamos que no exista previamente una fruta con ese nombre
+            var frutaExistente = await _epocaRepository
+                .GetByNameAsync(unaEpoca.Nombre);
+
+            if (frutaExistente.Id != Guid.Empty)
+                throw new AppValidationException($"Ya existe la época {unaEpoca.Nombre} ");
+
+            try
+            {
+                bool resultadoAccion = await _epocaRepository
+                    .CreateAsync(unaEpoca);
+
+                if (!resultadoAccion)
+                    throw new AppValidationException("Operación ejecutada pero no generó cambios en la DB");
+
+                frutaExistente = await _epocaRepository
+                    .GetByNameAsync(unaEpoca.Nombre);
+            }
+            catch (DbOperationException)
+            {
+                throw;
+            }
+
+            return frutaExistente;
+        }
     }
 }

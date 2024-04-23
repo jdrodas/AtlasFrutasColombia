@@ -46,5 +46,29 @@ namespace FrutasColombia_CS_REST_API.Repositories
 
             return unaEpoca;
         }
+
+        public async Task<Epoca> GetByNameAsync(string epoca_nombre)
+        {
+            Epoca unaEpoca = new();
+
+            var conexion = contextoDB.CreateConnection();
+
+            DynamicParameters parametrosSentencia = new();
+            parametrosSentencia.Add("@epoca_nombre", epoca_nombre,
+                                    DbType.String, ParameterDirection.Input);
+
+            string sentenciaSQL = "SELECT id, nombre, mes_inicio, mes_final " +
+                                  "FROM core.epocas " +
+                                  "WHERE nombre = @epoca_nombre";
+
+            var resultado = await conexion
+                .QueryAsync<Epoca>(sentenciaSQL, parametrosSentencia);
+
+            if (resultado.Any())
+                unaEpoca = resultado.First();
+
+            return unaEpoca;
+        }
+
     }
 }

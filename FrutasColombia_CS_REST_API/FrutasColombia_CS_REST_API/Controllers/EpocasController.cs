@@ -1,4 +1,5 @@
 ﻿using FrutasColombia_CS_REST_API.Exceptions;
+using FrutasColombia_CS_REST_API.Models;
 using FrutasColombia_CS_REST_API.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -50,5 +51,26 @@ namespace FrutasColombia_CS_REST_API.Controllers
                 return NotFound(error.Message);
             }
         }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateAsync(Epoca unaEpoca)
+        {
+            try
+            {
+                var epocaCreada = await _epocaService
+                    .CreateAsync(unaEpoca);
+
+                return Ok(epocaCreada);
+            }
+            catch (AppValidationException error)
+            {
+                return BadRequest($"Error de validación: {error.Message}");
+            }
+            catch (DbOperationException error)
+            {
+                return BadRequest($"Error de operacion en DB: {error.Message}");
+            }
+        }
+
     }
 }
