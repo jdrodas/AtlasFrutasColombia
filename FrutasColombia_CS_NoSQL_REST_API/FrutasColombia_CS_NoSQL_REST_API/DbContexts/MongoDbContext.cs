@@ -3,15 +3,10 @@ using MongoDB.Driver;
 
 namespace FrutasColombia_CS_NoSQL_REST_API.DbContexts
 {
-    public class MongoDbContext
+    public class MongoDbContext(IConfiguration unaConfiguracion)
     {
-        private readonly string cadenaConexion;
-        private readonly FrutasDatabaseSettings _frutasDatabaseSettings;
-        public MongoDbContext(IConfiguration unaConfiguracion)
-        {
-            cadenaConexion = unaConfiguracion.GetConnectionString("Mongo")!;
-            _frutasDatabaseSettings = new FrutasDatabaseSettings(unaConfiguracion);
-        }
+        private readonly string cadenaConexion = unaConfiguracion.GetConnectionString("Mongo")!;
+        private readonly FrutasDatabaseSettings _frutasDatabaseSettings = new(unaConfiguracion);
 
         public IMongoDatabase CreateConnection()
         {
@@ -21,7 +16,7 @@ namespace FrutasColombia_CS_NoSQL_REST_API.DbContexts
             return miDB;
         }
 
-        public FrutasDatabaseSettings configuracionColecciones
+        public FrutasDatabaseSettings ConfiguracionColecciones
         {
             get { return _frutasDatabaseSettings; }
         }

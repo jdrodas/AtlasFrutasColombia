@@ -4,11 +4,12 @@ using FrutasColombia_CS_NoSQL_REST_API.Models;
 
 namespace FrutasColombia_CS_NoSQL_REST_API.Services
 {
-    public class ClimaService(IClimaRepository climaRepository,
-                                        IFrutaRepository frutaRepository)
+    public class ClimaService(IClimaRepository climaRepository)
+    //public class ClimaService(IClimaRepository climaRepository,
+    //                                    IFrutaRepository frutaRepository)
     {
         private readonly IClimaRepository _climaRepository = climaRepository;
-        private readonly IFrutaRepository _frutaRepository = frutaRepository;
+        //private readonly IFrutaRepository _frutaRepository = frutaRepository;
 
         public async Task<IEnumerable<Clima>> GetAllAsync()
         {
@@ -27,21 +28,21 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Services
             return unClima;
         }
 
-        public async Task<IEnumerable<FrutaProducida>> GetProducedFruitsAsync(string clima_id)
-        {
-            Clima unClima = await _climaRepository
-                .GetByIdAsync(clima_id);
+        //public async Task<IEnumerable<FrutaProducida>> GetProducedFruitsAsync(string clima_id)
+        //{
+        //    Clima unClima = await _climaRepository
+        //        .GetByIdAsync(clima_id);
 
-            if (string.IsNullOrEmpty(unClima.Id))
-                throw new AppValidationException($"Clima no encontrado con el id {clima_id}");
+        //    if (string.IsNullOrEmpty(unClima.Id))
+        //        throw new AppValidationException($"Clima no encontrado con el id {clima_id}");
 
-            var frutasProducidas = await _frutaRepository
-                .GetByClimateAsync(clima_id);
+        //    var frutasProducidas = await _frutaRepository
+        //        .GetByClimateAsync(clima_id);
 
-            if (!frutasProducidas.Any())
-                throw new AppValidationException($"Clima {unClima.Nombre} no tiene frutas producidas");
+        //    if (!frutasProducidas.Any())
+        //        throw new AppValidationException($"Clima {unClima.Nombre} no tiene frutas producidas");
 
-            return frutasProducidas;
-        }
+        //    return frutasProducidas;
+        //}
     }
 }

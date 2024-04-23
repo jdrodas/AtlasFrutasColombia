@@ -15,7 +15,7 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Repositories
         {
             var conexion = contextoDB.CreateConnection();
             var coleccionClimas = conexion
-                .GetCollection<Clima>(contextoDB.configuracionColecciones.ColeccionClimas);
+                .GetCollection<Clima>(contextoDB.ConfiguracionColecciones.ColeccionClimas);
 
             var losClimas = await coleccionClimas
                 .Find(_ => true)
@@ -25,27 +25,45 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Repositories
             return losClimas;
         }
 
-        public async Task<Clima> GetByIdAsync(string? clima_id)
+        public async Task<Clima> GetByIdAsync(string clima_id)
         {
             Clima unClima = new();
 
             var conexion = contextoDB.CreateConnection();
+            var coleccionClimas = conexion
+                .GetCollection<Clima>(contextoDB.ConfiguracionColecciones.ColeccionClimas);
 
-            DynamicParameters parametrosSentencia = new();
-            parametrosSentencia.Add("@clima_id", clima_id,
-                                    DbType.string?, ParameterDirection.Input);
+            var resultado = await coleccionClimas
+                .Find(clima => clima.Id == clima_id)
+                .FirstOrDefaultAsync();
 
-            string sentenciaSQL = "SELECT id, nombre, altitud_minima, altitud_maxima " +
-                                  "FROM core.climas " +
-                                  "WHERE id = @clima_id";
-
-            var resultado = await conexion.QueryAsync<Clima>(sentenciaSQL,
-                parametrosSentencia);
-
-            if (resultado.Any())
-                unClima = resultado.First();
+            if (resultado is not null)
+                unClima = resultado;
 
             return unClima;
         }
+
+        //public async Task<Clima> GetByIdAsync(string? clima_id)
+        //{
+        //    Clima unClima = new();
+
+        //    var conexion = contextoDB.CreateConnection();
+
+        //    DynamicParameters parametrosSentencia = new();
+        //    parametrosSentencia.Add("@clima_id", clima_id,
+        //                            DbType.string?, ParameterDirection.Input);
+
+        //    string sentenciaSQL = "SELECT id, nombre, altitud_minima, altitud_maxima " +
+        //                          "FROM core.climas " +
+        //                          "WHERE id = @clima_id";
+
+        //    var resultado = await conexion.QueryAsync<Clima>(sentenciaSQL,
+        //        parametrosSentencia);
+
+        //    if (resultado.Any())
+        //        unClima = resultado.First();
+
+        //    return unClima;
+        //}
     }
 }

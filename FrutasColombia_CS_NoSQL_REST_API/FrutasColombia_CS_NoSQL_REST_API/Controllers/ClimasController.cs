@@ -13,21 +13,21 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllAsync()
         {
-            var losDepartamentos = await _climaService
+            var losClimas = await _climaService
                 .GetAllAsync();
 
-            return Ok(losDepartamentos);
+            return Ok(losClimas);
         }
 
-        [HttpGet("{clima_id:string}")]
+        [HttpGet("{clima_id:length(24)}")]
         public async Task<IActionResult> GetByIdAsync(string clima_id)
         {
             try
             {
-                var unaFruta = await _climaService
+                var unClima = await _climaService
                     .GetByIdAsync(clima_id);
 
-                return Ok(unaFruta);
+                return Ok(unClima);
             }
             catch (AppValidationException error)
             {
@@ -35,21 +35,20 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Controllers
             }
         }
 
-        [HttpGet("{clima_id:string}/Frutas")]
-        public async Task<IActionResult> GetProducedFruitsAsync(string clima_id)
-        {
-            try
-            {
-                var lasFrutasProducidas = await _climaService
-                    .GetProducedFruitsAsync(clima_id);
+        //[HttpGet("{clima_id:string}/Frutas")]
+        //public async Task<IActionResult> GetProducedFruitsAsync(string clima_id)
+        //{
+        //    try
+        //    {
+        //        var lasFrutasProducidas = await _climaService
+        //            .GetProducedFruitsAsync(clima_id);
 
-                return Ok(lasFrutasProducidas);
-            }
-            catch (AppValidationException error)
-            {
-                return NotFound(error.Message);
-            }
-        }
-
+        //        return Ok(lasFrutasProducidas);
+        //    }
+        //    catch (AppValidationException error)
+        //    {
+        //        return NotFound(error.Message);
+        //    }
+        //}
     }
 }

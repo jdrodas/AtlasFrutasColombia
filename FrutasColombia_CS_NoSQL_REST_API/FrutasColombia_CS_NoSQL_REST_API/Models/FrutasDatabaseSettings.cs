@@ -7,6 +7,8 @@
 
         public string ColeccionClimas { get; set; } = null!;
 
+        public string ColeccionTaxonomias { get; set; } = null!;
+
         public FrutasDatabaseSettings(IConfiguration unaConfiguracion)
         {
             var configuracion = unaConfiguracion.GetSection("FrutasDatabaseSettings");
@@ -14,6 +16,7 @@
             DatabaseName = configuracion.GetSection("DatabaseName").Value!;
             ColeccionFrutas = configuracion.GetSection("ColeccionFrutas").Value!;
             ColeccionClimas = configuracion.GetSection("ColeccionClimas").Value!;
+            ColeccionTaxonomias = configuracion.GetSection("ColeccionTaxonomias").Value!;
         }
     }
 }
