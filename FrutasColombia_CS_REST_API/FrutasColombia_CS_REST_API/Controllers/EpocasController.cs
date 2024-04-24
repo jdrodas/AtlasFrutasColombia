@@ -14,10 +14,10 @@ namespace FrutasColombia_CS_REST_API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllAsync()
         {
-            var losDepartamentos = await _epocaService
+            var lasEpocas = await _epocaService
                 .GetAllAsync();
 
-            return Ok(losDepartamentos);
+            return Ok(lasEpocas);
         }
 
         [HttpGet("{epoca_id:Guid}")]
@@ -25,10 +25,10 @@ namespace FrutasColombia_CS_REST_API.Controllers
         {
             try
             {
-                var unaFruta = await _epocaService
+                var unaEpoca = await _epocaService
                     .GetByIdAsync(epoca_id);
 
-                return Ok(unaFruta);
+                return Ok(unaEpoca);
             }
             catch (AppValidationException error)
             {
@@ -72,5 +72,44 @@ namespace FrutasColombia_CS_REST_API.Controllers
             }
         }
 
+        [HttpPut]
+        public async Task<IActionResult> UpdateAsync(Epoca unaEpoca)
+        {
+            try
+            {
+                var epocaActualizada = await _epocaService
+                    .UpdateAsync(unaEpoca);
+
+                return Ok(epocaActualizada);
+            }
+            catch (AppValidationException error)
+            {
+                return BadRequest($"Error de validación: {error.Message}");
+            }
+            catch (DbOperationException error)
+            {
+                return BadRequest($"Error de operacion en DB: {error.Message}");
+            }
+        }
+
+        [HttpDelete("{epoca_id:Guid}")]
+        public async Task<IActionResult> RemoveAsync(Guid epoca_id)
+        {
+            try
+            {
+                var nombreEpocaBorrada = await _epocaService
+                    .RemoveAsync(epoca_id);
+
+                return Ok($"La época {nombreEpocaBorrada} fue eliminada correctamente!");
+            }
+            catch (AppValidationException error)
+            {
+                return BadRequest($"Error de validación: {error.Message}");
+            }
+            catch (DbOperationException error)
+            {
+                return BadRequest($"Error de operacion en DB: {error.Message}");
+            }
+        }
     }
 }

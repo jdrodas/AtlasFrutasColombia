@@ -1068,6 +1068,81 @@ $$
     end;
 $$; 
 
+-- p_inserta_epoca
+create or replace procedure core.p_inserta_epoca(
+                    in p_nombre         text,
+                    in p_mes_inicio     integer,
+                    in p_mes_final      integer
+) language plpgsql as
+$$
+    declare
+        l_total_registros integer :=0;
+
+    begin
+        -- identificamos si ya hay epoca con ese nombre
+        select count(id) into l_total_registros
+        from core.epocas
+        where nombre = p_nombre;
+
+        -- Si no hay registros, se puede insertar
+        if l_total_registros = 0 then
+            insert into core.epocas (nombre, mes_inicio, mes_final) 
+            values (p_nombre,p_mes_inicio,p_mes_final);
+        end if;
+    end;
+$$;
+
+-- p_actualiza_epoca
+create or replace procedure core.p_actualiza_epoca(
+                    in p_id             uuid,
+                    in p_nombre         text,
+                    in p_mes_inicio     integer,
+                    in p_mes_final      integer
+) language plpgsql as
+$$
+    declare
+        l_total_registros integer :=0;
+
+    begin
+        -- identificamos si ya hay epoca con ese nombre
+        select count(id) into l_total_registros
+        from core.epocas
+        where id = p_id;
+
+        if l_total_registros != 0 then
+            update core.epocas
+            set nombre = p_nombre,
+                mes_inicio = p_mes_inicio,
+                mes_final = p_mes_final
+            where id = p_id;
+        end if;
+    end;
+$$;
+
+-- p_elimina_epoca
+create or replace procedure core.p_elimina_epoca(
+                    in p_id uuid
+) language plpgsql as
+$$
+    declare
+        l_total_registros integer :=0;
+    begin
+
+        -- Validamos si hay produccíón de frutas en esa epoca
+        select count(*) into l_total_registros
+        from core.produccion_frutas
+        where epoca_id = p_id;
+
+        -- Si hay registros, no se puede eliminar la época
+        if(l_total_registros >0) then
+            RAISE EXCEPTION 'Hay producción de frutas asociada a la época';
+        end if;
+
+        -- Borramos la época
+        delete from epocas where id = p_id;
+    end;
+$$;
+
 
 -- -----------------------
 -- Consultas de apoyo

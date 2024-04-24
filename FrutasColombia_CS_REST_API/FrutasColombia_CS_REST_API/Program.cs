@@ -19,7 +19,7 @@ builder.Services.AddScoped<IMunicipioRepository, MunicipioRepository>();
 builder.Services.AddScoped<IClimaRepository, ClimaRepository>();
 builder.Services.AddScoped<IClasificacionRepository, ClasificacionRepository>();
 builder.Services.AddScoped<IMesRepository, MesRepository>();
-//builder.Services.AddScoped<IEpocaRepository, EpocaRepository>();
+builder.Services.AddScoped<IEpocaRepository, EpocaRepository>();
 
 //Aqui agregamos los servicios asociados para cada EndPoint
 builder.Services.AddScoped<ResumenService>();
@@ -29,7 +29,7 @@ builder.Services.AddScoped<MunicipioService>();
 builder.Services.AddScoped<ClimaService>();
 builder.Services.AddScoped<ClasificacionService>();
 builder.Services.AddScoped<MesService>();
-//builder.Services.AddScoped<EpocaService>();
+builder.Services.AddScoped<EpocaService>();
 
 // Add services to the container.
 
