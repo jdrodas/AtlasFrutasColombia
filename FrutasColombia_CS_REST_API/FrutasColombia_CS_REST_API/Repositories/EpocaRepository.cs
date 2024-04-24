@@ -61,7 +61,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
 
             string sentenciaSQL = "SELECT id, nombre, mes_inicio, mes_final " +
                                   "FROM core.epocas " +
-                                  "WHERE nombre = @epoca_nombre";
+                                  "WHERE lower(nombre) = lower(@epoca_nombre)";
 
             var resultado = await conexion
                 .QueryAsync<Epoca>(sentenciaSQL, parametrosSentencia);
@@ -157,7 +157,6 @@ namespace FrutasColombia_CS_REST_API.Repositories
         {
             bool resultadoAccion = false;
 
-            //Validamos si la fruta existe por ese ID
             var epocaExistente = await GetByIdAsync(unaEpoca.Id);
 
             if (epocaExistente.Id == Guid.Empty)
@@ -196,7 +195,6 @@ namespace FrutasColombia_CS_REST_API.Repositories
         {
             bool resultadoAccion = false;
 
-            //Validamos si la epoca existe por ese ID
             var epocaExistente = await GetByIdAsync(epoca_id);
 
             if (epocaExistente.Id == Guid.Empty)

@@ -46,7 +46,7 @@ namespace FrutasColombia_CS_REST_API.Services
 
         public async Task<Epoca> CreateAsync(Epoca unaEpoca)
         {
-            var resultadoValidacion = await EvaluateEpochDetailsAsync(unaEpoca);
+            string resultadoValidacion = EvaluateEpochDetailsAsync(unaEpoca);
 
             if(!string.IsNullOrEmpty(resultadoValidacion))
                 throw new AppValidationException(resultadoValidacion);
@@ -86,7 +86,7 @@ namespace FrutasColombia_CS_REST_API.Services
 
         public async Task<Epoca> UpdateAsync(Epoca unaEpoca)
         {
-            var resultadoValidacion = await EvaluateEpochDetailsAsync(unaEpoca);
+            string resultadoValidacion = EvaluateEpochDetailsAsync(unaEpoca);
 
             if (!string.IsNullOrEmpty(resultadoValidacion))
                 throw new AppValidationException(resultadoValidacion);
@@ -109,8 +109,8 @@ namespace FrutasColombia_CS_REST_API.Services
             epocaExistente = await _epocaRepository
                 .GetByNameAsync(unaEpoca.Nombre!);
 
-            if (epocaExistente.Id != Guid.Empty && epocaExistente.Id != epocaExistente.Id)
-                throw new AppValidationException($"Ya existe la época {epocaExistente.Nombre} con el Id {epocaExistente.Id}");
+            if (epocaExistente.Id != Guid.Empty && epocaExistente.Id != unaEpoca.Id)
+                throw new AppValidationException($"Ya existe la época {unaEpoca.Nombre} con el Id {unaEpoca.Id}");
 
             try
             {
@@ -165,19 +165,19 @@ namespace FrutasColombia_CS_REST_API.Services
             return nombreFrutaEliminada;
         }
 
-        private async Task<string> EvaluateEpochDetailsAsync(Epoca unaEpoca)
+        private static string EvaluateEpochDetailsAsync(Epoca unaEpoca)
         {
             //Validamos que la época tenga nombre
             if (unaEpoca.Nombre!.Length == 0)
                 return "No se puede insertar una época con nombre nulo";
 
             //Validamos que la época tenga un mes de inicio válido
-            if (unaEpoca.Mes_Inicio == 0)
-                return "No se puede insertar una época sin el mes de inicio";
+            if (unaEpoca.Mes_Inicio < 1 || unaEpoca.Mes_Inicio > 12)
+                return "No se puede insertar una época con el mes de inicio fuera del rango [1;12]";
 
             //Validamos que la época tenga un mes final válido
-            if (unaEpoca.Mes_Final == 0)
-                return "No se puede insertar una época sin el mes de final";
+            if (unaEpoca.Mes_Final < 1 || unaEpoca.Mes_Final > 12)
+                return "No se puede insertar una época sin el mes de final fuera del rango [1;12]";
 
             if (unaEpoca.Mes_Inicio > unaEpoca.Mes_Final)
                 return "Los meses inicial y final de la época deben delimitar un rango";
