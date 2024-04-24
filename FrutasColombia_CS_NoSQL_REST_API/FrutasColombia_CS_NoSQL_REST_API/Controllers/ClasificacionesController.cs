@@ -1,6 +1,4 @@
-﻿using FrutasColombia_CS_NoSQL_REST_API.Helpers;
-using FrutasColombia_CS_NoSQL_REST_API.Models;
-using FrutasColombia_CS_NoSQL_REST_API.Services;
+﻿using FrutasColombia_CS_NoSQL_REST_API.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FrutasColombia_CS_NoSQL_REST_API.Controllers

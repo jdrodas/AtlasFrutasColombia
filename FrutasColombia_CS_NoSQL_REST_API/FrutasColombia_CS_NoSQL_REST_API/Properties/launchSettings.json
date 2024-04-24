@@ -5,7 +5,7 @@
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
-      "launchUrl": "api/Climas",
+      "launchUrl": "api/Epocas",
       "applicationUrl": "https://localhost:7024",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

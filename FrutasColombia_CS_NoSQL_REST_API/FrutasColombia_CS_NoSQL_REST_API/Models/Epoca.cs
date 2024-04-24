@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace FrutasColombia_CS_NoSQL_REST_API.Models
 {
-    public class Clima
+    public class Epoca
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
@@ -16,14 +16,15 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Models
         [BsonRepresentation(BsonType.String)]
         public string? Nombre { get; set; } = string.Empty;
 
-        [BsonElement("altitud_minima")]
-        [JsonPropertyName("altitud_minima")]
+        [BsonElement("mes_inicio")]
+        [JsonPropertyName("mes_inicio")]
         [BsonRepresentation(BsonType.Int32)]
-        public int Altitud_Minima { get; set; } = 0;
+        public int Mes_Inicio { get; set; } = 0;
 
-        [BsonElement("altitud_maxima")]
-        [JsonPropertyName("altitud_maxima")]
+
+        [BsonElement("mes_final")]
+        [JsonPropertyName("mes_final")]
         [BsonRepresentation(BsonType.Int32)]
-        public int Altitud_Maxima { get; set; } = 0;
+        public int Mes_Final { get; set; } = 0;
     }
 }

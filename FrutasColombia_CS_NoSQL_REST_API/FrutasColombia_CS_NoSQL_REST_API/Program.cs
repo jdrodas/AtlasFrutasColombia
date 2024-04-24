@@ -1,8 +1,8 @@
 using FrutasColombia_CS_NoSQL_REST_API.DbContexts;
-using FrutasColombia_CS_NoSQL_REST_API.Repositories;
 using FrutasColombia_CS_NoSQL_REST_API.Interfaces;
-using Microsoft.OpenApi.Models;
+using FrutasColombia_CS_NoSQL_REST_API.Repositories;
 using FrutasColombia_CS_NoSQL_REST_API.Services;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,10 +14,12 @@ builder.Services.AddSingleton<MongoDbContext>();
 //Los repositorios
 builder.Services.AddScoped<IClimaRepository, ClimaRepository>();
 builder.Services.AddScoped<IClasificacionRepository, ClasificacionRepository>();
+builder.Services.AddScoped<IEpocaRepository, EpocaRepository>();
 
 //Aqui agregamos los servicios asociados para cada EndPoint
 builder.Services.AddScoped<ClimaService>();
 builder.Services.AddScoped<ClasificacionService>();
+builder.Services.AddScoped<EpocaService>();
 
 // Add services to the container.
 

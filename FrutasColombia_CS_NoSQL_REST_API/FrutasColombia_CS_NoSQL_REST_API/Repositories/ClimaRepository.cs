@@ -3,7 +3,6 @@ using FrutasColombia_CS_NoSQL_REST_API.DbContexts;
 using FrutasColombia_CS_NoSQL_REST_API.Interfaces;
 using FrutasColombia_CS_NoSQL_REST_API.Models;
 using MongoDB.Driver;
-using System.Data;
 
 namespace FrutasColombia_CS_NoSQL_REST_API.Repositories
 {
