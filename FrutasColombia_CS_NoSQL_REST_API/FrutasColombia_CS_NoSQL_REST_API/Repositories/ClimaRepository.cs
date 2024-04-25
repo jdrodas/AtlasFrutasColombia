@@ -42,6 +42,24 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Repositories
             return unClima;
         }
 
+        public async Task<Clima> GetByNameAsync(string clima_nombre)
+        {
+            Clima unClima = new();
+
+            var conexion = contextoDB.CreateConnection();
+            var coleccionClimas = conexion
+                .GetCollection<Clima>(contextoDB.ConfiguracionColecciones.ColeccionClimas);
+
+            var resultado = await coleccionClimas
+                .Find(clima => clima.Nombre!.ToLower().Equals(clima_nombre.ToLower()))
+                .FirstOrDefaultAsync();
+
+            if (resultado is not null)
+                unClima = resultado;
+
+            return unClima;
+        }
+
         //public async Task<Clima> GetByIdAsync(string? clima_id)
         //{
         //    Clima unClima = new();
@@ -64,5 +82,73 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Repositories
 
         //    return unClima;
         //}
+
+        public async Task<long> GetTotalByAltitudeRangeAsync(int altitud_minima, int altitud_maxima)
+        {
+            var conexion = contextoDB.CreateConnection();
+            var coleccionClimas = conexion
+                .GetCollection<Clima>(contextoDB.ConfiguracionColecciones.ColeccionClimas);
+
+            var builder = Builders<Clima>.Filter;
+            var filtro = builder.And(
+                builder.Eq(clima => clima.Altitud_Minima, altitud_minima),
+                builder.Eq(clima => clima.Altitud_Maxima, altitud_maxima));
+
+            var resultado = await coleccionClimas
+                .CountDocumentsAsync(filtro);
+
+            return resultado;
+        }
+
+        public async Task<bool> CreateAsync(Clima unClima)
+        {
+            bool resultadoAccion = false;
+
+            var conexion = contextoDB.CreateConnection();
+            var coleccionClimas = conexion.GetCollection<Clima>(contextoDB.ConfiguracionColecciones.ColeccionClimas);
+
+            await coleccionClimas
+                .InsertOneAsync(unClima);
+
+            var resultado = await coleccionClimas
+                .Find(clima => clima.Nombre == unClima.Nombre)
+                .FirstOrDefaultAsync();
+
+            if (resultado is not null)
+                resultadoAccion = true;
+
+            return resultadoAccion;
+        }
+
+        public async Task<bool> UpdateAsync(Clima unClima)
+        {
+            bool resultadoAccion = false;
+
+            var conexion = contextoDB.CreateConnection();
+            var coleccionClimas = conexion.GetCollection<Clima>(contextoDB.ConfiguracionColecciones.ColeccionClimas);
+
+            var resultado = await coleccionClimas
+                .ReplaceOneAsync(clima => clima.Id == unClima.Id, unClima);
+
+            if (resultado.IsAcknowledged)
+                resultadoAccion = true;
+
+            return resultadoAccion;
+        }
+        public async Task<bool> RemoveAsync(string clima_id)
+        {
+            bool resultadoAccion = false;
+
+            var conexion = contextoDB.CreateConnection();
+            var coleccionClimas = conexion.GetCollection<Epoca>(contextoDB.ConfiguracionColecciones.ColeccionClimas);
+
+            var resultado = await coleccionClimas
+                .DeleteOneAsync(clima => clima.Id == clima_id);
+
+            if (resultado.IsAcknowledged)
+                resultadoAccion = true;
+
+            return resultadoAccion;
+        }
     }
 }

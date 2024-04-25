@@ -103,7 +103,7 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Services
             var totalEpocasExistentes = await _epocaRepository
                 .GetTotalByMonthRangeAsync(unaEpoca.Mes_Inicio, unaEpoca.Mes_Final);
 
-            if (totalEpocasExistentes > 0 || epocaExistente.Id != unaEpoca.Id)
+            if (totalEpocasExistentes > 0 && epocaExistente.Id != unaEpoca.Id)
                 throw new AppValidationException($"Ya existe una época asociada al mes de inicio {unaEpoca.Mes_Inicio} y al mes final {unaEpoca.Mes_Final}");
 
             //Que el nombre nuevo de la época no exista en otra época distinta            

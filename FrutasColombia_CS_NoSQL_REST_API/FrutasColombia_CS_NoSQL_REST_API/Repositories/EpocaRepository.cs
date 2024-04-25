@@ -123,7 +123,8 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Repositories
             var conexion = contextoDB.CreateConnection();
             var coleccionEpocas = conexion.GetCollection<Epoca>(contextoDB.ConfiguracionColecciones.ColeccionEpocas);
 
-            var resultado = await coleccionEpocas.ReplaceOneAsync(epoca => epoca.Id == unaEpoca.Id, unaEpoca);
+            var resultado = await coleccionEpocas
+                .ReplaceOneAsync(epoca => epoca.Id == unaEpoca.Id, unaEpoca);
 
             if (resultado.IsAcknowledged)
                 resultadoAccion = true;
