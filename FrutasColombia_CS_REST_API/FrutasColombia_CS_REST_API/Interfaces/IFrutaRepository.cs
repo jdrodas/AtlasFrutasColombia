@@ -4,19 +4,19 @@ namespace FrutasColombia_CS_REST_API.Interfaces
 {
     public interface IFrutaRepository
     {
-        public Task<IEnumerable<Fruta>> GetAllAsync();
+        public Task<List<Fruta>> GetAllAsync();
 
         public Task<Fruta> GetByIdAsync(Guid fruta_id);
 
         public Task<Fruta> GetByNameAsync(string fruta_nombre);
 
-        public Task<IEnumerable<FrutaProducida>> GetByLocationAsync(Guid departamento_id, Guid municipio_id);
+        public Task<List<FrutaProducida>> GetProducedByLocationAsync(Guid departamento_id, Guid municipio_id);
 
-        public Task<IEnumerable<FrutaProducida>> GetByClimateAsync(Guid clima_id);
+        public Task<List<FrutaProducida>> GetProducedByClimateAsync(Guid clima_id);
 
-        public Task<IEnumerable<FrutaProducida>> GetByEpochAsync(Guid epoca_id);
+        public Task<List<FrutaProducida>> GetProducedByEpochAsync(Guid epoca_id);
 
-        public Task<IEnumerable<FrutaProducida>> GetByMonthAsync(int mes_id);
+        public Task<List<FrutaProducida>> GetProducedByMonthAsync(int mes_id);
 
         public Task<FrutaDetallada> GetDetailsByIdAsync(Guid fruta_id);
 
@@ -32,9 +32,11 @@ namespace FrutasColombia_CS_REST_API.Interfaces
 
         public Task<FrutaClasificada> GetClassifiedFruitByIdAsync(Guid fruta_id);
 
+        public Task<FrutaProducida> GetProducedFruitByIdAsync(Guid fruta_id);
+
         public Task<Taxonomia> GetTaxonomicDetailsAsync(Guid fruta_id);
 
-        public Task<IEnumerable<FrutaClasificada>> GetByGenusIdAsync(Guid genero_id);
+        public Task<List<FrutaClasificada>> GetClassifiedByGenusIdAsync(Guid genero_id);
 
         public Task<bool> CreateAsync(Fruta unaFruta);
 

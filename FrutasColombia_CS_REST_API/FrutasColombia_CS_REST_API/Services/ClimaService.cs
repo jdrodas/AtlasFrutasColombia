@@ -10,7 +10,7 @@ namespace FrutasColombia_CS_REST_API.Services
         private readonly IClimaRepository _climaRepository = climaRepository;
         private readonly IFrutaRepository _frutaRepository = frutaRepository;
 
-        public async Task<IEnumerable<Clima>> GetAllAsync()
+        public async Task<List<Clima>> GetAllAsync()
         {
             return await _climaRepository
                 .GetAllAsync();
@@ -27,7 +27,7 @@ namespace FrutasColombia_CS_REST_API.Services
             return unClima;
         }
 
-        public async Task<IEnumerable<FrutaProducida>> GetProducedFruitsAsync(Guid clima_id)
+        public async Task<List<FrutaProducida>> GetProducedFruitsAsync(Guid clima_id)
         {
             Clima unClima = await _climaRepository
                 .GetByIdAsync(clima_id);
@@ -36,7 +36,7 @@ namespace FrutasColombia_CS_REST_API.Services
                 throw new AppValidationException($"Clima no encontrado con el id {clima_id}");
 
             var frutasProducidas = await _frutaRepository
-                .GetByClimateAsync(clima_id);
+                .GetProducedByClimateAsync(clima_id);
 
             if (!frutasProducidas.Any())
                 throw new AppValidationException($"Clima {unClima.Nombre} no tiene frutas producidas");

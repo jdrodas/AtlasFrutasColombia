@@ -13,7 +13,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
     {
         private readonly PgsqlDbContext contextoDB = unContexto;
 
-        public async Task<IEnumerable<Fruta>> GetAllAsync()
+        public async Task<List<Fruta>> GetAllAsync()
         {
             var conexion = contextoDB.CreateConnection();
 
@@ -24,7 +24,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             var resultadoFrutas = await conexion
                 .QueryAsync<Fruta>(sentenciaSQL, new DynamicParameters());
 
-            return resultadoFrutas;
+            return resultadoFrutas.ToList();
         }
 
         public async Task<Fruta> GetByIdAsync(Guid fruta_id)
@@ -75,7 +75,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return unaFruta;
         }
 
-        public async Task<IEnumerable<FrutaProducida>> GetByLocationAsync(Guid departamento_id, Guid municipio_id)
+        public async Task<List<FrutaProducida>> GetProducedByLocationAsync(Guid departamento_id, Guid municipio_id)
         {
             List<FrutaProducida> frutasProducidas = [];
 
@@ -109,7 +109,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             {
                 frutasProducidas = resultadoFrutas.ToList();
 
-                foreach (FrutaProducida unaFruta in frutasProducidas.ToList())
+                foreach (FrutaProducida unaFruta in frutasProducidas)
                 {
                     if (departamento_id != Guid.Empty)
                         unaFruta.Produccion = await GetProductionDetailsAsync(unaFruta.Id, departamento_id, Guid.Empty);
@@ -122,7 +122,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return frutasProducidas;
         }
 
-        public async Task<IEnumerable<FrutaProducida>> GetByClimateAsync(Guid clima_id)
+        public async Task<List<FrutaProducida>> GetProducedByClimateAsync(Guid clima_id)
         {
             List<FrutaProducida> frutasProducidas = [];
 
@@ -145,14 +145,14 @@ namespace FrutasColombia_CS_REST_API.Repositories
             {
                 frutasProducidas = resultadoFrutas.ToList();
 
-                foreach (FrutaProducida unaFruta in frutasProducidas.ToList())
+                foreach (FrutaProducida unaFruta in frutasProducidas)
                     unaFruta.Produccion = await GetProductionDetailsAsync(unaFruta.Id, clima_id);
             }
 
             return frutasProducidas;
         }
 
-        public async Task<IEnumerable<FrutaProducida>> GetByEpochAsync(Guid epoca_id)
+        public async Task<List<FrutaProducida>> GetProducedByEpochAsync(Guid epoca_id)
         {
             List<FrutaProducida> frutasProducidas = [];
 
@@ -175,14 +175,14 @@ namespace FrutasColombia_CS_REST_API.Repositories
             {
                 frutasProducidas = resultadoFrutas.ToList();
 
-                foreach (FrutaProducida unaFruta in frutasProducidas.ToList())
+                foreach (FrutaProducida unaFruta in frutasProducidas)
                     unaFruta.Produccion = await GetEpochProductionDetailsAsync(unaFruta.Id, epoca_id);
             }
 
             return frutasProducidas;
         }
 
-        public async Task<IEnumerable<FrutaProducida>> GetByMonthAsync(int mes_id)
+        public async Task<List<FrutaProducida>> GetProducedByMonthAsync(int mes_id)
         {
             List<FrutaProducida> frutasProducidas = [];
 
@@ -205,14 +205,14 @@ namespace FrutasColombia_CS_REST_API.Repositories
             {
                 frutasProducidas = resultadoFrutas.ToList();
 
-                foreach (FrutaProducida unaFruta in frutasProducidas.ToList())
+                foreach (FrutaProducida unaFruta in frutasProducidas)
                     unaFruta.Produccion = await GetProductionDetailsAsync(unaFruta.Id, mes_id);
             }
 
             return frutasProducidas;
         }
 
-        public async Task<IEnumerable<FrutaClasificada>> GetByGenusIdAsync(Guid genero_id)
+        public async Task<List<FrutaClasificada>> GetClassifiedByGenusIdAsync(Guid genero_id)
         {
             List<FrutaClasificada> frutasClasificadas = [];
 
@@ -234,7 +234,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             {
                 frutasClasificadas = resultadoFrutas.ToList();
 
-                foreach (FrutaClasificada unaFruta in frutasClasificadas.ToList())
+                foreach (FrutaClasificada unaFruta in frutasClasificadas)
                     unaFruta.Taxonomia = await GetTaxonomicDetailsAsync(unaFruta.Id);
             }
 
@@ -387,9 +387,9 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return infoProduccion;
         }
 
-        public async Task<Nutricion> GetNutritionDetailsAsync(Guid fruta_id)
+        public async Task<List<Produccion>> GetProductionDetailsAsync(Guid fruta_id)
         {
-            Nutricion infoNutricion = new();
+            List<Produccion> infoProduccion = [];
 
             var conexion = contextoDB.CreateConnection();
 
@@ -397,76 +397,36 @@ namespace FrutasColombia_CS_REST_API.Repositories
             parametrosSentencia.Add("@fruta_id", fruta_id,
                                     DbType.Guid, ParameterDirection.Input);
 
-            //Aqui colocamos la informacion nutricional
-            string sentenciaSQL = "SELECT DISTINCT azucares, carbohidratos, grasas, proteinas " +
-                "FROM core.v_info_nutricion_frutas v " +
-                "WHERE v.fruta_id = @fruta_id";
 
-            var resultadoNutricion = await conexion
-                .QueryAsync<Nutricion>(sentenciaSQL, parametrosSentencia);
+            string sentenciaSQL = "SELECT DISTINCT v.epoca_nombre epoca, v.clima_nombre clima, " +
+                "v.municipio_nombre municipio, v.departamento_nombre departamento, " +
+                "v.mes_inicio, v.mes_final " +
+                "FROM v_info_produccion_frutas v " +
+                "WHERE v.fruta_id = @fruta_id ";
 
-            if (resultadoNutricion.Any())
-                infoNutricion = resultadoNutricion.First();
+            var resultadoProduccion = await conexion
+                .QueryAsync<Produccion>(sentenciaSQL, parametrosSentencia);
 
-            return infoNutricion;
+            if (resultadoProduccion.Any())
+                infoProduccion = resultadoProduccion.ToList();
+
+            return infoProduccion;
         }
 
-        public async Task<FrutaNutritiva> GetNutritiousFruitByIdAsync(Guid fruta_id)
+        public async Task<FrutaProducida> GetProducedFruitByIdAsync(Guid fruta_id)
         {
             Fruta unaFruta = await GetByIdAsync(fruta_id);
 
-            FrutaNutritiva unaFrutaNutritiva = new()
+            FrutaProducida unafrutaClasificada = new()
             {
                 Id = unaFruta.Id,
                 Nombre = unaFruta.Nombre,
                 Url_Imagen = unaFruta.Url_Imagen,
                 Url_Wikipedia = unaFruta.Url_Wikipedia,
-                Nutricion = await GetNutritionDetailsAsync(fruta_id)
-            };
-
-            return unaFrutaNutritiva;
-        }
-
-        public async Task<FrutaClasificada> GetClassifiedFruitByIdAsync(Guid fruta_id)
-        {
-            Fruta unaFruta = await GetByIdAsync(fruta_id);
-
-            FrutaClasificada unafrutaClasificada = new()
-            {
-                Id = unaFruta.Id,
-                Nombre = unaFruta.Nombre,
-                Url_Imagen = unaFruta.Url_Imagen,
-                Url_Wikipedia = unaFruta.Url_Wikipedia,
-                Taxonomia = await GetTaxonomicDetailsAsync(fruta_id)
+                Produccion = await GetProductionDetailsAsync(fruta_id)
             };
 
             return unafrutaClasificada;
-        }
-
-        public async Task<Taxonomia> GetTaxonomicDetailsAsync(Guid fruta_id)
-        {
-            Taxonomia infoTaxonomia = new();
-
-            var conexion = contextoDB.CreateConnection();
-
-            DynamicParameters parametrosSentencia = new();
-            parametrosSentencia.Add("@fruta_id", fruta_id,
-                                    DbType.Guid, ParameterDirection.Input);
-
-            //Aqui colocamos la informacion de clasificación taxonómica
-            string sentenciaSQL = "SELECT DISTINCT reino_nombre reino, division_nombre division, clase_nombre clase, " +
-                "orden_nombre orden, familia_nombre familia, " +
-                "genero_nombre genero, especie_nombre especie " +
-                "FROM core.v_info_frutas v " +
-                "WHERE v.fruta_id = @fruta_id";
-
-            var resultadoTaxonomico = await conexion
-                .QueryAsync<Taxonomia>(sentenciaSQL, parametrosSentencia);
-
-            if (resultadoTaxonomico.Any())
-                infoTaxonomia = resultadoTaxonomico.First();
-
-            return infoTaxonomia;
         }
 
         public async Task<bool> CreateAsync(Fruta unaFruta)
@@ -489,89 +449,6 @@ namespace FrutasColombia_CS_REST_API.Repositories
                     p_nombre = unaFruta.Nombre,
                     p_url_wikipedia = unaFruta.Url_Wikipedia,
                     p_url_imagen = unaFruta.Url_Imagen
-                };
-
-                var cantidad_filas = await conexion.ExecuteAsync(
-                    procedimiento,
-                    parametros,
-                    commandType: CommandType.StoredProcedure);
-
-                if (cantidad_filas != 0)
-                    resultadoAccion = true;
-            }
-            catch (NpgsqlException error)
-            {
-                throw new DbOperationException(error.Message);
-            }
-
-            return resultadoAccion;
-        }
-
-        public async Task<bool> CreateNutritionDetailsAsync(Guid fruta_id, Nutricion unaInformacionNutricional)
-        {
-            bool resultadoAccion = false;
-
-            //Validamos si hay registros existentes
-            int totalRegistros =
-                await GetTotalNutritionDetailsByFruitIdAsync(fruta_id);
-
-            if (totalRegistros != 0)
-                throw new DbOperationException("No se puede insertar. Ya existen registros nutricionales para esta fruta.");
-
-            try
-            {
-                var conexion = contextoDB.CreateConnection();
-                string procedimiento = "core.p_inserta_nutricion_fruta";
-                var parametros = new
-                {
-                    p_fruta_id = fruta_id,
-                    p_azucares = unaInformacionNutricional.Azucares,
-                    p_carbohidratos = unaInformacionNutricional.Carbohidratos,
-                    p_grasas = unaInformacionNutricional.Grasas,
-                    p_proteinas = unaInformacionNutricional.Proteinas
-                };
-
-                var cantidad_filas = await conexion.ExecuteAsync(
-                    procedimiento,
-                    parametros,
-                    commandType: CommandType.StoredProcedure);
-
-                if (cantidad_filas != 0)
-                    resultadoAccion = true;
-            }
-            catch (NpgsqlException error)
-            {
-                throw new DbOperationException(error.Message);
-            }
-
-            return resultadoAccion;
-        }
-
-        public async Task<bool> CreateTaxonomicDetailsAsync(Guid fruta_id, Taxonomia unaInformacionTaxonomica)
-        {
-            bool resultadoAccion = false;
-
-            //Validamos si hay registros existentes
-            int totalRegistros =
-                await GetTotalTaxonomicDetailsByFruitIdAsync(fruta_id);
-
-            if (totalRegistros != 0)
-                throw new DbOperationException("No se puede insertar. Ya existen registros taxonómicos para esta fruta.");
-
-            try
-            {
-                var conexion = contextoDB.CreateConnection();
-                string procedimiento = "core.p_inserta_taxonomia_fruta";
-                var parametros = new
-                {
-                    p_fruta_id = fruta_id,
-                    p_reino = unaInformacionTaxonomica.Reino,
-                    p_division = unaInformacionTaxonomica.Division,
-                    p_clase = unaInformacionTaxonomica.Clase,
-                    p_orden = unaInformacionTaxonomica.Orden,
-                    p_familia = unaInformacionTaxonomica.Familia,
-                    p_genero = unaInformacionTaxonomica.Genero,
-                    p_especie = unaInformacionTaxonomica.Especie
                 };
 
                 var cantidad_filas = await conexion.ExecuteAsync(
@@ -629,6 +506,145 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return resultadoAccion;
         }
 
+        public async Task<bool> RemoveAsync(Guid fruta_id)
+        {
+            bool resultadoAccion = false;
+
+            //Validamos si la fruta existe por ese ID
+            var frutaExistente = await GetByIdAsync(fruta_id);
+
+            if (frutaExistente.Id == Guid.Empty)
+                throw new DbOperationException($"No se puede eliminar. No existe la fruta con el Id {fruta_id}.");
+
+            try
+            {
+                var conexion = contextoDB.CreateConnection();
+
+                string procedimiento = "core.p_elimina_fruta";
+                var parametros = new
+                {
+                    p_id = fruta_id
+                };
+
+                var cantidad_filas = await conexion.ExecuteAsync(
+                    procedimiento,
+                    parametros,
+                    commandType: CommandType.StoredProcedure);
+
+                if (cantidad_filas != 0)
+                    resultadoAccion = true;
+            }
+            catch (NpgsqlException error)
+            {
+                throw new DbOperationException(error.Message);
+            }
+
+            return resultadoAccion;
+        }
+
+
+        #region nutricion_frutas
+
+        public async Task<FrutaNutritiva> GetNutritiousFruitByIdAsync(Guid fruta_id)
+        {
+            Fruta unaFruta = await GetByIdAsync(fruta_id);
+
+            FrutaNutritiva unaFrutaNutritiva = new()
+            {
+                Id = unaFruta.Id,
+                Nombre = unaFruta.Nombre,
+                Url_Imagen = unaFruta.Url_Imagen,
+                Url_Wikipedia = unaFruta.Url_Wikipedia,
+                Nutricion = await GetNutritionDetailsAsync(fruta_id)
+            };
+
+            return unaFrutaNutritiva;
+        }
+
+        private async Task<int> GetTotalNutritionDetailsByFruitIdAsync(Guid fruta_id)
+        {
+            var conexion = contextoDB.CreateConnection();
+
+            //Validamos si hay registros existentes
+            DynamicParameters parametrosSentencia = new();
+            parametrosSentencia.Add("@fruta_id", fruta_id,
+                                    DbType.Guid, ParameterDirection.Input);
+
+            //Aqui colocamos la informacion nutricional
+            string sentenciaSQL = "SELECT count(*) totalRegistros " +
+                "FROM core.nutricion_frutas " +
+                "WHERE fruta_id = @fruta_id";
+
+            var totalRegistros = await conexion
+                .QueryAsync<int>(sentenciaSQL, parametrosSentencia);
+
+            return totalRegistros.FirstOrDefault();
+        }
+
+        public async Task<Nutricion> GetNutritionDetailsAsync(Guid fruta_id)
+        {
+            Nutricion infoNutricion = new();
+
+            var conexion = contextoDB.CreateConnection();
+
+            DynamicParameters parametrosSentencia = new();
+            parametrosSentencia.Add("@fruta_id", fruta_id,
+                                    DbType.Guid, ParameterDirection.Input);
+
+            //Aqui colocamos la informacion nutricional
+            string sentenciaSQL = "SELECT DISTINCT azucares, carbohidratos, grasas, proteinas " +
+                "FROM core.v_info_nutricion_frutas v " +
+                "WHERE v.fruta_id = @fruta_id";
+
+            var resultadoNutricion = await conexion
+                .QueryAsync<Nutricion>(sentenciaSQL, parametrosSentencia);
+
+            if (resultadoNutricion.Any())
+                infoNutricion = resultadoNutricion.First();
+
+            return infoNutricion;
+        }
+
+        public async Task<bool> CreateNutritionDetailsAsync(Guid fruta_id, Nutricion unaInformacionNutricional)
+        {
+            bool resultadoAccion = false;
+
+            //Validamos si hay registros existentes
+            int totalRegistros =
+                await GetTotalNutritionDetailsByFruitIdAsync(fruta_id);
+
+            if (totalRegistros != 0)
+                throw new DbOperationException("No se puede insertar. Ya existen registros nutricionales para esta fruta.");
+
+            try
+            {
+                var conexion = contextoDB.CreateConnection();
+                string procedimiento = "core.p_inserta_nutricion_fruta";
+                var parametros = new
+                {
+                    p_fruta_id = fruta_id,
+                    p_azucares = unaInformacionNutricional.Azucares,
+                    p_carbohidratos = unaInformacionNutricional.Carbohidratos,
+                    p_grasas = unaInformacionNutricional.Grasas,
+                    p_proteinas = unaInformacionNutricional.Proteinas
+                };
+
+                var cantidad_filas = await conexion.ExecuteAsync(
+                    procedimiento,
+                    parametros,
+                    commandType: CommandType.StoredProcedure);
+
+                if (cantidad_filas != 0)
+                    resultadoAccion = true;
+            }
+            catch (NpgsqlException error)
+            {
+                throw new DbOperationException(error.Message);
+            }
+
+            return resultadoAccion;
+        }
+
         public async Task<bool> UpdateNutritionDetailsAsync(Guid fruta_id, Nutricion unaInformacionNutricional)
         {
             bool resultadoAccion = false;
@@ -652,6 +668,154 @@ namespace FrutasColombia_CS_REST_API.Repositories
                     p_carbohidratos = unaInformacionNutricional.Carbohidratos,
                     p_grasas = unaInformacionNutricional.Grasas,
                     p_proteinas = unaInformacionNutricional.Proteinas
+                };
+
+                var cantidad_filas = await conexion.ExecuteAsync(
+                    procedimiento,
+                    parametros,
+                    commandType: CommandType.StoredProcedure);
+
+                if (cantidad_filas != 0)
+                    resultadoAccion = true;
+            }
+            catch (NpgsqlException error)
+            {
+                throw new DbOperationException(error.Message);
+            }
+
+            return resultadoAccion;
+        }
+
+        public async Task<bool> RemoveNutritionDetailsAsync(Guid fruta_id)
+        {
+            bool resultadoAccion = false;
+
+            //Validamos si hay registros existentes
+            int totalRegistros =
+                await GetTotalNutritionDetailsByFruitIdAsync(fruta_id);
+
+            if (totalRegistros == 0)
+                throw new DbOperationException("No se puede eliminar. NO existen registros nutricionales para esta fruta.");
+
+
+            try
+            {
+                var conexion = contextoDB.CreateConnection();
+
+                string procedimiento = "core.p_elimina_nutricion_fruta";
+                var parametros = new
+                {
+                    p_fruta_id = fruta_id
+                };
+
+                var cantidad_filas = await conexion.ExecuteAsync(
+                    procedimiento,
+                    parametros,
+                    commandType: CommandType.StoredProcedure);
+
+                if (cantidad_filas != 0)
+                    resultadoAccion = true;
+            }
+            catch (NpgsqlException error)
+            {
+                throw new DbOperationException(error.Message);
+            }
+
+            return resultadoAccion;
+        }
+
+        #endregion nutricion_frutas
+
+
+        #region taxonomia_frutas
+
+        public async Task<FrutaClasificada> GetClassifiedFruitByIdAsync(Guid fruta_id)
+        {
+            Fruta unaFruta = await GetByIdAsync(fruta_id);
+
+            FrutaClasificada unafrutaClasificada = new()
+            {
+                Id = unaFruta.Id,
+                Nombre = unaFruta.Nombre,
+                Url_Imagen = unaFruta.Url_Imagen,
+                Url_Wikipedia = unaFruta.Url_Wikipedia,
+                Taxonomia = await GetTaxonomicDetailsAsync(fruta_id)
+            };
+
+            return unafrutaClasificada;
+        }
+
+        private async Task<int> GetTotalTaxonomicDetailsByFruitIdAsync(Guid fruta_id)
+        {
+            var conexion = contextoDB.CreateConnection();
+
+            //Validamos si hay registros existentes
+            DynamicParameters parametrosSentencia = new();
+            parametrosSentencia.Add("@fruta_id", fruta_id,
+                                    DbType.Guid, ParameterDirection.Input);
+
+            //Aqui colocamos la informacion nutricional
+            string sentenciaSQL = "SELECT count(*) totalRegistros " +
+                "FROM core.taxonomia_frutas " +
+                "WHERE fruta_id = @fruta_id";
+
+            var totalRegistros = await conexion
+                .QueryAsync<int>(sentenciaSQL, parametrosSentencia);
+
+            return totalRegistros.FirstOrDefault();
+        }
+
+        public async Task<Taxonomia> GetTaxonomicDetailsAsync(Guid fruta_id)
+        {
+            Taxonomia infoTaxonomia = new();
+
+            var conexion = contextoDB.CreateConnection();
+
+            DynamicParameters parametrosSentencia = new();
+            parametrosSentencia.Add("@fruta_id", fruta_id,
+                                    DbType.Guid, ParameterDirection.Input);
+
+            //Aqui colocamos la informacion de clasificación taxonómica
+            string sentenciaSQL = "SELECT DISTINCT reino_nombre reino, division_nombre division, clase_nombre clase, " +
+                "orden_nombre orden, familia_nombre familia, " +
+                "genero_nombre genero, especie_nombre especie " +
+                "FROM core.v_info_frutas v " +
+                "WHERE v.fruta_id = @fruta_id";
+
+            var resultadoTaxonomico = await conexion
+                .QueryAsync<Taxonomia>(sentenciaSQL, parametrosSentencia);
+
+            if (resultadoTaxonomico.Any())
+                infoTaxonomia = resultadoTaxonomico.First();
+
+            return infoTaxonomia;
+        }
+
+        public async Task<bool> CreateTaxonomicDetailsAsync(Guid fruta_id, Taxonomia unaInformacionTaxonomica)
+        {
+            bool resultadoAccion = false;
+
+            //Validamos si hay registros existentes
+            int totalRegistros =
+                await GetTotalTaxonomicDetailsByFruitIdAsync(fruta_id);
+
+            if (totalRegistros != 0)
+                throw new DbOperationException("No se puede insertar. Ya existen registros taxonómicos para esta fruta.");
+
+            try
+            {
+                var conexion = contextoDB.CreateConnection();
+                string procedimiento = "core.p_inserta_taxonomia_fruta";
+                var parametros = new
+                {
+                    p_fruta_id = fruta_id,
+                    p_reino = unaInformacionTaxonomica.Reino,
+                    p_division = unaInformacionTaxonomica.Division,
+                    p_clase = unaInformacionTaxonomica.Clase,
+                    p_orden = unaInformacionTaxonomica.Orden,
+                    p_familia = unaInformacionTaxonomica.Familia,
+                    p_genero = unaInformacionTaxonomica.Genero,
+                    p_especie = unaInformacionTaxonomica.Especie
                 };
 
                 var cantidad_filas = await conexion.ExecuteAsync(
@@ -714,80 +878,6 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return resultadoAccion;
         }
 
-        public async Task<bool> RemoveAsync(Guid fruta_id)
-        {
-            bool resultadoAccion = false;
-
-            //Validamos si la fruta existe por ese ID
-            var frutaExistente = await GetByIdAsync(fruta_id);
-
-            if (frutaExistente.Id == Guid.Empty)
-                throw new DbOperationException($"No se puede eliminar. No existe la fruta con el Id {fruta_id}.");
-
-            try
-            {
-                var conexion = contextoDB.CreateConnection();
-
-                string procedimiento = "core.p_elimina_fruta";
-                var parametros = new
-                {
-                    p_id = fruta_id
-                };
-
-                var cantidad_filas = await conexion.ExecuteAsync(
-                    procedimiento,
-                    parametros,
-                    commandType: CommandType.StoredProcedure);
-
-                if (cantidad_filas != 0)
-                    resultadoAccion = true;
-            }
-            catch (NpgsqlException error)
-            {
-                throw new DbOperationException(error.Message);
-            }
-
-            return resultadoAccion;
-        }
-
-        public async Task<bool> RemoveNutritionDetailsAsync(Guid fruta_id)
-        {
-            bool resultadoAccion = false;
-
-            //Validamos si hay registros existentes
-            int totalRegistros =
-                await GetTotalNutritionDetailsByFruitIdAsync(fruta_id);
-
-            if (totalRegistros == 0)
-                throw new DbOperationException("No se puede eliminar. NO existen registros nutricionales para esta fruta.");
-
-
-            try
-            {
-                var conexion = contextoDB.CreateConnection();
-
-                string procedimiento = "core.p_elimina_nutricion_fruta";
-                var parametros = new
-                {
-                    p_fruta_id = fruta_id
-                };
-
-                var cantidad_filas = await conexion.ExecuteAsync(
-                    procedimiento,
-                    parametros,
-                    commandType: CommandType.StoredProcedure);
-
-                if (cantidad_filas != 0)
-                    resultadoAccion = true;
-            }
-            catch (NpgsqlException error)
-            {
-                throw new DbOperationException(error.Message);
-            }
-
-            return resultadoAccion;
-        }
-
         public async Task<bool> RemoveTaxonomicDetailsAsync(Guid fruta_id)
         {
             bool resultadoAccion = false;
@@ -826,44 +916,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return resultadoAccion;
         }
 
-        private async Task<int> GetTotalNutritionDetailsByFruitIdAsync(Guid fruta_id)
-        {
-            var conexion = contextoDB.CreateConnection();
+        #endregion taxonomia_frutas
 
-            //Validamos si hay registros existentes
-            DynamicParameters parametrosSentencia = new();
-            parametrosSentencia.Add("@fruta_id", fruta_id,
-                                    DbType.Guid, ParameterDirection.Input);
-
-            //Aqui colocamos la informacion nutricional
-            string sentenciaSQL = "SELECT count(*) totalRegistros " +
-                "FROM core.nutricion_frutas " +
-                "WHERE fruta_id = @fruta_id";
-
-            var totalRegistros = await conexion
-                .QueryAsync<int>(sentenciaSQL, parametrosSentencia);
-
-            return totalRegistros.FirstOrDefault();
-        }
-
-        private async Task<int> GetTotalTaxonomicDetailsByFruitIdAsync(Guid fruta_id)
-        {
-            var conexion = contextoDB.CreateConnection();
-
-            //Validamos si hay registros existentes
-            DynamicParameters parametrosSentencia = new();
-            parametrosSentencia.Add("@fruta_id", fruta_id,
-                                    DbType.Guid, ParameterDirection.Input);
-
-            //Aqui colocamos la informacion nutricional
-            string sentenciaSQL = "SELECT count(*) totalRegistros " +
-                "FROM core.taxonomia_frutas " +
-                "WHERE fruta_id = @fruta_id";
-
-            var totalRegistros = await conexion
-                .QueryAsync<int>(sentenciaSQL, parametrosSentencia);
-
-            return totalRegistros.FirstOrDefault();
-        }
     }
 }

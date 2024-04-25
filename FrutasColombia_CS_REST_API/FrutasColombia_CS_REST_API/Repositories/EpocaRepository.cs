@@ -12,7 +12,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
     {
         private readonly PgsqlDbContext contextoDB = unContexto;
 
-        public async Task<IEnumerable<Epoca>> GetAllAsync()
+        public async Task<List<Epoca>> GetAllAsync()
         {
             var conexion = contextoDB.CreateConnection();
 
@@ -23,7 +23,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             var resultadoEpocas = await conexion
                 .QueryAsync<Epoca>(sentenciaSQL, new DynamicParameters());
 
-            return resultadoEpocas;
+            return resultadoEpocas.ToList();
         }
 
         public async Task<Epoca> GetByIdAsync(Guid epoca_id)

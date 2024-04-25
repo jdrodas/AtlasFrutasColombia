@@ -10,7 +10,7 @@ namespace FrutasColombia_CS_REST_API.Services
         private readonly IEpocaRepository _epocaRepository = epocaRepository;
         private readonly IFrutaRepository _frutaRepository = frutaRepository;
 
-        public async Task<IEnumerable<Epoca>> GetAllAsync()
+        public async Task<List<Epoca>> GetAllAsync()
         {
             return await _epocaRepository
                 .GetAllAsync();
@@ -27,7 +27,7 @@ namespace FrutasColombia_CS_REST_API.Services
             return unaEpoca;
         }
 
-        public async Task<IEnumerable<FrutaProducida>> GetProducedFruitsAsync(Guid epoca_id)
+        public async Task<List<FrutaProducida>> GetProducedFruitsAsync(Guid epoca_id)
         {
             Epoca unaEpoca = await _epocaRepository
                 .GetByIdAsync(epoca_id);
@@ -36,7 +36,7 @@ namespace FrutasColombia_CS_REST_API.Services
                 throw new AppValidationException($"Época no encontrado con el id {epoca_id}");
 
             var frutasProducidas = await _frutaRepository
-                .GetByEpochAsync(epoca_id);
+                .GetProducedByEpochAsync(epoca_id);
 
             if (!frutasProducidas.Any())
                 throw new AppValidationException($"Época {unaEpoca.Nombre} no tiene frutas producidas");

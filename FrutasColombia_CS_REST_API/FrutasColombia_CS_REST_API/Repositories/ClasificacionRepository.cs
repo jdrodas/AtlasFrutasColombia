@@ -12,7 +12,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
     {
         private readonly PgsqlDbContext contextoDB = unContexto;
 
-        public async Task<IEnumerable<Clasificacion>> GetAllAsync()
+        public async Task<List<Clasificacion>> GetAllAsync()
         {
             var conexion = contextoDB.CreateConnection();
 
@@ -27,10 +27,10 @@ namespace FrutasColombia_CS_REST_API.Repositories
             var resultadoClasificacion = await conexion
                 .QueryAsync<Clasificacion>(sentenciaSQL, new DynamicParameters());
 
-            return resultadoClasificacion;
+            return resultadoClasificacion.ToList();
         }
 
-        public async Task<IEnumerable<Division>> GetAllDivisionsAsync()
+        public async Task<List<Division>> GetAllDivisionsAsync()
         {
             var conexion = contextoDB.CreateConnection();
 
@@ -41,10 +41,10 @@ namespace FrutasColombia_CS_REST_API.Repositories
             var resultadoDivisiones = await conexion
                 .QueryAsync<Division>(sentenciaSQL, new DynamicParameters());
 
-            return resultadoDivisiones;
+            return resultadoDivisiones.ToList();
         }
 
-        public async Task<IEnumerable<Clase>> GetAllClassesAsync()
+        public async Task<List<Clase>> GetAllClassesAsync()
         {
             var conexion = contextoDB.CreateConnection();
 
@@ -55,10 +55,10 @@ namespace FrutasColombia_CS_REST_API.Repositories
             var resultadoClases = await conexion
                 .QueryAsync<Clase>(sentenciaSQL, new DynamicParameters());
 
-            return resultadoClases;
+            return resultadoClases.ToList();
         }
 
-        public async Task<IEnumerable<Orden>> GetAllOrdersAsync()
+        public async Task<List<Orden>> GetAllOrdersAsync()
         {
             var conexion = contextoDB.CreateConnection();
 
@@ -69,10 +69,10 @@ namespace FrutasColombia_CS_REST_API.Repositories
             var resultadoOrdenes = await conexion
                 .QueryAsync<Orden>(sentenciaSQL, new DynamicParameters());
 
-            return resultadoOrdenes;
+            return resultadoOrdenes.ToList();
         }
 
-        public async Task<IEnumerable<Familia>> GetAllFamiliesAsync()
+        public async Task<List<Familia>> GetAllFamiliesAsync()
         {
             var conexion = contextoDB.CreateConnection();
 
@@ -83,10 +83,10 @@ namespace FrutasColombia_CS_REST_API.Repositories
             var resultadoFamilias = await conexion
                 .QueryAsync<Familia>(sentenciaSQL, new DynamicParameters());
 
-            return resultadoFamilias;
+            return resultadoFamilias.ToList();
         }
 
-        public async Task<IEnumerable<Genero>> GetAllGenusAsync()
+        public async Task<List<Genero>> GetAllGenusAsync()
         {
             var conexion = contextoDB.CreateConnection();
 
@@ -99,7 +99,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             var resultadoGeneros = await conexion
                 .QueryAsync<Genero>(sentenciaSQL, new DynamicParameters());
 
-            return resultadoGeneros;
+            return resultadoGeneros.ToList();
         }
 
         public async Task<Genero> GetGenusByIdAsync(Guid genero_id)

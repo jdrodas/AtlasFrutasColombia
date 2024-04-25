@@ -10,7 +10,7 @@ namespace FrutasColombia_CS_REST_API.Services
         private readonly IMesRepository _mesRepository = mesRepository;
         private readonly IFrutaRepository _frutaRepository = frutaRepository;
 
-        public async Task<IEnumerable<Mes>> GetAllAsync()
+        public async Task<List<Mes>> GetAllAsync()
         {
             return await _mesRepository
                 .GetAllAsync();
@@ -27,7 +27,7 @@ namespace FrutasColombia_CS_REST_API.Services
             return unMes;
         }
 
-        public async Task<IEnumerable<FrutaProducida>> GetProducedFruitsAsync(int mes_id)
+        public async Task<List<FrutaProducida>> GetProducedFruitsAsync(int mes_id)
         {
             Mes unMes = await _mesRepository
                 .GetByIdAsync(mes_id);
@@ -36,10 +36,10 @@ namespace FrutasColombia_CS_REST_API.Services
                 throw new AppValidationException($"Mes no encontrado con el id {mes_id}");
 
             //var frutasProducidas = await _frutaRepository
-            //    .GetByLocationAsync(departamento_id, null);
+            //    .GetProducedByLocationAsync(departamento_id, null);
 
             var frutasProducidas = await _frutaRepository
-                .GetByMonthAsync(mes_id);
+                .GetProducedByMonthAsync(mes_id);
 
             if (!frutasProducidas.Any())
                 throw new AppValidationException($"Mes {unMes.Nombre} no tiene frutas producidas");

@@ -10,7 +10,7 @@ namespace FrutasColombia_CS_REST_API.Services
         private readonly IFrutaRepository _frutaRepository = frutaRepository;
         private readonly IClasificacionRepository _clasificacionRepository = clasificacionRepository;
 
-        public async Task<IEnumerable<Fruta>> GetAllAsync()
+        public async Task<List<Fruta>> GetAllAsync()
         {
             return await _frutaRepository
                 .GetAllAsync();
@@ -56,6 +56,20 @@ namespace FrutasColombia_CS_REST_API.Services
                 .GetClassifiedFruitByIdAsync(fruta_id);
 
             return unaFrutaClasificada;
+        }
+
+        public async Task<FrutaProducida> GetProducedFruitByIdAsync(Guid fruta_id)
+        {
+            Fruta unaFruta = await _frutaRepository
+                .GetByIdAsync(fruta_id);
+
+            if (unaFruta.Id == Guid.Empty)
+                throw new AppValidationException($"Fruta no encontrada con el id {fruta_id}");
+
+            FrutaProducida unaFrutaProducida = await _frutaRepository
+                .GetProducedFruitByIdAsync(fruta_id);
+
+            return unaFrutaProducida;
         }
 
         public async Task<Fruta> CreateAsync(Fruta unaFruta)

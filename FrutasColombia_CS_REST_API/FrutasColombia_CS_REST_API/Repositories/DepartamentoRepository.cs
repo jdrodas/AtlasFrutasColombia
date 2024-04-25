@@ -10,7 +10,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
     {
         private readonly PgsqlDbContext contextoDB = unContexto;
 
-        public async Task<IEnumerable<Departamento>> GetAllAsync()
+        public async Task<List<Departamento>> GetAllAsync()
         {
             var conexion = contextoDB.CreateConnection();
 
@@ -21,7 +21,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             var resultadoDepartamentos = await conexion
                 .QueryAsync<Departamento>(sentenciaSQL, new DynamicParameters());
 
-            return resultadoDepartamentos;
+            return resultadoDepartamentos.ToList();
         }
 
         public async Task<Departamento> GetByIdAsync(Guid departamento_id)
@@ -47,7 +47,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             return unDepartamento;
         }
 
-        public async Task<IEnumerable<Municipio>> GetAssociatedMunicipalityAsync(Guid departamento_id)
+        public async Task<List<Municipio>> GetAssociatedMunicipalityAsync(Guid departamento_id)
         {
             var conexion = contextoDB.CreateConnection();
 
@@ -63,7 +63,7 @@ namespace FrutasColombia_CS_REST_API.Repositories
             var resultadoMunicipios = await conexion
                 .QueryAsync<Municipio>(sentenciaSQL, parametrosSentencia);
 
-            return resultadoMunicipios;
+            return resultadoMunicipios.ToList();
         }
     }
 }

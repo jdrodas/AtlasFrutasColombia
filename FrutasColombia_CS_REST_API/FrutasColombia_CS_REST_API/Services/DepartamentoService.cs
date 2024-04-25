@@ -10,7 +10,7 @@ namespace FrutasColombia_CS_REST_API.Services
         private readonly IDepartamentoRepository _departamentoRepository = departamentoRepository;
         private readonly IFrutaRepository _frutaRepository = frutaRepository;
 
-        public async Task<IEnumerable<Departamento>> GetAllAsync()
+        public async Task<List<Departamento>> GetAllAsync()
         {
             return await _departamentoRepository
                 .GetAllAsync();
@@ -27,7 +27,7 @@ namespace FrutasColombia_CS_REST_API.Services
             return unDepartamento;
         }
 
-        public async Task<IEnumerable<Municipio>> GetAssociatedMunicipalityAsync(Guid departamento_id)
+        public async Task<List<Municipio>> GetAssociatedMunicipalityAsync(Guid departamento_id)
         {
             Departamento unDepartamento = await _departamentoRepository
                 .GetByIdAsync(departamento_id);
@@ -44,7 +44,7 @@ namespace FrutasColombia_CS_REST_API.Services
             return municipiosAsociados;
         }
 
-        public async Task<IEnumerable<FrutaProducida>> GetProducedFruitsAsync(Guid departamento_id)
+        public async Task<List<FrutaProducida>> GetProducedFruitsAsync(Guid departamento_id)
         {
             Departamento unDepartamento = await _departamentoRepository
                 .GetByIdAsync(departamento_id);
@@ -53,7 +53,7 @@ namespace FrutasColombia_CS_REST_API.Services
                 throw new AppValidationException($"Departamento no encontrado con el id {departamento_id}");
 
             var frutasProducidas = await _frutaRepository
-                .GetByLocationAsync(departamento_id, Guid.Empty);
+                .GetProducedByLocationAsync(departamento_id, Guid.Empty);
 
             if (!frutasProducidas.Any())
                 throw new AppValidationException($"Departamento {unDepartamento.Nombre} no tiene frutas producidas");

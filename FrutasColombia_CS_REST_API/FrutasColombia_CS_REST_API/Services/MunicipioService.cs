@@ -10,7 +10,7 @@ namespace FrutasColombia_CS_REST_API.Services
         private readonly IMunicipioRepository _municipioRepository = municipioRepository;
         private readonly IFrutaRepository _frutaRepository = frutaRepository;
 
-        public async Task<IEnumerable<Municipio>> GetAllAsync()
+        public async Task<List<Municipio>> GetAllAsync()
         {
             return await _municipioRepository
                 .GetAllAsync();
@@ -27,7 +27,7 @@ namespace FrutasColombia_CS_REST_API.Services
             return unMunicipio;
         }
 
-        public async Task<IEnumerable<FrutaProducida>> GetProducedFruitsAsync(Guid municipio_id)
+        public async Task<List<FrutaProducida>> GetProducedFruitsAsync(Guid municipio_id)
         {
             Municipio unMunicipio = await _municipioRepository
                 .GetByIdAsync(municipio_id);
@@ -36,7 +36,7 @@ namespace FrutasColombia_CS_REST_API.Services
                 throw new AppValidationException($"Municipio no encontrado con el id {municipio_id}");
 
             var frutasProducidas = await _frutaRepository
-                .GetByLocationAsync(Guid.Empty, municipio_id);
+                .GetProducedByLocationAsync(Guid.Empty, municipio_id);
 
             if (!frutasProducidas.Any())
                 throw new AppValidationException($"Departamento {unMunicipio.Nombre} no tiene frutas producidas");

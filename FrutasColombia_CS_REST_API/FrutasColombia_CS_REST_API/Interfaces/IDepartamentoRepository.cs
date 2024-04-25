@@ -4,10 +4,10 @@ namespace FrutasColombia_CS_REST_API.Interfaces
 {
     public interface IDepartamentoRepository
     {
-        public Task<IEnumerable<Departamento>> GetAllAsync();
+        public Task<List<Departamento>> GetAllAsync();
 
         public Task<Departamento> GetByIdAsync(Guid departamento_id);
 
-        public Task<IEnumerable<Municipio>> GetAssociatedMunicipalityAsync(Guid departamento_id);
+        public Task<List<Municipio>> GetAssociatedMunicipalityAsync(Guid departamento_id);
     }
 }
