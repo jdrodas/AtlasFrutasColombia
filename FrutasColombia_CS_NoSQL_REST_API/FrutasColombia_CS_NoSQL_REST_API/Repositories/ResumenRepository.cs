@@ -2,6 +2,8 @@
 using FrutasColombia_CS_NoSQL_REST_API.DbContexts;
 using FrutasColombia_CS_NoSQL_REST_API.Interfaces;
 using FrutasColombia_CS_NoSQL_REST_API.Models;
+using MongoDB.Bson;
+using MongoDB.Driver;
 
 namespace FrutasColombia_CS_NoSQL_REST_API.Repositories
 {
@@ -15,53 +17,86 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Repositories
 
             var conexion = contextoDB.CreateConnection();
 
-            string sentenciaSQL = "SELECT COUNT(id) total FROM core.frutas";
-            unResumen.Frutas = await conexion
-                .QueryFirstAsync<int>(sentenciaSQL, new DynamicParameters());
+            // Total frutas
+            var coleccionFrutas = conexion
+                .GetCollection<Epoca>(contextoDB.ConfiguracionColecciones.ColeccionFrutas);
 
-            sentenciaSQL = "SELECT COUNT(id) total FROM core.departamentos";
-            unResumen.Departamentos = await conexion
-                .QueryFirstAsync<int>(sentenciaSQL, new DynamicParameters());
+            unResumen.Frutas = await coleccionFrutas
+                .CountDocumentsAsync(_ => true);
+            
+            // Total Epocas
+            var coleccionEpocas = conexion
+                .GetCollection<Epoca>(contextoDB.ConfiguracionColecciones.ColeccionEpocas);
 
-            sentenciaSQL = "SELECT COUNT(id) total FROM core.municipios";
-            unResumen.Municipios = await conexion
-                .QueryFirstAsync<int>(sentenciaSQL, new DynamicParameters());
+            unResumen.Epocas = await coleccionEpocas
+                .CountDocumentsAsync(_ => true);
 
-            sentenciaSQL = "SELECT COUNT(id) total FROM core.reinos";
-            unResumen.Taxonomia_Reinos = await conexion
-                .QueryFirstAsync<int>(sentenciaSQL, new DynamicParameters());
+            // Total Climas
+            var coleccionClimas = conexion
+                .GetCollection<Epoca>(contextoDB.ConfiguracionColecciones.ColeccionClimas);
 
-            sentenciaSQL = "SELECT COUNT(id) total FROM core.divisiones";
-            unResumen.Taxonomia_Divisiones = await conexion
-                .QueryFirstAsync<int>(sentenciaSQL, new DynamicParameters());
+            unResumen.Climas = await coleccionClimas
+                .CountDocumentsAsync(_ => true);
 
-            sentenciaSQL = "SELECT COUNT(id) total FROM core.clases";
-            unResumen.Taxonomia_Clases = await conexion
-                .QueryFirstAsync<int>(sentenciaSQL, new DynamicParameters());
+            // Totales de Taxonomias -- Reinos
+            var coleccionTaxonomias = conexion
+                .GetCollection<Taxonomia>(contextoDB.ConfiguracionColecciones.ColeccionTaxonomias);
 
-            sentenciaSQL = "SELECT COUNT(id) total FROM core.ordenes";
-            unResumen.Taxonomia_Ordenes = await conexion
-                .QueryFirstAsync<int>(sentenciaSQL, new DynamicParameters());
+            var filtroPredeterminado = Builders<Taxonomia>.Filter.Empty;
 
-            sentenciaSQL = "SELECT COUNT(id) total FROM core.familias";
-            unResumen.Taxonomia_Familias = await conexion
-                .QueryFirstAsync<int>(sentenciaSQL, new DynamicParameters());
+            var resultado = await coleccionTaxonomias
+                .DistinctAsync<string>("reino", filter: filtroPredeterminado);
 
-            sentenciaSQL = "SELECT COUNT(id) total FROM core.generos";
-            unResumen.Taxonomia_Generos = await conexion
-                .QueryFirstAsync<int>(sentenciaSQL, new DynamicParameters());
+            unResumen.Taxonomia_Reinos = resultado.ToList().Count;
 
-            sentenciaSQL = "SELECT COUNT(id) total FROM core.especies";
-            unResumen.Taxonomia_Especies = await conexion
-                .QueryFirstAsync<int>(sentenciaSQL, new DynamicParameters());
+            // Totales de Taxonomias -- Divisiones
+            resultado = await coleccionTaxonomias
+                .DistinctAsync<string>("division", filter: filtroPredeterminado);
 
-            sentenciaSQL = "SELECT COUNT(id) total FROM core.epocas";
-            unResumen.Epocas = await conexion
-                .QueryFirstAsync<int>(sentenciaSQL, new DynamicParameters());
+            unResumen.Taxonomia_Divisiones = resultado.ToList().Count;
 
-            sentenciaSQL = "SELECT COUNT(id) total FROM core.climas";
-            unResumen.Climas = await conexion
-                .QueryFirstAsync<int>(sentenciaSQL, new DynamicParameters());
+            // Totales de Taxonomias -- Divisiones
+            resultado = await coleccionTaxonomias
+                .DistinctAsync<string>("division", filter: filtroPredeterminado);
+
+            unResumen.Taxonomia_Divisiones = resultado.ToList().Count;
+
+            // Totales de Taxonomias -- clases
+            resultado = await coleccionTaxonomias
+                .DistinctAsync<string>("clase", filter: filtroPredeterminado);
+
+            unResumen.Taxonomia_Clases = resultado.ToList().Count;
+
+            // Totales de Taxonomias -- ordenes
+            resultado = await coleccionTaxonomias
+                .DistinctAsync<string>("orden", filter: filtroPredeterminado);
+
+            unResumen.Taxonomia_Ordenes = resultado.ToList().Count;
+
+            // Totales de Taxonomias -- familias
+            resultado = await coleccionTaxonomias
+                .DistinctAsync<string>("familia", filter: filtroPredeterminado);
+
+            unResumen.Taxonomia_Familias = resultado.ToList().Count;
+
+            // Totales de Taxonomias -- generos
+            resultado = await coleccionTaxonomias
+                .DistinctAsync<string>("genero", filter: filtroPredeterminado);
+
+            unResumen.Taxonomia_Generos = resultado.ToList().Count;
+
+            resultado = await coleccionTaxonomias
+                .DistinctAsync<string>("especie", filter: filtroPredeterminado);
+
+            unResumen.Taxonomia_Especies = resultado.ToList().Count;
+
+            //sentenciaSQL = "SELECT COUNT(id) total FROM core.departamentos";
+            //unResumen.Departamentos = await conexion
+            //    .QueryFirstAsync<int>(sentenciaSQL, new DynamicParameters());
+
+            //sentenciaSQL = "SELECT COUNT(id) total FROM core.municipios";
+            //unResumen.Municipios = await conexion
+            //    .QueryFirstAsync<int>(sentenciaSQL, new DynamicParameters());
 
             return unResumen;
         }

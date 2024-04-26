@@ -1,7 +1,6 @@
 ﻿using FrutasColombia_CS_NoSQL_REST_API.Exceptions;
 using FrutasColombia_CS_NoSQL_REST_API.Interfaces;
 using FrutasColombia_CS_NoSQL_REST_API.Models;
-using FrutasColombia_CS_NoSQL_REST_API.Repositories;
 
 namespace FrutasColombia_CS_NoSQL_REST_API.Services
 {
@@ -93,7 +92,7 @@ namespace FrutasColombia_CS_NoSQL_REST_API.Services
                 return "No se puede insertar una clima con nombre nulo";
 
             //Validamos que el clima tenga una altitud mínima válida
-            if (unClima.Altitud_Minima <0)
+            if (unClima.Altitud_Minima < 0)
                 return "No se puede insertar un clima con la altitud mínima fuera del rango";
 
             //Validamos que el clima tenga una altitud maxima válida

@@ -15,11 +15,13 @@ builder.Services.AddSingleton<MongoDbContext>();
 builder.Services.AddScoped<IClimaRepository, ClimaRepository>();
 builder.Services.AddScoped<IClasificacionRepository, ClasificacionRepository>();
 builder.Services.AddScoped<IEpocaRepository, EpocaRepository>();
+builder.Services.AddScoped<IResumenRepository, ResumenRepository>();
 
 //Aqui agregamos los servicios asociados para cada EndPoint
 builder.Services.AddScoped<ClimaService>();
 builder.Services.AddScoped<ClasificacionService>();
 builder.Services.AddScoped<EpocaService>();
+builder.Services.AddScoped<ResumenService>();
 
 // Add services to the container.
 

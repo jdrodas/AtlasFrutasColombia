@@ -11,12 +11,10 @@
     <Compile Remove="Controllers\FrutasController.cs" />
     <Compile Remove="Controllers\MesesController.cs" />
     <Compile Remove="Controllers\MunicipiosController.cs" />
-    <Compile Remove="Controllers\ResumenController.cs" />
     <Compile Remove="Interfaces\IDepartamentoRepository.cs" />
     <Compile Remove="Interfaces\IFrutaRepository.cs" />
     <Compile Remove="Interfaces\IMesRepository.cs" />
     <Compile Remove="Interfaces\IMunicipioRepository.cs" />
-    <Compile Remove="Interfaces\IResumenRepository.cs" />
     <Compile Remove="Models\Clase.cs" />
     <Compile Remove="Models\Departamento.cs" />
     <Compile Remove="Models\Division.cs" />
@@ -34,17 +32,14 @@
     <Compile Remove="Models\Nutricion.cs" />
     <Compile Remove="Models\Orden.cs" />
     <Compile Remove="Models\Produccion.cs" />
-    <Compile Remove="Models\Resumen.cs" />
     <Compile Remove="Repositories\DepartamentoRepository.cs" />
     <Compile Remove="Repositories\FrutaRepository.cs" />
     <Compile Remove="Repositories\MesRepository.cs" />
     <Compile Remove="Repositories\MunicipioRepository.cs" />
-    <Compile Remove="Repositories\ResumenRepository.cs" />
     <Compile Remove="Services\DepartamentoService.cs" />
     <Compile Remove="Services\FrutaService.cs" />
     <Compile Remove="Services\MesService.cs" />
     <Compile Remove="Services\MunicipioService.cs" />
-    <Compile Remove="Services\ResumenService.cs" />
   </ItemGroup>
 
   <ItemGroup>
