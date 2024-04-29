@@ -556,8 +556,8 @@ $$
     end;
 $$;
 
-
-create or replace function f_valida_especie_id(
+-- f_valida_especie_id
+create or replace function core.f_valida_especie_id(
     p_reino text,
     p_division text,
     p_clase text,
@@ -628,6 +628,64 @@ $$
         end if;
 
         return l_especie_id;
+    end;
+$$;
+
+-- f_obtiene_epoca_id
+create or replace function core.f_obtiene_epoca_id(
+                                    in p_epoca_nombre text, 
+                                    in p_mes_inicio integer, 
+                                    in p_mes_final integer)
+returns uuid language plpgsql as
+$$
+    declare
+        l_epoca_id     uuid;
+
+    begin
+        select id into l_epoca_id
+        from core.epocas
+        where lower(nombre) = lower(p_epoca_nombre)
+        and mes_inicio = p_mes_inicio
+        and mes_final = p_mes_final;
+
+        return l_epoca_id;
+    end;
+$$;
+
+-- f_obtiene_clima_id
+create or replace function core.f_obtiene_clima_id(
+                                    in p_clima_nombre text)
+returns uuid language plpgsql as
+$$
+    declare
+        l_clima_id     uuid;
+
+    begin
+        select id into l_clima_id
+        from core.climas
+        where lower(nombre) = lower(p_clima_nombre);
+
+        return l_clima_id;
+    end;
+$$;
+
+-- f_obtiene_municipio_id
+create or replace function core.f_obtiene_municipio_id(
+                                    in p_municipio_nombre text, 
+                                    in p_departamento_nombre text)
+returns uuid language plpgsql as
+$$
+    declare
+        l_municipio_id     uuid;
+
+    begin
+        select m.id into l_municipio_id
+        from core.municipios m
+        join core.departamentos d on m.departamento_id = d.id
+        where d.nombre = p_departamento_nombre
+        and m.nombre = p_municipio_nombre;
+
+        return l_municipio_id;
     end;
 $$;
 
@@ -1140,6 +1198,121 @@ $$
 
         -- Borramos la época
         delete from epocas where id = p_id;
+    end;
+$$;
+
+-- p_inserta_produccion_fruta
+create or replace procedure core.p_inserta_produccion_fruta(
+                    in p_fruta_id               uuid,
+                    in p_epoca_nombre           text,
+                    in p_clima_nombre           text,
+                    in p_municipio_nombre       text,
+                    in p_departamento_nombre    text,
+                    in p_mes_inicio             integer,
+                    in p_mes_final              integer
+) language plpgsql as
+$$
+    declare
+        l_total_registros integer :=0;
+        l_epoca_id      uuid;
+        l_clima_id      uuid;
+        l_municipio_id  uuid;  
+
+    begin
+        -- identificamos si ya hay producción registrada con esos valores
+        select count(*) into l_total_registros
+        from core.v_info_produccion_frutas 
+        where fruta_id = p_fruta_id
+        and epoca_nombre = p_epoca_nombre
+        and clima_nombre = p_clima_nombre
+        and municipio_nombre =  p_municipio_nombre
+        and departamento_nombre = p_departamento_nombre
+        and mes_inicio = p_mes_inicio
+        and mes_final = p_mes_final;
+
+        -- Si no hay registros, se puede insertar
+        if l_total_registros = 0 then
+
+            l_epoca_id = f_obtiene_epoca_id(p_epoca_nombre, p_mes_inicio, p_mes_final);
+
+            if l_epoca_id is null then
+                RAISE EXCEPTION 'La época para la producción no es válida';
+            end if;
+
+            l_clima_id = f_obtiene_clima_id(p_clima_nombre);
+
+            if l_clima_id is null then
+                RAISE EXCEPTION 'El cima para la producción no es válido';
+            end if;
+
+            l_municipio_id = f_obtiene_municipio_id(p_municipio_nombre, p_departamento_nombre);
+
+            if l_municipio_id is null then
+                RAISE EXCEPTION 'El municipio para la producción no es válido';
+            end if;
+
+            insert into core.produccion_frutas (municipio_id, clima_id, epoca_id, fruta_id) 
+            values (l_municipio_id,l_clima_id,l_epoca_id,p_fruta_id);
+        end if;
+    end;
+$$;
+
+-- p_elimina_produccion_fruta
+create or replace procedure core.p_elimina_produccion_fruta(
+                    in p_fruta_id               uuid,
+                    in p_epoca_nombre           text,
+                    in p_clima_nombre           text,
+                    in p_municipio_nombre       text,
+                    in p_departamento_nombre    text,
+                    in p_mes_inicio             integer,
+                    in p_mes_final              integer
+) language plpgsql as
+$$
+    declare
+        l_total_registros integer :=0;
+        l_epoca_id      uuid;
+        l_clima_id      uuid;
+        l_municipio_id  uuid;  
+
+    begin
+        -- identificamos si ya hay producción registrada con esos valores
+        select count(*) into l_total_registros
+        from core.v_info_produccion_frutas 
+        where fruta_id = p_fruta_id
+        and epoca_nombre = p_epoca_nombre
+        and clima_nombre = p_clima_nombre
+        and municipio_nombre =  p_municipio_nombre
+        and departamento_nombre = p_departamento_nombre
+        and mes_inicio = p_mes_inicio
+        and mes_final = p_mes_final;
+
+        -- Si hay registros, se puede eliminar
+        if l_total_registros != 0 then
+
+            l_epoca_id = f_obtiene_epoca_id(p_epoca_nombre, p_mes_inicio, p_mes_final);
+
+            if l_epoca_id is null then
+                RAISE EXCEPTION 'La época para la producción no es válida';
+            end if;
+
+            l_clima_id = f_obtiene_clima_id(p_clima_nombre);
+
+            if l_clima_id is null then
+                RAISE EXCEPTION 'El cima para la producción no es válido';
+            end if;
+
+            l_municipio_id = f_obtiene_municipio_id(p_municipio_nombre, p_departamento_nombre);
+
+            if l_municipio_id is null then
+                RAISE EXCEPTION 'El municipio para la producción no es válido';
+            end if;
+
+            delete from core.produccion_frutas 
+            where municipio_id = l_municipio_id
+            and clima_id = l_clima_id
+            and epoca_id = l_epoca_id
+            and fruta_id = p_fruta_id;
+        end if;
     end;
 $$;
 

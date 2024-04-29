@@ -21,5 +21,17 @@ namespace FrutasColombia_CS_REST_API.Models
 
         [JsonPropertyName("mes_final")]
         public int Mes_Final { get; set; } = 0;
+
+        public override string ToString()
+        {
+            string informacion = $"Epoca: {Epoca}, " +
+                $"Clima: {Clima}, " +
+                $"Municipio: {Municipio}, " +
+                $"Departamento: {Departamento}," +
+                $"Mes Inicio: {Mes_Inicio}, " +
+                $"Mes Final: {Mes_Final}";
+            
+            return informacion;
+        }
     }
 }

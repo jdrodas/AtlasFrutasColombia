@@ -175,6 +175,34 @@ namespace FrutasColombia_CS_REST_API.Services
             return frutaClasificadaExistente;
         }
 
+        public async Task<FrutaProducida> CreateProductionDetailsAsync(Guid fruta_id, Produccion unaInformacionProductiva)
+        {
+            //Validamos que exista la fruta previamente
+            var frutaProducidaExistetne = await _frutaRepository
+                .GetProducedFruitByIdAsync(fruta_id);
+
+            if (frutaProducidaExistetne.Id == Guid.Empty)
+                throw new AppValidationException($"No existe la fruta con el ID {fruta_id} ");
+
+            try
+            {
+                bool resultadoAccion = await _frutaRepository
+                    .CreateProductionDetailsAsync(fruta_id, unaInformacionProductiva);
+
+                if (!resultadoAccion)
+                    throw new AppValidationException("Operación ejecutada pero no generó cambios en la DB");
+
+                frutaProducidaExistetne = await _frutaRepository
+                    .GetProducedFruitByIdAsync(fruta_id);
+            }
+            catch (DbOperationException)
+            {
+                throw;
+            }
+
+            return frutaProducidaExistetne;
+        }
+
         public async Task<Fruta> UpdateAsync(Fruta unaFruta)
         {
             //Validamos que la fruta tenga Id
@@ -289,6 +317,7 @@ namespace FrutasColombia_CS_REST_API.Services
             return frutaClasificadaExistente;
         }
 
+
         public async Task<string> RemoveAsync(Guid fruta_id)
         {
             //Validamos que exista una fruta con ese Id
@@ -370,6 +399,34 @@ namespace FrutasColombia_CS_REST_API.Services
             }
 
             return frutaClasificadaExistente;
+        }
+
+        public async Task<FrutaProducida> RemoveProductionDetailsAsync(Guid fruta_id, Produccion unaInformacionProductiva)
+        {
+            //Validamos que exista la fruta previamente
+            var frutaProducidaExistente = await _frutaRepository
+                .GetProducedFruitByIdAsync(fruta_id);
+
+            if (frutaProducidaExistente.Id == Guid.Empty)
+                throw new AppValidationException($"No existe la fruta con el ID {fruta_id} ");
+
+            try
+            {
+                bool resultadoAccion = await _frutaRepository
+                    .RemoveProductionDetailsAsync(fruta_id, unaInformacionProductiva);
+
+                if (!resultadoAccion)
+                    throw new AppValidationException("Operación ejecutada pero no generó cambios en la DB");
+
+                frutaProducidaExistente = await _frutaRepository
+                    .GetProducedFruitByIdAsync(fruta_id);
+            }
+            catch (DbOperationException)
+            {
+                throw;
+            }
+
+            return frutaProducidaExistente;
         }
 
         private async Task<string> EvaluateTaxonomicDetails(Taxonomia unaInformacionTaxonomica)

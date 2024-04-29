@@ -118,6 +118,46 @@ namespace FrutasColombia_CS_REST_API.Controllers
             }
         }
 
+        [HttpPost("{fruta_id:Guid}/Produccion")]
+        public async Task<IActionResult> CreateProductionDetailsAsync(Guid fruta_id, Produccion unaInformacionProductiva)
+        {
+            try
+            {
+                var unaFrutaProducida = await _frutaService
+                    .CreateProductionDetailsAsync(fruta_id, unaInformacionProductiva);
+
+                return Ok(unaFrutaProducida);
+            }
+            catch (AppValidationException error)
+            {
+                return BadRequest($"Error de validación: {error.Message}");
+            }
+            catch (DbOperationException error)
+            {
+                return BadRequest($"Error de operacion en DB: {error.Message}");
+            }
+        }
+
+        [HttpDelete("{fruta_id:Guid}/Produccion")]
+        public async Task<IActionResult> RemoveProductionDetailsAsync(Guid fruta_id, Produccion unaInformacionProductiva)
+        {
+            try
+            {
+                var frutaSinProduccion = await _frutaService
+                    .RemoveProductionDetailsAsync(fruta_id, unaInformacionProductiva);
+
+                return Ok($"La fruta {frutaSinProduccion.Nombre} ya no tiene información de producción asociada a {unaInformacionProductiva}!");
+            }
+            catch (AppValidationException error)
+            {
+                return BadRequest($"Error de validación: {error.Message}");
+            }
+            catch (DbOperationException error)
+            {
+                return BadRequest($"Error de operacion en DB: {error.Message}");
+            }
+        }
+
         #endregion produccion_frutas
 
         #region nutricion_frutas

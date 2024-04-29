@@ -6,8 +6,7 @@ con la validación en todas las operaciones CRUD de la aplicación
 
 namespace FrutasColombia_CS_REST_API.Exceptions
 {
-    public class AppValidationException : Exception
+    public class AppValidationException(string message) : Exception(message)
     {
-        public AppValidationException(string message) : base(message) { }
     }
 }

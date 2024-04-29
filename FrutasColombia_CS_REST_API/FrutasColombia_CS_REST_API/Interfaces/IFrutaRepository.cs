@@ -44,6 +44,8 @@ namespace FrutasColombia_CS_REST_API.Interfaces
 
         public Task<bool> CreateTaxonomicDetailsAsync(Guid fruta_id, Taxonomia unaInformacionTaxonomica);
 
+        public Task<bool> CreateProductionDetailsAsync(Guid fruta_id, Produccion unaInformacionProductiva);
+
         public Task<bool> UpdateAsync(Fruta unaFruta);
 
         public Task<bool> UpdateNutritionDetailsAsync(Guid fruta_id, Nutricion unaInformacionNutricional);
@@ -55,6 +57,8 @@ namespace FrutasColombia_CS_REST_API.Interfaces
         public Task<bool> RemoveNutritionDetailsAsync(Guid fruta_id);
 
         public Task<bool> RemoveTaxonomicDetailsAsync(Guid fruta_id);
+
+        public Task<bool> RemoveProductionDetailsAsync(Guid fruta_id, Produccion unaInformacionProductiva);
 
     }
 }
