@@ -30,7 +30,7 @@ namespace FrutasColombia_CS_REST_API.Models
                 $"Departamento: {Departamento}," +
                 $"Mes Inicio: {Mes_Inicio}, " +
                 $"Mes Final: {Mes_Final}";
-            
+
             return informacion;
         }
     }

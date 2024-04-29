@@ -38,7 +38,7 @@ namespace FrutasColombia_CS_REST_API.Services
             var frutasProducidas = await _frutaRepository
                 .GetProducedByEpochAsync(epoca_id);
 
-            if (!frutasProducidas.Any())
+            if (frutasProducidas.Count == 0)
                 throw new AppValidationException($"Época {unaEpoca.Nombre} no tiene frutas producidas");
 
             return frutasProducidas;
@@ -48,7 +48,7 @@ namespace FrutasColombia_CS_REST_API.Services
         {
             string resultadoValidacion = EvaluateEpochDetailsAsync(unaEpoca);
 
-            if(!string.IsNullOrEmpty(resultadoValidacion))
+            if (!string.IsNullOrEmpty(resultadoValidacion))
                 throw new AppValidationException(resultadoValidacion);
 
             //Validamos que los meses no estén asociados a otras épocas
@@ -144,7 +144,7 @@ namespace FrutasColombia_CS_REST_API.Services
             var totalProduccionPorEpoca = await _epocaRepository
                 .GetTotalProductionById(epoca_id);
 
-            if(totalProduccionPorEpoca>0)
+            if (totalProduccionPorEpoca > 0)
                 throw new AppValidationException($"Hay producción de frutas asociada a la época {unaEpoca.Nombre}");
 
             string nombreFrutaEliminada = unaEpoca.Nombre!;

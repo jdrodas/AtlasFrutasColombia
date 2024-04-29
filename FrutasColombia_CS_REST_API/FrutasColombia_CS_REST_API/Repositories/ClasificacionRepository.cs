@@ -159,11 +159,11 @@ namespace FrutasColombia_CS_REST_API.Repositories
                 "WHERE v.genero_id = @genero_id " +
                 "ORDER BY v.especie_nombre";
 
-            var resultadoEspecies = await conexion
+            var resultado = await conexion
                 .QueryAsync<Especie>(sentenciaSQL, parametrosSentencia);
 
-            if (resultadoEspecies.Any())
-                especiesDelGenero = resultadoEspecies.ToList();
+            if (resultado.Any())
+                especiesDelGenero = resultado.ToList();
 
             return especiesDelGenero;
         }

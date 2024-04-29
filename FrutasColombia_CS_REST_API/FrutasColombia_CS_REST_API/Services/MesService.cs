@@ -41,7 +41,7 @@ namespace FrutasColombia_CS_REST_API.Services
             var frutasProducidas = await _frutaRepository
                 .GetProducedByMonthAsync(mes_id);
 
-            if (!frutasProducidas.Any())
+            if (frutasProducidas.Count == 0)
                 throw new AppValidationException($"Mes {unMes.Nombre} no tiene frutas producidas");
 
             return frutasProducidas;

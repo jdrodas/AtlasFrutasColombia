@@ -38,7 +38,7 @@ namespace FrutasColombia_CS_REST_API.Services
             var municipiosAsociados = await _departamentoRepository
                 .GetAssociatedMunicipalityAsync(unDepartamento.Id);
 
-            if (!municipiosAsociados.Any())
+            if (municipiosAsociados.Count == 0)
                 throw new AppValidationException($"Departamento {unDepartamento.Nombre} no tiene municipios asociados");
 
             return municipiosAsociados;
@@ -55,7 +55,7 @@ namespace FrutasColombia_CS_REST_API.Services
             var frutasProducidas = await _frutaRepository
                 .GetProducedByLocationAsync(departamento_id, Guid.Empty);
 
-            if (!frutasProducidas.Any())
+            if (frutasProducidas.Count == 0)
                 throw new AppValidationException($"Departamento {unDepartamento.Nombre} no tiene frutas producidas");
 
             return frutasProducidas;

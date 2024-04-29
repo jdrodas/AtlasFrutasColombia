@@ -71,7 +71,7 @@ namespace FrutasColombia_CS_REST_API.Services
             var frutasClasificadas = await _frutaRepository
                 .GetClassifiedByGenusIdAsync(genero_id);
 
-            if (!frutasClasificadas.Any())
+            if (frutasClasificadas.Count == 0)
                 throw new AppValidationException($"Género {unGenero.Nombre} no tiene frutas producidas");
 
             return frutasClasificadas;

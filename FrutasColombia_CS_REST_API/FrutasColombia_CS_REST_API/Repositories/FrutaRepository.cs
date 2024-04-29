@@ -90,12 +90,12 @@ namespace FrutasColombia_CS_REST_API.Repositories
                 "FROM v_info_frutas v " +
                 "WHERE genero_id = @genero_id";
 
-            var resultadoFrutas = await conexion
+            var resultado = await conexion
                 .QueryAsync<FrutaClasificada>(sentenciaSQL, parametrosSentencia);
 
-            if (resultadoFrutas.Any())
+            if (resultado.Any())
             {
-                frutasClasificadas = resultadoFrutas.ToList();
+                frutasClasificadas = resultado.ToList();
 
                 foreach (FrutaClasificada unaFruta in frutasClasificadas)
                     unaFruta.Taxonomia = await GetTaxonomicDetailsAsync(unaFruta.Id);
@@ -264,12 +264,12 @@ namespace FrutasColombia_CS_REST_API.Repositories
                 sentenciaSQL += "WHERE v.municipio_id = @municipio_id";
             }
 
-            var resultadoFrutas = await conexion
+            var resultado = await conexion
                 .QueryAsync<FrutaProducida>(sentenciaSQL, parametrosSentencia);
 
-            if (resultadoFrutas.Any())
+            if (resultado.Any())
             {
-                frutasProducidas = resultadoFrutas.ToList();
+                frutasProducidas = resultado.ToList();
 
                 foreach (FrutaProducida unaFruta in frutasProducidas)
                 {
@@ -300,12 +300,12 @@ namespace FrutasColombia_CS_REST_API.Repositories
                 "FROM v_info_produccion_frutas v " +
                 "WHERE clima_id = @clima_id";
 
-            var resultadoFrutas = await conexion
+            var resultado = await conexion
                 .QueryAsync<FrutaProducida>(sentenciaSQL, parametrosSentencia);
 
-            if (resultadoFrutas.Any())
+            if (resultado.Any())
             {
-                frutasProducidas = resultadoFrutas.ToList();
+                frutasProducidas = resultado.ToList();
 
                 foreach (FrutaProducida unaFruta in frutasProducidas)
                     unaFruta.Produccion = await GetProductionDetailsAsync(unaFruta.Id, clima_id);
@@ -330,12 +330,12 @@ namespace FrutasColombia_CS_REST_API.Repositories
                 "FROM v_info_produccion_frutas v " +
                 "WHERE epoca_id = @epoca_id";
 
-            var resultadoFrutas = await conexion
+            var resultado = await conexion
                 .QueryAsync<FrutaProducida>(sentenciaSQL, parametrosSentencia);
 
-            if (resultadoFrutas.Any())
+            if (resultado.Any())
             {
-                frutasProducidas = resultadoFrutas.ToList();
+                frutasProducidas = resultado.ToList();
 
                 foreach (FrutaProducida unaFruta in frutasProducidas)
                     unaFruta.Produccion = await GetEpochProductionDetailsAsync(unaFruta.Id, epoca_id);
@@ -360,12 +360,12 @@ namespace FrutasColombia_CS_REST_API.Repositories
                 "FROM v_info_produccion_frutas v " +
                 "WHERE @mes_id BETWEEN mes_inicio and mes_final";
 
-            var resultadoFrutas = await conexion
+            var resultado = await conexion
                 .QueryAsync<FrutaProducida>(sentenciaSQL, parametrosSentencia);
 
-            if (resultadoFrutas.Any())
+            if (resultado.Any())
             {
-                frutasProducidas = resultadoFrutas.ToList();
+                frutasProducidas = resultado.ToList();
 
                 foreach (FrutaProducida unaFruta in frutasProducidas)
                     unaFruta.Produccion = await GetProductionDetailsAsync(unaFruta.Id, mes_id);
@@ -422,11 +422,11 @@ namespace FrutasColombia_CS_REST_API.Repositories
                 sentenciaSQL += "AND v.municipio_id = @municipio_id";
             }
 
-            var resultadoProduccion = await conexion
+            var resultado = await conexion
                 .QueryAsync<Produccion>(sentenciaSQL, parametrosSentencia);
 
-            if (resultadoProduccion.Any())
-                infoProduccion = resultadoProduccion.ToList();
+            if (resultado.Any())
+                infoProduccion = resultado.ToList();
 
             return infoProduccion;
         }
@@ -451,11 +451,11 @@ namespace FrutasColombia_CS_REST_API.Repositories
                 "WHERE v.fruta_id = @fruta_id " +
                 "AND v.clima_id = @clima_id";
 
-            var resultadoProduccion = await conexion
+            var resultado = await conexion
                 .QueryAsync<Produccion>(sentenciaSQL, parametrosSentencia);
 
-            if (resultadoProduccion.Any())
-                infoProduccion = resultadoProduccion.ToList();
+            if (resultado.Any())
+                infoProduccion = resultado.ToList();
 
             return infoProduccion;
         }
@@ -480,11 +480,11 @@ namespace FrutasColombia_CS_REST_API.Repositories
                 "WHERE v.fruta_id = @fruta_id " +
                 "AND v.epoca_id = @epoca_id";
 
-            var resultadoProduccion = await conexion
+            var resultado = await conexion
                 .QueryAsync<Produccion>(sentenciaSQL, parametrosSentencia);
 
-            if (resultadoProduccion.Any())
-                infoProduccion = resultadoProduccion.ToList();
+            if (resultado.Any())
+                infoProduccion = resultado.ToList();
 
             return infoProduccion;
         }
@@ -509,11 +509,11 @@ namespace FrutasColombia_CS_REST_API.Repositories
                 "WHERE v.fruta_id = @fruta_id " +
                 "AND @mes_id BETWEEN mes_inicio and mes_final";
 
-            var resultadoProduccion = await conexion
+            var resultado = await conexion
                 .QueryAsync<Produccion>(sentenciaSQL, parametrosSentencia);
 
-            if (resultadoProduccion.Any())
-                infoProduccion = resultadoProduccion.ToList();
+            if (resultado.Any())
+                infoProduccion = resultado.ToList();
 
             return infoProduccion;
         }
@@ -535,11 +535,11 @@ namespace FrutasColombia_CS_REST_API.Repositories
                 "FROM v_info_produccion_frutas v " +
                 "WHERE v.fruta_id = @fruta_id ";
 
-            var resultadoProduccion = await conexion
+            var resultado = await conexion
                 .QueryAsync<Produccion>(sentenciaSQL, parametrosSentencia);
 
-            if (resultadoProduccion.Any())
-                infoProduccion = resultadoProduccion.ToList();
+            if (resultado.Any())
+                infoProduccion = resultado.ToList();
 
             return infoProduccion;
         }
@@ -722,11 +722,11 @@ namespace FrutasColombia_CS_REST_API.Repositories
                 "FROM core.v_info_nutricion_frutas v " +
                 "WHERE v.fruta_id = @fruta_id";
 
-            var resultadoNutricion = await conexion
+            var resultado = await conexion
                 .QueryAsync<Nutricion>(sentenciaSQL, parametrosSentencia);
 
-            if (resultadoNutricion.Any())
-                infoNutricion = resultadoNutricion.First();
+            if (resultado.Any())
+                infoNutricion = resultado.First();
 
             return infoNutricion;
         }
@@ -907,11 +907,11 @@ namespace FrutasColombia_CS_REST_API.Repositories
                 "FROM core.v_info_frutas v " +
                 "WHERE v.fruta_id = @fruta_id";
 
-            var resultadoTaxonomico = await conexion
+            var resultado = await conexion
                 .QueryAsync<Taxonomia>(sentenciaSQL, parametrosSentencia);
 
-            if (resultadoTaxonomico.Any())
-                infoTaxonomia = resultadoTaxonomico.First();
+            if (resultado.Any())
+                infoTaxonomia = resultado.First();
 
             return infoTaxonomia;
         }

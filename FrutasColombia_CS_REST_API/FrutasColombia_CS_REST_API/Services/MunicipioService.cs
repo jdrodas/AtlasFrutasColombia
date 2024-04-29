@@ -38,7 +38,7 @@ namespace FrutasColombia_CS_REST_API.Services
             var frutasProducidas = await _frutaRepository
                 .GetProducedByLocationAsync(Guid.Empty, municipio_id);
 
-            if (!frutasProducidas.Any())
+            if (frutasProducidas.Count == 0)
                 throw new AppValidationException($"Departamento {unMunicipio.Nombre} no tiene frutas producidas");
 
             return frutasProducidas;
