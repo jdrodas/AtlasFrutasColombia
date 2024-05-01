@@ -910,7 +910,7 @@ $$
         end if;
 
         -- Si todas las validaciones son correctas, insertamos
-        insert into taxonomia_frutas (fruta_id, especie_id)
+        insert into core.taxonomia_frutas (fruta_id, especie_id)
         values (p_fruta_id, l_especie_id);
     end;
 $$;
@@ -986,7 +986,7 @@ $$
         -- Si hay registros, se puede eliminar
         if(l_total_registros!=0) then
             -- eliminamos la información de taxonomia de la fruta
-            delete from taxonomia_frutas
+            delete from core.taxonomia_frutas
             where fruta_id = p_fruta_id;
         end if;
     end;
@@ -1197,7 +1197,7 @@ $$
         end if;
 
         -- Borramos la época
-        delete from epocas where id = p_id;
+        delete from core.epocas where id = p_id;
     end;
 $$;
 
@@ -1233,19 +1233,19 @@ $$
         -- Si no hay registros, se puede insertar
         if l_total_registros = 0 then
 
-            l_epoca_id = f_obtiene_epoca_id(p_epoca_nombre, p_mes_inicio, p_mes_final);
+            l_epoca_id = core.f_obtiene_epoca_id(p_epoca_nombre, p_mes_inicio, p_mes_final);
 
             if l_epoca_id is null then
                 RAISE EXCEPTION 'La época para la producción no es válida';
             end if;
 
-            l_clima_id = f_obtiene_clima_id(p_clima_nombre);
+            l_clima_id = core.f_obtiene_clima_id(p_clima_nombre);
 
             if l_clima_id is null then
                 RAISE EXCEPTION 'El cima para la producción no es válido';
             end if;
 
-            l_municipio_id = f_obtiene_municipio_id(p_municipio_nombre, p_departamento_nombre);
+            l_municipio_id = core.f_obtiene_municipio_id(p_municipio_nombre, p_departamento_nombre);
 
             if l_municipio_id is null then
                 RAISE EXCEPTION 'El municipio para la producción no es válido';
@@ -1289,19 +1289,19 @@ $$
         -- Si hay registros, se puede eliminar
         if l_total_registros != 0 then
 
-            l_epoca_id = f_obtiene_epoca_id(p_epoca_nombre, p_mes_inicio, p_mes_final);
+            l_epoca_id = core.f_obtiene_epoca_id(p_epoca_nombre, p_mes_inicio, p_mes_final);
 
             if l_epoca_id is null then
                 RAISE EXCEPTION 'La época para la producción no es válida';
             end if;
 
-            l_clima_id = f_obtiene_clima_id(p_clima_nombre);
+            l_clima_id = core.f_obtiene_clima_id(p_clima_nombre);
 
             if l_clima_id is null then
                 RAISE EXCEPTION 'El cima para la producción no es válido';
             end if;
 
-            l_municipio_id = f_obtiene_municipio_id(p_municipio_nombre, p_departamento_nombre);
+            l_municipio_id = core.f_obtiene_municipio_id(p_municipio_nombre, p_departamento_nombre);
 
             if l_municipio_id is null then
                 RAISE EXCEPTION 'El municipio para la producción no es válido';
@@ -1313,6 +1313,82 @@ $$
             and epoca_id = l_epoca_id
             and fruta_id = p_fruta_id;
         end if;
+    end;
+$$;
+
+-- p_inserta_clima
+create or replace procedure core.p_inserta_clima(
+                    in p_nombre             text,
+                    in p_altitud_minima     integer,
+                    in p_altitud_maxima     integer
+) language plpgsql as
+$$
+    declare
+        l_total_registros integer :=0;
+
+    begin
+        -- identificamos si ya hay epoca con ese nombre
+        select count(id) into l_total_registros
+        from core.climas
+        where nombre = p_nombre;
+
+        -- Si no hay registros, se puede insertar
+        if l_total_registros = 0 then
+            insert into core.climas (nombre, altitud_minima, altitud_maxima) 
+            values (p_nombre,p_altitud_minima,p_altitud_maxima);
+        end if;
+    end;
+$$;
+
+-- p_actualiza_clima
+create or replace procedure core.p_actualiza_clima(
+                    in p_id                 uuid,
+                    in p_nombre             text,
+                    in p_altitud_minima     integer,
+                    in p_altitud_maxima     integer
+) language plpgsql as
+$$
+    declare
+        l_total_registros integer :=0;
+
+    begin
+        -- identificamos si ya hay epoca con ese nombre
+        select count(id) into l_total_registros
+        from core.climas
+        where id = p_id;
+
+        -- Si no hay registros, se puede insertar
+        if l_total_registros != 0 then
+            update core.climas
+            set nombre = p_nombre,
+            altitud_minima = p_altitud_minima,
+            altitud_maxima = p_altitud_maxima
+            where id = p_id;
+        end if;
+    end;
+$$;
+
+-- p_elimina_clima
+create or replace procedure core.p_elimina_clima(
+                    in p_id uuid
+) language plpgsql as
+$$
+    declare
+        l_total_registros integer :=0;
+    begin
+
+        -- Validamos si hay produccíón de frutas en ese clima
+        select count(*) into l_total_registros
+        from core.produccion_frutas
+        where clima_id = p_id;
+
+        -- Si hay registros, no se puede eliminar el clima
+        if(l_total_registros >0) then
+            RAISE EXCEPTION 'Hay producción de frutas asociada al clima';
+        end if;
+
+        -- Borramos el clima
+        delete from core.climas where id = p_id;
     end;
 $$;
 
